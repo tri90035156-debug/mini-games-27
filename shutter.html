@@ -1,0 +1,407 @@
+<!doctype html><html lang="zh-Hant"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>0.1 秒快門</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--page:#161616;--scr:#0B0B0B;--card:#171717;--ink:#F3F3F3;--mute:#9A9A9A;--line:#2A2A2A;--acc:#9BE028;--acc-ink:#0B0B0B;--r:6px;
+--sh:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);--sh-acc:0 1px 2px rgba(155,224,40,.25),0 8px 24px rgba(155,224,40,.22);--sh-acc-h:0 2px 4px rgba(155,224,40,.3),0 12px 32px rgba(155,224,40,.32)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:"Noto Sans TC","PingFang TC",sans-serif;background:var(--page);color:var(--ink);display:flex;align-items:center;justify-content:center;-webkit-font-smoothing:antialiased;overflow:hidden}
+.mono{font-family:"SF Mono",Menlo,Consolas,monospace}
+.defs{position:absolute;width:0;height:0;overflow:hidden}
+.app{position:relative;width:100%;max-width:400px;height:100%;background:var(--scr);overflow:hidden;user-select:none;-webkit-user-select:none}
+@media (min-width:520px) and (min-height:700px){.app{height:min(860px,calc(100dvh - 48px));border-radius:36px;box-shadow:0 0 0 1px #2A2A2A,0 24px 56px rgba(0,0,0,.5)}}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(155,224,40,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(155,224,40,.06) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
+.hud{position:absolute;inset:max(12px,env(safe-area-inset-top)) 12px max(12px,env(safe-area-inset-bottom));border:1px solid rgba(155,224,40,.18);pointer-events:none}
+.hud:before,.hud:after{content:"";position:absolute;width:16px;height:16px;border:2px solid var(--acc)}
+.hud:before{top:-2px;left:-2px;border-right:0;border-bottom:0}.hud:after{bottom:-2px;right:-2px;border-left:0;border-top:0}
+.view{position:absolute;inset:0;display:none;flex-direction:column;padding:max(32px,calc(env(safe-area-inset-top) + 20px)) 28px max(32px,calc(env(safe-area-inset-bottom) + 20px))}
+.view.on{display:flex}
+.logo{font-weight:900;font-size:22px;line-height:24px;letter-spacing:-.02em;color:var(--acc)}
+.logo span{color:#fff;font-size:11px;letter-spacing:.24em;margin-left:4px}
+.k{font-size:12px;line-height:16px;letter-spacing:.14em;font-weight:700;color:var(--mute)}
+.h{font-size:32px;font-weight:900;line-height:40px;margin:8px 0}
+.p{font-size:14px;line-height:24px;color:var(--mute)}
+.foot{margin-top:12px;font-size:11px;line-height:16px;color:var(--mute);text-align:center}
+.c{text-align:center}
+.top{display:flex;justify-content:space-between;align-items:center}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;height:56px;width:100%;border:0;font:inherit;font-weight:900;font-size:17px;letter-spacing:.06em;border-radius:var(--r);background:var(--acc);color:var(--acc-ink);box-shadow:var(--sh-acc);cursor:pointer;touch-action:manipulation;transition:transform .15s,box-shadow .15s,filter .15s}
+@media (hover:hover){.btn:hover{transform:translateY(-1px);box-shadow:var(--sh-acc-h);filter:brightness(1.05)}}
+.btn:active{transform:translateY(1px);filter:brightness(.92)}
+.btn.o{height:48px;background:transparent;border:1px solid #3A3A3A;color:var(--ink);font-weight:700;font-size:15px;box-shadow:none}
+@media (hover:hover){.btn.o:hover{border-color:var(--acc);filter:none}}
+.btns{display:flex;flex-direction:column;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;font-size:12px;line-height:16px;font-weight:700;border-radius:4px;border:1px solid #333;background:#121212;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+.chip.g{border-color:var(--acc);color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 16px;box-shadow:var(--sh)}
+/* viewfinder */
+.vf{position:relative;border-radius:4px;overflow:hidden;background:radial-gradient(circle at 50% 50%,#151a10 0,#0B0B0B 70%);touch-action:manipulation;cursor:crosshair}
+.vf .cn{position:absolute;width:20px;height:20px;border:2px solid var(--acc);z-index:3}
+.vf .cn.a{top:8px;left:8px;border-right:0;border-bottom:0}.vf .cn.b{top:8px;right:8px;border-left:0;border-bottom:0}
+.vf .cn.c{bottom:8px;left:8px;border-right:0;border-top:0}.vf .cn.d{bottom:8px;right:8px;border-left:0;border-top:0}
+.vf .rec{position:absolute;top:12px;left:36px;font-size:11px;line-height:16px;color:#fff;display:flex;align-items:center;gap:6px;letter-spacing:.1em;z-index:3}
+.vf .rec i{width:8px;height:8px;border-radius:50%;background:#FF4D3A;box-shadow:0 0 8px #FF4D3A;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.25}}
+.vf .xh{position:absolute;left:50%;top:50%;width:48px;height:48px;margin:-24px 0 0 -24px;border:1px solid rgba(155,224,40,.5);border-radius:50%;z-index:1}
+.vf .xh:before,.vf .xh:after{content:"";position:absolute;background:rgba(155,224,40,.5)}
+.vf .xh:before{left:50%;top:-10px;bottom:-10px;width:1px}.vf .xh:after{top:50%;left:-10px;right:-10px;height:1px}
+.mystery{filter:brightness(0) drop-shadow(0 0 1px #9BE028) drop-shadow(0 0 6px rgba(155,224,40,.6))}
+.qm{position:absolute;font-size:40px;line-height:48px;font-weight:900;color:var(--acc);text-shadow:0 0 12px rgba(155,224,40,.6)}
+#runner{position:absolute;top:50%;left:0;width:168px;height:104px;margin-top:-52px;z-index:2;pointer-events:none;display:none}
+#runner .g1,#runner .g2{position:absolute;inset:0;filter:url(#mblur)}
+#runner .g1{opacity:.3;transform:translateX(-56px)}#runner .g2{opacity:.14;transform:translateX(-112px)}
+#runner .streak{position:absolute;right:120px;height:3px;border-radius:2px;background:linear-gradient(90deg,rgba(155,224,40,0),rgba(155,224,40,.9))}
+#runner svg{position:absolute;inset:0;display:block}
+#runner .body{transform:rotate(-4deg)}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:5}
+.flash.on{animation:flash .35s ease-out}
+@keyframes flash{0%{opacity:.95}100%{opacity:0}}
+.msg{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);padding:4px 12px;border-radius:4px;font-size:13px;line-height:20px;font-weight:900;letter-spacing:.06em;white-space:nowrap;z-index:4;display:none}
+.msg.on{display:block}
+.msg.tap{background:var(--acc);color:var(--acc-ink);box-shadow:0 0 16px rgba(155,224,40,.6)}
+.msg.bad{background:#FF4D3A;color:#fff}
+.msg.wait{background:#1E1E1E;color:var(--mute);border:1px solid #333}
+.snap{position:absolute;inset:0;display:none;align-items:center;justify-content:center;z-index:4;background:rgba(11,11,11,.55)}
+.snap.on{display:flex}
+.snap .pz{width:72%;padding:8px 8px 0;background:#F6F6F2;border-radius:4px;transform:rotate(-3deg) scale(.6);opacity:0;transition:transform .3s cubic-bezier(.2,.9,.3,1.3),opacity .2s;box-shadow:0 12px 32px rgba(0,0,0,.6)}
+.snap.on .pz{transform:rotate(-3deg) scale(1);opacity:1}
+.snap .pz .ph{background:#0E120B;border-radius:2px;position:relative}
+.snap .pz svg{display:block;width:100%;height:auto}
+.snap .pz .cp{display:flex;justify-content:space-between;color:#1A1A1A;font-size:12px;line-height:28px;font-weight:700}
+.snap .pz .cp span{color:#5F8A12}
+.timer{font-size:48px;line-height:56px;font-weight:700;color:var(--acc);text-shadow:0 0 16px rgba(155,224,40,.4);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.timer small{font-size:20px;color:var(--mute);margin-left:2px}
+.timer.idle{color:#3A3A3A;text-shadow:none}
+.shutterbar{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+.thumb{width:48px;height:48px;border-radius:8px;border:1px solid #333;background:#151515;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.thumb svg{display:block}
+.shutter{width:88px;height:88px;border-radius:50%;border:3px solid var(--acc);display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(155,224,40,.35);cursor:pointer;background:none;touch-action:manipulation;padding:0}
+.shutter i{width:68px;height:68px;border-radius:50%;background:var(--acc);display:flex;align-items:center;justify-content:center;color:var(--acc-ink);font-style:normal;font-weight:900;font-size:13px;letter-spacing:.06em;transition:transform .08s}
+.shutter:active i,.shutter.press i{transform:scale(.86);filter:brightness(.9)}
+.dex{display:flex;flex-direction:column;align-items:center;gap:2px;width:48px;font-size:11px;line-height:16px;color:var(--mute)}
+.dex b{font-size:14px;color:var(--ink)}
+.rounds{display:flex;gap:6px;justify-content:center;margin-top:12px}
+.rounds i{width:28px;height:4px;border-radius:2px;background:#2A2A2A}.rounds i.hit{background:var(--acc)}.rounds i.miss{background:#5A2A26}.rounds i.cur{background:#777}
+/* result */
+.pol{width:228px;margin:16px auto 0;padding:10px 10px 0;background:#F6F6F2;border-radius:4px;transform:rotate(-3deg);box-shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.5);position:relative}
+.pol .ph{position:relative;height:140px;background:#0E120B;border-radius:2px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.pol .ph svg{display:block}
+.pol .cap{display:flex;justify-content:space-between;align-items:center;height:36px;color:#1A1A1A;font-size:13px;line-height:16px;font-weight:700}
+.pol .cap span{font-size:11px;color:#8A8A8A;font-weight:400}
+.pol .ts{position:absolute;right:8px;bottom:6px;font-size:11px;line-height:16px;color:var(--acc);letter-spacing:.06em}
+.tape{position:absolute;top:-10px;left:50%;width:64px;height:20px;margin-left:-32px;background:rgba(155,224,40,.55);transform:rotate(4deg)}
+.big{font-size:56px;line-height:56px;font-weight:700;color:var(--acc);letter-spacing:-.03em;text-shadow:0 0 16px rgba(155,224,40,.35);font-variant-numeric:tabular-nums}
+.big small{font-size:22px;color:var(--mute);margin-left:2px}
+.badge{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 14px;border-radius:4px;border:1px solid var(--acc);background:rgba(155,224,40,.08);font-weight:700;font-size:13px}
+.badge svg{display:block}
+.toast{position:absolute;left:50%;bottom:110px;transform:translate(-50%,16px);background:var(--acc);color:var(--acc-ink);font-size:13px;font-weight:700;line-height:20px;padding:8px 16px;border-radius:4px;opacity:0;transition:all .25s;pointer-events:none;white-space:nowrap;z-index:20}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.sheet{position:absolute;inset:0;z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;background:rgba(0,0,0,.75)}
+.sheet[hidden]{display:none}
+.sheet img{display:block;max-width:100%;max-height:68%;border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,.4)}
+.sheet p{color:#fff;font-size:14px;line-height:22px;text-align:center}
+.sheet .btn{max-width:200px}
+</style></head><body>
+<svg class="defs" aria-hidden="true" width="0" height="0"><defs>
+<linearGradient id="fishBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F1F4F6"/><stop offset=".55" stop-color="#C9D1D7"/><stop offset="1" stop-color="#8F9AA3"/></linearGradient>
+<linearGradient id="fishTail" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8F9AA3"/><stop offset="1" stop-color="#C9D1D7"/></linearGradient>
+<radialGradient id="flash"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<linearGradient id="streak" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9BE028" stop-opacity="0"/><stop offset="1" stop-color="#9BE028" stop-opacity=".9"/></linearGradient>
+<filter id="mblur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3 0.6"/></filter>
+<filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#9BE028" flood-opacity=".7"/></filter>
+<linearGradient id="tea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0DDBE"/><stop offset="1" stop-color="#C99E6B"/></linearGradient></defs><symbol id="fish" viewBox="0 0 200 124">
+<g stroke="#2B2B2B" stroke-width="3" stroke-linecap="round" fill="none"><path d="M96 92 L84 106 L72 104"/><path d="M118 90 L130 104 L142 100"/></g>
+<rect x="60" y="99" width="20" height="10" rx="5" fill="#9BE028"/><rect x="134" y="95" width="20" height="10" rx="5" fill="#9BE028" transform="rotate(-14 144 100)"/>
+<rect x="60" y="105" width="20" height="3" rx="1.5" fill="#fff" opacity=".7"/>
+<path d="M36 62 L6 36 Q16 62 6 88 Z" fill="url(#fishTail)" stroke="#7E8A92" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M92 30 L104 10 L122 30 Z" fill="#B7C0C7" stroke="#7E8A92" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M32 62 Q62 24 122 30 Q162 36 184 62 Q162 88 122 94 Q62 100 32 62 Z" fill="url(#fishBody)" stroke="#7E8A92" stroke-width="1.5"/>
+<path d="M60 52 Q90 44 120 46" stroke="#fff" stroke-opacity=".7" stroke-width="3" fill="none" stroke-linecap="round"/>
+<g fill="#fff" opacity=".85"><circle cx="70" cy="70" r="1.6"/><circle cx="84" cy="78" r="1.3"/><circle cx="98" cy="68" r="1.5"/><circle cx="110" cy="80" r="1.2"/><circle cx="78" cy="60" r="1.1"/><circle cx="124" cy="72" r="1.4"/></g>
+<path d="M144 42 Q134 62 144 82" stroke="#7E8A92" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M120 66 Q112 78 100 80" stroke="#7E8A92" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M136 34 Q160 30 174 46" stroke="#9BE028" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M137 35 L124 24 M137 35 L122 40" stroke="#9BE028" stroke-width="4" stroke-linecap="round"/>
+<circle cx="160" cy="54" r="10" fill="#fff" stroke="#2B2B2B" stroke-width="1.5"/><circle cx="164" cy="54" r="4.5" fill="#111"/><circle cx="165.5" cy="52.5" r="1.4" fill="#fff"/>
+<path d="M176 68 Q182 66 186 70 Q181 74 176 72 Z" fill="#3A2226"/>
+<path d="M184 38 Q187 44 184 47 Q181 44 184 38 Z" fill="#CFEFFF"/><path d="M192 48 Q194 52 192 54 Q190 52 192 48 Z" fill="#CFEFFF"/>
+</symbol><symbol id="fishface" viewBox="0 0 220 160">
+<circle cx="110" cy="84" r="78" fill="url(#flash)"/>
+<g stroke="#9BE028" stroke-width="3" stroke-linecap="round" opacity=".8"><path d="M18 40 30 48"/><path d="M12 84h16"/><path d="M20 126l12-8"/><path d="M202 40l-12 8"/><path d="M208 84h-16"/><path d="M200 126l-12-8"/></g>
+<path d="M60 38 Q110 4 160 38 Q190 70 176 108 Q160 148 110 150 Q60 148 44 108 Q30 70 60 38 Z" fill="url(#fishBody)" stroke="#7E8A92" stroke-width="2"/>
+<g fill="#fff" opacity=".85"><circle cx="70" cy="112" r="2"/><circle cx="150" cy="118" r="1.8"/><circle cx="160" cy="98" r="1.5"/><circle cx="62" cy="96" r="1.5"/><circle cx="96" cy="136" r="1.7"/></g>
+<path d="M54 46 Q110 18 166 46" stroke="#9BE028" stroke-width="10" fill="none" stroke-linecap="round" transform="rotate(-8 110 40)"/>
+<path d="M166 40 L184 28 M166 40 L186 46" stroke="#9BE028" stroke-width="5" stroke-linecap="round"/>
+<circle cx="80" cy="74" r="24" fill="#fff" stroke="#2B2B2B" stroke-width="2"/><circle cx="90" cy="80" r="6" fill="#111"/><circle cx="92" cy="78" r="2" fill="#fff"/>
+<circle cx="144" cy="70" r="15" fill="#fff" stroke="#2B2B2B" stroke-width="2"/><circle cx="136" cy="64" r="4.5" fill="#111"/><circle cx="137" cy="63" r="1.5" fill="#fff"/>
+<ellipse cx="112" cy="118" rx="20" ry="16" fill="#3A2226"/><path d="M98 126 Q112 112 126 126 Q122 134 112 134 Q102 134 98 126 Z" fill="#F08AA0"/>
+<path d="M60 88 Q52 92 50 98" stroke="#7E8A92" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M170 60 Q176 70 170 76 Q164 70 170 60 Z" fill="#CFEFFF"/><path d="M182 82 Q185 88 182 92 Q179 88 182 82 Z" fill="#CFEFFF"/><path d="M42 58 Q45 64 42 68 Q39 64 42 58 Z" fill="#CFEFFF"/>
+</symbol><symbol id="boba" viewBox="0 0 200 124">
+<g stroke="#2B2B2B" stroke-width="3" stroke-linecap="round" fill="none"><path d="M88 96 L78 110 L66 108"/><path d="M110 96 L122 108 L134 104"/></g>
+<rect x="54" y="103" width="20" height="10" rx="5" fill="#9BE028"/><rect x="126" y="99" width="20" height="10" rx="5" fill="#9BE028" transform="rotate(-14 136 104)"/>
+<g stroke="#2B2B2B" stroke-width="3" stroke-linecap="round" fill="none"><path d="M70 56 L54 46"/><path d="M128 58 L146 70"/></g>
+<path d="M68 22 L132 22 L124 98 Q100 104 76 98 Z" fill="url(#tea)" stroke="#8A6A44" stroke-width="1.6" stroke-linejoin="round"/>
+<g fill="#3A2A1E"><circle cx="84" cy="90" r="5"/><circle cx="96" cy="93" r="5"/><circle cx="108" cy="91" r="5"/><circle cx="118" cy="86" r="4.5"/><circle cx="90" cy="81" r="4.5"/><circle cx="104" cy="82" r="4.5"/></g>
+<path d="M72 30 L76 92" stroke="#fff" stroke-opacity=".45" stroke-width="4" stroke-linecap="round"/>
+<path d="M68 34 Q100 26 132 34" stroke="#9BE028" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M70 35 L56 26 M70 35 L54 40" stroke="#9BE028" stroke-width="4" stroke-linecap="round"/>
+<ellipse cx="100" cy="22" rx="34" ry="7" fill="#F4F4F4" stroke="#BDBDBD" stroke-width="1.2"/>
+<path d="M70 21 Q100 2 130 21" fill="#FAFAFA" stroke="#BDBDBD" stroke-width="1.2"/>
+<path d="M110 16 L118 3" stroke="#9BE028" stroke-width="7" stroke-linecap="round"/>
+<circle cx="94" cy="54" r="9" fill="#fff" stroke="#2B2B2B" stroke-width="1.5"/><circle cx="98" cy="54" r="4" fill="#111"/>
+<circle cx="116" cy="55" r="8" fill="#fff" stroke="#2B2B2B" stroke-width="1.5"/><circle cx="120" cy="55" r="3.6" fill="#111"/>
+<ellipse cx="110" cy="70" rx="5" ry="4" fill="#3A2226"/>
+<path d="M140 30 Q143 36 140 40 Q137 36 140 30 Z" fill="#CFEFFF"/>
+</symbol>
+<symbol id="bobaface" viewBox="0 0 220 160">
+<circle cx="110" cy="84" r="78" fill="url(#flash)"/>
+<g stroke="#9BE028" stroke-width="3" stroke-linecap="round" opacity=".8"><path d="M18 40 30 48"/><path d="M12 84h16"/><path d="M20 126l12-8"/><path d="M202 40l-12 8"/><path d="M208 84h-16"/><path d="M200 126l-12-8"/></g>
+<g fill="#3A2A1E"><circle cx="40" cy="30" r="7"/><circle cx="186" cy="24" r="6"/><circle cx="178" cy="142" r="7"/><circle cx="34" cy="138" r="6"/></g>
+<path d="M58 38 L162 38 L150 150 Q110 158 70 150 Z" fill="url(#tea)" stroke="#8A6A44" stroke-width="2" stroke-linejoin="round"/>
+<g fill="#3A2A1E"><circle cx="82" cy="138" r="7"/><circle cx="100" cy="143" r="7"/><circle cx="120" cy="142" r="7"/><circle cx="138" cy="136" r="6.5"/></g>
+<path d="M58 54 Q110 42 162 54" stroke="#9BE028" stroke-width="10" fill="none" stroke-linecap="round" transform="rotate(6 110 50)"/>
+<ellipse cx="110" cy="38" rx="56" ry="10" fill="#F4F4F4" stroke="#BDBDBD" stroke-width="1.5"/>
+<path d="M126 32 L136 12 L150 18 L160 -2" stroke="#9BE028" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="86" cy="84" r="20" fill="#fff" stroke="#2B2B2B" stroke-width="2"/><circle cx="96" cy="88" r="6" fill="#111"/><circle cx="98" cy="86" r="2" fill="#fff"/>
+<circle cx="138" cy="82" r="22" fill="#fff" stroke="#2B2B2B" stroke-width="2"/><circle cx="128" cy="86" r="6.5" fill="#111"/><circle cx="130" cy="84" r="2" fill="#fff"/>
+<path d="M92 114 Q112 104 132 114 Q128 134 112 134 Q96 134 92 114 Z" fill="#3A2226"/><path d="M100 126 Q112 118 124 126 Q120 133 112 133 Q104 133 100 126 Z" fill="#F08AA0"/>
+<path d="M166 66 Q172 76 166 82 Q160 76 166 66 Z" fill="#CFEFFF"/>
+</symbol><symbol id="slipper" viewBox="0 0 200 124">
+<g stroke="#2B2B2B" stroke-width="3" stroke-linecap="round" fill="none"><path d="M90 88 L80 104 L68 102"/><path d="M118 88 L130 102 L142 98"/></g>
+<rect x="56" y="97" width="20" height="10" rx="5" fill="#9BE028"/><rect x="132" y="93" width="20" height="10" rx="5" fill="#9BE028" transform="rotate(-14 142 98)"/>
+<path d="M54 52 Q30 28 22 44 Q36 46 40 56 Q24 58 26 70 Q42 62 56 66 Z" fill="#fff" stroke="#BDBDBD" stroke-width="1.2"/>
+<path d="M30 52 L44 56 M30 64 L46 64" stroke="#DADADA" stroke-width="1.2"/>
+<rect x="40" y="70" width="140" height="20" rx="10" fill="#F2F2F2" stroke="#BDBDBD" stroke-width="1.4"/>
+<rect x="40" y="82" width="140" height="8" rx="4" fill="#2F6FD6"/>
+<path d="M104 72 Q128 22 172 72 Z" fill="#2F6FD6" stroke="#1E4FA3" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M110 66 Q128 34 164 66" stroke="#fff" stroke-opacity=".35" stroke-width="3" fill="none"/>
+<path d="M112 46 Q134 38 160 50" stroke="#9BE028" stroke-width="6" fill="none" stroke-linecap="round"/>
+<circle cx="130" cy="56" r="8.5" fill="#fff" stroke="#2B2B2B" stroke-width="1.5"/><circle cx="134" cy="56" r="3.8" fill="#111"/>
+<circle cx="150" cy="58" r="7.5" fill="#fff" stroke="#2B2B2B" stroke-width="1.5"/><circle cx="154" cy="58" r="3.4" fill="#111"/>
+<path d="M176 40 Q179 46 176 50 Q173 46 176 40 Z" fill="#CFEFFF"/>
+</symbol>
+<symbol id="slipperface" viewBox="0 0 220 160">
+<circle cx="110" cy="84" r="78" fill="url(#flash)"/>
+<g stroke="#9BE028" stroke-width="3" stroke-linecap="round" opacity=".8"><path d="M18 40 30 48"/><path d="M12 84h16"/><path d="M20 126l12-8"/><path d="M202 40l-12 8"/><path d="M208 84h-16"/><path d="M200 126l-12-8"/></g>
+<path d="M44 70 Q14 40 10 64 Q26 66 30 78 Q12 84 18 96 Q34 84 46 90 Z" fill="#fff" stroke="#BDBDBD" stroke-width="1.5"/>
+<path d="M176 70 Q206 40 210 64 Q194 66 190 78 Q208 84 202 96 Q186 84 174 90 Z" fill="#fff" stroke="#BDBDBD" stroke-width="1.5"/>
+<ellipse cx="110" cy="134" rx="78" ry="18" fill="#F2F2F2" stroke="#BDBDBD" stroke-width="1.6"/>
+<path d="M32 136 Q110 160 188 136" stroke="#2F6FD6" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="M42 132 Q48 30 110 28 Q172 30 178 132 Z" fill="#2F6FD6" stroke="#1E4FA3" stroke-width="2" stroke-linejoin="round"/>
+<path d="M54 60 Q110 34 166 60" stroke="#9BE028" stroke-width="10" fill="none" stroke-linecap="round" transform="rotate(-6 110 50)"/>
+<circle cx="84" cy="86" r="16" fill="#fff" stroke="#2B2B2B" stroke-width="2"/><circle cx="78" cy="80" r="5" fill="#111"/><circle cx="79" cy="79" r="1.6" fill="#fff"/>
+<circle cx="138" cy="84" r="25" fill="#fff" stroke="#2B2B2B" stroke-width="2"/><circle cx="146" cy="90" r="7" fill="#111"/><circle cx="148" cy="88" r="2.2" fill="#fff"/>
+<path d="M90 110 Q112 100 132 112 Q126 128 110 128 Q94 128 90 110 Z" fill="#3A2226"/><path d="M98 120 Q112 114 124 121 Q120 127 110 127 Q102 127 98 120 Z" fill="#F08AA0"/>
+<path d="M176 100 Q181 108 176 113 Q171 108 176 100 Z" fill="#CFEFFF"/><path d="M50 40 Q53 46 50 50 Q47 46 50 40 Z" fill="#CFEFFF"/>
+</symbol></svg>
+<div class="app" id="app"><div class="grid"></div><div class="hud"></div>
+
+<section class="view on" id="v-start">
+ <div class="logo">acer<span>NITRO</span></div>
+ <div class="c" style="margin-top:24px"><div class="k mono">NITRO 指速測試・02</div><div class="h">0.1 秒快門</div><p class="p">有個怪東西會飆速衝過去。<br>看到就按，拍下牠的奇異表情。</p></div>
+ <div class="vf" style="margin-top:24px;height:200px"><i class="cn a"></i><i class="cn b"></i><i class="cn c"></i><i class="cn d"></i><span class="rec mono"><i></i>REC</span><div class="xh"></div>
+  <svg class="mystery" style="position:absolute;left:50%;top:44px;margin-left:-90px" width="180" height="112"><use href="#fish"/></svg><span class="qm mono" style="right:28px;top:20px">?</span><span class="qm mono" style="left:24px;bottom:16px;font-size:28px">?</span></div>
+ <div class="c" style="margin-top:16px;display:flex;justify-content:center;gap:8px"><span class="chip">5 回合</span><span class="chip">按下快門就定格</span><span class="chip g" id="dexStart">圖鑑 0/3</span></div>
+ <div class="btns" style="margin-top:auto;padding-top:16px"><button class="btn mono" id="go">GO</button></div>
+ <div class="foot mono">可以點取景框、快門鍵，或按空白鍵。</div>
+</section>
+
+<section class="view" id="v-play">
+ <div class="top"><span class="chip mono" id="round">ROUND 1/5</span><span class="chip g mono" id="best">BEST ---</span></div>
+ <div class="rounds" id="rounds"></div>
+ <div class="c" style="margin-top:12px"><div class="k mono" id="status">準備……盯著取景框</div><div class="timer mono idle" id="timer">0.000<small>s</small></div></div>
+ <div class="vf" id="vf" style="margin-top:12px;flex:1;min-height:200px;max-height:300px"><i class="cn a"></i><i class="cn b"></i><i class="cn c"></i><i class="cn d"></i><span class="rec mono"><i></i>REC</span><div class="xh"></div>
+  <div id="runner"><i class="streak" style="top:18px;width:120px"></i><i class="streak" style="top:44px;width:150px"></i><i class="streak" style="top:72px;width:110px"></i>
+   <svg class="g2" viewBox="0 0 200 124"><use id="ug2" href="#fish"/></svg><svg class="g1" viewBox="0 0 200 124"><use id="ug1" href="#fish"/></svg><svg class="body" viewBox="0 0 200 124"><use id="ub" href="#fish"/></svg></div>
+  <div class="flash" id="flash"></div>
+  <span class="msg" id="msg"></span>
+  <div class="snap" id="snap"><div class="pz"><div class="ph"><svg viewBox="0 0 220 160"><use id="snapUse" href="#fishface"/></svg></div><div class="cp"><b id="snapName">飆速鹹魚</b><span class="mono" id="snapMs">0.168s</span></div></div></div>
+ </div>
+ <div class="shutterbar"><div class="thumb" id="thumb"></div><button class="shutter" id="shutter" aria-label="按快門"><i>按快門</i></button><div class="dex"><b class="mono" id="dexPlay">0/3</b>圖鑑</div></div>
+ <div class="foot mono" id="hint">太早按會拍到空氣，太晚只拍到尾巴。</div>
+</section>
+
+<section class="view" id="v-end">
+ <div class="top"><div class="logo">acer<span>NITRO</span></div><span class="chip g mono" id="dexEnd">圖鑑 1/3</span></div>
+ <div class="pol"><i class="tape"></i><div class="ph" id="polPh"></div><div class="cap"><b id="polName">飆速鹹魚・被你抓包</b><span class="mono" id="polNo">#01</span></div></div>
+ <div class="c" style="margin-top:20px"><div class="k" id="speedLab">你的指速（最快一張）</div><div class="big mono" style="margin-top:4px" id="bigMs">168<small>ms</small></div>
+ <div style="margin-top:8px"><span class="badge"><svg width="14" height="16" viewBox="0 0 14 16"><path d="M8.5 0 1 9h5l-1.5 7L13 6.5H8Z" fill="#9BE028"/></svg><span id="rank">神之手指・比 92% 玩家快</span></span></div>
+ <div class="foot mono" id="sum" style="margin-top:8px"></div></div>
+ <div class="card" style="margin-top:12px"><p class="p" style="color:#DDD"><b style="color:var(--acc)">Nitro 180Hz 每一幀只要 5.6ms</b>，再快的怪咖都拍得清清楚楚。</p></div>
+ <div class="btns" style="margin-top:auto;padding-top:16px"><button class="btn" id="share">分享奇異快照</button><button class="btn o mono" id="again">AGAIN</button></div>
+</section>
+<div class="sheet" id="sheet" hidden><img id="sheetImg" alt="分享圖"><p>長按圖片就能存到手機<br>分享文字也已經複製好了</p><button class="btn o" id="sheetClose">關閉</button></div>
+<div class="toast" id="toast"></div>
+</div>
+
+<script>
+(()=>{
+const ROUNDS = 5;
+const CRITTERS = [
+  {id:'fish',   face:'fishface',    name:'飆速鹹魚'},
+  {id:'boba',   face:'bobaface',    name:'暴走珍奶'},
+  {id:'slipper',face:'slipperface', name:'飛天藍白拖'},
+];
+const $ = id => document.getElementById(id);
+const views = {start:$('v-start'), play:$('v-play'), end:$('v-end')};
+const show = v => { for(const k in views) views[k].classList.toggle('on', k===v); };
+
+let ac=null;
+function tone(freqs,dur=0.07,type='square',vol=0.035){ try{ ac=ac||new (window.AudioContext||window.webkitAudioContext)(); let t=ac.currentTime;
+  freqs.forEach(f=>{const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(0.0001,t+dur);o.connect(g).connect(ac.destination);o.start(t);o.stop(t+dur);t+=dur*0.9;}); }catch(e){} }
+function shutterSound(){ try{ ac=ac||new (window.AudioContext||window.webkitAudioContext)(); const n=ac.sampleRate*0.08, b=ac.createBuffer(1,n,ac.sampleRate), d=b.getChannelData(0);
+  for(let i=0;i<n;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/n,3); const s=ac.createBufferSource(), g=ac.createGain(); g.gain.value=0.25; s.buffer=b; s.connect(g).connect(ac.destination); s.start(); }catch(e){} }
+const buzz = ms => { try{ navigator.vibrate && navigator.vibrate(ms); }catch(e){} };
+
+// 圖鑑（只存在這台裝置的瀏覽器裡）
+let dex = new Set();
+try{ dex = new Set(JSON.parse(localStorage.getItem('acer-shutter-dex')||'[]')); }catch(e){}
+const saveDex = () => { try{ localStorage.setItem('acer-shutter-dex', JSON.stringify([...dex])); }catch(e){} };
+const dexText = () => `${dex.size}/${CRITTERS.length}`;
+$('dexStart').textContent = '圖鑑 '+dexText();
+
+let round=0, shots=[], state='idle', t0=0, raf=0, waitT=0, nextT=0, critter=null, dur=0, newFinds=[];
+const runner=$('runner'), vf=$('vf');
+
+function setMsg(text, cls){ const m=$('msg'); m.textContent=text; m.className='msg on '+cls; }
+function clearMsg(){ $('msg').className='msg'; }
+function setTimer(ms, idle){ $('timer').innerHTML=(ms/1000).toFixed(3)+'<small>s</small>'; $('timer').classList.toggle('idle',!!idle); }
+function renderRounds(){
+  $('rounds').innerHTML = Array.from({length:ROUNDS},(_,i)=>{ const s=shots[i]; return `<i class="${s?(s.ms!=null?'hit':'miss'):(i===round?'cur':'')}"></i>`; }).join('');
+  $('round').textContent = `ROUND ${Math.min(round+1,ROUNDS)}/${ROUNDS}`;
+  const hits = shots.filter(s=>s&&s.ms!=null).map(s=>s.ms);
+  $('best').textContent = hits.length ? `BEST ${Math.min(...hits)}ms` : 'BEST ---';
+  $('dexPlay').textContent = dexText();
+}
+
+function start(){
+  round=0; shots=[]; newFinds=[]; $('thumb').innerHTML='';
+  show('play'); renderRounds(); nextRound();
+}
+function nextRound(){
+  clearTimeout(waitT); clearTimeout(nextT); cancelAnimationFrame(raf);
+  if(round>=ROUNDS) return finish();
+  renderRounds(); $('snap').classList.remove('on'); runner.style.display='none'; clearMsg();
+  state='wait'; setTimer(0,true);
+  $('status').textContent='準備……盯著取景框';
+  setMsg('等牠出現…','wait');
+  waitT = setTimeout(appear, 1100 + Math.random()*2400);
+}
+function appear(){
+  critter = CRITTERS[Math.floor(Math.random()*CRITTERS.length)];
+  ['ug2','ug1','ub'].forEach(id=>$(id).setAttribute('href','#'+critter.id));
+  dur = 720 - round*45;                     // 一回比一回快
+  runner.style.top = (38 + Math.random()*24)+'%';
+  runner.style.display='block'; clearMsg();
+  state='run'; t0=performance.now();
+  $('status').textContent='牠出現了！';
+  tone([1200],0.03,'square',0.02);
+  raf=requestAnimationFrame(run);
+}
+function run(now){
+  if(state!=='run') return;
+  const el=now-t0, W=vf.clientWidth, x = -170 + (W+340)*(el/dur);
+  runner.style.transform=`translateX(${x}px)`;
+  setTimer(el);
+  if(el>=dur){ return escaped(); }
+  raf=requestAnimationFrame(run);
+}
+function escaped(){
+  state='done'; runner.style.display='none';
+  shots[round]={ms:null, c:critter};
+  setMsg('跑掉了……只拍到尾巴','bad'); $('status').textContent='MISS'; tone([220,160],0.12);
+  buzz(60); round++; nextT=setTimeout(nextRound,1300);
+}
+function fire(){
+  $('shutter').classList.add('press'); setTimeout(()=>$('shutter').classList.remove('press'),120);
+  if(state==='wait'){
+    clearTimeout(waitT); state='done';
+    setMsg('太早了！拍到空氣','bad'); $('status').textContent='再來一次這回合'; tone([180],0.15); buzz(80);
+    nextT=setTimeout(nextRound,1100); return;
+  }
+  if(state!=='run') return;
+  const ms = Math.round(performance.now()-t0);
+  state='done'; cancelAnimationFrame(raf);
+  shutterSound(); buzz(25);
+  const f=$('flash'); f.classList.remove('on'); void f.offsetWidth; f.classList.add('on');
+  setTimer(ms);
+  shots[round]={ms, c:critter};
+  if(!dex.has(critter.id)){ dex.add(critter.id); newFinds.push(critter.id); saveDex(); }
+  $('snapUse').setAttribute('href','#'+critter.face); $('snapName').textContent=critter.name; $('snapMs').textContent=(ms/1000).toFixed(3)+'s';
+  setTimeout(()=>{ runner.style.display='none'; $('snap').classList.add('on'); },140);
+  $('status').textContent = ms<200?'神速！':ms<260?'拍到了！':'差點跑掉！';
+  $('thumb').innerHTML=`<svg width="48" height="35" viewBox="0 0 220 160"><use href="#${critter.face}"/></svg>`;
+  round++; renderRounds();
+  nextT=setTimeout(nextRound,1500);
+}
+$('shutter').addEventListener('pointerdown',e=>{e.preventDefault();fire();});
+vf.addEventListener('pointerdown',e=>{e.preventDefault();fire();});
+document.addEventListener('keydown',e=>{ if(views.play.classList.contains('on') && (e.code==='Space'||e.key==='Enter')){ e.preventDefault(); fire(); } });
+
+function rankOf(ms){
+  const pct = Math.max(1, Math.min(99, Math.round(100-(ms-140)*0.45)));
+  const t = ms<180?'神之手指':ms<230?'電競反應':ms<300?'正常人類':'樹懶模式';
+  return {pct,t};
+}
+let bestShot=null;
+function finish(){
+  state='idle'; clearTimeout(waitT); clearTimeout(nextT); cancelAnimationFrame(raf);
+  const hits = shots.filter(s=>s&&s.ms!=null);
+  bestShot = hits.sort((a,b)=>a.ms-b.ms)[0] || null;
+  const ph=$('polPh');
+  if(bestShot){
+    const r=rankOf(bestShot.ms), avg=Math.round(hits.reduce((a,s)=>a+s.ms,0)/hits.length);
+    ph.innerHTML=`<svg width="184" height="134" viewBox="0 0 220 160"><use href="#${bestShot.c.face}"/></svg><span class="ts mono">${(bestShot.ms/1000).toFixed(3)}s</span>`;
+    $('polName').textContent=bestShot.c.name+'・被你抓包';
+    $('polNo').textContent='#'+String(CRITTERS.indexOf(bestShot.c)+1).padStart(2,'0');
+    $('bigMs').innerHTML=bestShot.ms+'<small>ms</small>';
+    $('rank').textContent=`${r.t}・比 ${r.pct}% 玩家快`;
+    $('sum').textContent=`拍到 ${hits.length}/${ROUNDS} 隻・平均 ${avg}ms`;
+    $('speedLab').textContent='你的指速（最快一張）';
+  } else {
+    ph.innerHTML=`<svg width="184" height="115" viewBox="0 0 200 124" style="filter:url(#mblur);opacity:.6"><use href="#fish"/></svg><span class="ts mono">MISS</span>`;
+    $('polName').textContent='一團殘影'; $('polNo').textContent='#--';
+    $('bigMs').innerHTML='---<small>ms</small>'; $('rank').textContent='再來一輪，牠們跑不掉';
+    $('sum').textContent=`拍到 0/${ROUNDS} 隻`; $('speedLab').textContent='你的指速';
+  }
+  $('dexEnd').textContent=(newFinds.length?'NEW・':'')+'圖鑑 '+dexText();
+  $('dexStart').textContent='圖鑑 '+dexText();
+  show('end'); tone([523,659,784],0.08,'square',0.03);
+}
+
+function toast(t){ const el=$('toast'); el.textContent=t; el.classList.add('on'); clearTimeout(el._t); el._t=setTimeout(()=>el.classList.remove('on'),1800); }
+
+// 把拍立得畫成 PNG：組一張獨立 SVG（含角色圖形），畫到 canvas
+async function snapshotPNG(){
+  const defs=document.querySelector('svg.defs').innerHTML;
+  const c=bestShot.c, ms=(bestShot.ms/1000).toFixed(3), r=rankOf(bestShot.ms);
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="720" height="900" viewBox="0 0 720 900">${defs}
+  <rect width="720" height="900" fill="#0B0B0B"/>
+  <g transform="rotate(-3 360 400)"><rect x="110" y="90" width="500" height="560" rx="8" fill="#F6F6F2"/><rect x="134" y="114" width="452" height="420" rx="4" fill="#0E120B"/>
+  <svg x="140" y="120" width="440" height="408" viewBox="0 0 220 160"><use href="#${c.face}" xlink:href="#${c.face}"/></svg>
+  <text x="572" y="520" text-anchor="end" font-family="Menlo,monospace" font-size="22" fill="#9BE028">${ms}s</text>
+  <text x="138" y="600" font-family="PingFang TC,Noto Sans TC,sans-serif" font-size="30" font-weight="700" fill="#1A1A1A">${c.name}・被我抓包</text></g>
+  <text x="360" y="740" text-anchor="middle" font-family="Menlo,monospace" font-size="64" font-weight="700" fill="#9BE028">${bestShot.ms}ms</text>
+  <text x="360" y="790" text-anchor="middle" font-family="PingFang TC,Noto Sans TC,sans-serif" font-size="26" fill="#F3F3F3">${r.t}・比 ${r.pct}% 玩家快</text>
+  <text x="360" y="850" text-anchor="middle" font-family="PingFang TC,Noto Sans TC,sans-serif" font-size="20" fill="#9A9A9A">acer NITRO｜0.1 秒快門</text></svg>`;
+  const url=URL.createObjectURL(new Blob([svg],{type:'image/svg+xml'}));
+  const img=new Image(); await new Promise((res,rej)=>{img.onload=res; img.onerror=rej; img.src=url;});
+  const cv=document.createElement('canvas'); cv.width=720; cv.height=900; cv.getContext('2d').drawImage(img,0,0); URL.revokeObjectURL(url);
+  return await new Promise(res=>cv.toBlob(res,'image/png'));
+}
+function showSheet(blob){ $('sheetImg').src=URL.createObjectURL(blob); $('sheet').hidden=false; }
+$('sheetClose').onclick=()=>{ $('sheet').hidden=true; };
+$('share').onclick=async()=>{
+  if(!bestShot){ toast('這輪沒拍到，再來一輪！'); return; }
+  const text=`我用 ${bestShot.ms}ms 拍到了「${bestShot.c.name}」的奇異表情！你拍得到嗎？`;
+  try{ navigator.clipboard.writeText(text).catch(()=>{}); }catch(e){}
+  let blob; try{ blob=await snapshotPNG(); }catch(e){ toast('已複製分享文字'); return; }
+  const file=new File([blob],'奇異快照.png',{type:'image/png'});
+  try{ if(navigator.canShare && navigator.canShare({files:[file]})){ await navigator.share({files:[file],text}); return; } }catch(e){ if(e&&e.name==='AbortError') return; }
+  showSheet(blob);
+};
+$('go').onclick=start; $('again').onclick=start;
+})();
+</script>
+</body></html>

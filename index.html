@@ -1,0 +1,1307 @@
+<!doctype html><html lang="zh-Hant"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Acer 小遊戲試玩</title>
+<style>
+:root{--acc:#83B81A;--ink:#1A1A1A;--mute:#6B6B6B;--line:#E3E3E3}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:"Noto Sans TC","PingFang TC",sans-serif;background:#E9E9E9;color:var(--ink);display:flex;flex-direction:column}
+.bar{flex:none;background:#fff;border-bottom:1px solid var(--line);padding:max(8px,env(safe-area-inset-top)) 12px 8px}
+.in{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.brand{font-weight:900;font-size:15px;white-space:nowrap}.brand b{color:var(--acc)}
+.tabs{display:flex;gap:8px;flex:1;overflow-x:auto;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tab{flex:1 0 auto;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:8px 14px;border-radius:12px;border:1px solid var(--line);background:#fff;font-family:inherit;cursor:pointer;text-align:left;color:var(--ink);transition:background .15s,border-color .15s}
+.tab b{font-size:13px;line-height:16px}.tab span{font-size:11px;line-height:14px;color:var(--mute)}
+.tab:hover{border-color:#CFCFCF}
+.tab.on{background:var(--acc);border-color:var(--acc);color:#fff}.tab.on span{color:rgba(255,255,255,.85)}
+.stage{flex:1;min-height:0;position:relative}
+.g{position:absolute;inset:0;width:100%;height:100%;border:0;display:none;background:transparent}.g.on{display:block}
+@media (max-width:640px){.brand{display:none}.tab{padding:6px 10px}.tab span{display:none}}
+</style></head><body>
+<div class="bar"><div class="in"><div class="brand"><b>acer</b> 小遊戲試玩</div><nav class="tabs"><button class="tab" data-id="A2"><b>A2 秤重大挑戰</b><span>左滑右滑，哪一個比較重？</span></button><button class="tab" data-id="B"><b>B 0.1 秒快門</b><span>拍下飆速怪咖的奇異表情</span></button><button class="tab" data-id="C"><b>C 今天穿這樣出門？</b><span>東西亂冒出來，點了全疊上身</span></button></nav></div></div>
+<div class="stage"><iframe class="g" id="g-A2" title="A2 秤重大挑戰" data-src="&lt;!doctype html&gt;&lt;html lang=&quot;zh-Hant&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,viewport-fit=cover&quot;&gt;
+&lt;title&gt;秤重大挑戰&lt;/title&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+:root{--page:#F2F2F2;--scr:#FFFFFF;--ink:#1A1A1A;--mute:#6B6B6B;--line:#E3E3E3;--acc:#83B81A;--acc-ink:#fff;--acc-dk:#5F8A12;--r:12px;
+--sh:0 1px 2px rgba(26,26,26,.06),0 8px 24px rgba(26,26,26,.06);--sh-h:0 1px 2px rgba(26,26,26,.08),0 12px 32px rgba(26,26,26,.10);
+--sh-acc:0 1px 2px rgba(95,138,18,.22),0 8px 24px rgba(131,184,26,.24);--sh-acc-h:0 2px 4px rgba(95,138,18,.24),0 12px 32px rgba(131,184,26,.30)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:&quot;Noto Sans TC&quot;,&quot;PingFang TC&quot;,sans-serif;background:var(--page);color:var(--ink);display:flex;align-items:center;justify-content:center;-webkit-font-smoothing:antialiased;overflow:hidden}
+.defs{position:absolute;width:0;height:0;overflow:hidden}
+.app{position:relative;width:100%;max-width:400px;height:100%;background:var(--scr);overflow:hidden;user-select:none;-webkit-user-select:none}
+@media (min-width:520px) and (min-height:700px){.app{height:min(860px,calc(100dvh - 48px));border-radius:36px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 24px 56px rgba(0,0,0,.12)}}
+.view{position:absolute;inset:0;display:none;flex-direction:column;padding:max(24px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom))}
+.view.on{display:flex}
+.logo{font-weight:900;font-size:22px;line-height:24px;letter-spacing:-.02em;color:var(--acc)}
+.k{font-size:12px;line-height:16px;letter-spacing:.14em;font-weight:700;color:var(--mute)}
+.h{font-size:32px;font-weight:900;line-height:40px;margin:8px 0}
+.p{font-size:14px;line-height:24px;color:var(--mute)}
+.foot{margin-top:16px;font-size:11px;line-height:16px;color:var(--mute);text-align:center}
+.c{text-align:center}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;height:56px;border:0;width:100%;font:inherit;font-weight:900;font-size:17px;border-radius:var(--r);background:var(--acc);color:var(--acc-ink);box-shadow:var(--sh-acc);cursor:pointer;touch-action:manipulation;transition:transform .15s,box-shadow .15s,filter .15s}
+@media (hover:hover){.btn:hover{transform:translateY(-1px);box-shadow:var(--sh-acc-h);filter:brightness(1.04)}}
+.btn:active{transform:translateY(1px);box-shadow:0 1px 2px rgba(95,138,18,.24);filter:brightness(.94)}
+.btn:focus-visible{outline:3px solid rgba(131,184,26,.4);outline-offset:2px}
+.btn.o{height:48px;background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:15px;box-shadow:var(--sh)}
+@media (hover:hover){.btn.o:hover{box-shadow:var(--sh-h);filter:none}}
+.btn.o:active{background:#F4F4F4;filter:none}
+.btn.t{height:40px;background:transparent;box-shadow:none;color:var(--ink);font-weight:700;font-size:14px}
+.btn.t svg{color:var(--acc)}
+.btns{display:flex;flex-direction:column;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px;font-size:13px;line-height:16px;font-weight:700;border-radius:99px;background:var(--acc);color:var(--acc-ink);box-shadow:var(--sh-acc);font-variant-numeric:tabular-nums;white-space:nowrap}
+.chip.l{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:var(--sh)}
+.chip.warn{background:#1A1A1A;color:#fff;box-shadow:none}
+.chips{display:flex;gap:8px;justify-content:center}
+.top{display:flex;justify-content:space-between;align-items:center}
+.card{background:#fff;border:1px solid #EDEDED;border-radius:var(--r);padding:16px;box-shadow:var(--sh)}
+.prod{display:flex;align-items:center;gap:16px}.prod svg{flex:none;display:block}.prod .p{color:var(--ink)}
+/* progress */
+.prog{margin-top:16px}
+.track{position:relative;height:8px;border-radius:99px;background:#EDEDED;overflow:hidden}
+.track i{position:absolute;left:0;top:0;bottom:0;background:var(--acc);border-radius:99px}
+.track:after{content:&quot;&quot;;position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 calc(16.6667% - 2px),#fff calc(16.6667% - 2px) 16.6667%)}
+.ticks{display:flex;justify-content:space-between;margin-top:4px}
+.ticks i{width:1px;height:4px;background:#CFCFCF}.ticks i.m{height:8px;background:#9A9A9A}
+.tl{display:flex;justify-content:space-between;font-size:11px;line-height:16px;color:var(--mute)}
+.dots{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:12px;height:12px}
+.dots i{width:8px;height:8px;border-radius:50%;background:#E3E3E3;transition:all .2s}
+.dots i.ok{background:var(--acc)}
+.dots i.ng{background:#fff;box-shadow:inset 0 0 0 1.5px #BDBDBD}
+.dots i.cur{width:12px;height:12px;background:var(--acc);box-shadow:0 0 0 4px rgba(131,184,26,.18)}
+/* start */
+.hero{display:flex;justify-content:center;margin-top:16px}.hero svg{display:block}
+.cap{text-align:center;font-size:14px;line-height:24px;font-weight:700}
+.cap small{display:block;font-size:11px;line-height:16px;color:var(--mute);font-weight:400}
+.hint{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:16px;padding:8px 12px;border-radius:var(--r);background:#F7F7F7;font-size:12px;line-height:16px;font-weight:700;color:var(--mute)}
+.hint b{display:inline-flex;align-items:center;gap:4px;color:var(--ink)}.hint b.r{color:var(--acc-dk)}
+.hint svg{display:inline-block;vertical-align:middle}
+/* stack */
+.stack{position:relative;flex:1;min-height:250px;max-height:440px;margin-top:12px}
+.sc{position:absolute;left:12px;right:12px;top:0;bottom:16px;border-radius:20px;background:#fff;border:1px solid #EDEDED;box-shadow:var(--sh);padding:16px;display:flex;flex-direction:column;align-items:center}
+.sc.b2{transform:translateY(16px) scale(.9);opacity:.55}
+.sc.b1{transform:translateY(8px) scale(.95);opacity:.85}
+.sc.cur{box-shadow:var(--sh-h);cursor:grab;touch-action:none;will-change:transform}
+.sc.cur.drag{cursor:grabbing;transition:none}
+.sc.cur.back{transition:transform .25s cubic-bezier(.2,.8,.3,1.2)}
+.sc.cur.fly{transition:transform .28s ease-in,opacity .28s ease-in}
+.sc .no{align-self:flex-start;font-size:11px;line-height:16px;font-weight:700;color:var(--mute);letter-spacing:.08em}
+.sc .art{flex:1;display:flex;align-items:center;justify-content:center;min-height:0;pointer-events:none}
+.sc .art svg{display:block;max-height:100%}
+.sc .emo{font-size:96px;line-height:1;filter:drop-shadow(0 8px 12px rgba(0,0,0,.12))}
+.sc b{font-size:17px;line-height:24px;text-align:center}
+.sc .vsl{display:flex;align-items:center;gap:8px;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);width:100%;justify-content:center;font-size:12px;line-height:16px;color:var(--mute)}
+.sc .vsl svg{display:block}
+.stamp{position:absolute;top:28px;padding:4px 12px;border:3px solid var(--acc);border-radius:8px;color:var(--acc);font-size:20px;line-height:28px;font-weight:900;letter-spacing:.04em;background:rgba(255,255,255,.92);opacity:0;pointer-events:none;white-space:nowrap}
+.stamp.r{left:16px;transform:rotate(-14deg)}
+.stamp.l{right:16px;transform:rotate(14deg);border-color:#1A1A1A;color:#1A1A1A}
+.reveal{position:absolute;left:12px;right:12px;top:0;bottom:16px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:24px;background:rgba(255,255,255,.96);border:2px solid var(--acc);box-shadow:var(--sh-h);opacity:0;transform:scale(.94);pointer-events:none;transition:opacity .18s,transform .18s}
+.reveal.on{opacity:1;transform:none}
+.reveal.ng{border-color:#1A1A1A}
+.reveal .mark{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--acc);color:#fff;font-size:28px;font-weight:900}
+.reveal.ng .mark{background:#1A1A1A}
+.reveal .rt{font-size:20px;line-height:28px;font-weight:900}
+.reveal .rwho{font-size:16px;line-height:24px;font-weight:700}
+.reveal .rw{font-size:14px;line-height:24px;color:var(--mute)}
+.reveal .rw b{color:var(--ink)}
+.swipebtns{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.swipebtns .btn{height:52px;font-size:14px}
+/* result */
+.big{font-size:72px;font-weight:900;line-height:72px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.big-u{display:inline-block;position:relative;padding-bottom:8px}
+.big-u:after{content:&quot;&quot;;position:absolute;left:4px;right:4px;bottom:0;height:2px;border-radius:2px;background:var(--acc)}
+.big .unit{font-size:24px;line-height:32px;color:var(--mute);letter-spacing:0;font-weight:700;margin-left:4px}
+.award{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:16px}
+.stars{display:flex;gap:8px;height:24px;align-items:center}
+.st svg{display:block;fill:#fff;stroke:#CFCFCF;stroke-width:1.5}.st.on svg{fill:var(--acc);stroke:var(--acc)}
+.badge{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 16px;border-radius:99px;background:rgba(131,184,26,.08);border:1px solid var(--acc);font-weight:700;font-size:13px}
+.say{font-size:17px;line-height:24px;font-weight:900;margin-top:16px;text-align:center}
+.mini{display:flex;justify-content:center;gap:4px;margin-top:16px}
+.mini i{width:20px;height:28px;border-radius:4px;background:#fff;border:1px solid var(--line);box-shadow:0 1px 2px rgba(26,26,26,.06);position:relative}
+.mini i.ok{border-color:var(--acc);background:rgba(131,184,26,.10)}
+.mini i.ok:after{content:&quot;&quot;;position:absolute;left:6px;top:9px;width:6px;height:3px;border-left:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:rotate(-45deg)}
+.mini i.ng:after,.mini i.ng:before{content:&quot;&quot;;position:absolute;left:9px;top:8px;width:2px;height:12px;background:#BDBDBD;transform:rotate(45deg)}
+.mini i.ng:before{transform:rotate(-45deg)}
+.toast{position:absolute;left:50%;bottom:96px;transform:translate(-50%,16px);background:#1A1A1A;color:#fff;font-size:13px;line-height:20px;padding:8px 16px;border-radius:99px;opacity:0;transition:all .25s;pointer-events:none;white-space:nowrap;z-index:20}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+.chip.warn{animation:pulse .6s infinite}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;
+&lt;svg class=&quot;defs&quot; aria-hidden=&quot;true&quot; width=&quot;0&quot; height=&quot;0&quot;&gt;&lt;defs&gt;
+&lt;linearGradient id=&quot;lapLid&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#FBFBFC&quot;/&gt;&lt;stop offset=&quot;.6&quot; stop-color=&quot;#E6E8EB&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#D3D7DB&quot;/&gt;&lt;/linearGradient&gt;
+&lt;radialGradient id=&quot;lapScr&quot; cx=&quot;.5&quot; cy=&quot;.38&quot; r=&quot;.75&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#CDEB86&quot;/&gt;&lt;stop offset=&quot;.42&quot; stop-color=&quot;#83B81A&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#4F7A0C&quot;/&gt;&lt;/radialGradient&gt;
+&lt;linearGradient id=&quot;lapHinge&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#9AA0A6&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#C8CCD0&quot;/&gt;&lt;/linearGradient&gt;
+&lt;linearGradient id=&quot;lapDeck&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#E4E7EA&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#F4F5F7&quot;/&gt;&lt;/linearGradient&gt;
+&lt;linearGradient id=&quot;lapEdge&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#C9CDD2&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#AEB4BA&quot;/&gt;&lt;/linearGradient&gt;
+&lt;radialGradient id=&quot;lapShadow&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#000&quot; stop-opacity=&quot;.16&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#000&quot; stop-opacity=&quot;0&quot;/&gt;&lt;/radialGradient&gt;
+&lt;linearGradient id=&quot;capG&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#FFFFFF&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#E1E4E7&quot;/&gt;&lt;/linearGradient&gt;
+&lt;linearGradient id=&quot;waterG&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#E9F0F3&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#CCDAE1&quot;/&gt;&lt;/linearGradient&gt;
+&lt;filter id=&quot;lapGlow&quot; x=&quot;-30%&quot; y=&quot;-30%&quot; width=&quot;160%&quot; height=&quot;160%&quot;&gt;&lt;feGaussianBlur stdDeviation=&quot;7&quot;/&gt;&lt;/filter&gt;
+&lt;filter id=&quot;tagSh&quot; x=&quot;-40%&quot; y=&quot;-40%&quot; width=&quot;180%&quot; height=&quot;180%&quot;&gt;&lt;feDropShadow dx=&quot;0&quot; dy=&quot;2&quot; stdDeviation=&quot;2.5&quot; flood-color=&quot;#1A1A1A&quot; flood-opacity=&quot;.18&quot;/&gt;&lt;/filter&gt;
+&lt;style&gt;.lk{fill:#FCFCFD;stroke:#C2C7CC;stroke-width:.35}.lb{fill:#D5D9DD}.lp{fill:#E7EAED;stroke:#C2C7CC;stroke-width:.6}&lt;/style&gt;
+&lt;/defs&gt;&lt;symbol id=&quot;lap&quot; viewBox=&quot;0 0 240 168&quot;&gt;
+&lt;ellipse cx=&quot;120&quot; cy=&quot;161&quot; rx=&quot;108&quot; ry=&quot;5&quot; fill=&quot;url(#lapShadow)&quot;/&gt;
+&lt;rect x=&quot;50&quot; y=&quot;8&quot; width=&quot;140&quot; height=&quot;90&quot; rx=&quot;10&quot; fill=&quot;#83B81A&quot; opacity=&quot;.28&quot; filter=&quot;url(#lapGlow)&quot;/&gt;
+&lt;rect x=&quot;44&quot; y=&quot;4&quot; width=&quot;152&quot; height=&quot;104&quot; rx=&quot;9&quot; fill=&quot;url(#lapLid)&quot; stroke=&quot;#BFC4C9&quot; stroke-width=&quot;1&quot;/&gt;
+&lt;rect x=&quot;47&quot; y=&quot;7&quot; width=&quot;146&quot; height=&quot;92&quot; rx=&quot;6&quot; fill=&quot;#171B13&quot;/&gt;
+&lt;rect x=&quot;50.5&quot; y=&quot;10.5&quot; width=&quot;139&quot; height=&quot;85&quot; rx=&quot;2.5&quot; fill=&quot;url(#lapScr)&quot;/&gt;
+&lt;polygon points=&quot;50.5,10.5 124,10.5 86,95.5 50.5,95.5&quot; fill=&quot;#fff&quot; opacity=&quot;.10&quot;/&gt;
+&lt;rect x=&quot;50.5&quot; y=&quot;10.5&quot; width=&quot;139&quot; height=&quot;85&quot; rx=&quot;2.5&quot; fill=&quot;none&quot; stroke=&quot;#fff&quot; stroke-opacity=&quot;.18&quot; stroke-width=&quot;.6&quot;/&gt;
+&lt;circle cx=&quot;120&quot; cy=&quot;8.8&quot; r=&quot;.9&quot; fill=&quot;#3A4034&quot;/&gt;
+&lt;text x=&quot;120&quot; y=&quot;105.6&quot; text-anchor=&quot;middle&quot; font-family=&quot;Noto Sans TC,Arial,sans-serif&quot; font-size=&quot;6.2&quot; font-weight=&quot;700&quot; letter-spacing=&quot;.6&quot; fill=&quot;#8E949A&quot;&gt;acer&lt;/text&gt;
+&lt;rect x=&quot;62&quot; y=&quot;107.5&quot; width=&quot;116&quot; height=&quot;5.5&quot; rx=&quot;2.75&quot; fill=&quot;url(#lapHinge)&quot;/&gt;
+&lt;polygon points=&quot;44,113 196,113 226,152 14,152&quot; fill=&quot;url(#lapDeck)&quot; stroke=&quot;#C3C8CD&quot; stroke-width=&quot;.8&quot; stroke-linejoin=&quot;round&quot;/&gt;
+&lt;ellipse cx=&quot;120&quot; cy=&quot;115.5&quot; rx=&quot;62&quot; ry=&quot;3.2&quot; fill=&quot;#83B81A&quot; opacity=&quot;.16&quot;/&gt;
+&lt;polygon class=&quot;lb&quot; points=&quot;55.5,115.2 184.5,115.2 199.7,139.0 40.3,139.0&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;58.0,116.2 66.1,116.2 64.4,119.4 56.1,119.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;67.7,116.2 75.8,116.2 74.4,119.4 66.0,119.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;77.3,116.2 85.4,116.2 84.3,119.4 76.0,119.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;87.0,116.2 95.1,116.2 94.3,119.4 85.9,119.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;96.6,116.2 104.7,116.2 104.3,119.4 95.9,119.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;106.3,116.2 114.4,116.2 114.2,119.4 105.9,119.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;115.9,116.2 124.1,116.2 124.2,119.4 115.8,119.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;125.6,116.2 133.7,116.2 134.1,119.4 125.8,119.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;135.3,116.2 143.4,116.2 144.1,119.4 135.7,119.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;144.9,116.2 153.0,116.2 154.1,119.4 145.7,119.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;154.6,116.2 162.7,116.2 164.0,119.4 155.7,119.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;164.2,116.2 172.3,116.2 174.0,119.4 165.6,119.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;173.9,116.2 182.0,116.2 183.9,119.4 175.6,119.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;55.5,120.4 63.9,120.4 62.1,123.8 53.4,123.8&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;65.5,120.4 74.0,120.4 72.5,123.8 63.8,123.8&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;75.6,120.4 84.0,120.4 82.9,123.8 74.1,123.8&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;85.6,120.4 94.1,120.4 93.2,123.8 84.5,123.8&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;95.7,120.4 104.1,120.4 103.6,123.8 94.9,123.8&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;105.7,120.4 114.2,120.4 114.0,123.8 105.3,123.8&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;115.8,120.4 124.2,120.4 124.4,123.8 115.6,123.8&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;125.8,120.4 134.3,120.4 134.7,123.8 126.0,123.8&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;135.9,120.4 144.3,120.4 145.1,123.8 136.4,123.8&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;145.9,120.4 154.4,120.4 155.5,123.8 146.8,123.8&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;156.0,120.4 164.4,120.4 165.9,123.8 157.1,123.8&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;166.0,120.4 174.5,120.4 176.2,123.8 167.5,123.8&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;176.1,120.4 184.5,120.4 186.6,123.8 177.9,123.8&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;52.8,124.8 61.6,124.8 59.7,128.4 50.6,128.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;63.2,124.8 72.0,124.8 70.5,128.4 61.4,128.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;73.7,124.8 82.5,124.8 81.3,128.4 72.2,128.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;84.2,124.8 93.0,124.8 92.1,128.4 83.0,128.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;94.7,124.8 103.5,124.8 102.9,128.4 93.8,128.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;105.1,124.8 113.9,124.8 113.7,128.4 104.6,128.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;115.6,124.8 124.4,124.8 124.5,128.4 115.5,128.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;126.1,124.8 134.9,124.8 135.4,128.4 126.3,128.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;136.5,124.8 145.3,124.8 146.2,128.4 137.1,128.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;147.0,124.8 155.8,124.8 157.0,128.4 147.9,128.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;157.5,124.8 166.3,124.8 167.8,128.4 158.7,128.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;168.0,124.8 176.8,124.8 178.6,128.4 169.5,128.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;178.4,124.8 187.2,124.8 189.4,128.4 180.3,128.4&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;50.0,129.4 59.1,129.4 57.1,133.2 47.7,133.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;60.9,129.4 70.0,129.4 68.4,133.2 58.9,133.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;71.8,129.4 81.0,129.4 79.7,133.2 70.2,133.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;82.7,129.4 91.9,129.4 90.9,133.2 81.5,133.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;93.6,129.4 102.8,129.4 102.2,133.2 92.7,133.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;104.5,129.4 113.7,129.4 113.5,133.2 104.0,133.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;115.4,129.4 124.6,129.4 124.7,133.2 115.3,133.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;126.3,129.4 135.5,129.4 136.0,133.2 126.5,133.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;137.2,129.4 146.4,129.4 147.3,133.2 137.8,133.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;148.1,129.4 157.3,129.4 158.5,133.2 149.1,133.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;159.0,129.4 168.2,129.4 169.8,133.2 160.3,133.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;170.0,129.4 179.1,129.4 181.1,133.2 171.6,133.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;180.9,129.4 190.0,129.4 192.3,133.2 182.9,133.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;47.1,134.2 56.6,134.2 54.5,138.2 44.6,138.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;58.4,134.2 68.0,134.2 66.2,138.2 56.4,138.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;69.8,134.2 79.3,134.2 78.0,138.2 68.1,138.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;81.1,134.2 147.5,134.2 148.4,138.2 79.9,138.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;149.3,134.2 158.9,134.2 160.1,138.2 150.3,138.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;160.7,134.2 170.2,134.2 171.9,138.2 162.0,138.2&quot;/&gt;&lt;polygon class=&quot;lk&quot; points=&quot;172.0,134.2 192.9,134.2 195.4,138.2 173.8,138.2&quot;/&gt;&lt;polygon class=&quot;lp&quot; points=&quot;96.7,140.4 143.3,140.4 145.0,149.4 95.0,149.4&quot;/&gt;
+&lt;path d=&quot;M14 152 H226 L221.5 157.5 Q220 159 217 159 H23 Q20 159 18.5 157.5 Z&quot; fill=&quot;url(#lapEdge)&quot;/&gt;
+&lt;rect x=&quot;106&quot; y=&quot;152&quot; width=&quot;28&quot; height=&quot;2.2&quot; rx=&quot;1.1&quot; fill=&quot;#A6ACB2&quot;/&gt;
+&lt;/symbol&gt;&lt;symbol id=&quot;bottle&quot; viewBox=&quot;0 0 120 168&quot;&gt;
+&lt;ellipse cx=&quot;60&quot; cy=&quot;161&quot; rx=&quot;34&quot; ry=&quot;4.5&quot; fill=&quot;url(#lapShadow)&quot;/&gt;
+&lt;rect x=&quot;45&quot; y=&quot;4&quot; width=&quot;30&quot; height=&quot;18&quot; rx=&quot;4&quot; fill=&quot;url(#capG)&quot; stroke=&quot;#BFC4C9&quot; stroke-width=&quot;.8&quot;/&gt;
+&lt;g stroke=&quot;#C9CDD1&quot; stroke-width=&quot;.8&quot;&gt;&lt;line x1=&quot;50&quot; y1=&quot;7&quot; x2=&quot;50&quot; y2=&quot;19&quot;/&gt;&lt;line x1=&quot;55&quot; y1=&quot;7&quot; x2=&quot;55&quot; y2=&quot;19&quot;/&gt;&lt;line x1=&quot;60&quot; y1=&quot;7&quot; x2=&quot;60&quot; y2=&quot;19&quot;/&gt;&lt;line x1=&quot;65&quot; y1=&quot;7&quot; x2=&quot;65&quot; y2=&quot;19&quot;/&gt;&lt;line x1=&quot;70&quot; y1=&quot;7&quot; x2=&quot;70&quot; y2=&quot;19&quot;/&gt;&lt;/g&gt;
+&lt;rect x=&quot;47&quot; y=&quot;22&quot; width=&quot;26&quot; height=&quot;6&quot; rx=&quot;1.5&quot; fill=&quot;#E3E6E9&quot; stroke=&quot;#C3C8CD&quot; stroke-width=&quot;.6&quot;/&gt;
+&lt;clipPath id=&quot;btlClip&quot;&gt;&lt;path d=&quot;M48 28 H72 Q72 40 84 48 Q90 52 90 62 V146 Q90 156 80 156 H40 Q30 156 30 146 V62 Q30 52 36 48 Q48 40 48 28 Z&quot;/&gt;&lt;/clipPath&gt;
+&lt;path d=&quot;M48 28 H72 Q72 40 84 48 Q90 52 90 62 V146 Q90 156 80 156 H40 Q30 156 30 146 V62 Q30 52 36 48 Q48 40 48 28 Z&quot; fill=&quot;#F7F9FA&quot;/&gt;
+&lt;g clip-path=&quot;url(#btlClip)&quot;&gt;
+&lt;rect x=&quot;28&quot; y=&quot;40&quot; width=&quot;64&quot; height=&quot;120&quot; fill=&quot;url(#waterG)&quot;/&gt;
+&lt;path d=&quot;M28 40 Q44 37 60 40 T92 40&quot; fill=&quot;none&quot; stroke=&quot;#fff&quot; stroke-opacity=&quot;.8&quot; stroke-width=&quot;1&quot;/&gt;
+&lt;rect x=&quot;28&quot; y=&quot;84&quot; width=&quot;64&quot; height=&quot;30&quot; fill=&quot;#fff&quot; opacity=&quot;.92&quot;/&gt;
+&lt;rect x=&quot;28&quot; y=&quot;84&quot; width=&quot;64&quot; height=&quot;2&quot; fill=&quot;#83B81A&quot;/&gt;
+&lt;rect x=&quot;36&quot; y=&quot;56&quot; width=&quot;6&quot; height=&quot;92&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; opacity=&quot;.45&quot;/&gt;
+&lt;g stroke=&quot;#fff&quot; stroke-opacity=&quot;.5&quot; stroke-width=&quot;1&quot;&gt;&lt;line x1=&quot;30&quot; y1=&quot;128&quot; x2=&quot;90&quot; y2=&quot;128&quot;/&gt;&lt;line x1=&quot;30&quot; y1=&quot;136&quot; x2=&quot;90&quot; y2=&quot;136&quot;/&gt;&lt;/g&gt;
+&lt;/g&gt;
+&lt;text x=&quot;60&quot; y=&quot;103.5&quot; text-anchor=&quot;middle&quot; font-family=&quot;Noto Sans TC,Arial,sans-serif&quot; font-size=&quot;11&quot; font-weight=&quot;900&quot; fill=&quot;#1A1A1A&quot;&gt;600ml&lt;/text&gt;
+&lt;path d=&quot;M48 28 H72 Q72 40 84 48 Q90 52 90 62 V146 Q90 156 80 156 H40 Q30 156 30 146 V62 Q30 52 36 48 Q48 40 48 28 Z&quot; fill=&quot;none&quot; stroke=&quot;#B9C2C8&quot; stroke-width=&quot;1.2&quot;/&gt;
+&lt;/symbol&gt;
+&lt;symbol id=&quot;lap999&quot; viewBox=&quot;0 0 240 168&quot;&gt;&lt;use href=&quot;#lap&quot;/&gt;
+&lt;g filter=&quot;url(#tagSh)&quot;&gt;&lt;circle cx=&quot;203&quot; cy=&quot;25&quot; r=&quot;20&quot; fill=&quot;#83B81A&quot; stroke=&quot;#fff&quot; stroke-width=&quot;3&quot;/&gt;&lt;/g&gt;
+&lt;text x=&quot;203&quot; y=&quot;29.2&quot; text-anchor=&quot;middle&quot; font-family=&quot;Noto Sans TC,Arial,sans-serif&quot; font-size=&quot;12&quot; font-weight=&quot;900&quot; fill=&quot;#fff&quot; letter-spacing=&quot;-.2&quot;&gt;999g&lt;/text&gt;
+&lt;/symbol&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;app&quot; id=&quot;app&quot;&gt;
+
+&lt;section class=&quot;view on&quot; id=&quot;v-start&quot;&gt;
+ &lt;div class=&quot;logo&quot;&gt;acer&lt;/div&gt;
+ &lt;div class=&quot;c&quot; style=&quot;margin-top:24px&quot;&gt;&lt;div class=&quot;k&quot;&gt;ACER 12 關・02&lt;/div&gt;&lt;div class=&quot;h&quot;&gt;秤重大挑戰&lt;/div&gt;&lt;p class=&quot;p&quot;&gt;東西一張張滑過來，跟 Swift Air 16 比，&lt;br&gt;哪一個比較重？&lt;/p&gt;
+ &lt;div class=&quot;chips&quot; style=&quot;margin-top:16px&quot;&gt;&lt;span class=&quot;chip l&quot;&gt;10 題&lt;/span&gt;&lt;span class=&quot;chip l&quot;&gt;&lt;svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 14 14&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.6&quot;&gt;&lt;circle cx=&quot;7&quot; cy=&quot;8&quot; r=&quot;5.2&quot;/&gt;&lt;path d=&quot;M7 5.2V8l1.8 1.2M5.4 1h3.2&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;/svg&gt;30 秒&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+ &lt;div class=&quot;hero&quot;&gt;&lt;svg width=&quot;240&quot; height=&quot;168&quot; aria-label=&quot;Swift Air 16 筆電，999g&quot;&gt;&lt;use href=&quot;#lap999&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;
+ &lt;div class=&quot;cap&quot;&gt;Swift Air 16&lt;small&gt;16 吋・999g&lt;/small&gt;&lt;/div&gt;
+ &lt;div class=&quot;hint&quot;&gt;&lt;span&gt;&lt;b&gt;&lt;svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M13 8H3M7 4 3 8l4 4&quot;/&gt;&lt;/svg&gt;左滑&lt;/b&gt; 筆電比較重&lt;/span&gt;&lt;span&gt;它比較重 &lt;b class=&quot;r&quot;&gt;右滑&lt;svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M3 8h10M9 4l4 4-4 4&quot;/&gt;&lt;/svg&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+ &lt;div class=&quot;btns&quot; style=&quot;margin-top:auto;padding-top:16px&quot;&gt;&lt;button class=&quot;btn&quot; id=&quot;go&quot;&gt;開始滑&lt;/button&gt;&lt;/div&gt;
+ &lt;div class=&quot;foot&quot;&gt;像滑交友軟體一樣・也可以用鍵盤 ← →&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;view&quot; id=&quot;v-play&quot;&gt;
+ &lt;div class=&quot;top&quot;&gt;&lt;span class=&quot;chip l&quot; id=&quot;qno&quot;&gt;第 1/10 題&lt;/span&gt;&lt;span class=&quot;chip&quot; id=&quot;clock&quot;&gt;&lt;svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 14 14&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.6&quot;&gt;&lt;circle cx=&quot;7&quot; cy=&quot;8&quot; r=&quot;5.2&quot;/&gt;&lt;path d=&quot;M7 5.2V8l1.8 1.2M5.4 1h3.2&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;/svg&gt;&lt;span id=&quot;tleft&quot;&gt;0:30&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+ &lt;div class=&quot;prog&quot;&gt;&lt;div class=&quot;track&quot;&gt;&lt;i id=&quot;tbar&quot; style=&quot;width:0&quot;&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class=&quot;ticks&quot;&gt;&lt;i class=&quot;m&quot;&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i class=&quot;m&quot;&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i class=&quot;m&quot;&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i class=&quot;m&quot;&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class=&quot;tl&quot;&gt;&lt;span&gt;0s&lt;/span&gt;&lt;span&gt;10s&lt;/span&gt;&lt;span&gt;20s&lt;/span&gt;&lt;span&gt;30s&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+ &lt;div class=&quot;dots&quot; id=&quot;dots&quot;&gt;&lt;/div&gt;
+ &lt;div class=&quot;h c&quot; style=&quot;margin-top:12px;font-size:28px;line-height:36px&quot;&gt;哪一個比較重？&lt;/div&gt;
+ &lt;div class=&quot;stack&quot; id=&quot;stack&quot;&gt;&lt;/div&gt;
+ &lt;div class=&quot;swipebtns&quot;&gt;&lt;button class=&quot;btn o&quot; id=&quot;bl&quot;&gt;&lt;svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M13 8H3M7 4 3 8l4 4&quot;/&gt;&lt;/svg&gt;筆電比較重&lt;/button&gt;&lt;button class=&quot;btn&quot; id=&quot;br&quot;&gt;它比較重&lt;svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M3 8h10M9 4l4 4-4 4&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;view&quot; id=&quot;v-end&quot;&gt;
+ &lt;div class=&quot;logo&quot;&gt;acer&lt;/div&gt;
+ &lt;div class=&quot;c&quot; style=&quot;margin-top:16px&quot;&gt;&lt;div class=&quot;k&quot;&gt;10 張你滑對了&lt;/div&gt;&lt;div style=&quot;margin-top:8px&quot;&gt;&lt;span class=&quot;big big-u&quot;&gt;&lt;span id=&quot;score&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;unit&quot;&gt;/10&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+ &lt;div class=&quot;award&quot;&gt;&lt;div class=&quot;stars&quot; id=&quot;stars&quot;&gt;&lt;/div&gt;&lt;span class=&quot;badge&quot;&gt;&lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;#83B81A&quot; stroke-width=&quot;1.6&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M8 2v12M4.5 14h7M2.5 4.5h11M8 3.2 2.5 4.5 0.9 9h3.2ZM13.5 4.5 11.9 9h3.2Z&quot;/&gt;&lt;path d=&quot;M.9 9a1.6 1.6 0 0 0 3.2 0M11.9 9a1.6 1.6 0 0 0 3.2 0&quot;/&gt;&lt;/svg&gt;&lt;span id=&quot;title&quot;&gt;人肉電子秤&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+ &lt;div class=&quot;say&quot; id=&quot;say&quot;&gt;重量感很準，差一點滿分&lt;/div&gt;
+ &lt;div class=&quot;mini&quot; id=&quot;mini&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+ &lt;div class=&quot;card prod&quot; style=&quot;margin-top:16px&quot;&gt;&lt;svg width=&quot;96&quot; height=&quot;67&quot; aria-label=&quot;Swift Air 16&quot;&gt;&lt;use href=&quot;#lap999&quot;/&gt;&lt;/svg&gt;&lt;p class=&quot;p&quot;&gt;&lt;b&gt;Swift Air 16 只有 999g&lt;/b&gt;，比裝滿的 600ml 水壺還輕。&lt;/p&gt;&lt;/div&gt;
+ &lt;div class=&quot;btns&quot; style=&quot;margin-top:auto;padding-top:16px&quot;&gt;&lt;button class=&quot;btn&quot; id=&quot;share&quot;&gt;分享成績&lt;/button&gt;&lt;button class=&quot;btn o&quot; id=&quot;again&quot;&gt;再玩一次&lt;/button&gt;&lt;button class=&quot;btn t&quot; id=&quot;more&quot;&gt;看 Swift Air 16&lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M3 8h10M9 4l4 4-4 4&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;div class=&quot;toast&quot; id=&quot;toast&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+(()=&gt;{
+const LAPTOP_W = 999, TOTAL_Q = 10, TOTAL_MS = 30000;
+// 重量為一般常見規格的約略值（視覺稿示範用）
+const POOL = [
+ {name:&quot;600ml 不鏽鋼水壺&quot;, sub:&quot;裝滿&quot;, g:1050, art:&#x27;&lt;svg width=&quot;104&quot; height=&quot;146&quot;&gt;&lt;use href=&quot;#bottle&quot;/&gt;&lt;/svg&gt;&#x27;, fixed:true},
+ {name:&quot;一包 1kg 白米&quot;, sub:&quot;超市那種&quot;, g:1000, emo:&quot;🍚&quot;, fixed:true, note:&quot;只比 999g 重 1 公克！&quot;},
+ {name:&quot;一般 16 吋筆電&quot;, sub:&quot;同尺寸的別台&quot;, g:1900, art:&#x27;&lt;svg width=&quot;150&quot; height=&quot;105&quot;&gt;&lt;use href=&quot;#lap&quot;/&gt;&lt;/svg&gt;&#x27;},
+ {name:&quot;一顆鳳梨&quot;, sub:&quot;中型&quot;, g:1500, emo:&quot;🍍&quot;},
+ {name:&quot;小玉西瓜&quot;, sub:&quot;一顆&quot;, g:2000, emo:&quot;🍉&quot;},
+ {name:&quot;家裡的貓&quot;, sub:&quot;成貓&quot;, g:4500, emo:&quot;🐈&quot;},
+ {name:&quot;精裝字典&quot;, sub:&quot;厚的那本&quot;, g:1300, emo:&quot;📕&quot;},
+ {name:&quot;時尚雜誌&quot;, sub:&quot;一本&quot;, g:450, emo:&quot;📖&quot;},
+ {name:&quot;雞腿便當&quot;, sub:&quot;含飯&quot;, g:650, emo:&quot;🍱&quot;},
+ {name:&quot;大杯珍奶&quot;, sub:&quot;全糖去冰&quot;, g:750, emo:&quot;🧋&quot;},
+ {name:&quot;一隻球鞋&quot;, sub:&quot;單腳&quot;, g:400, emo:&quot;👟&quot;},
+ {name:&quot;智慧型手機&quot;, sub:&quot;一支&quot;, g:200, emo:&quot;📱&quot;},
+ {name:&quot;鳳梨酥禮盒&quot;, sub:&quot;10 入&quot;, g:550, emo:&quot;🎁&quot;},
+];
+const $ = id =&gt; document.getElementById(id);
+const views = {start:$(&#x27;v-start&#x27;), play:$(&#x27;v-play&#x27;), end:$(&#x27;v-end&#x27;)};
+function show(v){ for(const k in views) views[k].classList.toggle(&#x27;on&#x27;, k===v); }
+
+// ---------- sound &amp; haptics ----------
+let ac=null;
+function beep(freqs, dur=0.09, type=&#x27;sine&#x27;, vol=0.06){
+  try{ ac = ac || new (window.AudioContext||window.webkitAudioContext)();
+    let t = ac.currentTime;
+    freqs.forEach(f=&gt;{ const o=ac.createOscillator(), g=ac.createGain(); o.type=type; o.frequency.value=f;
+      g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(0.0001,t+dur); o.connect(g).connect(ac.destination); o.start(t); o.stop(t+dur); t+=dur*0.9; });
+  }catch(e){}
+}
+const buzz = ms =&gt; { try{ navigator.vibrate &amp;&amp; navigator.vibrate(ms); }catch(e){} };
+
+// ---------- state ----------
+let qs=[], idx=0, results=[], left=TOTAL_MS, last=0, running=false, busy=false, raf=0;
+
+function shuffle(a){ for(let i=a.length-1;i&gt;0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function pickQuestions(){
+  const fixed = POOL.filter(p=&gt;p.fixed), rest = shuffle(POOL.filter(p=&gt;!p.fixed));
+  const heavy = rest.filter(p=&gt;p.g&gt;LAPTOP_W), light = rest.filter(p=&gt;p.g&lt;LAPTOP_W);
+  // 大約一半一半，避免全猜同一邊
+  return shuffle([...fixed, ...heavy.slice(0,3), ...light.slice(0,5)]).slice(0,TOTAL_Q);
+}
+
+function start(){
+  qs = pickQuestions(); idx=0; results=[]; left=TOTAL_MS; busy=false;
+  show(&#x27;play&#x27;); renderDots(); renderStack(); updateClock();
+  running=true; last=performance.now(); cancelAnimationFrame(raf); raf=requestAnimationFrame(tick);
+  beep([523,659],0.08);
+}
+function tick(now){
+  if(!running) return;
+  if(!busy){ left -= now-last; }
+  last = now;
+  if(left&lt;=0){ left=0; updateClock(); return finish(); }
+  updateClock();
+  raf=requestAnimationFrame(tick);
+}
+function updateClock(){
+  const s = Math.ceil(left/1000);
+  $(&#x27;tleft&#x27;).textContent = &#x27;0:&#x27;+String(s).padStart(2,&#x27;0&#x27;);
+  $(&#x27;tbar&#x27;).style.width = (100-left/TOTAL_MS*100)+&#x27;%&#x27;;
+  $(&#x27;clock&#x27;).classList.toggle(&#x27;warn&#x27;, left&lt;=5000 &amp;&amp; left&gt;0);
+}
+function renderDots(){
+  $(&#x27;dots&#x27;).innerHTML = qs.map((_,i)=&gt;{
+    const r = results[i]; const c = r===true?&#x27;ok&#x27;:r===false?&#x27;ng&#x27;:(i===idx?&#x27;cur&#x27;:&#x27;&#x27;);
+    return `&lt;i class=&quot;${c}&quot;&gt;&lt;/i&gt;`; }).join(&#x27;&#x27;);
+  $(&#x27;qno&#x27;).textContent = `第 ${Math.min(idx+1,TOTAL_Q)}/${TOTAL_Q} 題`;
+}
+function cardHTML(q,i){
+  const art = q.art ? q.art : `&lt;span class=&quot;emo&quot;&gt;${q.emo}&lt;/span&gt;`;
+  return `&lt;span class=&quot;no&quot;&gt;${String(i+1).padStart(2,&#x27;0&#x27;)} / ${TOTAL_Q}&lt;/span&gt;&lt;div class=&quot;art&quot;&gt;${art}&lt;/div&gt;&lt;b&gt;${q.name}・${q.sub}&lt;/b&gt;
+   &lt;div class=&quot;vsl&quot;&gt;對上&lt;svg width=&quot;40&quot; height=&quot;28&quot;&gt;&lt;use href=&quot;#lap&quot;/&gt;&lt;/svg&gt;Swift Air 16&lt;/div&gt;
+   &lt;span class=&quot;stamp r&quot;&gt;它比較重！&lt;/span&gt;&lt;span class=&quot;stamp l&quot;&gt;筆電比較重！&lt;/span&gt;`;
+}
+let card=null;
+function renderStack(){
+  const st=$(&#x27;stack&#x27;); st.innerHTML=&#x27;&#x27;;
+  if(idx+2&lt;qs.length){ const b=document.createElement(&#x27;div&#x27;); b.className=&#x27;sc b2&#x27;; st.appendChild(b); }
+  if(idx+1&lt;qs.length){ const b=document.createElement(&#x27;div&#x27;); b.className=&#x27;sc b1&#x27;; st.appendChild(b); }
+  card=document.createElement(&#x27;div&#x27;); card.className=&#x27;sc cur&#x27;; card.innerHTML=cardHTML(qs[idx],idx); st.appendChild(card);
+  const rv=document.createElement(&#x27;div&#x27;); rv.className=&#x27;reveal&#x27;; rv.id=&#x27;reveal&#x27;; st.appendChild(rv);
+  bindDrag(card);
+}
+
+// ---------- drag / swipe ----------
+function setDrag(dx){
+  card.style.transform = `translateX(${dx}px) rotate(${dx/14}deg)`;
+  const r = card.querySelector(&#x27;.stamp.r&#x27;), l = card.querySelector(&#x27;.stamp.l&#x27;);
+  r.style.opacity = Math.max(0,Math.min(1,dx/80)); l.style.opacity = Math.max(0,Math.min(1,-dx/80));
+}
+function bindDrag(el){
+  let sx=0, dx=0, t0=0, active=false, id=null;
+  el.addEventListener(&#x27;pointerdown&#x27;, e=&gt;{ if(busy) return; active=true; id=e.pointerId; sx=e.clientX; dx=0; t0=performance.now(); el.classList.add(&#x27;drag&#x27;); el.classList.remove(&#x27;back&#x27;); try{el.setPointerCapture(id);}catch(_){} });
+  el.addEventListener(&#x27;pointermove&#x27;, e=&gt;{ if(!active||e.pointerId!==id) return; dx=e.clientX-sx; setDrag(dx); });
+  const end = e=&gt;{ if(!active||e.pointerId!==id) return; active=false; el.classList.remove(&#x27;drag&#x27;);
+    const v = Math.abs(dx)/Math.max(1,performance.now()-t0);
+    if(Math.abs(dx)&gt;90 || (Math.abs(dx)&gt;40 &amp;&amp; v&gt;0.6)) answer(dx&gt;0?&#x27;heavier&#x27;:&#x27;lighter&#x27;);
+    else { el.classList.add(&#x27;back&#x27;); setDrag(0); } };
+  el.addEventListener(&#x27;pointerup&#x27;, end); el.addEventListener(&#x27;pointercancel&#x27;, end);
+}
+function answer(choice){
+  if(busy||!running) return; busy=true;
+  const q=qs[idx], heavier=q.g&gt;LAPTOP_W, ok=(choice===&#x27;heavier&#x27;)===heavier;
+  results[idx]=ok;
+  // fly out
+  card.classList.remove(&#x27;back&#x27;); card.classList.add(&#x27;fly&#x27;);
+  const dir = choice===&#x27;heavier&#x27;?1:-1;
+  setDrag(dir*60);
+  requestAnimationFrame(()=&gt;{ card.style.transform=`translateX(${dir*520}px) rotate(${dir*24}deg)`; card.style.opacity=&#x27;0&#x27;; });
+  ok ? (beep([660,880],0.08), buzz(15)) : (beep([180],0.18,&#x27;square&#x27;,0.04), buzz([30,40,30]));
+  const rv=$(&#x27;reveal&#x27;); rv.classList.toggle(&#x27;ng&#x27;,!ok);
+  const who = heavier ? `${q.name}比較重` : `Swift Air 16 比較重`;
+  rv.innerHTML = `&lt;div class=&quot;mark&quot;&gt;${ok?&#x27;✓&#x27;:&#x27;✕&#x27;}&lt;/div&gt;&lt;div class=&quot;rt&quot;&gt;${ok?&#x27;答對！&#x27;:&#x27;差一點！&#x27;}&lt;/div&gt;&lt;div class=&quot;rwho&quot;&gt;${who}&lt;/div&gt;
+    &lt;div class=&quot;rw&quot;&gt;${q.name}約 &lt;b&gt;${q.g.toLocaleString()}g&lt;/b&gt;｜Swift Air 16 &lt;b&gt;999g&lt;/b&gt;${q.note?&#x27;&lt;br&gt;&#x27;+q.note:&#x27;&#x27;}&lt;/div&gt;`;
+  setTimeout(()=&gt;rv.classList.add(&#x27;on&#x27;),120);
+  renderDots();
+  setTimeout(()=&gt;{
+    idx++;
+    if(idx&gt;=TOTAL_Q) return finish();
+    busy=false; renderDots(); renderStack();
+  }, 1100);
+}
+$(&#x27;bl&#x27;).onclick=()=&gt;answer(&#x27;lighter&#x27;); $(&#x27;br&#x27;).onclick=()=&gt;answer(&#x27;heavier&#x27;);
+document.addEventListener(&#x27;keydown&#x27;,e=&gt;{
+  if(!views.play.classList.contains(&#x27;on&#x27;)) return;
+  if(e.key===&#x27;ArrowLeft&#x27;) answer(&#x27;lighter&#x27;); if(e.key===&#x27;ArrowRight&#x27;) answer(&#x27;heavier&#x27;);
+});
+
+// ---------- result ----------
+const STAR=&#x27;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M12 2.6l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8Z&quot; stroke-linejoin=&quot;round&quot;/&gt;&lt;/svg&gt;&#x27;;
+let lastScore=0;
+function finish(){
+  running=false; cancelAnimationFrame(raf);
+  const score = results.filter(r=&gt;r===true).length; lastScore=score;
+  const nStar = score&gt;=9?3:score&gt;=6?2:1;
+  const [title,say] = score===10?[&#x27;人肉電子秤・滿分&#x27;,&#x27;滿分！你的手就是電子秤&#x27;]
+    : score&gt;=8?[&#x27;人肉電子秤&#x27;,&#x27;重量感很準，差一點滿分&#x27;]
+    : score&gt;=6?[&#x27;手感不錯&#x27;,&#x27;重量感還不錯，再一輪就滿分&#x27;]
+    : score&gt;=4?[&#x27;手感暖機中&#x27;,&#x27;有些東西比你想的還輕&#x27;]
+    : [&#x27;萬物皆重&#x27;,&#x27;你覺得什麼都很重，筆電除外&#x27;];
+  $(&#x27;score&#x27;).textContent=score; $(&#x27;title&#x27;).textContent=title; $(&#x27;say&#x27;).textContent=say;
+  $(&#x27;stars&#x27;).innerHTML=[0,1,2].map(i=&gt;`&lt;span class=&quot;st${i&lt;nStar?&#x27; on&#x27;:&#x27;&#x27;}&quot;&gt;${STAR}&lt;/span&gt;`).join(&#x27;&#x27;);
+  $(&#x27;mini&#x27;).innerHTML=Array.from({length:TOTAL_Q},(_,i)=&gt;`&lt;i class=&quot;${results[i]===true?&#x27;ok&#x27;:results[i]===false?&#x27;ng&#x27;:&#x27;&#x27;}&quot;&gt;&lt;/i&gt;`).join(&#x27;&#x27;);
+  setTimeout(()=&gt;{ show(&#x27;end&#x27;); beep([523,659,784],0.1); },300);
+}
+function toast(t){ const el=$(&#x27;toast&#x27;); el.textContent=t; el.classList.add(&#x27;on&#x27;); clearTimeout(el._t); el._t=setTimeout(()=&gt;el.classList.remove(&#x27;on&#x27;),1800); }
+$(&#x27;go&#x27;).onclick=start; $(&#x27;again&#x27;).onclick=start;
+$(&#x27;share&#x27;).onclick=async()=&gt;{
+  const text=`我在「秤重大挑戰」滑對 ${lastScore}/10！原來 Swift Air 16 只有 999g，比裝滿的 600ml 水壺還輕。你猜得出來嗎？`;
+  let copied=false; try{ await navigator.clipboard.writeText(text); copied=true; }catch(e){}
+  try{ if(navigator.share){ await navigator.share({title:&#x27;秤重大挑戰&#x27;,text}); return; } }catch(e){ if(e&amp;&amp;e.name===&#x27;AbortError&#x27;) return; }
+  toast(copied?&#x27;已複製分享文字，貼到 IG／LINE 就好&#x27;:&#x27;分享文字：&#x27;+text.slice(0,18)+&#x27;…&#x27;);
+};
+$(&#x27;more&#x27;).onclick=()=&gt;toast(&#x27;正式版會連到 Swift Air 16 產品頁&#x27;);
+})();
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+" allow="web-share; clipboard-write"></iframe><iframe class="g" id="g-B" title="B 0.1 秒快門" data-src="&lt;!doctype html&gt;&lt;html lang=&quot;zh-Hant&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,viewport-fit=cover&quot;&gt;
+&lt;title&gt;0.1 秒快門&lt;/title&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+:root{color-scheme:dark;--page:#161616;--scr:#0B0B0B;--card:#171717;--ink:#F3F3F3;--mute:#9A9A9A;--line:#2A2A2A;--acc:#9BE028;--acc-ink:#0B0B0B;--r:6px;
+--sh:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);--sh-acc:0 1px 2px rgba(155,224,40,.25),0 8px 24px rgba(155,224,40,.22);--sh-acc-h:0 2px 4px rgba(155,224,40,.3),0 12px 32px rgba(155,224,40,.32)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:&quot;Noto Sans TC&quot;,&quot;PingFang TC&quot;,sans-serif;background:var(--page);color:var(--ink);display:flex;align-items:center;justify-content:center;-webkit-font-smoothing:antialiased;overflow:hidden}
+.mono{font-family:&quot;SF Mono&quot;,Menlo,Consolas,monospace}
+.defs{position:absolute;width:0;height:0;overflow:hidden}
+.app{position:relative;width:100%;max-width:400px;height:100%;background:var(--scr);overflow:hidden;user-select:none;-webkit-user-select:none}
+@media (min-width:520px) and (min-height:700px){.app{height:min(860px,calc(100dvh - 48px));border-radius:36px;box-shadow:0 0 0 1px #2A2A2A,0 24px 56px rgba(0,0,0,.5)}}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(155,224,40,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(155,224,40,.06) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
+.hud{position:absolute;inset:max(12px,env(safe-area-inset-top)) 12px max(12px,env(safe-area-inset-bottom));border:1px solid rgba(155,224,40,.18);pointer-events:none}
+.hud:before,.hud:after{content:&quot;&quot;;position:absolute;width:16px;height:16px;border:2px solid var(--acc)}
+.hud:before{top:-2px;left:-2px;border-right:0;border-bottom:0}.hud:after{bottom:-2px;right:-2px;border-left:0;border-top:0}
+.view{position:absolute;inset:0;display:none;flex-direction:column;padding:max(32px,calc(env(safe-area-inset-top) + 20px)) 28px max(32px,calc(env(safe-area-inset-bottom) + 20px))}
+.view.on{display:flex}
+.logo{font-weight:900;font-size:22px;line-height:24px;letter-spacing:-.02em;color:var(--acc)}
+.logo span{color:#fff;font-size:11px;letter-spacing:.24em;margin-left:4px}
+.k{font-size:12px;line-height:16px;letter-spacing:.14em;font-weight:700;color:var(--mute)}
+.h{font-size:32px;font-weight:900;line-height:40px;margin:8px 0}
+.p{font-size:14px;line-height:24px;color:var(--mute)}
+.foot{margin-top:12px;font-size:11px;line-height:16px;color:var(--mute);text-align:center}
+.c{text-align:center}
+.top{display:flex;justify-content:space-between;align-items:center}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;height:56px;width:100%;border:0;font:inherit;font-weight:900;font-size:17px;letter-spacing:.06em;border-radius:var(--r);background:var(--acc);color:var(--acc-ink);box-shadow:var(--sh-acc);cursor:pointer;touch-action:manipulation;transition:transform .15s,box-shadow .15s,filter .15s}
+@media (hover:hover){.btn:hover{transform:translateY(-1px);box-shadow:var(--sh-acc-h);filter:brightness(1.05)}}
+.btn:active{transform:translateY(1px);filter:brightness(.92)}
+.btn.o{height:48px;background:transparent;border:1px solid #3A3A3A;color:var(--ink);font-weight:700;font-size:15px;box-shadow:none}
+@media (hover:hover){.btn.o:hover{border-color:var(--acc);filter:none}}
+.btns{display:flex;flex-direction:column;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;font-size:12px;line-height:16px;font-weight:700;border-radius:4px;border:1px solid #333;background:#121212;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+.chip.g{border-color:var(--acc);color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 16px;box-shadow:var(--sh)}
+/* viewfinder */
+.vf{position:relative;border-radius:4px;overflow:hidden;background:radial-gradient(circle at 50% 50%,#151a10 0,#0B0B0B 70%);touch-action:manipulation;cursor:crosshair}
+.vf .cn{position:absolute;width:20px;height:20px;border:2px solid var(--acc);z-index:3}
+.vf .cn.a{top:8px;left:8px;border-right:0;border-bottom:0}.vf .cn.b{top:8px;right:8px;border-left:0;border-bottom:0}
+.vf .cn.c{bottom:8px;left:8px;border-right:0;border-top:0}.vf .cn.d{bottom:8px;right:8px;border-left:0;border-top:0}
+.vf .rec{position:absolute;top:12px;left:36px;font-size:11px;line-height:16px;color:#fff;display:flex;align-items:center;gap:6px;letter-spacing:.1em;z-index:3}
+.vf .rec i{width:8px;height:8px;border-radius:50%;background:#FF4D3A;box-shadow:0 0 8px #FF4D3A;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.25}}
+.vf .xh{position:absolute;left:50%;top:50%;width:48px;height:48px;margin:-24px 0 0 -24px;border:1px solid rgba(155,224,40,.5);border-radius:50%;z-index:1}
+.vf .xh:before,.vf .xh:after{content:&quot;&quot;;position:absolute;background:rgba(155,224,40,.5)}
+.vf .xh:before{left:50%;top:-10px;bottom:-10px;width:1px}.vf .xh:after{top:50%;left:-10px;right:-10px;height:1px}
+.mystery{filter:brightness(0) drop-shadow(0 0 1px #9BE028) drop-shadow(0 0 6px rgba(155,224,40,.6))}
+.qm{position:absolute;font-size:40px;line-height:48px;font-weight:900;color:var(--acc);text-shadow:0 0 12px rgba(155,224,40,.6)}
+#runner{position:absolute;top:50%;left:0;width:168px;height:104px;margin-top:-52px;z-index:2;pointer-events:none;display:none}
+#runner .g1,#runner .g2{position:absolute;inset:0;filter:url(#mblur)}
+#runner .g1{opacity:.3;transform:translateX(-56px)}#runner .g2{opacity:.14;transform:translateX(-112px)}
+#runner .streak{position:absolute;right:120px;height:3px;border-radius:2px;background:linear-gradient(90deg,rgba(155,224,40,0),rgba(155,224,40,.9))}
+#runner svg{position:absolute;inset:0;display:block}
+#runner .body{transform:rotate(-4deg)}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:5}
+.flash.on{animation:flash .35s ease-out}
+@keyframes flash{0%{opacity:.95}100%{opacity:0}}
+.msg{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);padding:4px 12px;border-radius:4px;font-size:13px;line-height:20px;font-weight:900;letter-spacing:.06em;white-space:nowrap;z-index:4;display:none}
+.msg.on{display:block}
+.msg.tap{background:var(--acc);color:var(--acc-ink);box-shadow:0 0 16px rgba(155,224,40,.6)}
+.msg.bad{background:#FF4D3A;color:#fff}
+.msg.wait{background:#1E1E1E;color:var(--mute);border:1px solid #333}
+.snap{position:absolute;inset:0;display:none;align-items:center;justify-content:center;z-index:4;background:rgba(11,11,11,.55)}
+.snap.on{display:flex}
+.snap .pz{width:72%;padding:8px 8px 0;background:#F6F6F2;border-radius:4px;transform:rotate(-3deg) scale(.6);opacity:0;transition:transform .3s cubic-bezier(.2,.9,.3,1.3),opacity .2s;box-shadow:0 12px 32px rgba(0,0,0,.6)}
+.snap.on .pz{transform:rotate(-3deg) scale(1);opacity:1}
+.snap .pz .ph{background:#0E120B;border-radius:2px;position:relative}
+.snap .pz svg{display:block;width:100%;height:auto}
+.snap .pz .cp{display:flex;justify-content:space-between;color:#1A1A1A;font-size:12px;line-height:28px;font-weight:700}
+.snap .pz .cp span{color:#5F8A12}
+.timer{font-size:48px;line-height:56px;font-weight:700;color:var(--acc);text-shadow:0 0 16px rgba(155,224,40,.4);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.timer small{font-size:20px;color:var(--mute);margin-left:2px}
+.timer.idle{color:#3A3A3A;text-shadow:none}
+.shutterbar{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+.thumb{width:48px;height:48px;border-radius:8px;border:1px solid #333;background:#151515;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.thumb svg{display:block}
+.shutter{width:88px;height:88px;border-radius:50%;border:3px solid var(--acc);display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(155,224,40,.35);cursor:pointer;background:none;touch-action:manipulation;padding:0}
+.shutter i{width:68px;height:68px;border-radius:50%;background:var(--acc);display:flex;align-items:center;justify-content:center;color:var(--acc-ink);font-style:normal;font-weight:900;font-size:13px;letter-spacing:.06em;transition:transform .08s}
+.shutter:active i,.shutter.press i{transform:scale(.86);filter:brightness(.9)}
+.dex{display:flex;flex-direction:column;align-items:center;gap:2px;width:48px;font-size:11px;line-height:16px;color:var(--mute)}
+.dex b{font-size:14px;color:var(--ink)}
+.rounds{display:flex;gap:6px;justify-content:center;margin-top:12px}
+.rounds i{width:28px;height:4px;border-radius:2px;background:#2A2A2A}.rounds i.hit{background:var(--acc)}.rounds i.miss{background:#5A2A26}.rounds i.cur{background:#777}
+/* result */
+.pol{width:228px;margin:16px auto 0;padding:10px 10px 0;background:#F6F6F2;border-radius:4px;transform:rotate(-3deg);box-shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.5);position:relative}
+.pol .ph{position:relative;height:140px;background:#0E120B;border-radius:2px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.pol .ph svg{display:block}
+.pol .cap{display:flex;justify-content:space-between;align-items:center;height:36px;color:#1A1A1A;font-size:13px;line-height:16px;font-weight:700}
+.pol .cap span{font-size:11px;color:#8A8A8A;font-weight:400}
+.pol .ts{position:absolute;right:8px;bottom:6px;font-size:11px;line-height:16px;color:var(--acc);letter-spacing:.06em}
+.tape{position:absolute;top:-10px;left:50%;width:64px;height:20px;margin-left:-32px;background:rgba(155,224,40,.55);transform:rotate(4deg)}
+.big{font-size:56px;line-height:56px;font-weight:700;color:var(--acc);letter-spacing:-.03em;text-shadow:0 0 16px rgba(155,224,40,.35);font-variant-numeric:tabular-nums}
+.big small{font-size:22px;color:var(--mute);margin-left:2px}
+.badge{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 14px;border-radius:4px;border:1px solid var(--acc);background:rgba(155,224,40,.08);font-weight:700;font-size:13px}
+.badge svg{display:block}
+.toast{position:absolute;left:50%;bottom:110px;transform:translate(-50%,16px);background:var(--acc);color:var(--acc-ink);font-size:13px;font-weight:700;line-height:20px;padding:8px 16px;border-radius:4px;opacity:0;transition:all .25s;pointer-events:none;white-space:nowrap;z-index:20}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.sheet{position:absolute;inset:0;z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;background:rgba(0,0,0,.75)}
+.sheet[hidden]{display:none}
+.sheet img{display:block;max-width:100%;max-height:68%;border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,.4)}
+.sheet p{color:#fff;font-size:14px;line-height:22px;text-align:center}
+.sheet .btn{max-width:200px}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;
+&lt;svg class=&quot;defs&quot; aria-hidden=&quot;true&quot; width=&quot;0&quot; height=&quot;0&quot;&gt;&lt;defs&gt;
+&lt;linearGradient id=&quot;fishBody&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#F1F4F6&quot;/&gt;&lt;stop offset=&quot;.55&quot; stop-color=&quot;#C9D1D7&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#8F9AA3&quot;/&gt;&lt;/linearGradient&gt;
+&lt;linearGradient id=&quot;fishTail&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;1&quot; y2=&quot;0&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#8F9AA3&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#C9D1D7&quot;/&gt;&lt;/linearGradient&gt;
+&lt;radialGradient id=&quot;flash&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#fff&quot; stop-opacity=&quot;.35&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#fff&quot; stop-opacity=&quot;0&quot;/&gt;&lt;/radialGradient&gt;
+&lt;linearGradient id=&quot;streak&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;1&quot; y2=&quot;0&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#9BE028&quot; stop-opacity=&quot;0&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#9BE028&quot; stop-opacity=&quot;.9&quot;/&gt;&lt;/linearGradient&gt;
+&lt;filter id=&quot;mblur&quot; x=&quot;-20%&quot; y=&quot;-20%&quot; width=&quot;140%&quot; height=&quot;140%&quot;&gt;&lt;feGaussianBlur stdDeviation=&quot;3 0.6&quot;/&gt;&lt;/filter&gt;
+&lt;filter id=&quot;glow&quot; x=&quot;-30%&quot; y=&quot;-30%&quot; width=&quot;160%&quot; height=&quot;160%&quot;&gt;&lt;feDropShadow dx=&quot;0&quot; dy=&quot;0&quot; stdDeviation=&quot;4&quot; flood-color=&quot;#9BE028&quot; flood-opacity=&quot;.7&quot;/&gt;&lt;/filter&gt;
+&lt;linearGradient id=&quot;tea&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#F0DDBE&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#C99E6B&quot;/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;symbol id=&quot;fish&quot; viewBox=&quot;0 0 200 124&quot;&gt;
+&lt;g stroke=&quot;#2B2B2B&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot; fill=&quot;none&quot;&gt;&lt;path d=&quot;M96 92 L84 106 L72 104&quot;/&gt;&lt;path d=&quot;M118 90 L130 104 L142 100&quot;/&gt;&lt;/g&gt;
+&lt;rect x=&quot;60&quot; y=&quot;99&quot; width=&quot;20&quot; height=&quot;10&quot; rx=&quot;5&quot; fill=&quot;#9BE028&quot;/&gt;&lt;rect x=&quot;134&quot; y=&quot;95&quot; width=&quot;20&quot; height=&quot;10&quot; rx=&quot;5&quot; fill=&quot;#9BE028&quot; transform=&quot;rotate(-14 144 100)&quot;/&gt;
+&lt;rect x=&quot;60&quot; y=&quot;105&quot; width=&quot;20&quot; height=&quot;3&quot; rx=&quot;1.5&quot; fill=&quot;#fff&quot; opacity=&quot;.7&quot;/&gt;
+&lt;path d=&quot;M36 62 L6 36 Q16 62 6 88 Z&quot; fill=&quot;url(#fishTail)&quot; stroke=&quot;#7E8A92&quot; stroke-width=&quot;1.5&quot; stroke-linejoin=&quot;round&quot;/&gt;
+&lt;path d=&quot;M92 30 L104 10 L122 30 Z&quot; fill=&quot;#B7C0C7&quot; stroke=&quot;#7E8A92&quot; stroke-width=&quot;1.5&quot; stroke-linejoin=&quot;round&quot;/&gt;
+&lt;path d=&quot;M32 62 Q62 24 122 30 Q162 36 184 62 Q162 88 122 94 Q62 100 32 62 Z&quot; fill=&quot;url(#fishBody)&quot; stroke=&quot;#7E8A92&quot; stroke-width=&quot;1.5&quot;/&gt;
+&lt;path d=&quot;M60 52 Q90 44 120 46&quot; stroke=&quot;#fff&quot; stroke-opacity=&quot;.7&quot; stroke-width=&quot;3&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/&gt;
+&lt;g fill=&quot;#fff&quot; opacity=&quot;.85&quot;&gt;&lt;circle cx=&quot;70&quot; cy=&quot;70&quot; r=&quot;1.6&quot;/&gt;&lt;circle cx=&quot;84&quot; cy=&quot;78&quot; r=&quot;1.3&quot;/&gt;&lt;circle cx=&quot;98&quot; cy=&quot;68&quot; r=&quot;1.5&quot;/&gt;&lt;circle cx=&quot;110&quot; cy=&quot;80&quot; r=&quot;1.2&quot;/&gt;&lt;circle cx=&quot;78&quot; cy=&quot;60&quot; r=&quot;1.1&quot;/&gt;&lt;circle cx=&quot;124&quot; cy=&quot;72&quot; r=&quot;1.4&quot;/&gt;&lt;/g&gt;
+&lt;path d=&quot;M144 42 Q134 62 144 82&quot; stroke=&quot;#7E8A92&quot; stroke-width=&quot;2&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/&gt;
+&lt;path d=&quot;M120 66 Q112 78 100 80&quot; stroke=&quot;#7E8A92&quot; stroke-width=&quot;5&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/&gt;
+&lt;path d=&quot;M136 34 Q160 30 174 46&quot; stroke=&quot;#9BE028&quot; stroke-width=&quot;7&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/&gt;
+&lt;path d=&quot;M137 35 L124 24 M137 35 L122 40&quot; stroke=&quot;#9BE028&quot; stroke-width=&quot;4&quot; stroke-linecap=&quot;round&quot;/&gt;
+&lt;circle cx=&quot;160&quot; cy=&quot;54&quot; r=&quot;10&quot; fill=&quot;#fff&quot; stroke=&quot;#2B2B2B&quot; stroke-width=&quot;1.5&quot;/&gt;&lt;circle cx=&quot;164&quot; cy=&quot;54&quot; r=&quot;4.5&quot; fill=&quot;#111&quot;/&gt;&lt;circle cx=&quot;165.5&quot; cy=&quot;52.5&quot; r=&quot;1.4&quot; fill=&quot;#fff&quot;/&gt;
+&lt;path d=&quot;M176 68 Q182 66 186 70 Q181 74 176 72 Z&quot; fill=&quot;#3A2226&quot;/&gt;
+&lt;path d=&quot;M184 38 Q187 44 184 47 Q181 44 184 38 Z&quot; fill=&quot;#CFEFFF&quot;/&gt;&lt;path d=&quot;M192 48 Q194 52 192 54 Q190 52 192 48 Z&quot; fill=&quot;#CFEFFF&quot;/&gt;
+&lt;/symbol&gt;&lt;symbol id=&quot;fishface&quot; viewBox=&quot;0 0 220 160&quot;&gt;
+&lt;circle cx=&quot;110&quot; cy=&quot;84&quot; r=&quot;78&quot; fill=&quot;url(#flash)&quot;/&gt;
+&lt;g stroke=&quot;#9BE028&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot; opacity=&quot;.8&quot;&gt;&lt;path d=&quot;M18 40 30 48&quot;/&gt;&lt;path d=&quot;M12 84h16&quot;/&gt;&lt;path d=&quot;M20 126l12-8&quot;/&gt;&lt;path d=&quot;M202 40l-12 8&quot;/&gt;&lt;path d=&quot;M208 84h-16&quot;/&gt;&lt;path d=&quot;M200 126l-12-8&quot;/&gt;&lt;/g&gt;
+&lt;path d=&quot;M60 38 Q110 4 160 38 Q190 70 176 108 Q160 148 110 150 Q60 148 44 108 Q30 70 60 38 Z&quot; fill=&quot;url(#fishBody)&quot; stroke=&quot;#7E8A92&quot; stroke-width=&quot;2&quot;/&gt;
+&lt;g fill=&quot;#fff&quot; opacity=&quot;.85&quot;&gt;&lt;circle cx=&quot;70&quot; cy=&quot;112&quot; r=&quot;2&quot;/&gt;&lt;circle cx=&quot;150&quot; cy=&quot;118&quot; r=&quot;1.8&quot;/&gt;&lt;circle cx=&quot;160&quot; cy=&quot;98&quot; r=&quot;1.5&quot;/&gt;&lt;circle cx=&quot;62&quot; cy=&quot;96&quot; r=&quot;1.5&quot;/&gt;&lt;circle cx=&quot;96&quot; cy=&quot;136&quot; r=&quot;1.7&quot;/&gt;&lt;/g&gt;
+&lt;path d=&quot;M54 46 Q110 18 166 46&quot; stroke=&quot;#9BE028&quot; stroke-width=&quot;10&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot; transform=&quot;rotate(-8 110 40)&quot;/&gt;
+&lt;path d=&quot;M166 40 L184 28 M166 40 L186 46&quot; stroke=&quot;#9BE028&quot; stroke-width=&quot;5&quot; stroke-linecap=&quot;round&quot;/&gt;
+&lt;circle cx=&quot;80&quot; cy=&quot;74&quot; r=&quot;24&quot; fill=&quot;#fff&quot; stroke=&quot;#2B2B2B&quot; stroke-width=&quot;2&quot;/&gt;&lt;circle cx=&quot;90&quot; cy=&quot;80&quot; r=&quot;6&quot; fill=&quot;#111&quot;/&gt;&lt;circle cx=&quot;92&quot; cy=&quot;78&quot; r=&quot;2&quot; fill=&quot;#fff&quot;/&gt;
+&lt;circle cx=&quot;144&quot; cy=&quot;70&quot; r=&quot;15&quot; fill=&quot;#fff&quot; stroke=&quot;#2B2B2B&quot; stroke-width=&quot;2&quot;/&gt;&lt;circle cx=&quot;136&quot; cy=&quot;64&quot; r=&quot;4.5&quot; fill=&quot;#111&quot;/&gt;&lt;circle cx=&quot;137&quot; cy=&quot;63&quot; r=&quot;1.5&quot; fill=&quot;#fff&quot;/&gt;
+&lt;ellipse cx=&quot;112&quot; cy=&quot;118&quot; rx=&quot;20&quot; ry=&quot;16&quot; fill=&quot;#3A2226&quot;/&gt;&lt;path d=&quot;M98 126 Q112 112 126 126 Q122 134 112 134 Q102 134 98 126 Z&quot; fill=&quot;#F08AA0&quot;/&gt;
+&lt;path d=&quot;M60 88 Q52 92 50 98&quot; stroke=&quot;#7E8A92&quot; stroke-width=&quot;2&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/&gt;
+&lt;path d=&quot;M170 60 Q176 70 170 76 Q164 70 170 60 Z&quot; fill=&quot;#CFEFFF&quot;/&gt;&lt;path d=&quot;M182 82 Q185 88 182 92 Q179 88 182 82 Z&quot; fill=&quot;#CFEFFF&quot;/&gt;&lt;path d=&quot;M42 58 Q45 64 42 68 Q39 64 42 58 Z&quot; fill=&quot;#CFEFFF&quot;/&gt;
+&lt;/symbol&gt;&lt;symbol id=&quot;boba&quot; viewBox=&quot;0 0 200 124&quot;&gt;
+&lt;g stroke=&quot;#2B2B2B&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot; fill=&quot;none&quot;&gt;&lt;path d=&quot;M88 96 L78 110 L66 108&quot;/&gt;&lt;path d=&quot;M110 96 L122 108 L134 104&quot;/&gt;&lt;/g&gt;
+&lt;rect x=&quot;54&quot; y=&quot;103&quot; width=&quot;20&quot; height=&quot;10&quot; rx=&quot;5&quot; fill=&quot;#9BE028&quot;/&gt;&lt;rect x=&quot;126&quot; y=&quot;99&quot; width=&quot;20&quot; height=&quot;10&quot; rx=&quot;5&quot; fill=&quot;#9BE028&quot; transform=&quot;rotate(-14 136 104)&quot;/&gt;
+&lt;g stroke=&quot;#2B2B2B&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot; fill=&quot;none&quot;&gt;&lt;path d=&quot;M70 56 L54 46&quot;/&gt;&lt;path d=&quot;M128 58 L146 70&quot;/&gt;&lt;/g&gt;
+&lt;path d=&quot;M68 22 L132 22 L124 98 Q100 104 76 98 Z&quot; fill=&quot;url(#tea)&quot; stroke=&quot;#8A6A44&quot; stroke-width=&quot;1.6&quot; stroke-linejoin=&quot;round&quot;/&gt;
+&lt;g fill=&quot;#3A2A1E&quot;&gt;&lt;circle cx=&quot;84&quot; cy=&quot;90&quot; r=&quot;5&quot;/&gt;&lt;circle cx=&quot;96&quot; cy=&quot;93&quot; r=&quot;5&quot;/&gt;&lt;circle cx=&quot;108&quot; cy=&quot;91&quot; r=&quot;5&quot;/&gt;&lt;circle cx=&quot;118&quot; cy=&quot;86&quot; r=&quot;4.5&quot;/&gt;&lt;circle cx=&quot;90&quot; cy=&quot;81&quot; r=&quot;4.5&quot;/&gt;&lt;circle cx=&quot;104&quot; cy=&quot;82&quot; r=&quot;4.5&quot;/&gt;&lt;/g&gt;
+&lt;path d=&quot;M72 30 L76 92&quot; stroke=&quot;#fff&quot; stroke-opacity=&quot;.45&quot; stroke-width=&quot;4&quot; stroke-linecap=&quot;round&quot;/&gt;
+&lt;path d=&quot;M68 34 Q100 26 132 34&quot; stroke=&quot;#9BE028&quot; stroke-width=&quot;7&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/&gt;
+&lt;path d=&quot;M70 35 L56 26 M70 35 L54 40&quot; stroke=&quot;#9BE028&quot; stroke-width=&quot;4&quot; stroke-linecap=&quot;round&quot;/&gt;
+&lt;ellipse cx=&quot;100&quot; cy=&quot;22&quot; rx=&quot;34&quot; ry=&quot;7&quot; fill=&quot;#F4F4F4&quot; stroke=&quot;#BDBDBD&quot; stroke-width=&quot;1.2&quot;/&gt;
+&lt;path d=&quot;M70 21 Q100 2 130 21&quot; fill=&quot;#FAFAFA&quot; stroke=&quot;#BDBDBD&quot; stroke-width=&quot;1.2&quot;/&gt;
+&lt;path d=&quot;M110 16 L118 3&quot; stroke=&quot;#9BE028&quot; stroke-width=&quot;7&quot; stroke-linecap=&quot;round&quot;/&gt;
+&lt;circle cx=&quot;94&quot; cy=&quot;54&quot; r=&quot;9&quot; fill=&quot;#fff&quot; stroke=&quot;#2B2B2B&quot; stroke-width=&quot;1.5&quot;/&gt;&lt;circle cx=&quot;98&quot; cy=&quot;54&quot; r=&quot;4&quot; fill=&quot;#111&quot;/&gt;
+&lt;circle cx=&quot;116&quot; cy=&quot;55&quot; r=&quot;8&quot; fill=&quot;#fff&quot; stroke=&quot;#2B2B2B&quot; stroke-width=&quot;1.5&quot;/&gt;&lt;circle cx=&quot;120&quot; cy=&quot;55&quot; r=&quot;3.6&quot; fill=&quot;#111&quot;/&gt;
+&lt;ellipse cx=&quot;110&quot; cy=&quot;70&quot; rx=&quot;5&quot; ry=&quot;4&quot; fill=&quot;#3A2226&quot;/&gt;
+&lt;path d=&quot;M140 30 Q143 36 140 40 Q137 36 140 30 Z&quot; fill=&quot;#CFEFFF&quot;/&gt;
+&lt;/symbol&gt;
+&lt;symbol id=&quot;bobaface&quot; viewBox=&quot;0 0 220 160&quot;&gt;
+&lt;circle cx=&quot;110&quot; cy=&quot;84&quot; r=&quot;78&quot; fill=&quot;url(#flash)&quot;/&gt;
+&lt;g stroke=&quot;#9BE028&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot; opacity=&quot;.8&quot;&gt;&lt;path d=&quot;M18 40 30 48&quot;/&gt;&lt;path d=&quot;M12 84h16&quot;/&gt;&lt;path d=&quot;M20 126l12-8&quot;/&gt;&lt;path d=&quot;M202 40l-12 8&quot;/&gt;&lt;path d=&quot;M208 84h-16&quot;/&gt;&lt;path d=&quot;M200 126l-12-8&quot;/&gt;&lt;/g&gt;
+&lt;g fill=&quot;#3A2A1E&quot;&gt;&lt;circle cx=&quot;40&quot; cy=&quot;30&quot; r=&quot;7&quot;/&gt;&lt;circle cx=&quot;186&quot; cy=&quot;24&quot; r=&quot;6&quot;/&gt;&lt;circle cx=&quot;178&quot; cy=&quot;142&quot; r=&quot;7&quot;/&gt;&lt;circle cx=&quot;34&quot; cy=&quot;138&quot; r=&quot;6&quot;/&gt;&lt;/g&gt;
+&lt;path d=&quot;M58 38 L162 38 L150 150 Q110 158 70 150 Z&quot; fill=&quot;url(#tea)&quot; stroke=&quot;#8A6A44&quot; stroke-width=&quot;2&quot; stroke-linejoin=&quot;round&quot;/&gt;
+&lt;g fill=&quot;#3A2A1E&quot;&gt;&lt;circle cx=&quot;82&quot; cy=&quot;138&quot; r=&quot;7&quot;/&gt;&lt;circle cx=&quot;100&quot; cy=&quot;143&quot; r=&quot;7&quot;/&gt;&lt;circle cx=&quot;120&quot; cy=&quot;142&quot; r=&quot;7&quot;/&gt;&lt;circle cx=&quot;138&quot; cy=&quot;136&quot; r=&quot;6.5&quot;/&gt;&lt;/g&gt;
+&lt;path d=&quot;M58 54 Q110 42 162 54&quot; stroke=&quot;#9BE028&quot; stroke-width=&quot;10&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot; transform=&quot;rotate(6 110 50)&quot;/&gt;
+&lt;ellipse cx=&quot;110&quot; cy=&quot;38&quot; rx=&quot;56&quot; ry=&quot;10&quot; fill=&quot;#F4F4F4&quot; stroke=&quot;#BDBDBD&quot; stroke-width=&quot;1.5&quot;/&gt;
+&lt;path d=&quot;M126 32 L136 12 L150 18 L160 -2&quot; stroke=&quot;#9BE028&quot; stroke-width=&quot;9&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;
+&lt;circle cx=&quot;86&quot; cy=&quot;84&quot; r=&quot;20&quot; fill=&quot;#fff&quot; stroke=&quot;#2B2B2B&quot; stroke-width=&quot;2&quot;/&gt;&lt;circle cx=&quot;96&quot; cy=&quot;88&quot; r=&quot;6&quot; fill=&quot;#111&quot;/&gt;&lt;circle cx=&quot;98&quot; cy=&quot;86&quot; r=&quot;2&quot; fill=&quot;#fff&quot;/&gt;
+&lt;circle cx=&quot;138&quot; cy=&quot;82&quot; r=&quot;22&quot; fill=&quot;#fff&quot; stroke=&quot;#2B2B2B&quot; stroke-width=&quot;2&quot;/&gt;&lt;circle cx=&quot;128&quot; cy=&quot;86&quot; r=&quot;6.5&quot; fill=&quot;#111&quot;/&gt;&lt;circle cx=&quot;130&quot; cy=&quot;84&quot; r=&quot;2&quot; fill=&quot;#fff&quot;/&gt;
+&lt;path d=&quot;M92 114 Q112 104 132 114 Q128 134 112 134 Q96 134 92 114 Z&quot; fill=&quot;#3A2226&quot;/&gt;&lt;path d=&quot;M100 126 Q112 118 124 126 Q120 133 112 133 Q104 133 100 126 Z&quot; fill=&quot;#F08AA0&quot;/&gt;
+&lt;path d=&quot;M166 66 Q172 76 166 82 Q160 76 166 66 Z&quot; fill=&quot;#CFEFFF&quot;/&gt;
+&lt;/symbol&gt;&lt;symbol id=&quot;slipper&quot; viewBox=&quot;0 0 200 124&quot;&gt;
+&lt;g stroke=&quot;#2B2B2B&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot; fill=&quot;none&quot;&gt;&lt;path d=&quot;M90 88 L80 104 L68 102&quot;/&gt;&lt;path d=&quot;M118 88 L130 102 L142 98&quot;/&gt;&lt;/g&gt;
+&lt;rect x=&quot;56&quot; y=&quot;97&quot; width=&quot;20&quot; height=&quot;10&quot; rx=&quot;5&quot; fill=&quot;#9BE028&quot;/&gt;&lt;rect x=&quot;132&quot; y=&quot;93&quot; width=&quot;20&quot; height=&quot;10&quot; rx=&quot;5&quot; fill=&quot;#9BE028&quot; transform=&quot;rotate(-14 142 98)&quot;/&gt;
+&lt;path d=&quot;M54 52 Q30 28 22 44 Q36 46 40 56 Q24 58 26 70 Q42 62 56 66 Z&quot; fill=&quot;#fff&quot; stroke=&quot;#BDBDBD&quot; stroke-width=&quot;1.2&quot;/&gt;
+&lt;path d=&quot;M30 52 L44 56 M30 64 L46 64&quot; stroke=&quot;#DADADA&quot; stroke-width=&quot;1.2&quot;/&gt;
+&lt;rect x=&quot;40&quot; y=&quot;70&quot; width=&quot;140&quot; height=&quot;20&quot; rx=&quot;10&quot; fill=&quot;#F2F2F2&quot; stroke=&quot;#BDBDBD&quot; stroke-width=&quot;1.4&quot;/&gt;
+&lt;rect x=&quot;40&quot; y=&quot;82&quot; width=&quot;140&quot; height=&quot;8&quot; rx=&quot;4&quot; fill=&quot;#2F6FD6&quot;/&gt;
+&lt;path d=&quot;M104 72 Q128 22 172 72 Z&quot; fill=&quot;#2F6FD6&quot; stroke=&quot;#1E4FA3&quot; stroke-width=&quot;1.4&quot; stroke-linejoin=&quot;round&quot;/&gt;
+&lt;path d=&quot;M110 66 Q128 34 164 66&quot; stroke=&quot;#fff&quot; stroke-opacity=&quot;.35&quot; stroke-width=&quot;3&quot; fill=&quot;none&quot;/&gt;
+&lt;path d=&quot;M112 46 Q134 38 160 50&quot; stroke=&quot;#9BE028&quot; stroke-width=&quot;6&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/&gt;
+&lt;circle cx=&quot;130&quot; cy=&quot;56&quot; r=&quot;8.5&quot; fill=&quot;#fff&quot; stroke=&quot;#2B2B2B&quot; stroke-width=&quot;1.5&quot;/&gt;&lt;circle cx=&quot;134&quot; cy=&quot;56&quot; r=&quot;3.8&quot; fill=&quot;#111&quot;/&gt;
+&lt;circle cx=&quot;150&quot; cy=&quot;58&quot; r=&quot;7.5&quot; fill=&quot;#fff&quot; stroke=&quot;#2B2B2B&quot; stroke-width=&quot;1.5&quot;/&gt;&lt;circle cx=&quot;154&quot; cy=&quot;58&quot; r=&quot;3.4&quot; fill=&quot;#111&quot;/&gt;
+&lt;path d=&quot;M176 40 Q179 46 176 50 Q173 46 176 40 Z&quot; fill=&quot;#CFEFFF&quot;/&gt;
+&lt;/symbol&gt;
+&lt;symbol id=&quot;slipperface&quot; viewBox=&quot;0 0 220 160&quot;&gt;
+&lt;circle cx=&quot;110&quot; cy=&quot;84&quot; r=&quot;78&quot; fill=&quot;url(#flash)&quot;/&gt;
+&lt;g stroke=&quot;#9BE028&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot; opacity=&quot;.8&quot;&gt;&lt;path d=&quot;M18 40 30 48&quot;/&gt;&lt;path d=&quot;M12 84h16&quot;/&gt;&lt;path d=&quot;M20 126l12-8&quot;/&gt;&lt;path d=&quot;M202 40l-12 8&quot;/&gt;&lt;path d=&quot;M208 84h-16&quot;/&gt;&lt;path d=&quot;M200 126l-12-8&quot;/&gt;&lt;/g&gt;
+&lt;path d=&quot;M44 70 Q14 40 10 64 Q26 66 30 78 Q12 84 18 96 Q34 84 46 90 Z&quot; fill=&quot;#fff&quot; stroke=&quot;#BDBDBD&quot; stroke-width=&quot;1.5&quot;/&gt;
+&lt;path d=&quot;M176 70 Q206 40 210 64 Q194 66 190 78 Q208 84 202 96 Q186 84 174 90 Z&quot; fill=&quot;#fff&quot; stroke=&quot;#BDBDBD&quot; stroke-width=&quot;1.5&quot;/&gt;
+&lt;ellipse cx=&quot;110&quot; cy=&quot;134&quot; rx=&quot;78&quot; ry=&quot;18&quot; fill=&quot;#F2F2F2&quot; stroke=&quot;#BDBDBD&quot; stroke-width=&quot;1.6&quot;/&gt;
+&lt;path d=&quot;M32 136 Q110 160 188 136&quot; stroke=&quot;#2F6FD6&quot; stroke-width=&quot;8&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/&gt;
+&lt;path d=&quot;M42 132 Q48 30 110 28 Q172 30 178 132 Z&quot; fill=&quot;#2F6FD6&quot; stroke=&quot;#1E4FA3&quot; stroke-width=&quot;2&quot; stroke-linejoin=&quot;round&quot;/&gt;
+&lt;path d=&quot;M54 60 Q110 34 166 60&quot; stroke=&quot;#9BE028&quot; stroke-width=&quot;10&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot; transform=&quot;rotate(-6 110 50)&quot;/&gt;
+&lt;circle cx=&quot;84&quot; cy=&quot;86&quot; r=&quot;16&quot; fill=&quot;#fff&quot; stroke=&quot;#2B2B2B&quot; stroke-width=&quot;2&quot;/&gt;&lt;circle cx=&quot;78&quot; cy=&quot;80&quot; r=&quot;5&quot; fill=&quot;#111&quot;/&gt;&lt;circle cx=&quot;79&quot; cy=&quot;79&quot; r=&quot;1.6&quot; fill=&quot;#fff&quot;/&gt;
+&lt;circle cx=&quot;138&quot; cy=&quot;84&quot; r=&quot;25&quot; fill=&quot;#fff&quot; stroke=&quot;#2B2B2B&quot; stroke-width=&quot;2&quot;/&gt;&lt;circle cx=&quot;146&quot; cy=&quot;90&quot; r=&quot;7&quot; fill=&quot;#111&quot;/&gt;&lt;circle cx=&quot;148&quot; cy=&quot;88&quot; r=&quot;2.2&quot; fill=&quot;#fff&quot;/&gt;
+&lt;path d=&quot;M90 110 Q112 100 132 112 Q126 128 110 128 Q94 128 90 110 Z&quot; fill=&quot;#3A2226&quot;/&gt;&lt;path d=&quot;M98 120 Q112 114 124 121 Q120 127 110 127 Q102 127 98 120 Z&quot; fill=&quot;#F08AA0&quot;/&gt;
+&lt;path d=&quot;M176 100 Q181 108 176 113 Q171 108 176 100 Z&quot; fill=&quot;#CFEFFF&quot;/&gt;&lt;path d=&quot;M50 40 Q53 46 50 50 Q47 46 50 40 Z&quot; fill=&quot;#CFEFFF&quot;/&gt;
+&lt;/symbol&gt;&lt;/svg&gt;
+&lt;div class=&quot;app&quot; id=&quot;app&quot;&gt;&lt;div class=&quot;grid&quot;&gt;&lt;/div&gt;&lt;div class=&quot;hud&quot;&gt;&lt;/div&gt;
+
+&lt;section class=&quot;view on&quot; id=&quot;v-start&quot;&gt;
+ &lt;div class=&quot;logo&quot;&gt;acer&lt;span&gt;NITRO&lt;/span&gt;&lt;/div&gt;
+ &lt;div class=&quot;c&quot; style=&quot;margin-top:24px&quot;&gt;&lt;div class=&quot;k mono&quot;&gt;NITRO 指速測試・02&lt;/div&gt;&lt;div class=&quot;h&quot;&gt;0.1 秒快門&lt;/div&gt;&lt;p class=&quot;p&quot;&gt;有個怪東西會飆速衝過去。&lt;br&gt;看到就按，拍下牠的奇異表情。&lt;/p&gt;&lt;/div&gt;
+ &lt;div class=&quot;vf&quot; style=&quot;margin-top:24px;height:200px&quot;&gt;&lt;i class=&quot;cn a&quot;&gt;&lt;/i&gt;&lt;i class=&quot;cn b&quot;&gt;&lt;/i&gt;&lt;i class=&quot;cn c&quot;&gt;&lt;/i&gt;&lt;i class=&quot;cn d&quot;&gt;&lt;/i&gt;&lt;span class=&quot;rec mono&quot;&gt;&lt;i&gt;&lt;/i&gt;REC&lt;/span&gt;&lt;div class=&quot;xh&quot;&gt;&lt;/div&gt;
+  &lt;svg class=&quot;mystery&quot; style=&quot;position:absolute;left:50%;top:44px;margin-left:-90px&quot; width=&quot;180&quot; height=&quot;112&quot;&gt;&lt;use href=&quot;#fish&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;qm mono&quot; style=&quot;right:28px;top:20px&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;qm mono&quot; style=&quot;left:24px;bottom:16px;font-size:28px&quot;&gt;?&lt;/span&gt;&lt;/div&gt;
+ &lt;div class=&quot;c&quot; style=&quot;margin-top:16px;display:flex;justify-content:center;gap:8px&quot;&gt;&lt;span class=&quot;chip&quot;&gt;5 回合&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;按下快門就定格&lt;/span&gt;&lt;span class=&quot;chip g&quot; id=&quot;dexStart&quot;&gt;圖鑑 0/3&lt;/span&gt;&lt;/div&gt;
+ &lt;div class=&quot;btns&quot; style=&quot;margin-top:auto;padding-top:16px&quot;&gt;&lt;button class=&quot;btn mono&quot; id=&quot;go&quot;&gt;GO&lt;/button&gt;&lt;/div&gt;
+ &lt;div class=&quot;foot mono&quot;&gt;可以點取景框、快門鍵，或按空白鍵。&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;view&quot; id=&quot;v-play&quot;&gt;
+ &lt;div class=&quot;top&quot;&gt;&lt;span class=&quot;chip mono&quot; id=&quot;round&quot;&gt;ROUND 1/5&lt;/span&gt;&lt;span class=&quot;chip g mono&quot; id=&quot;best&quot;&gt;BEST ---&lt;/span&gt;&lt;/div&gt;
+ &lt;div class=&quot;rounds&quot; id=&quot;rounds&quot;&gt;&lt;/div&gt;
+ &lt;div class=&quot;c&quot; style=&quot;margin-top:12px&quot;&gt;&lt;div class=&quot;k mono&quot; id=&quot;status&quot;&gt;準備……盯著取景框&lt;/div&gt;&lt;div class=&quot;timer mono idle&quot; id=&quot;timer&quot;&gt;0.000&lt;small&gt;s&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+ &lt;div class=&quot;vf&quot; id=&quot;vf&quot; style=&quot;margin-top:12px;flex:1;min-height:200px;max-height:300px&quot;&gt;&lt;i class=&quot;cn a&quot;&gt;&lt;/i&gt;&lt;i class=&quot;cn b&quot;&gt;&lt;/i&gt;&lt;i class=&quot;cn c&quot;&gt;&lt;/i&gt;&lt;i class=&quot;cn d&quot;&gt;&lt;/i&gt;&lt;span class=&quot;rec mono&quot;&gt;&lt;i&gt;&lt;/i&gt;REC&lt;/span&gt;&lt;div class=&quot;xh&quot;&gt;&lt;/div&gt;
+  &lt;div id=&quot;runner&quot;&gt;&lt;i class=&quot;streak&quot; style=&quot;top:18px;width:120px&quot;&gt;&lt;/i&gt;&lt;i class=&quot;streak&quot; style=&quot;top:44px;width:150px&quot;&gt;&lt;/i&gt;&lt;i class=&quot;streak&quot; style=&quot;top:72px;width:110px&quot;&gt;&lt;/i&gt;
+   &lt;svg class=&quot;g2&quot; viewBox=&quot;0 0 200 124&quot;&gt;&lt;use id=&quot;ug2&quot; href=&quot;#fish&quot;/&gt;&lt;/svg&gt;&lt;svg class=&quot;g1&quot; viewBox=&quot;0 0 200 124&quot;&gt;&lt;use id=&quot;ug1&quot; href=&quot;#fish&quot;/&gt;&lt;/svg&gt;&lt;svg class=&quot;body&quot; viewBox=&quot;0 0 200 124&quot;&gt;&lt;use id=&quot;ub&quot; href=&quot;#fish&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;
+  &lt;div class=&quot;flash&quot; id=&quot;flash&quot;&gt;&lt;/div&gt;
+  &lt;span class=&quot;msg&quot; id=&quot;msg&quot;&gt;&lt;/span&gt;
+  &lt;div class=&quot;snap&quot; id=&quot;snap&quot;&gt;&lt;div class=&quot;pz&quot;&gt;&lt;div class=&quot;ph&quot;&gt;&lt;svg viewBox=&quot;0 0 220 160&quot;&gt;&lt;use id=&quot;snapUse&quot; href=&quot;#fishface&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;div class=&quot;cp&quot;&gt;&lt;b id=&quot;snapName&quot;&gt;飆速鹹魚&lt;/b&gt;&lt;span class=&quot;mono&quot; id=&quot;snapMs&quot;&gt;0.168s&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;shutterbar&quot;&gt;&lt;div class=&quot;thumb&quot; id=&quot;thumb&quot;&gt;&lt;/div&gt;&lt;button class=&quot;shutter&quot; id=&quot;shutter&quot; aria-label=&quot;按快門&quot;&gt;&lt;i&gt;按快門&lt;/i&gt;&lt;/button&gt;&lt;div class=&quot;dex&quot;&gt;&lt;b class=&quot;mono&quot; id=&quot;dexPlay&quot;&gt;0/3&lt;/b&gt;圖鑑&lt;/div&gt;&lt;/div&gt;
+ &lt;div class=&quot;foot mono&quot; id=&quot;hint&quot;&gt;太早按會拍到空氣，太晚只拍到尾巴。&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;view&quot; id=&quot;v-end&quot;&gt;
+ &lt;div class=&quot;top&quot;&gt;&lt;div class=&quot;logo&quot;&gt;acer&lt;span&gt;NITRO&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;chip g mono&quot; id=&quot;dexEnd&quot;&gt;圖鑑 1/3&lt;/span&gt;&lt;/div&gt;
+ &lt;div class=&quot;pol&quot;&gt;&lt;i class=&quot;tape&quot;&gt;&lt;/i&gt;&lt;div class=&quot;ph&quot; id=&quot;polPh&quot;&gt;&lt;/div&gt;&lt;div class=&quot;cap&quot;&gt;&lt;b id=&quot;polName&quot;&gt;飆速鹹魚・被你抓包&lt;/b&gt;&lt;span class=&quot;mono&quot; id=&quot;polNo&quot;&gt;#01&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+ &lt;div class=&quot;c&quot; style=&quot;margin-top:20px&quot;&gt;&lt;div class=&quot;k&quot; id=&quot;speedLab&quot;&gt;你的指速（最快一張）&lt;/div&gt;&lt;div class=&quot;big mono&quot; style=&quot;margin-top:4px&quot; id=&quot;bigMs&quot;&gt;168&lt;small&gt;ms&lt;/small&gt;&lt;/div&gt;
+ &lt;div style=&quot;margin-top:8px&quot;&gt;&lt;span class=&quot;badge&quot;&gt;&lt;svg width=&quot;14&quot; height=&quot;16&quot; viewBox=&quot;0 0 14 16&quot;&gt;&lt;path d=&quot;M8.5 0 1 9h5l-1.5 7L13 6.5H8Z&quot; fill=&quot;#9BE028&quot;/&gt;&lt;/svg&gt;&lt;span id=&quot;rank&quot;&gt;神之手指・比 92% 玩家快&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+ &lt;div class=&quot;foot mono&quot; id=&quot;sum&quot; style=&quot;margin-top:8px&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+ &lt;div class=&quot;card&quot; style=&quot;margin-top:12px&quot;&gt;&lt;p class=&quot;p&quot; style=&quot;color:#DDD&quot;&gt;&lt;b style=&quot;color:var(--acc)&quot;&gt;Nitro 180Hz 每一幀只要 5.6ms&lt;/b&gt;，再快的怪咖都拍得清清楚楚。&lt;/p&gt;&lt;/div&gt;
+ &lt;div class=&quot;btns&quot; style=&quot;margin-top:auto;padding-top:16px&quot;&gt;&lt;button class=&quot;btn&quot; id=&quot;share&quot;&gt;分享奇異快照&lt;/button&gt;&lt;button class=&quot;btn o mono&quot; id=&quot;again&quot;&gt;AGAIN&lt;/button&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;div class=&quot;sheet&quot; id=&quot;sheet&quot; hidden&gt;&lt;img id=&quot;sheetImg&quot; alt=&quot;分享圖&quot;&gt;&lt;p&gt;長按圖片就能存到手機&lt;br&gt;分享文字也已經複製好了&lt;/p&gt;&lt;button class=&quot;btn o&quot; id=&quot;sheetClose&quot;&gt;關閉&lt;/button&gt;&lt;/div&gt;
+&lt;div class=&quot;toast&quot; id=&quot;toast&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+(()=&gt;{
+const ROUNDS = 5;
+const CRITTERS = [
+  {id:&#x27;fish&#x27;,   face:&#x27;fishface&#x27;,    name:&#x27;飆速鹹魚&#x27;},
+  {id:&#x27;boba&#x27;,   face:&#x27;bobaface&#x27;,    name:&#x27;暴走珍奶&#x27;},
+  {id:&#x27;slipper&#x27;,face:&#x27;slipperface&#x27;, name:&#x27;飛天藍白拖&#x27;},
+];
+const $ = id =&gt; document.getElementById(id);
+const views = {start:$(&#x27;v-start&#x27;), play:$(&#x27;v-play&#x27;), end:$(&#x27;v-end&#x27;)};
+const show = v =&gt; { for(const k in views) views[k].classList.toggle(&#x27;on&#x27;, k===v); };
+
+let ac=null;
+function tone(freqs,dur=0.07,type=&#x27;square&#x27;,vol=0.035){ try{ ac=ac||new (window.AudioContext||window.webkitAudioContext)(); let t=ac.currentTime;
+  freqs.forEach(f=&gt;{const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(0.0001,t+dur);o.connect(g).connect(ac.destination);o.start(t);o.stop(t+dur);t+=dur*0.9;}); }catch(e){} }
+function shutterSound(){ try{ ac=ac||new (window.AudioContext||window.webkitAudioContext)(); const n=ac.sampleRate*0.08, b=ac.createBuffer(1,n,ac.sampleRate), d=b.getChannelData(0);
+  for(let i=0;i&lt;n;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/n,3); const s=ac.createBufferSource(), g=ac.createGain(); g.gain.value=0.25; s.buffer=b; s.connect(g).connect(ac.destination); s.start(); }catch(e){} }
+const buzz = ms =&gt; { try{ navigator.vibrate &amp;&amp; navigator.vibrate(ms); }catch(e){} };
+
+// 圖鑑（只存在這台裝置的瀏覽器裡）
+let dex = new Set();
+try{ dex = new Set(JSON.parse(localStorage.getItem(&#x27;acer-shutter-dex&#x27;)||&#x27;[]&#x27;)); }catch(e){}
+const saveDex = () =&gt; { try{ localStorage.setItem(&#x27;acer-shutter-dex&#x27;, JSON.stringify([...dex])); }catch(e){} };
+const dexText = () =&gt; `${dex.size}/${CRITTERS.length}`;
+$(&#x27;dexStart&#x27;).textContent = &#x27;圖鑑 &#x27;+dexText();
+
+let round=0, shots=[], state=&#x27;idle&#x27;, t0=0, raf=0, waitT=0, nextT=0, critter=null, dur=0, newFinds=[];
+const runner=$(&#x27;runner&#x27;), vf=$(&#x27;vf&#x27;);
+
+function setMsg(text, cls){ const m=$(&#x27;msg&#x27;); m.textContent=text; m.className=&#x27;msg on &#x27;+cls; }
+function clearMsg(){ $(&#x27;msg&#x27;).className=&#x27;msg&#x27;; }
+function setTimer(ms, idle){ $(&#x27;timer&#x27;).innerHTML=(ms/1000).toFixed(3)+&#x27;&lt;small&gt;s&lt;/small&gt;&#x27;; $(&#x27;timer&#x27;).classList.toggle(&#x27;idle&#x27;,!!idle); }
+function renderRounds(){
+  $(&#x27;rounds&#x27;).innerHTML = Array.from({length:ROUNDS},(_,i)=&gt;{ const s=shots[i]; return `&lt;i class=&quot;${s?(s.ms!=null?&#x27;hit&#x27;:&#x27;miss&#x27;):(i===round?&#x27;cur&#x27;:&#x27;&#x27;)}&quot;&gt;&lt;/i&gt;`; }).join(&#x27;&#x27;);
+  $(&#x27;round&#x27;).textContent = `ROUND ${Math.min(round+1,ROUNDS)}/${ROUNDS}`;
+  const hits = shots.filter(s=&gt;s&amp;&amp;s.ms!=null).map(s=&gt;s.ms);
+  $(&#x27;best&#x27;).textContent = hits.length ? `BEST ${Math.min(...hits)}ms` : &#x27;BEST ---&#x27;;
+  $(&#x27;dexPlay&#x27;).textContent = dexText();
+}
+
+function start(){
+  round=0; shots=[]; newFinds=[]; $(&#x27;thumb&#x27;).innerHTML=&#x27;&#x27;;
+  show(&#x27;play&#x27;); renderRounds(); nextRound();
+}
+function nextRound(){
+  clearTimeout(waitT); clearTimeout(nextT); cancelAnimationFrame(raf);
+  if(round&gt;=ROUNDS) return finish();
+  renderRounds(); $(&#x27;snap&#x27;).classList.remove(&#x27;on&#x27;); runner.style.display=&#x27;none&#x27;; clearMsg();
+  state=&#x27;wait&#x27;; setTimer(0,true);
+  $(&#x27;status&#x27;).textContent=&#x27;準備……盯著取景框&#x27;;
+  setMsg(&#x27;等牠出現…&#x27;,&#x27;wait&#x27;);
+  waitT = setTimeout(appear, 1100 + Math.random()*2400);
+}
+function appear(){
+  critter = CRITTERS[Math.floor(Math.random()*CRITTERS.length)];
+  [&#x27;ug2&#x27;,&#x27;ug1&#x27;,&#x27;ub&#x27;].forEach(id=&gt;$(id).setAttribute(&#x27;href&#x27;,&#x27;#&#x27;+critter.id));
+  dur = 720 - round*45;                     // 一回比一回快
+  runner.style.top = (38 + Math.random()*24)+&#x27;%&#x27;;
+  runner.style.display=&#x27;block&#x27;; clearMsg();
+  state=&#x27;run&#x27;; t0=performance.now();
+  $(&#x27;status&#x27;).textContent=&#x27;牠出現了！&#x27;;
+  tone([1200],0.03,&#x27;square&#x27;,0.02);
+  raf=requestAnimationFrame(run);
+}
+function run(now){
+  if(state!==&#x27;run&#x27;) return;
+  const el=now-t0, W=vf.clientWidth, x = -170 + (W+340)*(el/dur);
+  runner.style.transform=`translateX(${x}px)`;
+  setTimer(el);
+  if(el&gt;=dur){ return escaped(); }
+  raf=requestAnimationFrame(run);
+}
+function escaped(){
+  state=&#x27;done&#x27;; runner.style.display=&#x27;none&#x27;;
+  shots[round]={ms:null, c:critter};
+  setMsg(&#x27;跑掉了……只拍到尾巴&#x27;,&#x27;bad&#x27;); $(&#x27;status&#x27;).textContent=&#x27;MISS&#x27;; tone([220,160],0.12);
+  buzz(60); round++; nextT=setTimeout(nextRound,1300);
+}
+function fire(){
+  $(&#x27;shutter&#x27;).classList.add(&#x27;press&#x27;); setTimeout(()=&gt;$(&#x27;shutter&#x27;).classList.remove(&#x27;press&#x27;),120);
+  if(state===&#x27;wait&#x27;){
+    clearTimeout(waitT); state=&#x27;done&#x27;;
+    setMsg(&#x27;太早了！拍到空氣&#x27;,&#x27;bad&#x27;); $(&#x27;status&#x27;).textContent=&#x27;再來一次這回合&#x27;; tone([180],0.15); buzz(80);
+    nextT=setTimeout(nextRound,1100); return;
+  }
+  if(state!==&#x27;run&#x27;) return;
+  const ms = Math.round(performance.now()-t0);
+  state=&#x27;done&#x27;; cancelAnimationFrame(raf);
+  shutterSound(); buzz(25);
+  const f=$(&#x27;flash&#x27;); f.classList.remove(&#x27;on&#x27;); void f.offsetWidth; f.classList.add(&#x27;on&#x27;);
+  setTimer(ms);
+  shots[round]={ms, c:critter};
+  if(!dex.has(critter.id)){ dex.add(critter.id); newFinds.push(critter.id); saveDex(); }
+  $(&#x27;snapUse&#x27;).setAttribute(&#x27;href&#x27;,&#x27;#&#x27;+critter.face); $(&#x27;snapName&#x27;).textContent=critter.name; $(&#x27;snapMs&#x27;).textContent=(ms/1000).toFixed(3)+&#x27;s&#x27;;
+  setTimeout(()=&gt;{ runner.style.display=&#x27;none&#x27;; $(&#x27;snap&#x27;).classList.add(&#x27;on&#x27;); },140);
+  $(&#x27;status&#x27;).textContent = ms&lt;200?&#x27;神速！&#x27;:ms&lt;260?&#x27;拍到了！&#x27;:&#x27;差點跑掉！&#x27;;
+  $(&#x27;thumb&#x27;).innerHTML=`&lt;svg width=&quot;48&quot; height=&quot;35&quot; viewBox=&quot;0 0 220 160&quot;&gt;&lt;use href=&quot;#${critter.face}&quot;/&gt;&lt;/svg&gt;`;
+  round++; renderRounds();
+  nextT=setTimeout(nextRound,1500);
+}
+$(&#x27;shutter&#x27;).addEventListener(&#x27;pointerdown&#x27;,e=&gt;{e.preventDefault();fire();});
+vf.addEventListener(&#x27;pointerdown&#x27;,e=&gt;{e.preventDefault();fire();});
+document.addEventListener(&#x27;keydown&#x27;,e=&gt;{ if(views.play.classList.contains(&#x27;on&#x27;) &amp;&amp; (e.code===&#x27;Space&#x27;||e.key===&#x27;Enter&#x27;)){ e.preventDefault(); fire(); } });
+
+function rankOf(ms){
+  const pct = Math.max(1, Math.min(99, Math.round(100-(ms-140)*0.45)));
+  const t = ms&lt;180?&#x27;神之手指&#x27;:ms&lt;230?&#x27;電競反應&#x27;:ms&lt;300?&#x27;正常人類&#x27;:&#x27;樹懶模式&#x27;;
+  return {pct,t};
+}
+let bestShot=null;
+function finish(){
+  state=&#x27;idle&#x27;; clearTimeout(waitT); clearTimeout(nextT); cancelAnimationFrame(raf);
+  const hits = shots.filter(s=&gt;s&amp;&amp;s.ms!=null);
+  bestShot = hits.sort((a,b)=&gt;a.ms-b.ms)[0] || null;
+  const ph=$(&#x27;polPh&#x27;);
+  if(bestShot){
+    const r=rankOf(bestShot.ms), avg=Math.round(hits.reduce((a,s)=&gt;a+s.ms,0)/hits.length);
+    ph.innerHTML=`&lt;svg width=&quot;184&quot; height=&quot;134&quot; viewBox=&quot;0 0 220 160&quot;&gt;&lt;use href=&quot;#${bestShot.c.face}&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;ts mono&quot;&gt;${(bestShot.ms/1000).toFixed(3)}s&lt;/span&gt;`;
+    $(&#x27;polName&#x27;).textContent=bestShot.c.name+&#x27;・被你抓包&#x27;;
+    $(&#x27;polNo&#x27;).textContent=&#x27;#&#x27;+String(CRITTERS.indexOf(bestShot.c)+1).padStart(2,&#x27;0&#x27;);
+    $(&#x27;bigMs&#x27;).innerHTML=bestShot.ms+&#x27;&lt;small&gt;ms&lt;/small&gt;&#x27;;
+    $(&#x27;rank&#x27;).textContent=`${r.t}・比 ${r.pct}% 玩家快`;
+    $(&#x27;sum&#x27;).textContent=`拍到 ${hits.length}/${ROUNDS} 隻・平均 ${avg}ms`;
+    $(&#x27;speedLab&#x27;).textContent=&#x27;你的指速（最快一張）&#x27;;
+  } else {
+    ph.innerHTML=`&lt;svg width=&quot;184&quot; height=&quot;115&quot; viewBox=&quot;0 0 200 124&quot; style=&quot;filter:url(#mblur);opacity:.6&quot;&gt;&lt;use href=&quot;#fish&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;ts mono&quot;&gt;MISS&lt;/span&gt;`;
+    $(&#x27;polName&#x27;).textContent=&#x27;一團殘影&#x27;; $(&#x27;polNo&#x27;).textContent=&#x27;#--&#x27;;
+    $(&#x27;bigMs&#x27;).innerHTML=&#x27;---&lt;small&gt;ms&lt;/small&gt;&#x27;; $(&#x27;rank&#x27;).textContent=&#x27;再來一輪，牠們跑不掉&#x27;;
+    $(&#x27;sum&#x27;).textContent=`拍到 0/${ROUNDS} 隻`; $(&#x27;speedLab&#x27;).textContent=&#x27;你的指速&#x27;;
+  }
+  $(&#x27;dexEnd&#x27;).textContent=(newFinds.length?&#x27;NEW・&#x27;:&#x27;&#x27;)+&#x27;圖鑑 &#x27;+dexText();
+  $(&#x27;dexStart&#x27;).textContent=&#x27;圖鑑 &#x27;+dexText();
+  show(&#x27;end&#x27;); tone([523,659,784],0.08,&#x27;square&#x27;,0.03);
+}
+
+function toast(t){ const el=$(&#x27;toast&#x27;); el.textContent=t; el.classList.add(&#x27;on&#x27;); clearTimeout(el._t); el._t=setTimeout(()=&gt;el.classList.remove(&#x27;on&#x27;),1800); }
+
+// 把拍立得畫成 PNG：組一張獨立 SVG（含角色圖形），畫到 canvas
+async function snapshotPNG(){
+  const defs=document.querySelector(&#x27;svg.defs&#x27;).innerHTML;
+  const c=bestShot.c, ms=(bestShot.ms/1000).toFixed(3), r=rankOf(bestShot.ms);
+  const svg=`&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;720&quot; height=&quot;900&quot; viewBox=&quot;0 0 720 900&quot;&gt;${defs}
+  &lt;rect width=&quot;720&quot; height=&quot;900&quot; fill=&quot;#0B0B0B&quot;/&gt;
+  &lt;g transform=&quot;rotate(-3 360 400)&quot;&gt;&lt;rect x=&quot;110&quot; y=&quot;90&quot; width=&quot;500&quot; height=&quot;560&quot; rx=&quot;8&quot; fill=&quot;#F6F6F2&quot;/&gt;&lt;rect x=&quot;134&quot; y=&quot;114&quot; width=&quot;452&quot; height=&quot;420&quot; rx=&quot;4&quot; fill=&quot;#0E120B&quot;/&gt;
+  &lt;svg x=&quot;140&quot; y=&quot;120&quot; width=&quot;440&quot; height=&quot;408&quot; viewBox=&quot;0 0 220 160&quot;&gt;&lt;use href=&quot;#${c.face}&quot; xlink:href=&quot;#${c.face}&quot;/&gt;&lt;/svg&gt;
+  &lt;text x=&quot;572&quot; y=&quot;520&quot; text-anchor=&quot;end&quot; font-family=&quot;Menlo,monospace&quot; font-size=&quot;22&quot; fill=&quot;#9BE028&quot;&gt;${ms}s&lt;/text&gt;
+  &lt;text x=&quot;138&quot; y=&quot;600&quot; font-family=&quot;PingFang TC,Noto Sans TC,sans-serif&quot; font-size=&quot;30&quot; font-weight=&quot;700&quot; fill=&quot;#1A1A1A&quot;&gt;${c.name}・被我抓包&lt;/text&gt;&lt;/g&gt;
+  &lt;text x=&quot;360&quot; y=&quot;740&quot; text-anchor=&quot;middle&quot; font-family=&quot;Menlo,monospace&quot; font-size=&quot;64&quot; font-weight=&quot;700&quot; fill=&quot;#9BE028&quot;&gt;${bestShot.ms}ms&lt;/text&gt;
+  &lt;text x=&quot;360&quot; y=&quot;790&quot; text-anchor=&quot;middle&quot; font-family=&quot;PingFang TC,Noto Sans TC,sans-serif&quot; font-size=&quot;26&quot; fill=&quot;#F3F3F3&quot;&gt;${r.t}・比 ${r.pct}% 玩家快&lt;/text&gt;
+  &lt;text x=&quot;360&quot; y=&quot;850&quot; text-anchor=&quot;middle&quot; font-family=&quot;PingFang TC,Noto Sans TC,sans-serif&quot; font-size=&quot;20&quot; fill=&quot;#9A9A9A&quot;&gt;acer NITRO｜0.1 秒快門&lt;/text&gt;&lt;/svg&gt;`;
+  const url=URL.createObjectURL(new Blob([svg],{type:&#x27;image/svg+xml&#x27;}));
+  const img=new Image(); await new Promise((res,rej)=&gt;{img.onload=res; img.onerror=rej; img.src=url;});
+  const cv=document.createElement(&#x27;canvas&#x27;); cv.width=720; cv.height=900; cv.getContext(&#x27;2d&#x27;).drawImage(img,0,0); URL.revokeObjectURL(url);
+  return await new Promise(res=&gt;cv.toBlob(res,&#x27;image/png&#x27;));
+}
+function showSheet(blob){ $(&#x27;sheetImg&#x27;).src=URL.createObjectURL(blob); $(&#x27;sheet&#x27;).hidden=false; }
+$(&#x27;sheetClose&#x27;).onclick=()=&gt;{ $(&#x27;sheet&#x27;).hidden=true; };
+$(&#x27;share&#x27;).onclick=async()=&gt;{
+  if(!bestShot){ toast(&#x27;這輪沒拍到，再來一輪！&#x27;); return; }
+  const text=`我用 ${bestShot.ms}ms 拍到了「${bestShot.c.name}」的奇異表情！你拍得到嗎？`;
+  try{ navigator.clipboard.writeText(text).catch(()=&gt;{}); }catch(e){}
+  let blob; try{ blob=await snapshotPNG(); }catch(e){ toast(&#x27;已複製分享文字&#x27;); return; }
+  const file=new File([blob],&#x27;奇異快照.png&#x27;,{type:&#x27;image/png&#x27;});
+  try{ if(navigator.canShare &amp;&amp; navigator.canShare({files:[file]})){ await navigator.share({files:[file],text}); return; } }catch(e){ if(e&amp;&amp;e.name===&#x27;AbortError&#x27;) return; }
+  showSheet(blob);
+};
+$(&#x27;go&#x27;).onclick=start; $(&#x27;again&#x27;).onclick=start;
+})();
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+" allow="web-share; clipboard-write"></iframe><iframe class="g" id="g-C" title="C 今天穿這樣出門？" data-src="&lt;!doctype html&gt;&lt;html lang=&quot;zh-Hant&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,viewport-fit=cover&quot;&gt;
+&lt;title&gt;今天穿這樣出門？&lt;/title&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+:root{--page:#EFE9E2;--scr:#FAF7F2;--ink:#3B2F33;--mute:#8C7F84;--line:#E9DFDA;--acc:#7A2E3A;--acc-ink:#FAF7F2;--pink:#F3D9DC;--green:#CFE3D0;--r:22px;
+--sh:0 1px 2px rgba(59,47,51,.06),0 8px 24px rgba(59,47,51,.08);--sh-h:0 1px 2px rgba(59,47,51,.08),0 12px 32px rgba(59,47,51,.12);--sh-acc:0 1px 2px rgba(122,46,58,.2),0 8px 24px rgba(122,46,58,.22)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:&quot;Noto Sans TC&quot;,&quot;PingFang TC&quot;,sans-serif;background:var(--page);color:var(--ink);display:flex;align-items:center;justify-content:center;-webkit-font-smoothing:antialiased;overflow:hidden}
+.defs{position:absolute;width:0;height:0;overflow:hidden}
+.app{position:relative;width:100%;max-width:400px;height:100%;background:var(--scr);overflow:hidden;user-select:none;-webkit-user-select:none}
+@media (min-width:520px) and (min-height:700px){.app{height:min(860px,calc(100dvh - 48px));border-radius:36px;box-shadow:0 1px 2px rgba(0,0,0,.08),0 24px 56px rgba(59,47,51,.18)}}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);pointer-events:none}
+.view{position:absolute;inset:0;display:none;flex-direction:column;padding:max(24px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom))}
+.view.on{display:flex}
+.logo{font-weight:900;font-size:22px;line-height:24px;letter-spacing:-.02em;color:#83B81A;position:relative}
+.k{font-size:12px;line-height:16px;letter-spacing:.14em;font-weight:700;color:var(--mute)}
+.h{font-size:clamp(24px,8.4vw,32px);font-weight:900;line-height:1.25;margin:8px 0;white-space:nowrap}
+.p{font-size:14px;line-height:24px;color:var(--mute)}
+.foot{margin-top:8px;font-size:11px;line-height:16px;color:var(--mute);text-align:center;position:relative}
+.c{text-align:center;position:relative}
+.btn{display:flex;align-items:center;justify-content:center;height:56px;width:100%;border:0;font:inherit;font-weight:900;font-size:17px;border-radius:var(--r);background:var(--acc);color:var(--acc-ink);box-shadow:var(--sh-acc);cursor:pointer;touch-action:manipulation;transition:transform .15s,box-shadow .15s,filter .15s;position:relative}
+@media (hover:hover){.btn:hover{transform:translateY(-1px);filter:brightness(1.08)}}
+.btn:active{transform:translateY(1px);filter:brightness(.95)}
+.btn.o{height:48px;background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:15px;box-shadow:var(--sh)}
+.btns{display:flex;flex-direction:column;gap:8px;position:relative}
+.chip{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 14px;font:inherit;font-size:13px;font-weight:700;border-radius:99px;background:#fff;border:1px solid var(--line);box-shadow:var(--sh);white-space:nowrap;cursor:pointer;color:var(--ink);font-variant-numeric:tabular-nums}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip.s{height:28px;padding:0 10px;font-size:12px;cursor:default}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 16px;box-shadow:var(--sh);position:relative}
+.stage{position:relative}
+.stage&gt;svg.doll{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;transform-origin:50% 92%}
+@keyframes wob{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+.stage&gt;svg.doll.wobble{animation:wob .9s ease-in-out infinite}
+.stage&gt;svg.doll.wobble.hard{animation-duration:.5s}
+.sticker{filter:drop-shadow(1.5px 0 0 #fff) drop-shadow(-1.5px 0 0 #fff) drop-shadow(0 1.5px 0 #fff) drop-shadow(0 -1.5px 0 #fff) drop-shadow(0 4px 6px rgba(59,47,51,.18))}
+.rules{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:8px;position:relative}
+.hud{display:flex;align-items:center;justify-content:space-between;gap:8px;position:relative}
+.score{display:flex;flex-direction:column;align-items:center;line-height:1}
+.score b{font-size:28px;font-weight:900;color:var(--acc);font-variant-numeric:tabular-nums;transition:transform .12s}
+.score b.bump{transform:scale(1.18)}
+.score span{font-size:11px;color:var(--mute);margin-top:2px;font-weight:700}
+.timer{min-width:72px;justify-content:center}
+.timer.warn{background:#E85D4A;border-color:#E85D4A;color:#fff;animation:pulse .5s infinite}
+@keyframes pulse{50%{transform:scale(1.06)}}
+.sub{display:flex;justify-content:space-between;margin-top:8px;font-size:12px;line-height:16px;color:var(--mute);font-weight:700;position:relative}
+.sub b{color:var(--ink);font-variant-numeric:tabular-nums}
+.kgbar{height:6px;border-radius:99px;background:#EFE6E2;margin-top:4px;overflow:hidden;position:relative}
+.kgbar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#CFE3D0,#F7C948,#E85D4A);transition:width .3s}
+#stage{flex:1;min-height:0;margin-top:8px}
+.sp{position:absolute;width:64px;height:64px;margin:-32px 0 0 -32px;border:0;border-radius:50%;background:rgba(255,255,255,.85);box-shadow:var(--sh-h);display:flex;align-items:center;justify-content:center;cursor:pointer;touch-action:manipulation;z-index:4;padding:0;animation:popin .28s cubic-bezier(.2,.9,.3,1.4)}
+.sp svg{display:block;width:44px;height:44px;pointer-events:none}
+.sp.tall svg{height:52px}
+.sp.wide svg{width:52px}
+.sp.bad{background:#FFE9E6;box-shadow:0 0 0 2px #E85D4A,var(--sh-h)}
+.sp.rare{background:#FFFBEA;box-shadow:0 0 0 3px #F7C948,0 0 24px rgba(247,201,72,.8)}
+.sp.rare:after{content:&quot;✦&quot;;position:absolute;right:-2px;top:-6px;color:#F7C948;font-size:18px;text-shadow:0 0 6px #fff}
+.sp.fade{animation:fade .45s steps(2) infinite}
+@keyframes popin{0%{transform:scale(0)}100%{transform:scale(1)}}
+@keyframes fade{50%{opacity:.35}}
+.sp.gone{animation:none;transform:scale(0);opacity:0;transition:transform .2s,opacity .2s}
+.fly{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;z-index:6;pointer-events:none;transition:left .26s cubic-bezier(.5,0,.6,1),top .26s cubic-bezier(.5,0,.6,1),transform .26s;transform:scale(1.1)}
+.fly svg{width:100%;height:100%;display:block}
+.plus{position:absolute;font-weight:900;font-size:15px;line-height:20px;color:var(--acc);white-space:nowrap;pointer-events:none;z-index:7;animation:rise 1s ease-out forwards;text-shadow:0 1px 0 #fff,0 0 6px #fff}
+.plus.bad{color:#E85D4A}
+@keyframes rise{0%{opacity:0;transform:translate(-50%,8px) scale(.8)}15%{opacity:1;transform:translate(-50%,0) scale(1.1)}100%{opacity:0;transform:translate(-50%,-40px)}}
+.say{position:absolute;left:50%;top:6px;transform:translate(-50%,4px);max-width:80%;padding:6px 12px;border-radius:14px;background:#fff;border:1px solid var(--line);box-shadow:var(--sh);font-size:13px;line-height:20px;font-weight:700;opacity:0;transition:all .2s;pointer-events:none;z-index:5;white-space:nowrap}
+.say.on{opacity:1;transform:translate(-50%,0)}
+.banner{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%) scale(.6) rotate(-4deg);padding:10px 18px;border-radius:16px;background:var(--acc);color:#fff;text-align:center;box-shadow:var(--sh-acc);opacity:0;pointer-events:none;z-index:8;white-space:nowrap;transition:transform .25s cubic-bezier(.2,.9,.3,1.4),opacity .2s}
+.banner small{display:block;font-size:11px;letter-spacing:.2em;opacity:.85}
+.banner b{display:block;font-size:20px;line-height:28px}
+.banner.on{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-4deg)}
+.banner.go{background:#83B81A;box-shadow:0 8px 24px rgba(131,184,26,.4)}
+.countdown{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:96px;font-weight:900;color:var(--acc);z-index:9;pointer-events:none;text-shadow:0 4px 0 #fff}
+.found{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px;position:relative}
+.found .dots{display:flex;gap:4px}
+.found .dots i{width:10px;height:10px;border-radius:50%;background:#EFE6E2}
+.found .dots i.on{background:var(--acc)}
+.title{font-size:24px;line-height:32px;font-weight:900;margin-top:4px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px;position:relative}
+.st{background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px 0;text-align:center;box-shadow:var(--sh)}
+.st b{display:block;font-size:20px;line-height:24px;font-weight:900;color:var(--acc);font-variant-numeric:tabular-nums}
+.st span{font-size:11px;line-height:16px;color:var(--mute)}
+.combos{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:8px;position:relative}
+.combos span{font-size:11px;line-height:16px;padding:4px 8px;border-radius:99px;border:1px dashed #D9CFCB;color:#B9AEB2;background:#fff}
+.combos span.on{border:1px solid var(--acc);color:var(--acc);font-weight:700}
+.combos span.new{background:var(--acc);color:#fff}
+.match{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-1px;margin:0 4px;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+.toast{position:absolute;left:50%;bottom:120px;transform:translate(-50%,16px);background:var(--ink);color:#fff;font-size:13px;line-height:20px;padding:8px 16px;border-radius:99px;opacity:0;transition:all .25s;pointer-events:none;white-space:nowrap;z-index:20}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.sheet{position:absolute;inset:0;z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;background:rgba(0,0,0,.75)}
+.sheet[hidden]{display:none}
+.sheet img{display:block;max-width:100%;max-height:68%;border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,.4)}
+.sheet p{color:#fff;font-size:14px;line-height:22px;text-align:center}
+.sheet .btn{max-width:200px}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;
+&lt;svg class=&quot;defs&quot; aria-hidden=&quot;true&quot; width=&quot;0&quot; height=&quot;0&quot;&gt;&lt;defs&gt;&lt;linearGradient id=&quot;cScr&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;1&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#FCE8EA&quot;/&gt;&lt;stop offset=&quot;.55&quot; stop-color=&quot;#F3D9DC&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#CFE3D0&quot;/&gt;&lt;/linearGradient&gt;&lt;linearGradient id=&quot;lapGreenL&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#EAF3EA&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#C5DCC8&quot;/&gt;&lt;/linearGradient&gt;
+&lt;linearGradient id=&quot;lapGreenD&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#D3E6D5&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#E9F2E9&quot;/&gt;&lt;/linearGradient&gt;
+&lt;style&gt;.lapGreenk{fill:#F8FCF8;stroke:#A9C7AD;stroke-width:.35}.lapGreenb{fill:#C3D9C6}.lapGreenp{fill:#E9F2E9;stroke:#A9C7AD;stroke-width:.6}&lt;/style&gt;
+&lt;symbol id=&quot;lapGreen&quot; viewBox=&quot;0 0 240 168&quot;&gt;
+&lt;ellipse cx=&quot;120&quot; cy=&quot;161&quot; rx=&quot;108&quot; ry=&quot;5&quot; fill=&quot;#3B2F33&quot; opacity=&quot;.08&quot;/&gt;
+&lt;rect x=&quot;44&quot; y=&quot;4&quot; width=&quot;152&quot; height=&quot;104&quot; rx=&quot;9&quot; fill=&quot;url(#lapGreenL)&quot; stroke=&quot;#A9C7AD&quot;/&gt;
+&lt;rect x=&quot;47&quot; y=&quot;7&quot; width=&quot;146&quot; height=&quot;92&quot; rx=&quot;6&quot; fill=&quot;#2F3A31&quot;/&gt;
+&lt;rect x=&quot;50.5&quot; y=&quot;10.5&quot; width=&quot;139&quot; height=&quot;85&quot; rx=&quot;2.5&quot; fill=&quot;url(#cScr)&quot;/&gt;
+&lt;polygon points=&quot;50.5,10.5 124,10.5 86,95.5 50.5,95.5&quot; fill=&quot;#fff&quot; opacity=&quot;.18&quot;/&gt;
+&lt;text x=&quot;120&quot; y=&quot;105.6&quot; text-anchor=&quot;middle&quot; font-family=&quot;Arial,sans-serif&quot; font-size=&quot;6.2&quot; font-weight=&quot;700&quot; letter-spacing=&quot;.6&quot; fill=&quot;#7E9A82&quot;&gt;acer&lt;/text&gt;
+&lt;rect x=&quot;62&quot; y=&quot;107.5&quot; width=&quot;116&quot; height=&quot;5.5&quot; rx=&quot;2.75&quot; fill=&quot;#A9C7AD&quot;/&gt;
+&lt;polygon points=&quot;44,113 196,113 226,152 14,152&quot; fill=&quot;url(#lapGreenD)&quot; stroke=&quot;#A9C7AD&quot; stroke-width=&quot;.8&quot; stroke-linejoin=&quot;round&quot;/&gt;
+&lt;polygon class=&quot;lapGreenb&quot; points=&quot;55.5,115.2 184.5,115.2 199.7,139.0 40.3,139.0&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;58.0,116.2 66.1,116.2 64.4,119.4 56.1,119.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;67.7,116.2 75.8,116.2 74.4,119.4 66.0,119.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;77.3,116.2 85.4,116.2 84.3,119.4 76.0,119.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;87.0,116.2 95.1,116.2 94.3,119.4 85.9,119.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;96.6,116.2 104.7,116.2 104.3,119.4 95.9,119.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;106.3,116.2 114.4,116.2 114.2,119.4 105.9,119.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;115.9,116.2 124.1,116.2 124.2,119.4 115.8,119.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;125.6,116.2 133.7,116.2 134.1,119.4 125.8,119.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;135.3,116.2 143.4,116.2 144.1,119.4 135.7,119.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;144.9,116.2 153.0,116.2 154.1,119.4 145.7,119.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;154.6,116.2 162.7,116.2 164.0,119.4 155.7,119.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;164.2,116.2 172.3,116.2 174.0,119.4 165.6,119.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;173.9,116.2 182.0,116.2 183.9,119.4 175.6,119.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;55.5,120.4 63.9,120.4 62.1,123.8 53.4,123.8&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;65.5,120.4 74.0,120.4 72.5,123.8 63.8,123.8&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;75.6,120.4 84.0,120.4 82.9,123.8 74.1,123.8&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;85.6,120.4 94.1,120.4 93.2,123.8 84.5,123.8&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;95.7,120.4 104.1,120.4 103.6,123.8 94.9,123.8&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;105.7,120.4 114.2,120.4 114.0,123.8 105.3,123.8&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;115.8,120.4 124.2,120.4 124.4,123.8 115.6,123.8&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;125.8,120.4 134.3,120.4 134.7,123.8 126.0,123.8&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;135.9,120.4 144.3,120.4 145.1,123.8 136.4,123.8&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;145.9,120.4 154.4,120.4 155.5,123.8 146.8,123.8&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;156.0,120.4 164.4,120.4 165.9,123.8 157.1,123.8&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;166.0,120.4 174.5,120.4 176.2,123.8 167.5,123.8&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;176.1,120.4 184.5,120.4 186.6,123.8 177.9,123.8&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;52.8,124.8 61.6,124.8 59.7,128.4 50.6,128.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;63.2,124.8 72.0,124.8 70.5,128.4 61.4,128.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;73.7,124.8 82.5,124.8 81.3,128.4 72.2,128.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;84.2,124.8 93.0,124.8 92.1,128.4 83.0,128.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;94.7,124.8 103.5,124.8 102.9,128.4 93.8,128.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;105.1,124.8 113.9,124.8 113.7,128.4 104.6,128.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;115.6,124.8 124.4,124.8 124.5,128.4 115.5,128.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;126.1,124.8 134.9,124.8 135.4,128.4 126.3,128.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;136.5,124.8 145.3,124.8 146.2,128.4 137.1,128.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;147.0,124.8 155.8,124.8 157.0,128.4 147.9,128.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;157.5,124.8 166.3,124.8 167.8,128.4 158.7,128.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;168.0,124.8 176.8,124.8 178.6,128.4 169.5,128.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;178.4,124.8 187.2,124.8 189.4,128.4 180.3,128.4&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;50.0,129.4 59.1,129.4 57.1,133.2 47.7,133.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;60.9,129.4 70.0,129.4 68.4,133.2 58.9,133.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;71.8,129.4 81.0,129.4 79.7,133.2 70.2,133.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;82.7,129.4 91.9,129.4 90.9,133.2 81.5,133.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;93.6,129.4 102.8,129.4 102.2,133.2 92.7,133.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;104.5,129.4 113.7,129.4 113.5,133.2 104.0,133.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;115.4,129.4 124.6,129.4 124.7,133.2 115.3,133.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;126.3,129.4 135.5,129.4 136.0,133.2 126.5,133.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;137.2,129.4 146.4,129.4 147.3,133.2 137.8,133.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;148.1,129.4 157.3,129.4 158.5,133.2 149.1,133.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;159.0,129.4 168.2,129.4 169.8,133.2 160.3,133.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;170.0,129.4 179.1,129.4 181.1,133.2 171.6,133.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;180.9,129.4 190.0,129.4 192.3,133.2 182.9,133.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;47.1,134.2 56.6,134.2 54.5,138.2 44.6,138.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;58.4,134.2 68.0,134.2 66.2,138.2 56.4,138.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;69.8,134.2 79.3,134.2 78.0,138.2 68.1,138.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;81.1,134.2 147.5,134.2 148.4,138.2 79.9,138.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;149.3,134.2 158.9,134.2 160.1,138.2 150.3,138.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;160.7,134.2 170.2,134.2 171.9,138.2 162.0,138.2&quot;/&gt;&lt;polygon class=&quot;lapGreenk&quot; points=&quot;172.0,134.2 192.9,134.2 195.4,138.2 173.8,138.2&quot;/&gt;&lt;polygon class=&quot;lapGreenp&quot; points=&quot;96.7,140.4 143.3,140.4 145.0,149.4 95.0,149.4&quot;/&gt;
+&lt;path d=&quot;M14 152 H226 L221.5 157.5 Q220 159 217 159 H23 Q20 159 18.5 157.5 Z&quot; fill=&quot;#A9C7AD&quot;/&gt;
+&lt;/symbol&gt;&lt;linearGradient id=&quot;lapPinkL&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#FCF0F1&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#EBCBD0&quot;/&gt;&lt;/linearGradient&gt;
+&lt;linearGradient id=&quot;lapPinkD&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#EFD6DA&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#F8EBED&quot;/&gt;&lt;/linearGradient&gt;
+&lt;style&gt;.lapPinkk{fill:#FFFBFB;stroke:#D9AEB5;stroke-width:.35}.lapPinkb{fill:#E6C3C9}.lapPinkp{fill:#F8EBED;stroke:#D9AEB5;stroke-width:.6}&lt;/style&gt;
+&lt;symbol id=&quot;lapPink&quot; viewBox=&quot;0 0 240 168&quot;&gt;
+&lt;ellipse cx=&quot;120&quot; cy=&quot;161&quot; rx=&quot;108&quot; ry=&quot;5&quot; fill=&quot;#3B2F33&quot; opacity=&quot;.08&quot;/&gt;
+&lt;rect x=&quot;44&quot; y=&quot;4&quot; width=&quot;152&quot; height=&quot;104&quot; rx=&quot;9&quot; fill=&quot;url(#lapPinkL)&quot; stroke=&quot;#D9AEB5&quot;/&gt;
+&lt;rect x=&quot;47&quot; y=&quot;7&quot; width=&quot;146&quot; height=&quot;92&quot; rx=&quot;6&quot; fill=&quot;#2F3A31&quot;/&gt;
+&lt;rect x=&quot;50.5&quot; y=&quot;10.5&quot; width=&quot;139&quot; height=&quot;85&quot; rx=&quot;2.5&quot; fill=&quot;url(#cScr)&quot;/&gt;
+&lt;polygon points=&quot;50.5,10.5 124,10.5 86,95.5 50.5,95.5&quot; fill=&quot;#fff&quot; opacity=&quot;.18&quot;/&gt;
+&lt;text x=&quot;120&quot; y=&quot;105.6&quot; text-anchor=&quot;middle&quot; font-family=&quot;Arial,sans-serif&quot; font-size=&quot;6.2&quot; font-weight=&quot;700&quot; letter-spacing=&quot;.6&quot; fill=&quot;#B07D86&quot;&gt;acer&lt;/text&gt;
+&lt;rect x=&quot;62&quot; y=&quot;107.5&quot; width=&quot;116&quot; height=&quot;5.5&quot; rx=&quot;2.75&quot; fill=&quot;#D9AEB5&quot;/&gt;
+&lt;polygon points=&quot;44,113 196,113 226,152 14,152&quot; fill=&quot;url(#lapPinkD)&quot; stroke=&quot;#D9AEB5&quot; stroke-width=&quot;.8&quot; stroke-linejoin=&quot;round&quot;/&gt;
+&lt;polygon class=&quot;lapPinkb&quot; points=&quot;55.5,115.2 184.5,115.2 199.7,139.0 40.3,139.0&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;58.0,116.2 66.1,116.2 64.4,119.4 56.1,119.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;67.7,116.2 75.8,116.2 74.4,119.4 66.0,119.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;77.3,116.2 85.4,116.2 84.3,119.4 76.0,119.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;87.0,116.2 95.1,116.2 94.3,119.4 85.9,119.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;96.6,116.2 104.7,116.2 104.3,119.4 95.9,119.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;106.3,116.2 114.4,116.2 114.2,119.4 105.9,119.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;115.9,116.2 124.1,116.2 124.2,119.4 115.8,119.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;125.6,116.2 133.7,116.2 134.1,119.4 125.8,119.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;135.3,116.2 143.4,116.2 144.1,119.4 135.7,119.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;144.9,116.2 153.0,116.2 154.1,119.4 145.7,119.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;154.6,116.2 162.7,116.2 164.0,119.4 155.7,119.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;164.2,116.2 172.3,116.2 174.0,119.4 165.6,119.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;173.9,116.2 182.0,116.2 183.9,119.4 175.6,119.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;55.5,120.4 63.9,120.4 62.1,123.8 53.4,123.8&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;65.5,120.4 74.0,120.4 72.5,123.8 63.8,123.8&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;75.6,120.4 84.0,120.4 82.9,123.8 74.1,123.8&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;85.6,120.4 94.1,120.4 93.2,123.8 84.5,123.8&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;95.7,120.4 104.1,120.4 103.6,123.8 94.9,123.8&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;105.7,120.4 114.2,120.4 114.0,123.8 105.3,123.8&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;115.8,120.4 124.2,120.4 124.4,123.8 115.6,123.8&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;125.8,120.4 134.3,120.4 134.7,123.8 126.0,123.8&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;135.9,120.4 144.3,120.4 145.1,123.8 136.4,123.8&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;145.9,120.4 154.4,120.4 155.5,123.8 146.8,123.8&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;156.0,120.4 164.4,120.4 165.9,123.8 157.1,123.8&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;166.0,120.4 174.5,120.4 176.2,123.8 167.5,123.8&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;176.1,120.4 184.5,120.4 186.6,123.8 177.9,123.8&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;52.8,124.8 61.6,124.8 59.7,128.4 50.6,128.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;63.2,124.8 72.0,124.8 70.5,128.4 61.4,128.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;73.7,124.8 82.5,124.8 81.3,128.4 72.2,128.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;84.2,124.8 93.0,124.8 92.1,128.4 83.0,128.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;94.7,124.8 103.5,124.8 102.9,128.4 93.8,128.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;105.1,124.8 113.9,124.8 113.7,128.4 104.6,128.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;115.6,124.8 124.4,124.8 124.5,128.4 115.5,128.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;126.1,124.8 134.9,124.8 135.4,128.4 126.3,128.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;136.5,124.8 145.3,124.8 146.2,128.4 137.1,128.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;147.0,124.8 155.8,124.8 157.0,128.4 147.9,128.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;157.5,124.8 166.3,124.8 167.8,128.4 158.7,128.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;168.0,124.8 176.8,124.8 178.6,128.4 169.5,128.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;178.4,124.8 187.2,124.8 189.4,128.4 180.3,128.4&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;50.0,129.4 59.1,129.4 57.1,133.2 47.7,133.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;60.9,129.4 70.0,129.4 68.4,133.2 58.9,133.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;71.8,129.4 81.0,129.4 79.7,133.2 70.2,133.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;82.7,129.4 91.9,129.4 90.9,133.2 81.5,133.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;93.6,129.4 102.8,129.4 102.2,133.2 92.7,133.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;104.5,129.4 113.7,129.4 113.5,133.2 104.0,133.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;115.4,129.4 124.6,129.4 124.7,133.2 115.3,133.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;126.3,129.4 135.5,129.4 136.0,133.2 126.5,133.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;137.2,129.4 146.4,129.4 147.3,133.2 137.8,133.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;148.1,129.4 157.3,129.4 158.5,133.2 149.1,133.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;159.0,129.4 168.2,129.4 169.8,133.2 160.3,133.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;170.0,129.4 179.1,129.4 181.1,133.2 171.6,133.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;180.9,129.4 190.0,129.4 192.3,133.2 182.9,133.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;47.1,134.2 56.6,134.2 54.5,138.2 44.6,138.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;58.4,134.2 68.0,134.2 66.2,138.2 56.4,138.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;69.8,134.2 79.3,134.2 78.0,138.2 68.1,138.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;81.1,134.2 147.5,134.2 148.4,138.2 79.9,138.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;149.3,134.2 158.9,134.2 160.1,138.2 150.3,138.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;160.7,134.2 170.2,134.2 171.9,138.2 162.0,138.2&quot;/&gt;&lt;polygon class=&quot;lapPinkk&quot; points=&quot;172.0,134.2 192.9,134.2 195.4,138.2 173.8,138.2&quot;/&gt;&lt;polygon class=&quot;lapPinkp&quot; points=&quot;96.7,140.4 143.3,140.4 145.0,149.4 95.0,149.4&quot;/&gt;
+&lt;path d=&quot;M14 152 H226 L221.5 157.5 Q220 159 217 159 H23 Q20 159 18.5 157.5 Z&quot; fill=&quot;#D9AEB5&quot;/&gt;
+&lt;/symbol&gt;&lt;linearGradient id=&quot;lapBurgL&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#9C4B58&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#6E2834&quot;/&gt;&lt;/linearGradient&gt;
+&lt;linearGradient id=&quot;lapBurgD&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;#7E3442&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;#93485A&quot;/&gt;&lt;/linearGradient&gt;
+&lt;style&gt;.lapBurgk{fill:#A9606E;stroke:#5A1E28;stroke-width:.35}.lapBurgb{fill:#6A2632}.lapBurgp{fill:#93485A;stroke:#5A1E28;stroke-width:.6}&lt;/style&gt;
+&lt;symbol id=&quot;lapBurg&quot; viewBox=&quot;0 0 240 168&quot;&gt;
+&lt;ellipse cx=&quot;120&quot; cy=&quot;161&quot; rx=&quot;108&quot; ry=&quot;5&quot; fill=&quot;#3B2F33&quot; opacity=&quot;.08&quot;/&gt;
+&lt;rect x=&quot;44&quot; y=&quot;4&quot; width=&quot;152&quot; height=&quot;104&quot; rx=&quot;9&quot; fill=&quot;url(#lapBurgL)&quot; stroke=&quot;#5A1E28&quot;/&gt;
+&lt;rect x=&quot;47&quot; y=&quot;7&quot; width=&quot;146&quot; height=&quot;92&quot; rx=&quot;6&quot; fill=&quot;#2F3A31&quot;/&gt;
+&lt;rect x=&quot;50.5&quot; y=&quot;10.5&quot; width=&quot;139&quot; height=&quot;85&quot; rx=&quot;2.5&quot; fill=&quot;url(#cScr)&quot;/&gt;
+&lt;polygon points=&quot;50.5,10.5 124,10.5 86,95.5 50.5,95.5&quot; fill=&quot;#fff&quot; opacity=&quot;.18&quot;/&gt;
+&lt;text x=&quot;120&quot; y=&quot;105.6&quot; text-anchor=&quot;middle&quot; font-family=&quot;Arial,sans-serif&quot; font-size=&quot;6.2&quot; font-weight=&quot;700&quot; letter-spacing=&quot;.6&quot; fill=&quot;#D9A5AE&quot;&gt;acer&lt;/text&gt;
+&lt;rect x=&quot;62&quot; y=&quot;107.5&quot; width=&quot;116&quot; height=&quot;5.5&quot; rx=&quot;2.75&quot; fill=&quot;#5A1E28&quot;/&gt;
+&lt;polygon points=&quot;44,113 196,113 226,152 14,152&quot; fill=&quot;url(#lapBurgD)&quot; stroke=&quot;#5A1E28&quot; stroke-width=&quot;.8&quot; stroke-linejoin=&quot;round&quot;/&gt;
+&lt;polygon class=&quot;lapBurgb&quot; points=&quot;55.5,115.2 184.5,115.2 199.7,139.0 40.3,139.0&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;58.0,116.2 66.1,116.2 64.4,119.4 56.1,119.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;67.7,116.2 75.8,116.2 74.4,119.4 66.0,119.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;77.3,116.2 85.4,116.2 84.3,119.4 76.0,119.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;87.0,116.2 95.1,116.2 94.3,119.4 85.9,119.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;96.6,116.2 104.7,116.2 104.3,119.4 95.9,119.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;106.3,116.2 114.4,116.2 114.2,119.4 105.9,119.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;115.9,116.2 124.1,116.2 124.2,119.4 115.8,119.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;125.6,116.2 133.7,116.2 134.1,119.4 125.8,119.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;135.3,116.2 143.4,116.2 144.1,119.4 135.7,119.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;144.9,116.2 153.0,116.2 154.1,119.4 145.7,119.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;154.6,116.2 162.7,116.2 164.0,119.4 155.7,119.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;164.2,116.2 172.3,116.2 174.0,119.4 165.6,119.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;173.9,116.2 182.0,116.2 183.9,119.4 175.6,119.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;55.5,120.4 63.9,120.4 62.1,123.8 53.4,123.8&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;65.5,120.4 74.0,120.4 72.5,123.8 63.8,123.8&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;75.6,120.4 84.0,120.4 82.9,123.8 74.1,123.8&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;85.6,120.4 94.1,120.4 93.2,123.8 84.5,123.8&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;95.7,120.4 104.1,120.4 103.6,123.8 94.9,123.8&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;105.7,120.4 114.2,120.4 114.0,123.8 105.3,123.8&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;115.8,120.4 124.2,120.4 124.4,123.8 115.6,123.8&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;125.8,120.4 134.3,120.4 134.7,123.8 126.0,123.8&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;135.9,120.4 144.3,120.4 145.1,123.8 136.4,123.8&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;145.9,120.4 154.4,120.4 155.5,123.8 146.8,123.8&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;156.0,120.4 164.4,120.4 165.9,123.8 157.1,123.8&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;166.0,120.4 174.5,120.4 176.2,123.8 167.5,123.8&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;176.1,120.4 184.5,120.4 186.6,123.8 177.9,123.8&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;52.8,124.8 61.6,124.8 59.7,128.4 50.6,128.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;63.2,124.8 72.0,124.8 70.5,128.4 61.4,128.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;73.7,124.8 82.5,124.8 81.3,128.4 72.2,128.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;84.2,124.8 93.0,124.8 92.1,128.4 83.0,128.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;94.7,124.8 103.5,124.8 102.9,128.4 93.8,128.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;105.1,124.8 113.9,124.8 113.7,128.4 104.6,128.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;115.6,124.8 124.4,124.8 124.5,128.4 115.5,128.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;126.1,124.8 134.9,124.8 135.4,128.4 126.3,128.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;136.5,124.8 145.3,124.8 146.2,128.4 137.1,128.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;147.0,124.8 155.8,124.8 157.0,128.4 147.9,128.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;157.5,124.8 166.3,124.8 167.8,128.4 158.7,128.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;168.0,124.8 176.8,124.8 178.6,128.4 169.5,128.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;178.4,124.8 187.2,124.8 189.4,128.4 180.3,128.4&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;50.0,129.4 59.1,129.4 57.1,133.2 47.7,133.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;60.9,129.4 70.0,129.4 68.4,133.2 58.9,133.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;71.8,129.4 81.0,129.4 79.7,133.2 70.2,133.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;82.7,129.4 91.9,129.4 90.9,133.2 81.5,133.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;93.6,129.4 102.8,129.4 102.2,133.2 92.7,133.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;104.5,129.4 113.7,129.4 113.5,133.2 104.0,133.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;115.4,129.4 124.6,129.4 124.7,133.2 115.3,133.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;126.3,129.4 135.5,129.4 136.0,133.2 126.5,133.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;137.2,129.4 146.4,129.4 147.3,133.2 137.8,133.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;148.1,129.4 157.3,129.4 158.5,133.2 149.1,133.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;159.0,129.4 168.2,129.4 169.8,133.2 160.3,133.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;170.0,129.4 179.1,129.4 181.1,133.2 171.6,133.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;180.9,129.4 190.0,129.4 192.3,133.2 182.9,133.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;47.1,134.2 56.6,134.2 54.5,138.2 44.6,138.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;58.4,134.2 68.0,134.2 66.2,138.2 56.4,138.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;69.8,134.2 79.3,134.2 78.0,138.2 68.1,138.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;81.1,134.2 147.5,134.2 148.4,138.2 79.9,138.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;149.3,134.2 158.9,134.2 160.1,138.2 150.3,138.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;160.7,134.2 170.2,134.2 171.9,138.2 162.0,138.2&quot;/&gt;&lt;polygon class=&quot;lapBurgk&quot; points=&quot;172.0,134.2 192.9,134.2 195.4,138.2 173.8,138.2&quot;/&gt;&lt;polygon class=&quot;lapBurgp&quot; points=&quot;96.7,140.4 143.3,140.4 145.0,149.4 95.0,149.4&quot;/&gt;
+&lt;path d=&quot;M14 152 H226 L221.5 157.5 Q220 159 217 159 H23 Q20 159 18.5 157.5 Z&quot; fill=&quot;#5A1E28&quot;/&gt;
+&lt;/symbol&gt;&lt;/defs&gt;&lt;/svg&gt;
+&lt;div class=&quot;app&quot; id=&quot;app&quot;&gt;
+
+&lt;section class=&quot;view on&quot; id=&quot;v-start&quot;&gt;
+ &lt;div class=&quot;blob&quot; style=&quot;width:260px;height:260px;background:var(--pink);top:-60px;right:-90px&quot;&gt;&lt;/div&gt;&lt;div class=&quot;blob&quot; style=&quot;width:220px;height:220px;background:var(--green);bottom:-60px;left:-80px&quot;&gt;&lt;/div&gt;
+ &lt;div class=&quot;logo&quot;&gt;acer&lt;/div&gt;
+ &lt;div class=&quot;c&quot; style=&quot;margin-top:12px&quot;&gt;&lt;div class=&quot;k&quot;&gt;SWIFT AIR 穿搭配色・03&lt;/div&gt;&lt;div class=&quot;h&quot;&gt;今天穿這樣出門？&lt;/div&gt;&lt;p class=&quot;p&quot;&gt;出門前 20 秒，東西會一直冒出來。&lt;br&gt;點到就穿上身，全部疊上去！&lt;/p&gt;&lt;/div&gt;
+ &lt;div class=&quot;stage&quot; id=&quot;startStage&quot; style=&quot;margin-top:4px;flex:1;min-height:200px;max-height:400px&quot;&gt;&lt;/div&gt;
+ &lt;div class=&quot;rules&quot;&gt;&lt;span class=&quot;chip s&quot;&gt;👆 點＝穿上身&lt;/span&gt;&lt;span class=&quot;chip s&quot;&gt;🗼 可以一直疊&lt;/span&gt;&lt;span class=&quot;chip s&quot;&gt;🚫 紅色的別點&lt;/span&gt;&lt;span class=&quot;chip s&quot;&gt;✨ 發光的必接&lt;/span&gt;&lt;/div&gt;
+ &lt;div style=&quot;display:flex;justify-content:center;gap:8px;margin-top:12px;position:relative&quot;&gt;&lt;button class=&quot;chip on&quot; id=&quot;gF&quot;&gt;她&lt;/button&gt;&lt;button class=&quot;chip&quot; id=&quot;gM&quot;&gt;他&lt;/button&gt;&lt;/div&gt;
+ &lt;div class=&quot;btns&quot; style=&quot;margin-top:12px&quot;&gt;&lt;button class=&quot;btn&quot; id=&quot;go&quot;&gt;開始（20 秒）&lt;/button&gt;&lt;/div&gt;
+ &lt;div class=&quot;foot&quot; id=&quot;dexStart&quot;&gt;搭配圖鑑 0/8・找出隱藏搭配有加分&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;view&quot; id=&quot;v-play&quot;&gt;
+ &lt;div class=&quot;blob&quot; style=&quot;width:220px;height:220px;background:var(--green);top:-80px;left:-80px&quot;&gt;&lt;/div&gt;
+ &lt;div class=&quot;hud&quot;&gt;&lt;span class=&quot;chip s timer&quot; id=&quot;timer&quot;&gt;⏰ 0:20&lt;/span&gt;&lt;div class=&quot;score&quot;&gt;&lt;b id=&quot;score&quot;&gt;100%&lt;/b&gt;&lt;span&gt;回頭率&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;chip s&quot; id=&quot;streak&quot;&gt;連穿 ×0&lt;/span&gt;&lt;/div&gt;
+ &lt;div class=&quot;sub&quot;&gt;&lt;span&gt;身上 &lt;b id=&quot;cnt&quot;&gt;0&lt;/b&gt; 件&lt;/span&gt;&lt;span&gt;負重 &lt;b id=&quot;kg&quot;&gt;0.0&lt;/b&gt; kg&lt;/span&gt;&lt;/div&gt;
+ &lt;div class=&quot;kgbar&quot;&gt;&lt;i id=&quot;kgbar&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+ &lt;div class=&quot;stage&quot; id=&quot;stage&quot;&gt;&lt;span class=&quot;say&quot; id=&quot;say&quot;&gt;&lt;/span&gt;&lt;div class=&quot;banner&quot; id=&quot;banner&quot;&gt;&lt;small&gt;COMBO&lt;/small&gt;&lt;b&gt;放假模式&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;
+ &lt;div class=&quot;found&quot;&gt;&lt;span class=&quot;foot&quot; style=&quot;margin:0&quot; id=&quot;hint&quot;&gt;點冒出來的東西就會穿上身&lt;/span&gt;&lt;span class=&quot;dots&quot; id=&quot;foundDots&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;view&quot; id=&quot;v-end&quot;&gt;
+ &lt;div class=&quot;blob&quot; style=&quot;width:300px;height:300px;background:var(--green);top:140px;right:-150px&quot;&gt;&lt;/div&gt;&lt;div class=&quot;blob&quot; style=&quot;width:180px;height:180px;background:var(--pink);top:60px;left:-110px&quot;&gt;&lt;/div&gt;
+ &lt;div class=&quot;c&quot;&gt;&lt;div class=&quot;k&quot;&gt;今日出門鑑定&lt;/div&gt;&lt;div class=&quot;title&quot; id=&quot;title&quot;&gt;放假模式系&lt;/div&gt;&lt;/div&gt;
+ &lt;div class=&quot;stage&quot; id=&quot;endStage&quot; style=&quot;margin-top:4px;flex:1;min-height:160px&quot;&gt;&lt;/div&gt;
+ &lt;div class=&quot;stats&quot;&gt;&lt;div class=&quot;st&quot;&gt;&lt;b id=&quot;sN&quot;&gt;14&lt;/b&gt;&lt;span&gt;身上件數&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;st&quot;&gt;&lt;b id=&quot;sKg&quot;&gt;8.6&lt;/b&gt;&lt;span&gt;負重 kg&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;st&quot;&gt;&lt;b id=&quot;sR&quot;&gt;1,280%&lt;/b&gt;&lt;span&gt;回頭率&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+ &lt;div class=&quot;combos&quot; id=&quot;combos&quot;&gt;&lt;/div&gt;
+ &lt;div class=&quot;card&quot; style=&quot;margin-top:8px&quot;&gt;&lt;p class=&quot;p&quot; style=&quot;color:var(--ink);font-size:13px;line-height:20px&quot; id=&quot;copy&quot;&gt;&lt;/p&gt;&lt;/div&gt;
+ &lt;div class=&quot;btns&quot; style=&quot;margin-top:12px&quot;&gt;&lt;button class=&quot;btn&quot; id=&quot;save&quot;&gt;存成限動&lt;/button&gt;&lt;button class=&quot;btn o&quot; id=&quot;again&quot;&gt;再出門一次&lt;/button&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;div class=&quot;sheet&quot; id=&quot;sheet&quot; hidden&gt;&lt;img id=&quot;sheetImg&quot; alt=&quot;分享圖&quot;&gt;&lt;p&gt;長按圖片就能存到手機&lt;br&gt;分享文字也已經複製好了&lt;/p&gt;&lt;button class=&quot;btn o&quot; id=&quot;sheetClose&quot;&gt;關閉&lt;/button&gt;&lt;/div&gt;
+&lt;div class=&quot;toast&quot; id=&quot;toast&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+(()=&gt;{
+const INK=&#x27;#3B2F33&#x27;, SKIN=&#x27;#F6D9C6&#x27;, HAIR=&#x27;#3B2F33&#x27;, PINK=&#x27;#F3D9DC&#x27;, GREEN=&#x27;#CFE3D0&#x27;, BURG=&#x27;#7A2E3A&#x27;, YEL=&#x27;#F7E7B4&#x27;, DINO=&#x27;#8DBF93&#x27;, DINO_DK=&#x27;#6FA57A&#x27;, GOLD=&#x27;#F7C948&#x27;;
+const ROUND_MS = 20000;
+const $ = id =&gt; document.getElementById(id);
+const views={start:$(&#x27;v-start&#x27;),play:$(&#x27;v-play&#x27;),end:$(&#x27;v-end&#x27;)};
+const show=v=&gt;{for(const k in views) views[k].classList.toggle(&#x27;on&#x27;,k===v);};
+
+// ---------- item art (sticker style) ----------
+const lei = (()=&gt;{ let s=&#x27;&#x27;; const cols=[&#x27;#F3A6B4&#x27;,&#x27;#F7C948&#x27;,&#x27;#fff&#x27;,&#x27;#E85D4A&#x27;,&#x27;#F3A6B4&#x27;,&#x27;#F7C948&#x27;,&#x27;#fff&#x27;,&#x27;#E85D4A&#x27;,&#x27;#F3A6B4&#x27;,&#x27;#F7C948&#x27;];
+  for(let i=0;i&lt;10;i++){ const a=Math.PI*(0.05+i*0.1), x=30-24*Math.cos(a), y=6+16*Math.sin(a); s+=`&lt;circle cx=&quot;${x.toFixed(1)}&quot; cy=&quot;${y.toFixed(1)}&quot; r=&quot;4.6&quot; fill=&quot;${cols[i]}&quot; stroke=&quot;#E2C1C6&quot; stroke-width=&quot;.6&quot;/&gt;&lt;circle cx=&quot;${x.toFixed(1)}&quot; cy=&quot;${y.toFixed(1)}&quot; r=&quot;1.4&quot; fill=&quot;#F7C948&quot;/&gt;`; } return s; })();
+const ART = {
+ beret:`&lt;ellipse cx=&quot;20&quot; cy=&quot;24&quot; rx=&quot;17&quot; ry=&quot;7&quot; fill=&quot;${BURG}&quot; transform=&quot;rotate(-8 20 24)&quot;/&gt;&lt;circle cx=&quot;18&quot; cy=&quot;15&quot; r=&quot;2.5&quot; fill=&quot;${BURG}&quot;/&gt;`,
+ dino:`&lt;path d=&quot;M6 32 Q4 8 20 7 Q36 8 34 32 Z&quot; fill=&quot;${DINO}&quot; stroke=&quot;${DINO_DK}&quot; stroke-width=&quot;1.5&quot;/&gt;&lt;path d=&quot;M10 12 L8 4 L14 9 M18 7 L19 0 L23 7 M27 9 L32 3 L31 12&quot; stroke=&quot;${DINO_DK}&quot; stroke-width=&quot;2.5&quot; fill=&quot;${DINO_DK}&quot; stroke-linejoin=&quot;round&quot;/&gt;&lt;circle cx=&quot;14&quot; cy=&quot;15&quot; r=&quot;3.5&quot; fill=&quot;#fff&quot;/&gt;&lt;circle cx=&quot;26&quot; cy=&quot;15&quot; r=&quot;3.5&quot; fill=&quot;#fff&quot;/&gt;&lt;circle cx=&quot;15&quot; cy=&quot;16&quot; r=&quot;1.6&quot; fill=&quot;${INK}&quot;/&gt;&lt;circle cx=&quot;25&quot; cy=&quot;16&quot; r=&quot;1.6&quot; fill=&quot;${INK}&quot;/&gt;&lt;path d=&quot;M9 32 L12 27 L15 32 L18 27 L21 32 L24 27 L27 32 L30 27 L31 32&quot; fill=&quot;#fff&quot;/&gt;`,
+ helmet:`&lt;path d=&quot;M6 28 Q6 9 20 9 Q34 9 34 28 Z&quot; fill=&quot;${GOLD}&quot; stroke=&quot;#D9A82A&quot;/&gt;&lt;rect x=&quot;2&quot; y=&quot;27&quot; width=&quot;36&quot; height=&quot;5&quot; rx=&quot;2.5&quot; fill=&quot;${GOLD}&quot; stroke=&quot;#D9A82A&quot;/&gt;&lt;path d=&quot;M20 9 V27&quot; stroke=&quot;#D9A82A&quot; stroke-width=&quot;3&quot;/&gt;&lt;path d=&quot;M11 18 Q13 13 17 12&quot; stroke=&quot;#fff&quot; stroke-width=&quot;2&quot; fill=&quot;none&quot; opacity=&quot;.6&quot;/&gt;`,
+ party:`&lt;path d=&quot;M20 4 L31 35 H9 Z&quot; fill=&quot;#F3A6B4&quot;/&gt;&lt;path d=&quot;M14 21 L27 17 M11 29 L30 24 M17 13 L24 11&quot; stroke=&quot;#fff&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;circle cx=&quot;20&quot; cy=&quot;5&quot; r=&quot;3.5&quot; fill=&quot;#83B81A&quot;/&gt;`,
+ cat:`&lt;path d=&quot;M10 19 L11 8 L17 15 Z M30 19 L29 8 L23 15 Z&quot; fill=&quot;#F2A65A&quot;/&gt;&lt;path d=&quot;M12 11 L13 13 L15 14Z M28 11 L27 13 L25 14Z&quot; fill=&quot;#F7C9C9&quot;/&gt;&lt;path d=&quot;M5 34 Q4 15 20 14 Q36 15 35 34 Z&quot; fill=&quot;#F2A65A&quot;/&gt;&lt;path d=&quot;M18 14 L19 18 M22 14 L21 18 M7 26 L11 26 M33 26 L29 26&quot; stroke=&quot;#D9853A&quot; stroke-width=&quot;1.6&quot;/&gt;&lt;path d=&quot;M13 22 Q15 24 17 22 M23 22 Q25 24 27 22&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;1.5&quot; fill=&quot;none&quot;/&gt;&lt;path d=&quot;M19 25 L21 25 L20 26.5Z&quot; fill=&quot;#E08A8A&quot;/&gt;&lt;ellipse cx=&quot;13&quot; cy=&quot;33&quot; rx=&quot;4.5&quot; ry=&quot;2.2&quot; fill=&quot;#F7D3A6&quot;/&gt;&lt;ellipse cx=&quot;27&quot; cy=&quot;33&quot; rx=&quot;4.5&quot; ry=&quot;2.2&quot; fill=&quot;#F7D3A6&quot;/&gt;`,
+ crown:`&lt;path d=&quot;M5 31 L7 12 L14 21 L20 7 L26 21 L33 12 L35 31 Z&quot; fill=&quot;${GOLD}&quot; stroke=&quot;#D9A82A&quot; stroke-linejoin=&quot;round&quot;/&gt;&lt;circle cx=&quot;20&quot; cy=&quot;25&quot; r=&quot;2.6&quot; fill=&quot;#E85D4A&quot;/&gt;&lt;circle cx=&quot;12&quot; cy=&quot;26&quot; r=&quot;2&quot; fill=&quot;#2F6FD6&quot;/&gt;&lt;circle cx=&quot;28&quot; cy=&quot;26&quot; r=&quot;2&quot; fill=&quot;#83B81A&quot;/&gt;`,
+ shades:`&lt;path d=&quot;M2 17 H38&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;2&quot;/&gt;&lt;rect x=&quot;4&quot; y=&quot;16&quot; width=&quot;14&quot; height=&quot;10&quot; rx=&quot;4&quot; fill=&quot;${INK}&quot;/&gt;&lt;rect x=&quot;22&quot; y=&quot;16&quot; width=&quot;14&quot; height=&quot;10&quot; rx=&quot;4&quot; fill=&quot;${INK}&quot;/&gt;&lt;path d=&quot;M7 19 L11 19&quot; stroke=&quot;#fff&quot; stroke-width=&quot;1.6&quot; stroke-linecap=&quot;round&quot;/&gt;`,
+ goggles:`&lt;path d=&quot;M2 19 H38&quot; stroke=&quot;#2F6FD6&quot; stroke-width=&quot;3&quot;/&gt;&lt;rect x=&quot;5&quot; y=&quot;12&quot; width=&quot;30&quot; height=&quot;15&quot; rx=&quot;7.5&quot; fill=&quot;#9FD3F0&quot; stroke=&quot;#2F6FD6&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;path d=&quot;M20 14 V25&quot; stroke=&quot;#2F6FD6&quot; stroke-width=&quot;2&quot;/&gt;&lt;path d=&quot;M34 13 V3 Q34 1 36 1 H38&quot; stroke=&quot;${GOLD}&quot; stroke-width=&quot;3&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/&gt;`,
+ stache:`&lt;path d=&quot;M20 18 Q14 11 8 15 Q4 18 2 15 Q4 26 12 24 Q17 23 20 20 Q23 23 28 24 Q36 26 38 15 Q36 18 32 15 Q26 11 20 18 Z&quot; fill=&quot;${INK}&quot;/&gt;`,
+ lanyard:`&lt;path d=&quot;M12 2 L18 21 M28 2 L22 21&quot; stroke=&quot;${BURG}&quot; stroke-width=&quot;2&quot;/&gt;&lt;rect x=&quot;12&quot; y=&quot;19&quot; width=&quot;16&quot; height=&quot;19&quot; rx=&quot;2&quot; fill=&quot;#fff&quot; stroke=&quot;#D9CFCB&quot;/&gt;&lt;rect x=&quot;12&quot; y=&quot;19&quot; width=&quot;16&quot; height=&quot;5&quot; rx=&quot;2&quot; fill=&quot;#83B81A&quot;/&gt;&lt;rect x=&quot;15&quot; y=&quot;28&quot; width=&quot;10&quot; height=&quot;2&quot; fill=&quot;#D9CFCB&quot;/&gt;&lt;rect x=&quot;15&quot; y=&quot;32&quot; width=&quot;7&quot; height=&quot;2&quot; fill=&quot;#D9CFCB&quot;/&gt;`,
+ lei:lei,
+ medal:`&lt;path d=&quot;M12 1 L18 17 M28 1 L22 17&quot; stroke=&quot;#2F6FD6&quot; stroke-width=&quot;4&quot;/&gt;&lt;circle cx=&quot;20&quot; cy=&quot;27&quot; r=&quot;10&quot; fill=&quot;${GOLD}&quot; stroke=&quot;#D9A82A&quot; stroke-width=&quot;2&quot;/&gt;&lt;text x=&quot;20&quot; y=&quot;31&quot; text-anchor=&quot;middle&quot; font-size=&quot;11&quot; font-weight=&quot;900&quot; fill=&quot;#B07A10&quot; font-family=&quot;sans-serif&quot;&gt;1&lt;/text&gt;`,
+ ring:`&lt;ellipse cx=&quot;50&quot; cy=&quot;16&quot; rx=&quot;44&quot; ry=&quot;11&quot; fill=&quot;none&quot; stroke=&quot;#F3A6B4&quot; stroke-width=&quot;10&quot;/&gt;&lt;ellipse cx=&quot;50&quot; cy=&quot;16&quot; rx=&quot;44&quot; ry=&quot;11&quot; fill=&quot;none&quot; stroke=&quot;#fff&quot; stroke-width=&quot;10&quot; stroke-dasharray=&quot;14 14&quot;/&gt;`,
+ boba:`&lt;path d=&quot;M11 10 H29 L26 37 H14 Z&quot; fill=&quot;#E9CFA8&quot; stroke=&quot;#B48A5A&quot;/&gt;&lt;ellipse cx=&quot;20&quot; cy=&quot;10&quot; rx=&quot;10&quot; ry=&quot;3&quot; fill=&quot;#F4F4F4&quot; stroke=&quot;#BDBDBD&quot;/&gt;&lt;path d=&quot;M23 9 L27 1&quot; stroke=&quot;${BURG}&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;g fill=&quot;#3A2A1E&quot;&gt;&lt;circle cx=&quot;17&quot; cy=&quot;32&quot; r=&quot;2.2&quot;/&gt;&lt;circle cx=&quot;22&quot; cy=&quot;33&quot; r=&quot;2.2&quot;/&gt;&lt;circle cx=&quot;20&quot; cy=&quot;28&quot; r=&quot;2.2&quot;/&gt;&lt;/g&gt;`,
+ leek:`&lt;path d=&quot;M10 36 L24 14&quot; stroke=&quot;#F4F1E6&quot; stroke-width=&quot;6&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;path d=&quot;M24 14 L34 2 M24 14 L37 8 M24 14 L30 2&quot; stroke=&quot;#6FA57A&quot; stroke-width=&quot;4&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;path d=&quot;M8 38 L11 34 M10 38 L12 35&quot; stroke=&quot;#E2D9C2&quot; stroke-width=&quot;1.5&quot;/&gt;`,
+ basket:`&lt;path d=&quot;M10 18 Q20 5 30 18&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;2&quot; fill=&quot;none&quot;/&gt;&lt;path d=&quot;M5 18 H35 L31 36 H9 Z&quot; fill=&quot;#E7C9A0&quot;/&gt;&lt;path d=&quot;M7 24 H33 M8 30 H32 M14 18 L15 36 M20 18 V36 M26 18 L25 36&quot; stroke=&quot;#C9A170&quot; stroke-width=&quot;1&quot;/&gt;&lt;circle cx=&quot;13&quot; cy=&quot;15&quot; r=&quot;4&quot; fill=&quot;#83B81A&quot;/&gt;&lt;circle cx=&quot;27&quot; cy=&quot;14&quot; r=&quot;4.5&quot; fill=&quot;#E85D4A&quot;/&gt;`,
+ drum:`&lt;ellipse cx=&quot;25&quot; cy=&quot;15&quot; rx=&quot;11&quot; ry=&quot;9&quot; fill=&quot;#C97A3A&quot; transform=&quot;rotate(-30 25 15)&quot;/&gt;&lt;path d=&quot;M20 9 Q25 6 30 9&quot; stroke=&quot;#E8A160&quot; stroke-width=&quot;2&quot; fill=&quot;none&quot;/&gt;&lt;path d=&quot;M18 21 L9 31&quot; stroke=&quot;#F4EFE6&quot; stroke-width=&quot;4&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;circle cx=&quot;8&quot; cy=&quot;34&quot; r=&quot;3&quot; fill=&quot;#F4EFE6&quot;/&gt;&lt;circle cx=&quot;5.5&quot; cy=&quot;30.5&quot; r=&quot;3&quot; fill=&quot;#F4EFE6&quot;/&gt;`,
+ balloon:`&lt;ellipse cx=&quot;20&quot; cy=&quot;15&quot; rx=&quot;13&quot; ry=&quot;14&quot; fill=&quot;#E85D4A&quot;/&gt;&lt;path d=&quot;M18 29 L22 29 L20 32Z&quot; fill=&quot;#E85D4A&quot;/&gt;&lt;path d=&quot;M20 32 Q24 46 18 58 Q14 68 20 78&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;1&quot; fill=&quot;none&quot;/&gt;&lt;ellipse cx=&quot;15&quot; cy=&quot;10&quot; rx=&quot;3&quot; ry=&quot;5&quot; fill=&quot;#fff&quot; opacity=&quot;.5&quot;/&gt;`,
+ selfie:`&lt;path d=&quot;M8 37 L27 10&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;g transform=&quot;rotate(35 30 9)&quot;&gt;&lt;rect x=&quot;24&quot; y=&quot;0&quot; width=&quot;12&quot; height=&quot;20&quot; rx=&quot;2&quot; fill=&quot;${INK}&quot;/&gt;&lt;circle cx=&quot;30&quot; cy=&quot;4&quot; r=&quot;2&quot; fill=&quot;#9FD3F0&quot;/&gt;&lt;/g&gt;`,
+ box:`&lt;rect x=&quot;5&quot; y=&quot;8&quot; width=&quot;30&quot; height=&quot;27&quot; rx=&quot;3&quot; fill=&quot;${YEL}&quot; stroke=&quot;#E2CC86&quot;/&gt;&lt;rect x=&quot;5&quot; y=&quot;14&quot; width=&quot;30&quot; height=&quot;5&quot; fill=&quot;${BURG}&quot;/&gt;&lt;text x=&quot;20&quot; y=&quot;30&quot; text-anchor=&quot;middle&quot; font-size=&quot;8&quot; font-weight=&quot;900&quot; fill=&quot;${BURG}&quot; font-family=&quot;sans-serif&quot;&gt;外送&lt;/text&gt;`,
+ pack:`&lt;rect x=&quot;7&quot; y=&quot;6&quot; width=&quot;26&quot; height=&quot;32&quot; rx=&quot;8&quot; fill=&quot;#E85D4A&quot;/&gt;&lt;rect x=&quot;10&quot; y=&quot;21&quot; width=&quot;20&quot; height=&quot;13&quot; rx=&quot;4&quot; fill=&quot;#C94A3A&quot;/&gt;&lt;path d=&quot;M14 6 Q20 0 26 6&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;2&quot; fill=&quot;none&quot;/&gt;&lt;rect x=&quot;17&quot; y=&quot;25&quot; width=&quot;6&quot; height=&quot;2&quot; fill=&quot;${GOLD}&quot;/&gt;&lt;path d=&quot;M7 14 H33&quot; stroke=&quot;#C94A3A&quot; stroke-width=&quot;2&quot;/&gt;`,
+ guitar:`&lt;path d=&quot;M25 4 L31 1 L34 5 L29 9 Z&quot; fill=&quot;#5B3A22&quot;/&gt;&lt;path d=&quot;M29 7 L18 22&quot; stroke=&quot;#5B3A22&quot; stroke-width=&quot;3&quot;/&gt;&lt;path d=&quot;M18 17 Q23 21 21 26 Q25 32 19 37 Q12 41 7 36 Q1 30 8 25 Q9 20 13 19 Q15 15 18 17 Z&quot; fill=&quot;#E8A160&quot; stroke=&quot;#B5712E&quot;/&gt;&lt;circle cx=&quot;14&quot; cy=&quot;28&quot; r=&quot;3&quot; fill=&quot;#5B3A22&quot;/&gt;`,
+ slippers:`&lt;rect x=&quot;2&quot; y=&quot;20&quot; width=&quot;16&quot; height=&quot;15&quot; rx=&quot;7.5&quot; fill=&quot;#F2F2F2&quot; stroke=&quot;#BDBDBD&quot;/&gt;&lt;path d=&quot;M3 27 Q10 13 17 27 Z&quot; fill=&quot;#2F6FD6&quot;/&gt;&lt;rect x=&quot;22&quot; y=&quot;20&quot; width=&quot;16&quot; height=&quot;15&quot; rx=&quot;7.5&quot; fill=&quot;#F2F2F2&quot; stroke=&quot;#BDBDBD&quot;/&gt;&lt;path d=&quot;M23 27 Q30 13 37 27 Z&quot; fill=&quot;#2F6FD6&quot;/&gt;`,
+ flippers:`&lt;path d=&quot;M3 37 L7 14 Q10 10 13 14 L18 37 Q10 41 3 37 Z&quot; fill=&quot;#2FB5A6&quot;/&gt;&lt;path d=&quot;M22 37 L26 14 Q29 10 32 14 L37 37 Q29 41 22 37 Z&quot; fill=&quot;#2FB5A6&quot;/&gt;&lt;path d=&quot;M7 28 L8 36 M10 27 V37 M13 28 L12 36 M26 28 L27 36 M29 27 V37 M32 28 L31 36&quot; stroke=&quot;#1F8F83&quot; stroke-width=&quot;1&quot;/&gt;`,
+ corgi:`&lt;path d=&quot;M9 22 Q3 17 7 12&quot; stroke=&quot;#E8A160&quot; stroke-width=&quot;4&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;ellipse cx=&quot;27&quot; cy=&quot;24&quot; rx=&quot;18&quot; ry=&quot;9&quot; fill=&quot;#E8A160&quot;/&gt;&lt;ellipse cx=&quot;28&quot; cy=&quot;28&quot; rx=&quot;14&quot; ry=&quot;5&quot; fill=&quot;#fff&quot;/&gt;&lt;rect x=&quot;14&quot; y=&quot;29&quot; width=&quot;5&quot; height=&quot;8&quot; rx=&quot;2&quot; fill=&quot;#E8A160&quot;/&gt;&lt;rect x=&quot;34&quot; y=&quot;29&quot; width=&quot;5&quot; height=&quot;8&quot; rx=&quot;2&quot; fill=&quot;#E8A160&quot;/&gt;&lt;path d=&quot;M41 9 L42 1 L47 8 Z M48 8 L53 1 L52 10 Z&quot; fill=&quot;#E8A160&quot;/&gt;&lt;circle cx=&quot;46&quot; cy=&quot;15&quot; r=&quot;8&quot; fill=&quot;#E8A160&quot;/&gt;&lt;path d=&quot;M45 17 Q50 22 54 18 Q53 13 48 14 Z&quot; fill=&quot;#fff&quot;/&gt;&lt;circle cx=&quot;47&quot; cy=&quot;13&quot; r=&quot;1.3&quot; fill=&quot;${INK}&quot;/&gt;&lt;circle cx=&quot;54&quot; cy=&quot;16.5&quot; r=&quot;1.6&quot; fill=&quot;${INK}&quot;/&gt;&lt;path d=&quot;M50 20 Q51 23 53 21&quot; fill=&quot;#F08AA0&quot;/&gt;`,
+ ot:`&lt;rect x=&quot;2&quot; y=&quot;7&quot; width=&quot;36&quot; height=&quot;24&quot; rx=&quot;6&quot; fill=&quot;#E85D4A&quot;/&gt;&lt;text x=&quot;20&quot; y=&quot;24&quot; text-anchor=&quot;middle&quot; font-size=&quot;10&quot; font-weight=&quot;900&quot; fill=&quot;#fff&quot; font-family=&quot;sans-serif&quot;&gt;加班？&lt;/text&gt;&lt;path d=&quot;M10 31 L8 38 L17 31Z&quot; fill=&quot;#E85D4A&quot;/&gt;`,
+ boss:`&lt;rect x=&quot;10&quot; y=&quot;2&quot; width=&quot;20&quot; height=&quot;36&quot; rx=&quot;4&quot; fill=&quot;${INK}&quot;/&gt;&lt;rect x=&quot;12&quot; y=&quot;6&quot; width=&quot;16&quot; height=&quot;24&quot; rx=&quot;2&quot; fill=&quot;#E85D4A&quot;/&gt;&lt;text x=&quot;20&quot; y=&quot;21&quot; text-anchor=&quot;middle&quot; font-size=&quot;7&quot; font-weight=&quot;900&quot; fill=&quot;#fff&quot; font-family=&quot;sans-serif&quot;&gt;老闆&lt;/text&gt;&lt;path d=&quot;M4 10 Q2 14 4 18 M36 10 Q38 14 36 18&quot; stroke=&quot;#E85D4A&quot; stroke-width=&quot;2&quot; fill=&quot;none&quot;/&gt;`,
+ cloud:`&lt;path d=&quot;M14 26 Q4 26 6 18 Q8 10 18 12 Q22 2 34 6 Q44 4 46 14 Q56 14 54 22 Q52 28 44 26 Z&quot; fill=&quot;#8C8C96&quot;/&gt;&lt;path d=&quot;M18 30 L16 36 M28 30 L26 38 M38 30 L36 36&quot; stroke=&quot;#6FA3D9&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot;/&gt;`,
+};
+// a: where it goes on the body; w: drawn width (doll units); vb: art viewBox; g: grams; p: 回頭率 points
+const ITEMS = {
+ beret:{name:&#x27;貝雷帽&#x27;,a:&#x27;head&#x27;,w:46,g:80,p:40},
+ dino:{name:&#x27;恐龍頭套&#x27;,a:&#x27;head&#x27;,w:58,g:450,p:80,line:&#x27;這樣……可以嗎？&#x27;},
+ helmet:{name:&#x27;安全帽&#x27;,a:&#x27;head&#x27;,w:52,g:400,p:50,line:&#x27;安全第一&#x27;},
+ party:{name:&#x27;生日帽&#x27;,a:&#x27;head&#x27;,w:34,g:20,p:50,line:&#x27;今天我生日？&#x27;},
+ cat:{name:&#x27;貓&#x27;,a:&#x27;head&#x27;,w:50,g:4500,p:90,line:&#x27;牠自己跳上來的&#x27;},
+ crown:{name:&#x27;皇冠&#x27;,a:&#x27;head&#x27;,w:44,g:300,p:70,line:&#x27;今天我最大&#x27;},
+ shades:{name:&#x27;墨鏡&#x27;,a:&#x27;face&#x27;,w:62,g:30,p:40,line:&#x27;今天走酷路線&#x27;},
+ goggles:{name:&#x27;潛水鏡&#x27;,a:&#x27;face&#x27;,w:66,g:250,p:60},
+ stache:{name:&#x27;假鬍子&#x27;,a:&#x27;mouth&#x27;,w:34,g:5,p:60,line:&#x27;嗯哼。&#x27;},
+ lanyard:{name:&#x27;識別證&#x27;,a:&#x27;neck&#x27;,w:34,g:30,p:40,line:&#x27;下班忘了拔……&#x27;},
+ lei:{name:&#x27;夏威夷花圈&#x27;,a:&#x27;neck&#x27;,w:60,vb:&#x27;0 0 60 30&#x27;,g:120,p:50},
+ medal:{name:&#x27;金牌&#x27;,a:&#x27;neck&#x27;,w:30,g:200,p:50,line:&#x27;通勤冠軍&#x27;},
+ ring:{name:&#x27;游泳圈&#x27;,a:&#x27;waist&#x27;,w:110,vb:&#x27;0 0 100 32&#x27;,g:350,p:80,line:&#x27;隨時準備放假！&#x27;},
+ boba:{name:&#x27;珍奶&#x27;,a:&#x27;hand&#x27;,w:30,g:750,p:40,line:&#x27;續命用的&#x27;},
+ leek:{name:&#x27;一根蔥&#x27;,a:&#x27;hand&#x27;,w:42,g:150,p:60,line:&#x27;蔥是今年流行色&#x27;},
+ basket:{name:&#x27;菜籃&#x27;,a:&#x27;hand&#x27;,w:42,g:900,p:50,line:&#x27;下班直接去市場&#x27;},
+ drum:{name:&#x27;雞腿&#x27;,a:&#x27;hand&#x27;,w:34,g:250,p:40},
+ balloon:{name:&#x27;氣球&#x27;,a:&#x27;hand&#x27;,w:30,vb:&#x27;0 0 40 80&#x27;,g:5,p:50,ay:.97},
+ selfie:{name:&#x27;自拍棒&#x27;,a:&#x27;hand&#x27;,w:44,g:300,p:50,line:&#x27;等我拍一張&#x27;},
+ box:{name:&#x27;外送箱&#x27;,a:&#x27;back&#x27;,w:58,g:2200,p:70,line:&#x27;順便接個單？&#x27;},
+ pack:{name:&#x27;登山包&#x27;,a:&#x27;back&#x27;,w:56,g:3500,p:60,line:&#x27;今天要攻頂嗎&#x27;},
+ guitar:{name:&#x27;吉他&#x27;,a:&#x27;back&#x27;,w:66,g:2500,p:60},
+ slippers:{name:&#x27;藍白拖&#x27;,a:&#x27;feet&#x27;,w:62,g:300,p:50},
+ flippers:{name:&#x27;蛙鞋&#x27;,a:&#x27;feet&#x27;,w:70,g:900,p:70,line:&#x27;走路啪搭啪搭&#x27;},
+ corgi:{name:&#x27;柯基&#x27;,a:&#x27;pet&#x27;,w:80,vb:&#x27;0 0 60 40&#x27;,g:11000,p:100,line:&#x27;牠也要一起去&#x27;},
+ laptop:{name:&#x27;Swift Air 14&#x27;,a:&#x27;laptop&#x27;,w:70,vb:&#x27;0 0 240 168&#x27;,g:1190,p:150,rare:true},
+ ot:{name:&#x27;加班通知&#x27;,a:&#x27;cloud&#x27;,bad:true,p:-150,line:&#x27;啊……今晚加班&#x27;},
+ boss:{name:&#x27;老闆來電&#x27;,a:&#x27;cloud&#x27;,bad:true,p:-150,line:&#x27;老闆打來了……&#x27;},
+ cloud:{name:&#x27;烏雲&#x27;,a:&#x27;none&#x27;,w:60,vb:&#x27;0 0 60 40&#x27;,hidden:true},   // 點到加班才會出現在頭上
+};
+const NORMAL = Object.keys(ITEMS).filter(k=&gt;!ITEMS[k].bad &amp;&amp; !ITEMS[k].rare &amp;&amp; !ITEMS[k].hidden);
+const LAP_COLORS = [{key:&#x27;green&#x27;,name:&#x27;晨露綠&#x27;,hex:GREEN,sym:&#x27;lapGreen&#x27;},{key:&#x27;pink&#x27;,name:&#x27;柔霧粉&#x27;,hex:PINK,sym:&#x27;lapPink&#x27;},{key:&#x27;burg&#x27;,name:&#x27;勃根地紅&#x27;,hex:BURG,sym:&#x27;lapBurg&#x27;}];
+const COMBOS = [
+ {id:&#x27;beach&#x27;, name:&#x27;放假模式&#x27;, need:w=&gt;w.shades&amp;&amp;w.ring&amp;&amp;(w.slippers||w.flippers), bonus:300},
+ {id:&#x27;jura&#x27;, name:&#x27;侏羅紀上班族&#x27;, need:w=&gt;w.dino&amp;&amp;w.lanyard, bonus:200},
+ {id:&#x27;market&#x27;, name:&#x27;菜市場人生&#x27;, need:w=&gt;w.basket&amp;&amp;w.leek, bonus:200},
+ {id:&#x27;dive&#x27;, name:&#x27;潛水去上班&#x27;, need:w=&gt;w.goggles&amp;&amp;w.flippers&amp;&amp;w.lanyard, bonus:300},
+ {id:&#x27;bday&#x27;, name:&#x27;生日主角&#x27;, need:w=&gt;w.party&amp;&amp;w.balloon&amp;&amp;w.crown, bonus:300},
+ {id:&#x27;tower&#x27;, name:&#x27;帽子疊疊樂&#x27;, need:w=&gt;(w._head||0)&gt;=3, bonus:250},
+ {id:&#x27;pets&#x27;, name:&#x27;鏟屎官出門&#x27;, need:w=&gt;w.cat&amp;&amp;w.corgi, bonus:250},
+ {id:&#x27;influ&#x27;, name:&#x27;外送網紅&#x27;, need:w=&gt;w.box&amp;&amp;w.selfie, bonus:200},
+];
+
+// ---------- the doll ----------
+const FACES = {
+ smile:`&lt;ellipse cx=&quot;68&quot; cy=&quot;64&quot; rx=&quot;3&quot; ry=&quot;4&quot; fill=&quot;${INK}&quot;/&gt;&lt;ellipse cx=&quot;92&quot; cy=&quot;64&quot; rx=&quot;3&quot; ry=&quot;4&quot; fill=&quot;${INK}&quot;/&gt;&lt;path d=&quot;M74 76 Q80 82 86 76&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;2.2&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/&gt;`,
+ wow:`&lt;ellipse cx=&quot;68&quot; cy=&quot;63&quot; rx=&quot;3.5&quot; ry=&quot;4.5&quot; fill=&quot;${INK}&quot;/&gt;&lt;ellipse cx=&quot;92&quot; cy=&quot;63&quot; rx=&quot;3.5&quot; ry=&quot;4.5&quot; fill=&quot;${INK}&quot;/&gt;&lt;ellipse cx=&quot;80&quot; cy=&quot;79&quot; rx=&quot;4&quot; ry=&quot;5&quot; fill=&quot;#B34A5A&quot;/&gt;`,
+ strain:`&lt;path d=&quot;M63 60 L72 64 L63 68 M97 60 L88 64 L97 68&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;2.2&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;&lt;rect x=&quot;72&quot; y=&quot;74&quot; width=&quot;16&quot; height=&quot;8&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;1.8&quot;/&gt;&lt;path d=&quot;M76 74 V82 M80 74 V82 M84 74 V82&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;1&quot;/&gt;&lt;path d=&quot;M116 46 Q120 54 116 58 Q112 54 116 46 Z M44 52 Q47 58 44 61 Q41 58 44 52 Z&quot; fill=&quot;#BFE0F2&quot;/&gt;`,
+ dizzy:`&lt;path d=&quot;M64 64 m-4 0 a4 4 0 1 1 8 0 a3 3 0 1 1 -6 0 a2 2 0 1 1 4 0&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;1.6&quot; fill=&quot;none&quot;/&gt;&lt;path d=&quot;M88 64 m-4 0 a4 4 0 1 1 8 0 a3 3 0 1 1 -6 0 a2 2 0 1 1 4 0&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;1.6&quot; fill=&quot;none&quot;/&gt;&lt;path d=&quot;M72 80 Q76 76 80 80 Q84 84 88 80&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;2&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;path d=&quot;M116 46 Q120 54 116 58 Q112 54 116 46 Z M44 52 Q47 58 44 61 Q41 58 44 52 Z M120 66 Q123 72 120 75 Q117 72 120 66Z&quot; fill=&quot;#BFE0F2&quot;/&gt;`,
+ sad:`&lt;ellipse cx=&quot;68&quot; cy=&quot;66&quot; rx=&quot;3&quot; ry=&quot;3.5&quot; fill=&quot;${INK}&quot;/&gt;&lt;ellipse cx=&quot;92&quot; cy=&quot;66&quot; rx=&quot;3&quot; ry=&quot;3.5&quot; fill=&quot;${INK}&quot;/&gt;&lt;path d=&quot;M62 57 L72 55 M98 57 L88 55&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;path d=&quot;M74 82 Q80 77 86 82&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;2.2&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/&gt;`,
+ proud:`&lt;path d=&quot;M64 65 Q68 61 72 65&quot; stroke=&quot;${INK}&quot; stroke-width=&quot;2.4&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;ellipse cx=&quot;92&quot; cy=&quot;64&quot; rx=&quot;3&quot; ry=&quot;4&quot; fill=&quot;${INK}&quot;/&gt;&lt;path d=&quot;M73 75 Q80 75 87 75 Q86 84 80 84 Q74 84 73 75 Z&quot; fill=&quot;#B34A5A&quot;/&gt;&lt;path d=&quot;M76 80 Q80 78 84 80 Q82 83 80 83 Q78 83 76 80 Z&quot; fill=&quot;#F08AA0&quot;/&gt;`,
+};
+function baseDoll(gender, face, squash){
+  const g=[];
+  g.push(`&lt;ellipse cx=&quot;80&quot; cy=&quot;262&quot; rx=&quot;${(44+squash*200).toFixed(1)}&quot; ry=&quot;5&quot; fill=&quot;${INK}&quot; opacity=&quot;.08&quot;/&gt;`);
+  g.push(`&lt;g transform=&quot;translate(80 262) scale(${(1+squash*.6).toFixed(3)} ${(1-squash).toFixed(3)}) translate(-80 -262)&quot;&gt;`);
+  if(gender===&#x27;f&#x27;) g.push(`&lt;path d=&quot;M38 56 Q36 104 46 114 L114 114 Q124 104 122 56 Z&quot; fill=&quot;${HAIR}&quot;/&gt;`);
+  g.push(`&lt;rect x=&quot;66&quot; y=&quot;200&quot; width=&quot;11&quot; height=&quot;48&quot; rx=&quot;5&quot; fill=&quot;${SKIN}&quot;/&gt;&lt;rect x=&quot;83&quot; y=&quot;200&quot; width=&quot;11&quot; height=&quot;48&quot; rx=&quot;5&quot; fill=&quot;${SKIN}&quot;/&gt;`);
+  if(gender===&#x27;m&#x27;) g.push(`&lt;path d=&quot;M58 160 L102 160 L100 246 L84 246 L80 186 L76 246 L60 246 Z&quot; fill=&quot;#6E8FC2&quot; stroke=&quot;#56749F&quot; stroke-linejoin=&quot;round&quot;/&gt;`);
+  g.push(`&lt;rect x=&quot;58&quot; y=&quot;244&quot; width=&quot;22&quot; height=&quot;13&quot; rx=&quot;6.5&quot; fill=&quot;#fff&quot; stroke=&quot;#D9CFCB&quot;/&gt;&lt;rect x=&quot;82&quot; y=&quot;244&quot; width=&quot;22&quot; height=&quot;13&quot; rx=&quot;6.5&quot; fill=&quot;#fff&quot; stroke=&quot;#D9CFCB&quot;/&gt;&lt;rect x=&quot;58&quot; y=&quot;252&quot; width=&quot;22&quot; height=&quot;5&quot; rx=&quot;2.5&quot; fill=&quot;${BURG}&quot;/&gt;&lt;rect x=&quot;82&quot; y=&quot;252&quot; width=&quot;22&quot; height=&quot;5&quot; rx=&quot;2.5&quot; fill=&quot;${BURG}&quot;/&gt;`);
+  if(gender===&#x27;f&#x27;) g.push(`&lt;path d=&quot;M58 164 L102 164 L113 208 Q80 216 47 208 Z&quot; fill=&quot;${BURG}&quot;/&gt;`);
+  g.push(`&lt;rect x=&quot;39&quot; y=&quot;108&quot; width=&quot;14&quot; height=&quot;58&quot; rx=&quot;7&quot; fill=&quot;${PINK}&quot; stroke=&quot;#E2C1C6&quot;/&gt;&lt;rect x=&quot;107&quot; y=&quot;108&quot; width=&quot;14&quot; height=&quot;58&quot; rx=&quot;7&quot; fill=&quot;${PINK}&quot; stroke=&quot;#E2C1C6&quot;/&gt;&lt;circle cx=&quot;46&quot; cy=&quot;168&quot; r=&quot;7&quot; fill=&quot;${SKIN}&quot;/&gt;&lt;circle cx=&quot;114&quot; cy=&quot;168&quot; r=&quot;7&quot; fill=&quot;${SKIN}&quot;/&gt;`);
+  g.push(`&lt;path d=&quot;M52 110 Q54 102 66 101 L94 101 Q106 102 108 110 L108 168 L52 168 Z&quot; fill=&quot;#FFFFFF&quot; stroke=&quot;#E2D6D2&quot;/&gt;&lt;path d=&quot;M52 110 Q54 102 66 101 L74 101 L80 136 L80 168 L52 168 Z&quot; fill=&quot;${PINK}&quot; stroke=&quot;#E2C1C6&quot;/&gt;&lt;path d=&quot;M108 110 Q106 102 94 101 L86 101 L80 136 L80 168 L108 168 Z&quot; fill=&quot;${PINK}&quot; stroke=&quot;#E2C1C6&quot;/&gt;`);
+  g.push(`&lt;rect x=&quot;74&quot; y=&quot;90&quot; width=&quot;12&quot; height=&quot;14&quot; fill=&quot;${SKIN}&quot;/&gt;&lt;circle cx=&quot;80&quot; cy=&quot;62&quot; r=&quot;34&quot; fill=&quot;${SKIN}&quot;/&gt;&lt;ellipse cx=&quot;60&quot; cy=&quot;74&quot; rx=&quot;6&quot; ry=&quot;3.5&quot; fill=&quot;#F3B5BE&quot; opacity=&quot;.8&quot;/&gt;&lt;ellipse cx=&quot;100&quot; cy=&quot;74&quot; rx=&quot;6&quot; ry=&quot;3.5&quot; fill=&quot;#F3B5BE&quot; opacity=&quot;.8&quot;/&gt;`);
+  g.push(FACES[face]);
+  g.push(gender===&#x27;f&#x27;
+    ? `&lt;path d=&quot;M46 60 Q48 26 80 26 Q112 26 114 60 Q102 46 88 48 Q78 38 68 50 Q56 48 46 60 Z&quot; fill=&quot;${HAIR}&quot;/&gt;`
+    : `&lt;path d=&quot;M45 58 Q44 26 80 25 Q116 26 115 58 Q110 44 96 42 Q92 48 84 44 Q76 50 66 44 Q54 46 45 58 Z&quot; fill=&quot;${HAIR}&quot;/&gt;`);
+  g.push(`&lt;/g&gt;`);
+  return g.join(&#x27;&#x27;);
+}
+function sticker(id, x, y, w, rot, ay=0.5, sym=&#x27;&#x27;){
+  const it=ITEMS[id], vb=(it.vb||&#x27;0 0 40 40&#x27;).split(&#x27; &#x27;).map(Number), h=w*vb[3]/vb[2];
+  const art = id===&#x27;laptop&#x27; ? `&lt;use href=&quot;#${sym||&#x27;lapGreen&#x27;}&quot;/&gt;` : ART[id];
+  return `&lt;g transform=&quot;translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot.toFixed(1)})&quot; class=&quot;sticker&quot;&gt;&lt;svg x=&quot;${(-w/2).toFixed(1)}&quot; y=&quot;${(-h*ay).toFixed(1)}&quot; width=&quot;${w}&quot; height=&quot;${h.toFixed(1)}&quot; viewBox=&quot;${vb.join(&#x27; &#x27;)}&quot; overflow=&quot;visible&quot;&gt;${art}&lt;/svg&gt;&lt;/g&gt;`;
+}
+// worn = [{id, rot, jx, color}] in tap order; everything stacks, nothing gets replaced
+function layout(worn){
+  const L={back:[],pet:[],feet:[],waist:[],neck:[],face:[],mouth:[],hand:[],laptop:[],head:[],cloud:[]}, n={};
+  let headTop=34;
+  for(const it of worn){
+    const d=ITEMS[it.id], a=d.a, k=(n[a]=(n[a]||0)+1)-1, r=it.rot, j=it.jx;
+    if(a===&#x27;head&#x27;){
+      if(it.id===&#x27;dino&#x27; &amp;&amp; k===0){ L.head.push(sticker(&#x27;dino&#x27;,80,50,96,r*.3)); headTop=8; continue; }
+      const y=headTop+6; L.head.push(sticker(it.id,80+j,y,d.w,r,.86)); headTop=y-d.w*0.62*0.86; continue; }
+    if(a===&#x27;face&#x27;) { L.face.push(sticker(it.id,80+j*.3,65-k*5,d.w,r*.4)); continue; }
+    if(a===&#x27;mouth&#x27;){ L.mouth.push(sticker(it.id,80,80+k*4,d.w,r*.5)); continue; }
+    if(a===&#x27;neck&#x27;) { L.neck.push(sticker(it.id,80+j*.5,114+k*10,d.w,r*.4,.3)); continue; }
+    if(a===&#x27;waist&#x27;){ L.waist.push(sticker(it.id,80,168-k*14,d.w,r*.3)); continue; }
+    if(a===&#x27;hand&#x27;){ const right=k%2===0, m=Math.floor(k/2), sx=right?1:-1;
+      L.hand.push(sticker(it.id,(right?118:42)+sx*m*12,(d.ay?172:160)-m*10,d.w,sx*(m*14)+r*.5,d.ay||.5)); continue; }
+    if(a===&#x27;back&#x27;){ const right=k%2===0, m=Math.floor(k/2), sx=right?1:-1;
+      L.back.push(sticker(it.id,80+sx*(34+m*10),120-m*16,d.w,sx*(12+m*8)+r*.3)); continue; }
+    if(a===&#x27;feet&#x27;) { L.feet.push(sticker(it.id,80,250-k*3,d.w,r*.3)); continue; }
+    if(a===&#x27;pet&#x27;)  { const P=[[0,236],[160,236],[-20,212],[180,212]][k%4]; L.pet.push(sticker(it.id,P[0],P[1]-Math.floor(k/4)*20,d.w,r*.3)); continue; }
+    if(a===&#x27;laptop&#x27;){ const P=[[128,196],[32,196],[134,170],[26,170]][k%4]; L.laptop.push(sticker(&#x27;laptop&#x27;,P[0],P[1]-Math.floor(k/4)*24,d.w,r*.4,.5,it.color)); continue; }
+    if(a===&#x27;cloud&#x27;){ L.cloud.push({k,r}); continue; }
+  }
+  const clouds = L.cloud.map(({k,r})=&gt;sticker(&#x27;cloud&#x27;,80+(k%2?1:-1)*Math.ceil(k/2)*30,headTop-22-Math.floor(k/2)*4,60,r*.3)).join(&#x27;&#x27;);
+  return {L, clouds, headTop};
+}
+function totalKg(worn){ return worn.reduce((s,it)=&gt;s+(ITEMS[it.id].g||0),0)/1000; }
+function dollSVG(gender, worn, face, cls=&#x27;doll&#x27;){
+  const kg=totalKg(worn), squash=Math.min(.08,kg*.0028);
+  const {L,clouds,headTop}=layout(worn);
+  const top=Math.min(-12, headTop-52);
+  const vb=`-44 ${top.toFixed(0)} 248 ${(274-top).toFixed(0)}`;
+  return `&lt;svg class=&quot;${cls}&quot; viewBox=&quot;${vb}&quot; preserveAspectRatio=&quot;xMidYMax meet&quot; aria-hidden=&quot;true&quot;&gt;${L.back.join(&#x27;&#x27;)}${L.pet.join(&#x27;&#x27;)}${baseDoll(gender,face,squash)}${L.feet.join(&#x27;&#x27;)}${L.waist.join(&#x27;&#x27;)}${L.neck.join(&#x27;&#x27;)}${L.face.join(&#x27;&#x27;)}${L.mouth.join(&#x27;&#x27;)}${L.hand.join(&#x27;&#x27;)}${L.laptop.join(&#x27;&#x27;)}${L.head.join(&#x27;&#x27;)}${clouds}&lt;/svg&gt;`;
+}
+function faceFor(kg){ return kg&lt;4?&#x27;smile&#x27;:kg&lt;10?&#x27;wow&#x27;:kg&lt;18?&#x27;strain&#x27;:&#x27;dizzy&#x27;; }
+
+// ---------- sound ----------
+let ac=null;
+function tone(f1,f2=f1*1.5,dur=.12,type=&#x27;sine&#x27;,vol=.06){ try{ ac=ac||new (window.AudioContext||window.webkitAudioContext)(); const t=ac.currentTime,o=ac.createOscillator(),g=ac.createGain(); o.type=type; o.frequency.setValueAtTime(f1,t); o.frequency.exponentialRampToValueAtTime(f2,t+dur*.8); g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(.0001,t+dur); o.connect(g).connect(ac.destination); o.start(t); o.stop(t+dur);}catch(e){} }
+const buzz=ms=&gt;{ try{ navigator.vibrate&amp;&amp;navigator.vibrate(ms);}catch(e){} };
+
+// ---------- 搭配圖鑑（只存在這台裝置） ----------
+let dex=new Set(); try{ dex=new Set(JSON.parse(localStorage.getItem(&#x27;acer-outfit-combos&#x27;)||&#x27;[]&#x27;)); }catch(e){}
+const saveDex=()=&gt;{ try{ localStorage.setItem(&#x27;acer-outfit-combos&#x27;,JSON.stringify([...dex])); }catch(e){} };
+
+// ---------- game state ----------
+let gender=&#x27;f&#x27;, worn=[], score=100, streak=0, lastTap=0, found=[], lapColor=null, tEnd=0, running=false, spawnT=0, tickT=0, faceOverride=null, faceT=0, sayT=0, lapShown=false, kgSaid=0;
+const stage=$(&#x27;stage&#x27;);
+
+function renderStart(){
+  const demo=[{id:&#x27;crown&#x27;,rot:-6,jx:0},{id:&#x27;cat&#x27;,rot:8,jx:3},{id:&#x27;shades&#x27;,rot:0,jx:0},{id:&#x27;lei&#x27;,rot:0,jx:0},{id:&#x27;boba&#x27;,rot:0,jx:0},{id:&#x27;balloon&#x27;,rot:-4,jx:0},{id:&#x27;box&#x27;,rot:0,jx:0}];
+  $(&#x27;startStage&#x27;).innerHTML=dollSVG(gender,demo,&#x27;wow&#x27;);
+  $(&#x27;gF&#x27;).classList.toggle(&#x27;on&#x27;,gender===&#x27;f&#x27;); $(&#x27;gM&#x27;).classList.toggle(&#x27;on&#x27;,gender===&#x27;m&#x27;);
+  $(&#x27;dexStart&#x27;).textContent=`搭配圖鑑 ${dex.size}/${COMBOS.length}・找出隱藏搭配有加分`;
+}
+function renderDoll(){
+  const kg=totalKg(worn);
+  stage.querySelectorAll(&#x27;svg.doll&#x27;).forEach(s=&gt;s.remove());
+  stage.insertAdjacentHTML(&#x27;afterbegin&#x27;, dollSVG(gender,worn,faceOverride||faceFor(kg)));
+  const svg=stage.querySelector(&#x27;svg.doll&#x27;); svg.classList.toggle(&#x27;wobble&#x27;,kg&gt;=10); svg.classList.toggle(&#x27;hard&#x27;,kg&gt;=18);
+  $(&#x27;cnt&#x27;).textContent=worn.filter(w=&gt;!ITEMS[w.id].bad).length; $(&#x27;kg&#x27;).textContent=kg.toFixed(1);
+  $(&#x27;kgbar&#x27;).style.width=Math.min(100,kg/25*100)+&#x27;%&#x27;;
+}
+function setScore(v){ score=Math.max(0,v); const b=$(&#x27;score&#x27;); b.textContent=score.toLocaleString()+&#x27;%&#x27;; b.classList.add(&#x27;bump&#x27;); setTimeout(()=&gt;b.classList.remove(&#x27;bump&#x27;),120); }
+function say(text){ const s=$(&#x27;say&#x27;); s.textContent=text; s.classList.add(&#x27;on&#x27;); clearTimeout(sayT); sayT=setTimeout(()=&gt;s.classList.remove(&#x27;on&#x27;),1500); }
+function plus(text,x,y,bad){ const p=document.createElement(&#x27;span&#x27;); p.className=&#x27;plus&#x27;+(bad?&#x27; bad&#x27;:&#x27;&#x27;); p.textContent=text; p.style.left=x+&#x27;px&#x27;; p.style.top=y+&#x27;px&#x27;; stage.appendChild(p); setTimeout(()=&gt;p.remove(),1000); }
+function banner(small,big,cls=&#x27;&#x27;){ const b=$(&#x27;banner&#x27;); b.className=&#x27;banner &#x27;+cls; b.innerHTML=`&lt;small&gt;${small}&lt;/small&gt;&lt;b&gt;${big}&lt;/b&gt;`; void b.offsetWidth; b.classList.add(&#x27;on&#x27;); clearTimeout(b._t); b._t=setTimeout(()=&gt;b.classList.remove(&#x27;on&#x27;),1300); }
+function renderFoundDots(){ $(&#x27;foundDots&#x27;).innerHTML=COMBOS.map(c=&gt;`&lt;i class=&quot;${found.includes(c.id)?&#x27;on&#x27;:&#x27;&#x27;}&quot;&gt;&lt;/i&gt;`).join(&#x27;&#x27;); }
+
+function start(){
+  running=false; clearTimeout(spawnT); clearTimeout(tickT);
+  worn=[]; score=100; streak=0; found=[]; lapColor=null; lapShown=false; kgSaid=0; faceOverride=null;
+  stage.querySelectorAll(&#x27;.sp,.plus,.fly,.countdown&#x27;).forEach(e=&gt;e.remove());
+  show(&#x27;play&#x27;); renderDoll(); setScore(100); $(&#x27;streak&#x27;).textContent=&#x27;連穿 ×0&#x27;; renderFoundDots();
+  $(&#x27;timer&#x27;).textContent=&#x27;⏰ 0:20&#x27;; $(&#x27;timer&#x27;).classList.remove(&#x27;warn&#x27;); $(&#x27;hint&#x27;).textContent=&#x27;點冒出來的東西就會穿上身&#x27;;
+  const cd=document.createElement(&#x27;div&#x27;); cd.className=&#x27;countdown&#x27;; stage.appendChild(cd);
+  let n=3; const step=()=&gt;{ if(n===0){ cd.remove(); go(); return; } cd.textContent=n; tone(520,520,.08,&#x27;square&#x27;,.03); n--; setTimeout(step,550); }; step();
+}
+function go(){
+  running=true; tEnd=performance.now()+ROUND_MS; tone(660,990,.15);
+  spawn(); setTimeout(spawn,250); scheduleSpawn(); tick();
+}
+function scheduleSpawn(){ clearTimeout(spawnT); if(!running) return; spawnT=setTimeout(()=&gt;{ spawn(); scheduleSpawn(); }, 420+Math.random()*320); }
+function tick(){
+  if(!running) return;
+  const left=Math.max(0,tEnd-performance.now()), s=Math.ceil(left/1000);
+  $(&#x27;timer&#x27;).textContent=&#x27;⏰ 0:&#x27;+String(s).padStart(2,&#x27;0&#x27;); $(&#x27;timer&#x27;).classList.toggle(&#x27;warn&#x27;,left&lt;=5000);
+  if(left&lt;=0) return end();
+  tickT=setTimeout(tick,100);
+}
+function pickId(){
+  const elapsed=ROUND_MS-(tEnd-performance.now());
+  // 發光的 Swift Air 14：每輪 7～13 秒之間一定出現一次，之後偶爾再出現
+  if(!lapShown &amp;&amp; elapsed&gt;7000 &amp;&amp; (Math.random()&lt;.12 || elapsed&gt;13000)) { lapShown=true; return &#x27;laptop&#x27;; }
+  if(lapShown &amp;&amp; Math.random()&lt;.04) return &#x27;laptop&#x27;;
+  if(elapsed&gt;2500 &amp;&amp; Math.random()&lt;.16) return Math.random()&lt;.5?&#x27;ot&#x27;:&#x27;boss&#x27;;
+  return NORMAL[Math.floor(Math.random()*NORMAL.length)];
+}
+function spawn(){
+  if(!running) return;
+  const live=stage.querySelectorAll(&#x27;.sp:not(.gone)&#x27;); if(live.length&gt;=5) return;
+  const id=pickId(), it=ITEMS[id], W=stage.clientWidth, H=stage.clientHeight;
+  let x=0,y=0;
+  for(let t=0;t&lt;12;t++){ x=40+Math.random()*(W-80); y=40+Math.random()*(H-90);
+    if([...live].every(e=&gt;Math.hypot(parseFloat(e.style.left)-x,parseFloat(e.style.top)-y)&gt;74)) break; }
+  const b=document.createElement(&#x27;button&#x27;); b.className=&#x27;sp&#x27;+(it.bad?&#x27; bad&#x27;:&#x27;&#x27;)+(it.rare?&#x27; rare&#x27;:&#x27;&#x27;)+((it.vb||&#x27;&#x27;).endsWith(&#x27; 80&#x27;)?&#x27; tall&#x27;:&#x27;&#x27;)+(id===&#x27;ring&#x27;||id===&#x27;lei&#x27;||id===&#x27;corgi&#x27;?&#x27; wide&#x27;:&#x27;&#x27;);
+  b.style.left=x+&#x27;px&#x27;; b.style.top=y+&#x27;px&#x27;; b.dataset.id=id;
+  const color = id===&#x27;laptop&#x27; ? LAP_COLORS[Math.floor(Math.random()*3)] : null;
+  if(color) b.dataset.color=color.sym;
+  b.innerHTML=`&lt;svg viewBox=&quot;${it.vb||&#x27;0 0 40 40&#x27;}&quot; class=&quot;sticker&quot;&gt;${id===&#x27;laptop&#x27;?`&lt;use href=&quot;#${color.sym}&quot;/&gt;`:ART[id]}&lt;/svg&gt;`;
+  b.setAttribute(&#x27;aria-label&#x27;,it.name);
+  b.addEventListener(&#x27;pointerdown&#x27;,e=&gt;{ e.preventDefault(); tapItem(b); });
+  stage.appendChild(b);
+  const life = it.rare ? 1500 : 1900+Math.random()*700;
+  b._t1=setTimeout(()=&gt;b.classList.add(&#x27;fade&#x27;), life-500);
+  b._t2=setTimeout(()=&gt;{ b.classList.add(&#x27;gone&#x27;); setTimeout(()=&gt;b.remove(),220); }, life);
+}
+function anchorPoint(){
+  const svg=stage.querySelector(&#x27;svg.doll&#x27;), s=stage.getBoundingClientRect(), r=svg?svg.getBoundingClientRect():s;
+  return {x:r.left-s.left+r.width/2, y:r.top-s.top+r.height*.55};
+}
+function tapItem(b){
+  if(!running || b.classList.contains(&#x27;gone&#x27;)) return;
+  clearTimeout(b._t1); clearTimeout(b._t2); b.classList.add(&#x27;gone&#x27;); setTimeout(()=&gt;b.remove(),200);
+  const id=b.dataset.id, it=ITEMS[id], x=parseFloat(b.style.left), y=parseFloat(b.style.top);
+  const f=document.createElement(&#x27;div&#x27;); f.className=&#x27;fly&#x27;; f.innerHTML=b.innerHTML; f.style.left=x+&#x27;px&#x27;; f.style.top=y+&#x27;px&#x27;; stage.appendChild(f);
+  const ap=anchorPoint(); requestAnimationFrame(()=&gt;{ f.style.left=ap.x+&#x27;px&#x27;; f.style.top=ap.y+&#x27;px&#x27;; f.style.transform=&#x27;scale(.6)&#x27;; });
+  setTimeout(()=&gt;f.remove(),270);
+  const now=performance.now();
+  if(it.bad){
+    streak=0; $(&#x27;streak&#x27;).textContent=&#x27;連穿 ×0&#x27;;
+    worn.push({id, rot:(Math.random()*2-1)*10, jx:0});
+    setScore(score+it.p); plus(`${it.name} ${it.p}`,x,y-20,true); say(it.line);
+    faceOverride=&#x27;sad&#x27;; clearTimeout(faceT); faceT=setTimeout(()=&gt;{faceOverride=null; renderDoll();},1400);
+    tone(220,140,.25,&#x27;square&#x27;,.04); buzz([40,30,40]);
+    setTimeout(renderDoll,200); return;
+  }
+  streak = (now-lastTap&lt;1100) ? streak+1 : 1; lastTap=now;
+  const pts=Math.round(it.p*(1+Math.min(streak-1,10)*0.1));
+  const entry={id, rot:(Math.random()*2-1)*12, jx:(Math.random()*2-1)*4};
+  if(id===&#x27;laptop&#x27;){ entry.color=b.dataset.color; lapColor=LAP_COLORS.find(c=&gt;c.sym===b.dataset.color); }
+  worn.push(entry);
+  setScore(score+pts); $(&#x27;streak&#x27;).textContent=`連穿 ×${streak}`;
+  plus(`+${pts}`,x,y-20);
+  if(id===&#x27;laptop&#x27;){ banner(&#x27;接到了！&#x27;,`Swift Air 14 ${lapColor.name}`,&#x27;go&#x27;); say(&#x27;只有 1.19kg，好輕！&#x27;); tone(880,1760,.25,&#x27;triangle&#x27;,.07); }
+  else if(it.line &amp;&amp; Math.random()&lt;.7) say(it.line);
+  tone(500+Math.min(streak,12)*60, 900+Math.min(streak,12)*80, .1); buzz(12);
+  const kg=totalKg(worn);
+  for(const [t,l] of [[5,&#x27;有點重……&#x27;],[10,&#x27;我還撐得住！&#x27;],[15,&#x27;腰要斷了&#x27;],[20,&#x27;這是搬家吧？&#x27;]]){ if(kg&gt;=t &amp;&amp; kgSaid&lt;t){ kgSaid=t; say(l); } }
+  setTimeout(()=&gt;{ renderDoll(); checkCombos(); },200);
+}
+function checkCombos(){
+  const w={}; for(const it of worn){ w[it.id]=(w[it.id]||0)+1; if(ITEMS[it.id].a===&#x27;head&#x27;) w._head=(w._head||0)+1; }
+  for(const c of COMBOS){
+    if(found.includes(c.id) || !c.need(w)) continue;
+    found.push(c.id); const isNew=!dex.has(c.id); dex.add(c.id); saveDex();
+    setScore(score+c.bonus); banner(isNew?&#x27;NEW COMBO！&#x27;:&#x27;COMBO！&#x27;,`${c.name} +${c.bonus}`);
+    tone(660,1320,.18,&#x27;triangle&#x27;,.07); setTimeout(()=&gt;tone(990,1980,.2,&#x27;triangle&#x27;,.06),140); buzz([20,40,20]);
+    renderFoundDots(); $(&#x27;hint&#x27;).textContent=`找到「${c.name}」！`;
+    break;
+  }
+}
+function end(){
+  running=false; clearTimeout(spawnT); clearTimeout(tickT);
+  stage.querySelectorAll(&#x27;.sp&#x27;).forEach(b=&gt;{ clearTimeout(b._t1); clearTimeout(b._t2); b.classList.add(&#x27;gone&#x27;); });
+  $(&#x27;timer&#x27;).textContent=&#x27;⏰ 0:00&#x27;; $(&#x27;timer&#x27;).classList.remove(&#x27;warn&#x27;);
+  banner(&#x27;時間到&#x27;,&#x27;出門！&#x27;,&#x27;go&#x27;); tone(523,784,.2,&#x27;triangle&#x27;,.06);
+  setTimeout(result,1200);
+}
+
+// ---------- result ----------
+let res=null;
+function result(){
+  const n=worn.filter(w=&gt;!ITEMS[w.id].bad).length, kg=totalKg(worn), bads=worn.length-n;
+  const best=COMBOS.filter(c=&gt;found.includes(c.id)).sort((a,b)=&gt;b.bonus-a.bonus)[0];
+  const title = best ? best.name+&#x27;系&#x27; : n&gt;=16?&#x27;全身家當系&#x27;:n&gt;=10?&#x27;行動倉庫系&#x27;:n&gt;=5?&#x27;隨手一抓系&#x27;:n&gt;=1?&#x27;輕裝出門系&#x27;:&#x27;什麼都沒穿系&#x27;;
+  res={title,n,kg,col:lapColor};
+  $(&#x27;title&#x27;).textContent=title;
+  $(&#x27;endStage&#x27;).innerHTML=dollSVG(gender,worn,kg&gt;=18?&#x27;dizzy&#x27;:&#x27;proud&#x27;);
+  $(&#x27;sN&#x27;).textContent=n; $(&#x27;sKg&#x27;).textContent=kg.toFixed(1); $(&#x27;sR&#x27;).textContent=score.toLocaleString()+&#x27;%&#x27;;
+  $(&#x27;combos&#x27;).innerHTML=COMBOS.map(c=&gt;{ const got=found.includes(c.id), known=dex.has(c.id); return `&lt;span class=&quot;${got?&#x27;on new&#x27;:known?&#x27;on&#x27;:&#x27;&#x27;}&quot;&gt;${known?c.name:&#x27;？？？&#x27;}&lt;/span&gt;`; }).join(&#x27;&#x27;);
+  const heavy = kg&gt;=1.19 ? `全身扛了 ${kg.toFixed(1)}kg 出門，還好 &lt;b&gt;Swift Air 14 只有 1.19kg&lt;/b&gt;。` : `&lt;b&gt;Swift Air 14 只有 1.19kg&lt;/b&gt;，帶著出門剛剛好。`;
+  const colTxt = lapColor ? `你接到的&lt;span class=&quot;match&quot; style=&quot;background:${lapColor.hex}&quot;&gt;&lt;/span&gt;&lt;b&gt;${lapColor.name}&lt;/b&gt;就是你的本命色。` : `下次接住那台發光的 Swift Air 14，看看你的本命色。`;
+  $(&#x27;copy&#x27;).innerHTML = heavy + (bads?`（還順手接了 ${bads} 通加班，辛苦了。）`:&#x27;&#x27;) + &#x27;&lt;br&gt;&#x27; + colTxt;
+  show(&#x27;end&#x27;); tone(660,990,.15); setTimeout(()=&gt;tone(990,1320,.2),150);
+}
+function toast(t){ const el=$(&#x27;toast&#x27;); el.textContent=t; el.classList.add(&#x27;on&#x27;); clearTimeout(el._t); el._t=setTimeout(()=&gt;el.classList.remove(&#x27;on&#x27;),1800); }
+async function storyPNG(){
+  const defs=document.querySelector(&#x27;svg.defs&#x27;).innerHTML, W=1080, H=1920, r=res;
+  const doll=dollSVG(gender,worn,r.kg&gt;=18?&#x27;dizzy&#x27;:&#x27;proud&#x27;,&#x27;x&#x27;).replace(&#x27;&lt;svg class=&quot;x&quot;&#x27;,&#x27;&lt;svg x=&quot;90&quot; y=&quot;420&quot; width=&quot;900&quot; height=&quot;1000&quot;&#x27;);
+  const svg=`&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;${W}&quot; height=&quot;${H}&quot; viewBox=&quot;0 0 ${W} ${H}&quot;&gt;${defs}
+  &lt;style&gt;.sticker{filter:drop-shadow(0 4px 6px rgba(59,47,51,.18))}&lt;/style&gt;
+  &lt;rect width=&quot;${W}&quot; height=&quot;${H}&quot; fill=&quot;#FAF7F2&quot;/&gt;&lt;circle cx=&quot;980&quot; cy=&quot;200&quot; r=&quot;380&quot; fill=&quot;${PINK}&quot;/&gt;&lt;circle cx=&quot;60&quot; cy=&quot;1700&quot; r=&quot;420&quot; fill=&quot;${GREEN}&quot;/&gt;
+  &lt;text x=&quot;540&quot; y=&quot;230&quot; text-anchor=&quot;middle&quot; font-family=&quot;PingFang TC,Noto Sans TC,sans-serif&quot; font-size=&quot;40&quot; letter-spacing=&quot;8&quot; fill=&quot;#8C7F84&quot;&gt;今日出門鑑定&lt;/text&gt;
+  &lt;text x=&quot;540&quot; y=&quot;330&quot; text-anchor=&quot;middle&quot; font-family=&quot;PingFang TC,Noto Sans TC,sans-serif&quot; font-size=&quot;84&quot; font-weight=&quot;900&quot; fill=&quot;${INK}&quot;&gt;${r.title}&lt;/text&gt;
+  ${doll}
+  &lt;text x=&quot;540&quot; y=&quot;1520&quot; text-anchor=&quot;middle&quot; font-family=&quot;PingFang TC,Noto Sans TC,sans-serif&quot; font-size=&quot;44&quot; font-weight=&quot;700&quot; fill=&quot;${INK}&quot;&gt;身上 ${r.n} 件｜負重 ${r.kg.toFixed(1)}kg｜回頭率 ${score.toLocaleString()}%&lt;/text&gt;
+  &lt;text x=&quot;540&quot; y=&quot;1600&quot; text-anchor=&quot;middle&quot; font-family=&quot;PingFang TC,Noto Sans TC,sans-serif&quot; font-size=&quot;38&quot; fill=&quot;${BURG}&quot;&gt;${r.col?`我的本命色：Swift Air 14 ${r.col.name}`:&#x27;還好 Swift Air 14 只有 1.19kg&#x27;}&lt;/text&gt;
+  &lt;text x=&quot;540&quot; y=&quot;1790&quot; text-anchor=&quot;middle&quot; font-family=&quot;Arial,sans-serif&quot; font-size=&quot;56&quot; font-weight=&quot;900&quot; fill=&quot;#83B81A&quot;&gt;acer&lt;/text&gt;&lt;/svg&gt;`;
+  const url=URL.createObjectURL(new Blob([svg],{type:&#x27;image/svg+xml&#x27;}));
+  const img=new Image(); await new Promise((ok,no)=&gt;{img.onload=ok; img.onerror=no; img.src=url;});
+  const cv=document.createElement(&#x27;canvas&#x27;); cv.width=W; cv.height=H; cv.getContext(&#x27;2d&#x27;).drawImage(img,0,0); URL.revokeObjectURL(url);
+  return await new Promise(ok=&gt;cv.toBlob(ok,&#x27;image/png&#x27;));
+}
+function showSheet(blob){ $(&#x27;sheetImg&#x27;).src=URL.createObjectURL(blob); $(&#x27;sheet&#x27;).hidden=false; }
+$(&#x27;sheetClose&#x27;).onclick=()=&gt;{ $(&#x27;sheet&#x27;).hidden=true; };
+$(&#x27;save&#x27;).onclick=async()=&gt;{
+  const text=`我今天是「${res.title}」，身上掛了 ${res.n} 件出門！`;
+  try{ navigator.clipboard.writeText(text).catch(()=&gt;{}); }catch(e){}
+  let blob; try{ blob=await storyPNG(); }catch(e){ toast(&#x27;存圖失敗，再試一次&#x27;); return; }
+  const file=new File([blob],&#x27;今天穿這樣出門.png&#x27;,{type:&#x27;image/png&#x27;});
+  try{ if(navigator.canShare&amp;&amp;navigator.canShare({files:[file]})){ await navigator.share({files:[file],text}); return; } }catch(e){ if(e&amp;&amp;e.name===&#x27;AbortError&#x27;) return; }
+  showSheet(blob);
+};
+$(&#x27;gF&#x27;).onclick=()=&gt;{ gender=&#x27;f&#x27;; renderStart(); };
+$(&#x27;gM&#x27;).onclick=()=&gt;{ gender=&#x27;m&#x27;; renderStart(); };
+$(&#x27;go&#x27;).onclick=start; $(&#x27;again&#x27;).onclick=start;
+renderStart();
+})();
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+" allow="web-share; clipboard-write"></iframe></div>
+<script>
+// 遊戲只在第一次切過去時才載入，切換時保留進度
+function show(id){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.id===id));
+  document.querySelectorAll('.g').forEach(f=>{ const on=f.id==='g-'+id; f.classList.toggle('on',on); if(on&&!f.srcdoc) f.srcdoc=f.dataset.src; });
+  try{history.replaceState(null,'','#'+id)}catch(e){}
+  const f=document.getElementById('g-'+id); setTimeout(()=>{try{f.contentWindow.focus()}catch(e){}},50);
+}
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>show(t.dataset.id)));
+const h=(location.hash||'').slice(1); show(document.getElementById('g-'+h)?h:'A2');
+</script>
+</body></html>

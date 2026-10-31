@@ -1,0 +1,354 @@
+<!doctype html><html lang="zh-Hant"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>秤重大挑戰</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--page:#F2F2F2;--scr:#FFFFFF;--ink:#1A1A1A;--mute:#6B6B6B;--line:#E3E3E3;--acc:#83B81A;--acc-ink:#fff;--acc-dk:#5F8A12;--r:12px;
+--sh:0 1px 2px rgba(26,26,26,.06),0 8px 24px rgba(26,26,26,.06);--sh-h:0 1px 2px rgba(26,26,26,.08),0 12px 32px rgba(26,26,26,.10);
+--sh-acc:0 1px 2px rgba(95,138,18,.22),0 8px 24px rgba(131,184,26,.24);--sh-acc-h:0 2px 4px rgba(95,138,18,.24),0 12px 32px rgba(131,184,26,.30)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:"Noto Sans TC","PingFang TC",sans-serif;background:var(--page);color:var(--ink);display:flex;align-items:center;justify-content:center;-webkit-font-smoothing:antialiased;overflow:hidden}
+.defs{position:absolute;width:0;height:0;overflow:hidden}
+.app{position:relative;width:100%;max-width:400px;height:100%;background:var(--scr);overflow:hidden;user-select:none;-webkit-user-select:none}
+@media (min-width:520px) and (min-height:700px){.app{height:min(860px,calc(100dvh - 48px));border-radius:36px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 24px 56px rgba(0,0,0,.12)}}
+.view{position:absolute;inset:0;display:none;flex-direction:column;padding:max(24px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom))}
+.view.on{display:flex}
+.logo{font-weight:900;font-size:22px;line-height:24px;letter-spacing:-.02em;color:var(--acc)}
+.k{font-size:12px;line-height:16px;letter-spacing:.14em;font-weight:700;color:var(--mute)}
+.h{font-size:32px;font-weight:900;line-height:40px;margin:8px 0}
+.p{font-size:14px;line-height:24px;color:var(--mute)}
+.foot{margin-top:16px;font-size:11px;line-height:16px;color:var(--mute);text-align:center}
+.c{text-align:center}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;height:56px;border:0;width:100%;font:inherit;font-weight:900;font-size:17px;border-radius:var(--r);background:var(--acc);color:var(--acc-ink);box-shadow:var(--sh-acc);cursor:pointer;touch-action:manipulation;transition:transform .15s,box-shadow .15s,filter .15s}
+@media (hover:hover){.btn:hover{transform:translateY(-1px);box-shadow:var(--sh-acc-h);filter:brightness(1.04)}}
+.btn:active{transform:translateY(1px);box-shadow:0 1px 2px rgba(95,138,18,.24);filter:brightness(.94)}
+.btn:focus-visible{outline:3px solid rgba(131,184,26,.4);outline-offset:2px}
+.btn.o{height:48px;background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:15px;box-shadow:var(--sh)}
+@media (hover:hover){.btn.o:hover{box-shadow:var(--sh-h);filter:none}}
+.btn.o:active{background:#F4F4F4;filter:none}
+.btn.t{height:40px;background:transparent;box-shadow:none;color:var(--ink);font-weight:700;font-size:14px}
+.btn.t svg{color:var(--acc)}
+.btns{display:flex;flex-direction:column;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px;font-size:13px;line-height:16px;font-weight:700;border-radius:99px;background:var(--acc);color:var(--acc-ink);box-shadow:var(--sh-acc);font-variant-numeric:tabular-nums;white-space:nowrap}
+.chip.l{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:var(--sh)}
+.chip.warn{background:#1A1A1A;color:#fff;box-shadow:none}
+.chips{display:flex;gap:8px;justify-content:center}
+.top{display:flex;justify-content:space-between;align-items:center}
+.card{background:#fff;border:1px solid #EDEDED;border-radius:var(--r);padding:16px;box-shadow:var(--sh)}
+.prod{display:flex;align-items:center;gap:16px}.prod svg{flex:none;display:block}.prod .p{color:var(--ink)}
+/* progress */
+.prog{margin-top:16px}
+.track{position:relative;height:8px;border-radius:99px;background:#EDEDED;overflow:hidden}
+.track i{position:absolute;left:0;top:0;bottom:0;background:var(--acc);border-radius:99px}
+.track:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 calc(16.6667% - 2px),#fff calc(16.6667% - 2px) 16.6667%)}
+.ticks{display:flex;justify-content:space-between;margin-top:4px}
+.ticks i{width:1px;height:4px;background:#CFCFCF}.ticks i.m{height:8px;background:#9A9A9A}
+.tl{display:flex;justify-content:space-between;font-size:11px;line-height:16px;color:var(--mute)}
+.dots{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:12px;height:12px}
+.dots i{width:8px;height:8px;border-radius:50%;background:#E3E3E3;transition:all .2s}
+.dots i.ok{background:var(--acc)}
+.dots i.ng{background:#fff;box-shadow:inset 0 0 0 1.5px #BDBDBD}
+.dots i.cur{width:12px;height:12px;background:var(--acc);box-shadow:0 0 0 4px rgba(131,184,26,.18)}
+/* start */
+.hero{display:flex;justify-content:center;margin-top:16px}.hero svg{display:block}
+.cap{text-align:center;font-size:14px;line-height:24px;font-weight:700}
+.cap small{display:block;font-size:11px;line-height:16px;color:var(--mute);font-weight:400}
+.hint{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:16px;padding:8px 12px;border-radius:var(--r);background:#F7F7F7;font-size:12px;line-height:16px;font-weight:700;color:var(--mute)}
+.hint b{display:inline-flex;align-items:center;gap:4px;color:var(--ink)}.hint b.r{color:var(--acc-dk)}
+.hint svg{display:inline-block;vertical-align:middle}
+/* stack */
+.stack{position:relative;flex:1;min-height:250px;max-height:440px;margin-top:12px}
+.sc{position:absolute;left:12px;right:12px;top:0;bottom:16px;border-radius:20px;background:#fff;border:1px solid #EDEDED;box-shadow:var(--sh);padding:16px;display:flex;flex-direction:column;align-items:center}
+.sc.b2{transform:translateY(16px) scale(.9);opacity:.55}
+.sc.b1{transform:translateY(8px) scale(.95);opacity:.85}
+.sc.cur{box-shadow:var(--sh-h);cursor:grab;touch-action:none;will-change:transform}
+.sc.cur.drag{cursor:grabbing;transition:none}
+.sc.cur.back{transition:transform .25s cubic-bezier(.2,.8,.3,1.2)}
+.sc.cur.fly{transition:transform .28s ease-in,opacity .28s ease-in}
+.sc .no{align-self:flex-start;font-size:11px;line-height:16px;font-weight:700;color:var(--mute);letter-spacing:.08em}
+.sc .art{flex:1;display:flex;align-items:center;justify-content:center;min-height:0;pointer-events:none}
+.sc .art svg{display:block;max-height:100%}
+.sc .emo{font-size:96px;line-height:1;filter:drop-shadow(0 8px 12px rgba(0,0,0,.12))}
+.sc b{font-size:17px;line-height:24px;text-align:center}
+.sc .vsl{display:flex;align-items:center;gap:8px;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);width:100%;justify-content:center;font-size:12px;line-height:16px;color:var(--mute)}
+.sc .vsl svg{display:block}
+.stamp{position:absolute;top:28px;padding:4px 12px;border:3px solid var(--acc);border-radius:8px;color:var(--acc);font-size:20px;line-height:28px;font-weight:900;letter-spacing:.04em;background:rgba(255,255,255,.92);opacity:0;pointer-events:none;white-space:nowrap}
+.stamp.r{left:16px;transform:rotate(-14deg)}
+.stamp.l{right:16px;transform:rotate(14deg);border-color:#1A1A1A;color:#1A1A1A}
+.reveal{position:absolute;left:12px;right:12px;top:0;bottom:16px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:24px;background:rgba(255,255,255,.96);border:2px solid var(--acc);box-shadow:var(--sh-h);opacity:0;transform:scale(.94);pointer-events:none;transition:opacity .18s,transform .18s}
+.reveal.on{opacity:1;transform:none}
+.reveal.ng{border-color:#1A1A1A}
+.reveal .mark{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--acc);color:#fff;font-size:28px;font-weight:900}
+.reveal.ng .mark{background:#1A1A1A}
+.reveal .rt{font-size:20px;line-height:28px;font-weight:900}
+.reveal .rwho{font-size:16px;line-height:24px;font-weight:700}
+.reveal .rw{font-size:14px;line-height:24px;color:var(--mute)}
+.reveal .rw b{color:var(--ink)}
+.swipebtns{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.swipebtns .btn{height:52px;font-size:14px}
+/* result */
+.big{font-size:72px;font-weight:900;line-height:72px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.big-u{display:inline-block;position:relative;padding-bottom:8px}
+.big-u:after{content:"";position:absolute;left:4px;right:4px;bottom:0;height:2px;border-radius:2px;background:var(--acc)}
+.big .unit{font-size:24px;line-height:32px;color:var(--mute);letter-spacing:0;font-weight:700;margin-left:4px}
+.award{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:16px}
+.stars{display:flex;gap:8px;height:24px;align-items:center}
+.st svg{display:block;fill:#fff;stroke:#CFCFCF;stroke-width:1.5}.st.on svg{fill:var(--acc);stroke:var(--acc)}
+.badge{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 16px;border-radius:99px;background:rgba(131,184,26,.08);border:1px solid var(--acc);font-weight:700;font-size:13px}
+.say{font-size:17px;line-height:24px;font-weight:900;margin-top:16px;text-align:center}
+.mini{display:flex;justify-content:center;gap:4px;margin-top:16px}
+.mini i{width:20px;height:28px;border-radius:4px;background:#fff;border:1px solid var(--line);box-shadow:0 1px 2px rgba(26,26,26,.06);position:relative}
+.mini i.ok{border-color:var(--acc);background:rgba(131,184,26,.10)}
+.mini i.ok:after{content:"";position:absolute;left:6px;top:9px;width:6px;height:3px;border-left:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:rotate(-45deg)}
+.mini i.ng:after,.mini i.ng:before{content:"";position:absolute;left:9px;top:8px;width:2px;height:12px;background:#BDBDBD;transform:rotate(45deg)}
+.mini i.ng:before{transform:rotate(-45deg)}
+.toast{position:absolute;left:50%;bottom:96px;transform:translate(-50%,16px);background:#1A1A1A;color:#fff;font-size:13px;line-height:20px;padding:8px 16px;border-radius:99px;opacity:0;transition:all .25s;pointer-events:none;white-space:nowrap;z-index:20}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+.chip.warn{animation:pulse .6s infinite}
+</style></head><body>
+<svg class="defs" aria-hidden="true" width="0" height="0"><defs>
+<linearGradient id="lapLid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFBFC"/><stop offset=".6" stop-color="#E6E8EB"/><stop offset="1" stop-color="#D3D7DB"/></linearGradient>
+<radialGradient id="lapScr" cx=".5" cy=".38" r=".75"><stop offset="0" stop-color="#CDEB86"/><stop offset=".42" stop-color="#83B81A"/><stop offset="1" stop-color="#4F7A0C"/></radialGradient>
+<linearGradient id="lapHinge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9AA0A6"/><stop offset="1" stop-color="#C8CCD0"/></linearGradient>
+<linearGradient id="lapDeck" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4E7EA"/><stop offset="1" stop-color="#F4F5F7"/></linearGradient>
+<linearGradient id="lapEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9CDD2"/><stop offset="1" stop-color="#AEB4BA"/></linearGradient>
+<radialGradient id="lapShadow"><stop offset="0" stop-color="#000" stop-opacity=".16"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+<linearGradient id="capG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E1E4E7"/></linearGradient>
+<linearGradient id="waterG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9F0F3"/><stop offset="1" stop-color="#CCDAE1"/></linearGradient>
+<filter id="lapGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
+<filter id="tagSh" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#1A1A1A" flood-opacity=".18"/></filter>
+<style>.lk{fill:#FCFCFD;stroke:#C2C7CC;stroke-width:.35}.lb{fill:#D5D9DD}.lp{fill:#E7EAED;stroke:#C2C7CC;stroke-width:.6}</style>
+</defs><symbol id="lap" viewBox="0 0 240 168">
+<ellipse cx="120" cy="161" rx="108" ry="5" fill="url(#lapShadow)"/>
+<rect x="50" y="8" width="140" height="90" rx="10" fill="#83B81A" opacity=".28" filter="url(#lapGlow)"/>
+<rect x="44" y="4" width="152" height="104" rx="9" fill="url(#lapLid)" stroke="#BFC4C9" stroke-width="1"/>
+<rect x="47" y="7" width="146" height="92" rx="6" fill="#171B13"/>
+<rect x="50.5" y="10.5" width="139" height="85" rx="2.5" fill="url(#lapScr)"/>
+<polygon points="50.5,10.5 124,10.5 86,95.5 50.5,95.5" fill="#fff" opacity=".10"/>
+<rect x="50.5" y="10.5" width="139" height="85" rx="2.5" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width=".6"/>
+<circle cx="120" cy="8.8" r=".9" fill="#3A4034"/>
+<text x="120" y="105.6" text-anchor="middle" font-family="Noto Sans TC,Arial,sans-serif" font-size="6.2" font-weight="700" letter-spacing=".6" fill="#8E949A">acer</text>
+<rect x="62" y="107.5" width="116" height="5.5" rx="2.75" fill="url(#lapHinge)"/>
+<polygon points="44,113 196,113 226,152 14,152" fill="url(#lapDeck)" stroke="#C3C8CD" stroke-width=".8" stroke-linejoin="round"/>
+<ellipse cx="120" cy="115.5" rx="62" ry="3.2" fill="#83B81A" opacity=".16"/>
+<polygon class="lb" points="55.5,115.2 184.5,115.2 199.7,139.0 40.3,139.0"/><polygon class="lk" points="58.0,116.2 66.1,116.2 64.4,119.4 56.1,119.4"/><polygon class="lk" points="67.7,116.2 75.8,116.2 74.4,119.4 66.0,119.4"/><polygon class="lk" points="77.3,116.2 85.4,116.2 84.3,119.4 76.0,119.4"/><polygon class="lk" points="87.0,116.2 95.1,116.2 94.3,119.4 85.9,119.4"/><polygon class="lk" points="96.6,116.2 104.7,116.2 104.3,119.4 95.9,119.4"/><polygon class="lk" points="106.3,116.2 114.4,116.2 114.2,119.4 105.9,119.4"/><polygon class="lk" points="115.9,116.2 124.1,116.2 124.2,119.4 115.8,119.4"/><polygon class="lk" points="125.6,116.2 133.7,116.2 134.1,119.4 125.8,119.4"/><polygon class="lk" points="135.3,116.2 143.4,116.2 144.1,119.4 135.7,119.4"/><polygon class="lk" points="144.9,116.2 153.0,116.2 154.1,119.4 145.7,119.4"/><polygon class="lk" points="154.6,116.2 162.7,116.2 164.0,119.4 155.7,119.4"/><polygon class="lk" points="164.2,116.2 172.3,116.2 174.0,119.4 165.6,119.4"/><polygon class="lk" points="173.9,116.2 182.0,116.2 183.9,119.4 175.6,119.4"/><polygon class="lk" points="55.5,120.4 63.9,120.4 62.1,123.8 53.4,123.8"/><polygon class="lk" points="65.5,120.4 74.0,120.4 72.5,123.8 63.8,123.8"/><polygon class="lk" points="75.6,120.4 84.0,120.4 82.9,123.8 74.1,123.8"/><polygon class="lk" points="85.6,120.4 94.1,120.4 93.2,123.8 84.5,123.8"/><polygon class="lk" points="95.7,120.4 104.1,120.4 103.6,123.8 94.9,123.8"/><polygon class="lk" points="105.7,120.4 114.2,120.4 114.0,123.8 105.3,123.8"/><polygon class="lk" points="115.8,120.4 124.2,120.4 124.4,123.8 115.6,123.8"/><polygon class="lk" points="125.8,120.4 134.3,120.4 134.7,123.8 126.0,123.8"/><polygon class="lk" points="135.9,120.4 144.3,120.4 145.1,123.8 136.4,123.8"/><polygon class="lk" points="145.9,120.4 154.4,120.4 155.5,123.8 146.8,123.8"/><polygon class="lk" points="156.0,120.4 164.4,120.4 165.9,123.8 157.1,123.8"/><polygon class="lk" points="166.0,120.4 174.5,120.4 176.2,123.8 167.5,123.8"/><polygon class="lk" points="176.1,120.4 184.5,120.4 186.6,123.8 177.9,123.8"/><polygon class="lk" points="52.8,124.8 61.6,124.8 59.7,128.4 50.6,128.4"/><polygon class="lk" points="63.2,124.8 72.0,124.8 70.5,128.4 61.4,128.4"/><polygon class="lk" points="73.7,124.8 82.5,124.8 81.3,128.4 72.2,128.4"/><polygon class="lk" points="84.2,124.8 93.0,124.8 92.1,128.4 83.0,128.4"/><polygon class="lk" points="94.7,124.8 103.5,124.8 102.9,128.4 93.8,128.4"/><polygon class="lk" points="105.1,124.8 113.9,124.8 113.7,128.4 104.6,128.4"/><polygon class="lk" points="115.6,124.8 124.4,124.8 124.5,128.4 115.5,128.4"/><polygon class="lk" points="126.1,124.8 134.9,124.8 135.4,128.4 126.3,128.4"/><polygon class="lk" points="136.5,124.8 145.3,124.8 146.2,128.4 137.1,128.4"/><polygon class="lk" points="147.0,124.8 155.8,124.8 157.0,128.4 147.9,128.4"/><polygon class="lk" points="157.5,124.8 166.3,124.8 167.8,128.4 158.7,128.4"/><polygon class="lk" points="168.0,124.8 176.8,124.8 178.6,128.4 169.5,128.4"/><polygon class="lk" points="178.4,124.8 187.2,124.8 189.4,128.4 180.3,128.4"/><polygon class="lk" points="50.0,129.4 59.1,129.4 57.1,133.2 47.7,133.2"/><polygon class="lk" points="60.9,129.4 70.0,129.4 68.4,133.2 58.9,133.2"/><polygon class="lk" points="71.8,129.4 81.0,129.4 79.7,133.2 70.2,133.2"/><polygon class="lk" points="82.7,129.4 91.9,129.4 90.9,133.2 81.5,133.2"/><polygon class="lk" points="93.6,129.4 102.8,129.4 102.2,133.2 92.7,133.2"/><polygon class="lk" points="104.5,129.4 113.7,129.4 113.5,133.2 104.0,133.2"/><polygon class="lk" points="115.4,129.4 124.6,129.4 124.7,133.2 115.3,133.2"/><polygon class="lk" points="126.3,129.4 135.5,129.4 136.0,133.2 126.5,133.2"/><polygon class="lk" points="137.2,129.4 146.4,129.4 147.3,133.2 137.8,133.2"/><polygon class="lk" points="148.1,129.4 157.3,129.4 158.5,133.2 149.1,133.2"/><polygon class="lk" points="159.0,129.4 168.2,129.4 169.8,133.2 160.3,133.2"/><polygon class="lk" points="170.0,129.4 179.1,129.4 181.1,133.2 171.6,133.2"/><polygon class="lk" points="180.9,129.4 190.0,129.4 192.3,133.2 182.9,133.2"/><polygon class="lk" points="47.1,134.2 56.6,134.2 54.5,138.2 44.6,138.2"/><polygon class="lk" points="58.4,134.2 68.0,134.2 66.2,138.2 56.4,138.2"/><polygon class="lk" points="69.8,134.2 79.3,134.2 78.0,138.2 68.1,138.2"/><polygon class="lk" points="81.1,134.2 147.5,134.2 148.4,138.2 79.9,138.2"/><polygon class="lk" points="149.3,134.2 158.9,134.2 160.1,138.2 150.3,138.2"/><polygon class="lk" points="160.7,134.2 170.2,134.2 171.9,138.2 162.0,138.2"/><polygon class="lk" points="172.0,134.2 192.9,134.2 195.4,138.2 173.8,138.2"/><polygon class="lp" points="96.7,140.4 143.3,140.4 145.0,149.4 95.0,149.4"/>
+<path d="M14 152 H226 L221.5 157.5 Q220 159 217 159 H23 Q20 159 18.5 157.5 Z" fill="url(#lapEdge)"/>
+<rect x="106" y="152" width="28" height="2.2" rx="1.1" fill="#A6ACB2"/>
+</symbol><symbol id="bottle" viewBox="0 0 120 168">
+<ellipse cx="60" cy="161" rx="34" ry="4.5" fill="url(#lapShadow)"/>
+<rect x="45" y="4" width="30" height="18" rx="4" fill="url(#capG)" stroke="#BFC4C9" stroke-width=".8"/>
+<g stroke="#C9CDD1" stroke-width=".8"><line x1="50" y1="7" x2="50" y2="19"/><line x1="55" y1="7" x2="55" y2="19"/><line x1="60" y1="7" x2="60" y2="19"/><line x1="65" y1="7" x2="65" y2="19"/><line x1="70" y1="7" x2="70" y2="19"/></g>
+<rect x="47" y="22" width="26" height="6" rx="1.5" fill="#E3E6E9" stroke="#C3C8CD" stroke-width=".6"/>
+<clipPath id="btlClip"><path d="M48 28 H72 Q72 40 84 48 Q90 52 90 62 V146 Q90 156 80 156 H40 Q30 156 30 146 V62 Q30 52 36 48 Q48 40 48 28 Z"/></clipPath>
+<path d="M48 28 H72 Q72 40 84 48 Q90 52 90 62 V146 Q90 156 80 156 H40 Q30 156 30 146 V62 Q30 52 36 48 Q48 40 48 28 Z" fill="#F7F9FA"/>
+<g clip-path="url(#btlClip)">
+<rect x="28" y="40" width="64" height="120" fill="url(#waterG)"/>
+<path d="M28 40 Q44 37 60 40 T92 40" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="1"/>
+<rect x="28" y="84" width="64" height="30" fill="#fff" opacity=".92"/>
+<rect x="28" y="84" width="64" height="2" fill="#83B81A"/>
+<rect x="36" y="56" width="6" height="92" rx="3" fill="#fff" opacity=".45"/>
+<g stroke="#fff" stroke-opacity=".5" stroke-width="1"><line x1="30" y1="128" x2="90" y2="128"/><line x1="30" y1="136" x2="90" y2="136"/></g>
+</g>
+<text x="60" y="103.5" text-anchor="middle" font-family="Noto Sans TC,Arial,sans-serif" font-size="11" font-weight="900" fill="#1A1A1A">600ml</text>
+<path d="M48 28 H72 Q72 40 84 48 Q90 52 90 62 V146 Q90 156 80 156 H40 Q30 156 30 146 V62 Q30 52 36 48 Q48 40 48 28 Z" fill="none" stroke="#B9C2C8" stroke-width="1.2"/>
+</symbol>
+<symbol id="lap999" viewBox="0 0 240 168"><use href="#lap"/>
+<g filter="url(#tagSh)"><circle cx="203" cy="25" r="20" fill="#83B81A" stroke="#fff" stroke-width="3"/></g>
+<text x="203" y="29.2" text-anchor="middle" font-family="Noto Sans TC,Arial,sans-serif" font-size="12" font-weight="900" fill="#fff" letter-spacing="-.2">999g</text>
+</symbol>
+</svg>
+<div class="app" id="app">
+
+<section class="view on" id="v-start">
+ <div class="logo">acer</div>
+ <div class="c" style="margin-top:24px"><div class="k">ACER 12 關・02</div><div class="h">秤重大挑戰</div><p class="p">東西一張張滑過來，跟 Swift Air 16 比，<br>哪一個比較重？</p>
+ <div class="chips" style="margin-top:16px"><span class="chip l">10 題</span><span class="chip l"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="8" r="5.2"/><path d="M7 5.2V8l1.8 1.2M5.4 1h3.2" stroke-linecap="round"/></svg>30 秒</span></div></div>
+ <div class="hero"><svg width="240" height="168" aria-label="Swift Air 16 筆電，999g"><use href="#lap999"/></svg></div>
+ <div class="cap">Swift Air 16<small>16 吋・999g</small></div>
+ <div class="hint"><span><b><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8H3M7 4 3 8l4 4"/></svg>左滑</b> 筆電比較重</span><span>它比較重 <b class="r">右滑<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></b></span></div>
+ <div class="btns" style="margin-top:auto;padding-top:16px"><button class="btn" id="go">開始滑</button></div>
+ <div class="foot">像滑交友軟體一樣・也可以用鍵盤 ← →</div>
+</section>
+
+<section class="view" id="v-play">
+ <div class="top"><span class="chip l" id="qno">第 1/10 題</span><span class="chip" id="clock"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="8" r="5.2"/><path d="M7 5.2V8l1.8 1.2M5.4 1h3.2" stroke-linecap="round"/></svg><span id="tleft">0:30</span></span></div>
+ <div class="prog"><div class="track"><i id="tbar" style="width:0"></i></div><div class="ticks"><i class="m"></i><i></i><i class="m"></i><i></i><i class="m"></i><i></i><i class="m"></i></div><div class="tl"><span>0s</span><span>10s</span><span>20s</span><span>30s</span></div></div>
+ <div class="dots" id="dots"></div>
+ <div class="h c" style="margin-top:12px;font-size:28px;line-height:36px">哪一個比較重？</div>
+ <div class="stack" id="stack"></div>
+ <div class="swipebtns"><button class="btn o" id="bl"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8H3M7 4 3 8l4 4"/></svg>筆電比較重</button><button class="btn" id="br">它比較重<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button></div>
+</section>
+
+<section class="view" id="v-end">
+ <div class="logo">acer</div>
+ <div class="c" style="margin-top:16px"><div class="k">10 張你滑對了</div><div style="margin-top:8px"><span class="big big-u"><span id="score">8</span><span class="unit">/10</span></span></div>
+ <div class="award"><div class="stars" id="stars"></div><span class="badge"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#83B81A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v12M4.5 14h7M2.5 4.5h11M8 3.2 2.5 4.5 0.9 9h3.2ZM13.5 4.5 11.9 9h3.2Z"/><path d="M.9 9a1.6 1.6 0 0 0 3.2 0M11.9 9a1.6 1.6 0 0 0 3.2 0"/></svg><span id="title">人肉電子秤</span></span></div>
+ <div class="say" id="say">重量感很準，差一點滿分</div>
+ <div class="mini" id="mini"></div></div>
+ <div class="card prod" style="margin-top:16px"><svg width="96" height="67" aria-label="Swift Air 16"><use href="#lap999"/></svg><p class="p"><b>Swift Air 16 只有 999g</b>，比裝滿的 600ml 水壺還輕。</p></div>
+ <div class="btns" style="margin-top:auto;padding-top:16px"><button class="btn" id="share">分享成績</button><button class="btn o" id="again">再玩一次</button><button class="btn t" id="more">看 Swift Air 16<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button></div>
+</section>
+<div class="toast" id="toast"></div>
+</div>
+
+<script>
+(()=>{
+const LAPTOP_W = 999, TOTAL_Q = 10, TOTAL_MS = 30000;
+// 重量為一般常見規格的約略值（視覺稿示範用）
+const POOL = [
+ {name:"600ml 不鏽鋼水壺", sub:"裝滿", g:1050, art:'<svg width="104" height="146"><use href="#bottle"/></svg>', fixed:true},
+ {name:"一包 1kg 白米", sub:"超市那種", g:1000, emo:"🍚", fixed:true, note:"只比 999g 重 1 公克！"},
+ {name:"一般 16 吋筆電", sub:"同尺寸的別台", g:1900, art:'<svg width="150" height="105"><use href="#lap"/></svg>'},
+ {name:"一顆鳳梨", sub:"中型", g:1500, emo:"🍍"},
+ {name:"小玉西瓜", sub:"一顆", g:2000, emo:"🍉"},
+ {name:"家裡的貓", sub:"成貓", g:4500, emo:"🐈"},
+ {name:"精裝字典", sub:"厚的那本", g:1300, emo:"📕"},
+ {name:"時尚雜誌", sub:"一本", g:450, emo:"📖"},
+ {name:"雞腿便當", sub:"含飯", g:650, emo:"🍱"},
+ {name:"大杯珍奶", sub:"全糖去冰", g:750, emo:"🧋"},
+ {name:"一隻球鞋", sub:"單腳", g:400, emo:"👟"},
+ {name:"智慧型手機", sub:"一支", g:200, emo:"📱"},
+ {name:"鳳梨酥禮盒", sub:"10 入", g:550, emo:"🎁"},
+];
+const $ = id => document.getElementById(id);
+const views = {start:$('v-start'), play:$('v-play'), end:$('v-end')};
+function show(v){ for(const k in views) views[k].classList.toggle('on', k===v); }
+
+// ---------- sound & haptics ----------
+let ac=null;
+function beep(freqs, dur=0.09, type='sine', vol=0.06){
+  try{ ac = ac || new (window.AudioContext||window.webkitAudioContext)();
+    let t = ac.currentTime;
+    freqs.forEach(f=>{ const o=ac.createOscillator(), g=ac.createGain(); o.type=type; o.frequency.value=f;
+      g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(0.0001,t+dur); o.connect(g).connect(ac.destination); o.start(t); o.stop(t+dur); t+=dur*0.9; });
+  }catch(e){}
+}
+const buzz = ms => { try{ navigator.vibrate && navigator.vibrate(ms); }catch(e){} };
+
+// ---------- state ----------
+let qs=[], idx=0, results=[], left=TOTAL_MS, last=0, running=false, busy=false, raf=0;
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function pickQuestions(){
+  const fixed = POOL.filter(p=>p.fixed), rest = shuffle(POOL.filter(p=>!p.fixed));
+  const heavy = rest.filter(p=>p.g>LAPTOP_W), light = rest.filter(p=>p.g<LAPTOP_W);
+  // 大約一半一半，避免全猜同一邊
+  return shuffle([...fixed, ...heavy.slice(0,3), ...light.slice(0,5)]).slice(0,TOTAL_Q);
+}
+
+function start(){
+  qs = pickQuestions(); idx=0; results=[]; left=TOTAL_MS; busy=false;
+  show('play'); renderDots(); renderStack(); updateClock();
+  running=true; last=performance.now(); cancelAnimationFrame(raf); raf=requestAnimationFrame(tick);
+  beep([523,659],0.08);
+}
+function tick(now){
+  if(!running) return;
+  if(!busy){ left -= now-last; }
+  last = now;
+  if(left<=0){ left=0; updateClock(); return finish(); }
+  updateClock();
+  raf=requestAnimationFrame(tick);
+}
+function updateClock(){
+  const s = Math.ceil(left/1000);
+  $('tleft').textContent = '0:'+String(s).padStart(2,'0');
+  $('tbar').style.width = (100-left/TOTAL_MS*100)+'%';
+  $('clock').classList.toggle('warn', left<=5000 && left>0);
+}
+function renderDots(){
+  $('dots').innerHTML = qs.map((_,i)=>{
+    const r = results[i]; const c = r===true?'ok':r===false?'ng':(i===idx?'cur':'');
+    return `<i class="${c}"></i>`; }).join('');
+  $('qno').textContent = `第 ${Math.min(idx+1,TOTAL_Q)}/${TOTAL_Q} 題`;
+}
+function cardHTML(q,i){
+  const art = q.art ? q.art : `<span class="emo">${q.emo}</span>`;
+  return `<span class="no">${String(i+1).padStart(2,'0')} / ${TOTAL_Q}</span><div class="art">${art}</div><b>${q.name}・${q.sub}</b>
+   <div class="vsl">對上<svg width="40" height="28"><use href="#lap"/></svg>Swift Air 16</div>
+   <span class="stamp r">它比較重！</span><span class="stamp l">筆電比較重！</span>`;
+}
+let card=null;
+function renderStack(){
+  const st=$('stack'); st.innerHTML='';
+  if(idx+2<qs.length){ const b=document.createElement('div'); b.className='sc b2'; st.appendChild(b); }
+  if(idx+1<qs.length){ const b=document.createElement('div'); b.className='sc b1'; st.appendChild(b); }
+  card=document.createElement('div'); card.className='sc cur'; card.innerHTML=cardHTML(qs[idx],idx); st.appendChild(card);
+  const rv=document.createElement('div'); rv.className='reveal'; rv.id='reveal'; st.appendChild(rv);
+  bindDrag(card);
+}
+
+// ---------- drag / swipe ----------
+function setDrag(dx){
+  card.style.transform = `translateX(${dx}px) rotate(${dx/14}deg)`;
+  const r = card.querySelector('.stamp.r'), l = card.querySelector('.stamp.l');
+  r.style.opacity = Math.max(0,Math.min(1,dx/80)); l.style.opacity = Math.max(0,Math.min(1,-dx/80));
+}
+function bindDrag(el){
+  let sx=0, dx=0, t0=0, active=false, id=null;
+  el.addEventListener('pointerdown', e=>{ if(busy) return; active=true; id=e.pointerId; sx=e.clientX; dx=0; t0=performance.now(); el.classList.add('drag'); el.classList.remove('back'); try{el.setPointerCapture(id);}catch(_){} });
+  el.addEventListener('pointermove', e=>{ if(!active||e.pointerId!==id) return; dx=e.clientX-sx; setDrag(dx); });
+  const end = e=>{ if(!active||e.pointerId!==id) return; active=false; el.classList.remove('drag');
+    const v = Math.abs(dx)/Math.max(1,performance.now()-t0);
+    if(Math.abs(dx)>90 || (Math.abs(dx)>40 && v>0.6)) answer(dx>0?'heavier':'lighter');
+    else { el.classList.add('back'); setDrag(0); } };
+  el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
+}
+function answer(choice){
+  if(busy||!running) return; busy=true;
+  const q=qs[idx], heavier=q.g>LAPTOP_W, ok=(choice==='heavier')===heavier;
+  results[idx]=ok;
+  // fly out
+  card.classList.remove('back'); card.classList.add('fly');
+  const dir = choice==='heavier'?1:-1;
+  setDrag(dir*60);
+  requestAnimationFrame(()=>{ card.style.transform=`translateX(${dir*520}px) rotate(${dir*24}deg)`; card.style.opacity='0'; });
+  ok ? (beep([660,880],0.08), buzz(15)) : (beep([180],0.18,'square',0.04), buzz([30,40,30]));
+  const rv=$('reveal'); rv.classList.toggle('ng',!ok);
+  const who = heavier ? `${q.name}比較重` : `Swift Air 16 比較重`;
+  rv.innerHTML = `<div class="mark">${ok?'✓':'✕'}</div><div class="rt">${ok?'答對！':'差一點！'}</div><div class="rwho">${who}</div>
+    <div class="rw">${q.name}約 <b>${q.g.toLocaleString()}g</b>｜Swift Air 16 <b>999g</b>${q.note?'<br>'+q.note:''}</div>`;
+  setTimeout(()=>rv.classList.add('on'),120);
+  renderDots();
+  setTimeout(()=>{
+    idx++;
+    if(idx>=TOTAL_Q) return finish();
+    busy=false; renderDots(); renderStack();
+  }, 1100);
+}
+$('bl').onclick=()=>answer('lighter'); $('br').onclick=()=>answer('heavier');
+document.addEventListener('keydown',e=>{
+  if(!views.play.classList.contains('on')) return;
+  if(e.key==='ArrowLeft') answer('lighter'); if(e.key==='ArrowRight') answer('heavier');
+});
+
+// ---------- result ----------
+const STAR='<svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2.6l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8Z" stroke-linejoin="round"/></svg>';
+let lastScore=0;
+function finish(){
+  running=false; cancelAnimationFrame(raf);
+  const score = results.filter(r=>r===true).length; lastScore=score;
+  const nStar = score>=9?3:score>=6?2:1;
+  const [title,say] = score===10?['人肉電子秤・滿分','滿分！你的手就是電子秤']
+    : score>=8?['人肉電子秤','重量感很準，差一點滿分']
+    : score>=6?['手感不錯','重量感還不錯，再一輪就滿分']
+    : score>=4?['手感暖機中','有些東西比你想的還輕']
+    : ['萬物皆重','你覺得什麼都很重，筆電除外'];
+  $('score').textContent=score; $('title').textContent=title; $('say').textContent=say;
+  $('stars').innerHTML=[0,1,2].map(i=>`<span class="st${i<nStar?' on':''}">${STAR}</span>`).join('');
+  $('mini').innerHTML=Array.from({length:TOTAL_Q},(_,i)=>`<i class="${results[i]===true?'ok':results[i]===false?'ng':''}"></i>`).join('');
+  setTimeout(()=>{ show('end'); beep([523,659,784],0.1); },300);
+}
+function toast(t){ const el=$('toast'); el.textContent=t; el.classList.add('on'); clearTimeout(el._t); el._t=setTimeout(()=>el.classList.remove('on'),1800); }
+$('go').onclick=start; $('again').onclick=start;
+$('share').onclick=async()=>{
+  const text=`我在「秤重大挑戰」滑對 ${lastScore}/10！原來 Swift Air 16 只有 999g，比裝滿的 600ml 水壺還輕。你猜得出來嗎？`;
+  let copied=false; try{ await navigator.clipboard.writeText(text); copied=true; }catch(e){}
+  try{ if(navigator.share){ await navigator.share({title:'秤重大挑戰',text}); return; } }catch(e){ if(e&&e.name==='AbortError') return; }
+  toast(copied?'已複製分享文字，貼到 IG／LINE 就好':'分享文字：'+text.slice(0,18)+'…');
+};
+$('more').onclick=()=>toast('正式版會連到 Swift Air 16 產品頁');
+})();
+</script>
+</body></html>

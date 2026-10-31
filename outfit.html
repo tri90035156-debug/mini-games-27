@@ -1,0 +1,513 @@
+<!doctype html><html lang="zh-Hant"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>今天穿這樣出門？</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--page:#EFE9E2;--scr:#FAF7F2;--ink:#3B2F33;--mute:#8C7F84;--line:#E9DFDA;--acc:#7A2E3A;--acc-ink:#FAF7F2;--pink:#F3D9DC;--green:#CFE3D0;--r:22px;
+--sh:0 1px 2px rgba(59,47,51,.06),0 8px 24px rgba(59,47,51,.08);--sh-h:0 1px 2px rgba(59,47,51,.08),0 12px 32px rgba(59,47,51,.12);--sh-acc:0 1px 2px rgba(122,46,58,.2),0 8px 24px rgba(122,46,58,.22)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:"Noto Sans TC","PingFang TC",sans-serif;background:var(--page);color:var(--ink);display:flex;align-items:center;justify-content:center;-webkit-font-smoothing:antialiased;overflow:hidden}
+.defs{position:absolute;width:0;height:0;overflow:hidden}
+.app{position:relative;width:100%;max-width:400px;height:100%;background:var(--scr);overflow:hidden;user-select:none;-webkit-user-select:none}
+@media (min-width:520px) and (min-height:700px){.app{height:min(860px,calc(100dvh - 48px));border-radius:36px;box-shadow:0 1px 2px rgba(0,0,0,.08),0 24px 56px rgba(59,47,51,.18)}}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);pointer-events:none}
+.view{position:absolute;inset:0;display:none;flex-direction:column;padding:max(24px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom))}
+.view.on{display:flex}
+.logo{font-weight:900;font-size:22px;line-height:24px;letter-spacing:-.02em;color:#83B81A;position:relative}
+.k{font-size:12px;line-height:16px;letter-spacing:.14em;font-weight:700;color:var(--mute)}
+.h{font-size:clamp(24px,8.4vw,32px);font-weight:900;line-height:1.25;margin:8px 0;white-space:nowrap}
+.p{font-size:14px;line-height:24px;color:var(--mute)}
+.foot{margin-top:8px;font-size:11px;line-height:16px;color:var(--mute);text-align:center;position:relative}
+.c{text-align:center;position:relative}
+.btn{display:flex;align-items:center;justify-content:center;height:56px;width:100%;border:0;font:inherit;font-weight:900;font-size:17px;border-radius:var(--r);background:var(--acc);color:var(--acc-ink);box-shadow:var(--sh-acc);cursor:pointer;touch-action:manipulation;transition:transform .15s,box-shadow .15s,filter .15s;position:relative}
+@media (hover:hover){.btn:hover{transform:translateY(-1px);filter:brightness(1.08)}}
+.btn:active{transform:translateY(1px);filter:brightness(.95)}
+.btn.o{height:48px;background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:15px;box-shadow:var(--sh)}
+.btns{display:flex;flex-direction:column;gap:8px;position:relative}
+.chip{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 14px;font:inherit;font-size:13px;font-weight:700;border-radius:99px;background:#fff;border:1px solid var(--line);box-shadow:var(--sh);white-space:nowrap;cursor:pointer;color:var(--ink);font-variant-numeric:tabular-nums}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip.s{height:28px;padding:0 10px;font-size:12px;cursor:default}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 16px;box-shadow:var(--sh);position:relative}
+.stage{position:relative}
+.stage>svg.doll{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;transform-origin:50% 92%}
+@keyframes wob{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+.stage>svg.doll.wobble{animation:wob .9s ease-in-out infinite}
+.stage>svg.doll.wobble.hard{animation-duration:.5s}
+.sticker{filter:drop-shadow(1.5px 0 0 #fff) drop-shadow(-1.5px 0 0 #fff) drop-shadow(0 1.5px 0 #fff) drop-shadow(0 -1.5px 0 #fff) drop-shadow(0 4px 6px rgba(59,47,51,.18))}
+.rules{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:8px;position:relative}
+.hud{display:flex;align-items:center;justify-content:space-between;gap:8px;position:relative}
+.score{display:flex;flex-direction:column;align-items:center;line-height:1}
+.score b{font-size:28px;font-weight:900;color:var(--acc);font-variant-numeric:tabular-nums;transition:transform .12s}
+.score b.bump{transform:scale(1.18)}
+.score span{font-size:11px;color:var(--mute);margin-top:2px;font-weight:700}
+.timer{min-width:72px;justify-content:center}
+.timer.warn{background:#E85D4A;border-color:#E85D4A;color:#fff;animation:pulse .5s infinite}
+@keyframes pulse{50%{transform:scale(1.06)}}
+.sub{display:flex;justify-content:space-between;margin-top:8px;font-size:12px;line-height:16px;color:var(--mute);font-weight:700;position:relative}
+.sub b{color:var(--ink);font-variant-numeric:tabular-nums}
+.kgbar{height:6px;border-radius:99px;background:#EFE6E2;margin-top:4px;overflow:hidden;position:relative}
+.kgbar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#CFE3D0,#F7C948,#E85D4A);transition:width .3s}
+#stage{flex:1;min-height:0;margin-top:8px}
+.sp{position:absolute;width:64px;height:64px;margin:-32px 0 0 -32px;border:0;border-radius:50%;background:rgba(255,255,255,.85);box-shadow:var(--sh-h);display:flex;align-items:center;justify-content:center;cursor:pointer;touch-action:manipulation;z-index:4;padding:0;animation:popin .28s cubic-bezier(.2,.9,.3,1.4)}
+.sp svg{display:block;width:44px;height:44px;pointer-events:none}
+.sp.tall svg{height:52px}
+.sp.wide svg{width:52px}
+.sp.bad{background:#FFE9E6;box-shadow:0 0 0 2px #E85D4A,var(--sh-h)}
+.sp.rare{background:#FFFBEA;box-shadow:0 0 0 3px #F7C948,0 0 24px rgba(247,201,72,.8)}
+.sp.rare:after{content:"✦";position:absolute;right:-2px;top:-6px;color:#F7C948;font-size:18px;text-shadow:0 0 6px #fff}
+.sp.fade{animation:fade .45s steps(2) infinite}
+@keyframes popin{0%{transform:scale(0)}100%{transform:scale(1)}}
+@keyframes fade{50%{opacity:.35}}
+.sp.gone{animation:none;transform:scale(0);opacity:0;transition:transform .2s,opacity .2s}
+.fly{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;z-index:6;pointer-events:none;transition:left .26s cubic-bezier(.5,0,.6,1),top .26s cubic-bezier(.5,0,.6,1),transform .26s;transform:scale(1.1)}
+.fly svg{width:100%;height:100%;display:block}
+.plus{position:absolute;font-weight:900;font-size:15px;line-height:20px;color:var(--acc);white-space:nowrap;pointer-events:none;z-index:7;animation:rise 1s ease-out forwards;text-shadow:0 1px 0 #fff,0 0 6px #fff}
+.plus.bad{color:#E85D4A}
+@keyframes rise{0%{opacity:0;transform:translate(-50%,8px) scale(.8)}15%{opacity:1;transform:translate(-50%,0) scale(1.1)}100%{opacity:0;transform:translate(-50%,-40px)}}
+.say{position:absolute;left:50%;top:6px;transform:translate(-50%,4px);max-width:80%;padding:6px 12px;border-radius:14px;background:#fff;border:1px solid var(--line);box-shadow:var(--sh);font-size:13px;line-height:20px;font-weight:700;opacity:0;transition:all .2s;pointer-events:none;z-index:5;white-space:nowrap}
+.say.on{opacity:1;transform:translate(-50%,0)}
+.banner{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%) scale(.6) rotate(-4deg);padding:10px 18px;border-radius:16px;background:var(--acc);color:#fff;text-align:center;box-shadow:var(--sh-acc);opacity:0;pointer-events:none;z-index:8;white-space:nowrap;transition:transform .25s cubic-bezier(.2,.9,.3,1.4),opacity .2s}
+.banner small{display:block;font-size:11px;letter-spacing:.2em;opacity:.85}
+.banner b{display:block;font-size:20px;line-height:28px}
+.banner.on{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-4deg)}
+.banner.go{background:#83B81A;box-shadow:0 8px 24px rgba(131,184,26,.4)}
+.countdown{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:96px;font-weight:900;color:var(--acc);z-index:9;pointer-events:none;text-shadow:0 4px 0 #fff}
+.found{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px;position:relative}
+.found .dots{display:flex;gap:4px}
+.found .dots i{width:10px;height:10px;border-radius:50%;background:#EFE6E2}
+.found .dots i.on{background:var(--acc)}
+.title{font-size:24px;line-height:32px;font-weight:900;margin-top:4px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px;position:relative}
+.st{background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px 0;text-align:center;box-shadow:var(--sh)}
+.st b{display:block;font-size:20px;line-height:24px;font-weight:900;color:var(--acc);font-variant-numeric:tabular-nums}
+.st span{font-size:11px;line-height:16px;color:var(--mute)}
+.combos{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:8px;position:relative}
+.combos span{font-size:11px;line-height:16px;padding:4px 8px;border-radius:99px;border:1px dashed #D9CFCB;color:#B9AEB2;background:#fff}
+.combos span.on{border:1px solid var(--acc);color:var(--acc);font-weight:700}
+.combos span.new{background:var(--acc);color:#fff}
+.match{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-1px;margin:0 4px;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+.toast{position:absolute;left:50%;bottom:120px;transform:translate(-50%,16px);background:var(--ink);color:#fff;font-size:13px;line-height:20px;padding:8px 16px;border-radius:99px;opacity:0;transition:all .25s;pointer-events:none;white-space:nowrap;z-index:20}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.sheet{position:absolute;inset:0;z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;background:rgba(0,0,0,.75)}
+.sheet[hidden]{display:none}
+.sheet img{display:block;max-width:100%;max-height:68%;border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,.4)}
+.sheet p{color:#fff;font-size:14px;line-height:22px;text-align:center}
+.sheet .btn{max-width:200px}
+</style></head><body>
+<svg class="defs" aria-hidden="true" width="0" height="0"><defs><linearGradient id="cScr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FCE8EA"/><stop offset=".55" stop-color="#F3D9DC"/><stop offset="1" stop-color="#CFE3D0"/></linearGradient><linearGradient id="lapGreenL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAF3EA"/><stop offset="1" stop-color="#C5DCC8"/></linearGradient>
+<linearGradient id="lapGreenD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D3E6D5"/><stop offset="1" stop-color="#E9F2E9"/></linearGradient>
+<style>.lapGreenk{fill:#F8FCF8;stroke:#A9C7AD;stroke-width:.35}.lapGreenb{fill:#C3D9C6}.lapGreenp{fill:#E9F2E9;stroke:#A9C7AD;stroke-width:.6}</style>
+<symbol id="lapGreen" viewBox="0 0 240 168">
+<ellipse cx="120" cy="161" rx="108" ry="5" fill="#3B2F33" opacity=".08"/>
+<rect x="44" y="4" width="152" height="104" rx="9" fill="url(#lapGreenL)" stroke="#A9C7AD"/>
+<rect x="47" y="7" width="146" height="92" rx="6" fill="#2F3A31"/>
+<rect x="50.5" y="10.5" width="139" height="85" rx="2.5" fill="url(#cScr)"/>
+<polygon points="50.5,10.5 124,10.5 86,95.5 50.5,95.5" fill="#fff" opacity=".18"/>
+<text x="120" y="105.6" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.2" font-weight="700" letter-spacing=".6" fill="#7E9A82">acer</text>
+<rect x="62" y="107.5" width="116" height="5.5" rx="2.75" fill="#A9C7AD"/>
+<polygon points="44,113 196,113 226,152 14,152" fill="url(#lapGreenD)" stroke="#A9C7AD" stroke-width=".8" stroke-linejoin="round"/>
+<polygon class="lapGreenb" points="55.5,115.2 184.5,115.2 199.7,139.0 40.3,139.0"/><polygon class="lapGreenk" points="58.0,116.2 66.1,116.2 64.4,119.4 56.1,119.4"/><polygon class="lapGreenk" points="67.7,116.2 75.8,116.2 74.4,119.4 66.0,119.4"/><polygon class="lapGreenk" points="77.3,116.2 85.4,116.2 84.3,119.4 76.0,119.4"/><polygon class="lapGreenk" points="87.0,116.2 95.1,116.2 94.3,119.4 85.9,119.4"/><polygon class="lapGreenk" points="96.6,116.2 104.7,116.2 104.3,119.4 95.9,119.4"/><polygon class="lapGreenk" points="106.3,116.2 114.4,116.2 114.2,119.4 105.9,119.4"/><polygon class="lapGreenk" points="115.9,116.2 124.1,116.2 124.2,119.4 115.8,119.4"/><polygon class="lapGreenk" points="125.6,116.2 133.7,116.2 134.1,119.4 125.8,119.4"/><polygon class="lapGreenk" points="135.3,116.2 143.4,116.2 144.1,119.4 135.7,119.4"/><polygon class="lapGreenk" points="144.9,116.2 153.0,116.2 154.1,119.4 145.7,119.4"/><polygon class="lapGreenk" points="154.6,116.2 162.7,116.2 164.0,119.4 155.7,119.4"/><polygon class="lapGreenk" points="164.2,116.2 172.3,116.2 174.0,119.4 165.6,119.4"/><polygon class="lapGreenk" points="173.9,116.2 182.0,116.2 183.9,119.4 175.6,119.4"/><polygon class="lapGreenk" points="55.5,120.4 63.9,120.4 62.1,123.8 53.4,123.8"/><polygon class="lapGreenk" points="65.5,120.4 74.0,120.4 72.5,123.8 63.8,123.8"/><polygon class="lapGreenk" points="75.6,120.4 84.0,120.4 82.9,123.8 74.1,123.8"/><polygon class="lapGreenk" points="85.6,120.4 94.1,120.4 93.2,123.8 84.5,123.8"/><polygon class="lapGreenk" points="95.7,120.4 104.1,120.4 103.6,123.8 94.9,123.8"/><polygon class="lapGreenk" points="105.7,120.4 114.2,120.4 114.0,123.8 105.3,123.8"/><polygon class="lapGreenk" points="115.8,120.4 124.2,120.4 124.4,123.8 115.6,123.8"/><polygon class="lapGreenk" points="125.8,120.4 134.3,120.4 134.7,123.8 126.0,123.8"/><polygon class="lapGreenk" points="135.9,120.4 144.3,120.4 145.1,123.8 136.4,123.8"/><polygon class="lapGreenk" points="145.9,120.4 154.4,120.4 155.5,123.8 146.8,123.8"/><polygon class="lapGreenk" points="156.0,120.4 164.4,120.4 165.9,123.8 157.1,123.8"/><polygon class="lapGreenk" points="166.0,120.4 174.5,120.4 176.2,123.8 167.5,123.8"/><polygon class="lapGreenk" points="176.1,120.4 184.5,120.4 186.6,123.8 177.9,123.8"/><polygon class="lapGreenk" points="52.8,124.8 61.6,124.8 59.7,128.4 50.6,128.4"/><polygon class="lapGreenk" points="63.2,124.8 72.0,124.8 70.5,128.4 61.4,128.4"/><polygon class="lapGreenk" points="73.7,124.8 82.5,124.8 81.3,128.4 72.2,128.4"/><polygon class="lapGreenk" points="84.2,124.8 93.0,124.8 92.1,128.4 83.0,128.4"/><polygon class="lapGreenk" points="94.7,124.8 103.5,124.8 102.9,128.4 93.8,128.4"/><polygon class="lapGreenk" points="105.1,124.8 113.9,124.8 113.7,128.4 104.6,128.4"/><polygon class="lapGreenk" points="115.6,124.8 124.4,124.8 124.5,128.4 115.5,128.4"/><polygon class="lapGreenk" points="126.1,124.8 134.9,124.8 135.4,128.4 126.3,128.4"/><polygon class="lapGreenk" points="136.5,124.8 145.3,124.8 146.2,128.4 137.1,128.4"/><polygon class="lapGreenk" points="147.0,124.8 155.8,124.8 157.0,128.4 147.9,128.4"/><polygon class="lapGreenk" points="157.5,124.8 166.3,124.8 167.8,128.4 158.7,128.4"/><polygon class="lapGreenk" points="168.0,124.8 176.8,124.8 178.6,128.4 169.5,128.4"/><polygon class="lapGreenk" points="178.4,124.8 187.2,124.8 189.4,128.4 180.3,128.4"/><polygon class="lapGreenk" points="50.0,129.4 59.1,129.4 57.1,133.2 47.7,133.2"/><polygon class="lapGreenk" points="60.9,129.4 70.0,129.4 68.4,133.2 58.9,133.2"/><polygon class="lapGreenk" points="71.8,129.4 81.0,129.4 79.7,133.2 70.2,133.2"/><polygon class="lapGreenk" points="82.7,129.4 91.9,129.4 90.9,133.2 81.5,133.2"/><polygon class="lapGreenk" points="93.6,129.4 102.8,129.4 102.2,133.2 92.7,133.2"/><polygon class="lapGreenk" points="104.5,129.4 113.7,129.4 113.5,133.2 104.0,133.2"/><polygon class="lapGreenk" points="115.4,129.4 124.6,129.4 124.7,133.2 115.3,133.2"/><polygon class="lapGreenk" points="126.3,129.4 135.5,129.4 136.0,133.2 126.5,133.2"/><polygon class="lapGreenk" points="137.2,129.4 146.4,129.4 147.3,133.2 137.8,133.2"/><polygon class="lapGreenk" points="148.1,129.4 157.3,129.4 158.5,133.2 149.1,133.2"/><polygon class="lapGreenk" points="159.0,129.4 168.2,129.4 169.8,133.2 160.3,133.2"/><polygon class="lapGreenk" points="170.0,129.4 179.1,129.4 181.1,133.2 171.6,133.2"/><polygon class="lapGreenk" points="180.9,129.4 190.0,129.4 192.3,133.2 182.9,133.2"/><polygon class="lapGreenk" points="47.1,134.2 56.6,134.2 54.5,138.2 44.6,138.2"/><polygon class="lapGreenk" points="58.4,134.2 68.0,134.2 66.2,138.2 56.4,138.2"/><polygon class="lapGreenk" points="69.8,134.2 79.3,134.2 78.0,138.2 68.1,138.2"/><polygon class="lapGreenk" points="81.1,134.2 147.5,134.2 148.4,138.2 79.9,138.2"/><polygon class="lapGreenk" points="149.3,134.2 158.9,134.2 160.1,138.2 150.3,138.2"/><polygon class="lapGreenk" points="160.7,134.2 170.2,134.2 171.9,138.2 162.0,138.2"/><polygon class="lapGreenk" points="172.0,134.2 192.9,134.2 195.4,138.2 173.8,138.2"/><polygon class="lapGreenp" points="96.7,140.4 143.3,140.4 145.0,149.4 95.0,149.4"/>
+<path d="M14 152 H226 L221.5 157.5 Q220 159 217 159 H23 Q20 159 18.5 157.5 Z" fill="#A9C7AD"/>
+</symbol><linearGradient id="lapPinkL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FCF0F1"/><stop offset="1" stop-color="#EBCBD0"/></linearGradient>
+<linearGradient id="lapPinkD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EFD6DA"/><stop offset="1" stop-color="#F8EBED"/></linearGradient>
+<style>.lapPinkk{fill:#FFFBFB;stroke:#D9AEB5;stroke-width:.35}.lapPinkb{fill:#E6C3C9}.lapPinkp{fill:#F8EBED;stroke:#D9AEB5;stroke-width:.6}</style>
+<symbol id="lapPink" viewBox="0 0 240 168">
+<ellipse cx="120" cy="161" rx="108" ry="5" fill="#3B2F33" opacity=".08"/>
+<rect x="44" y="4" width="152" height="104" rx="9" fill="url(#lapPinkL)" stroke="#D9AEB5"/>
+<rect x="47" y="7" width="146" height="92" rx="6" fill="#2F3A31"/>
+<rect x="50.5" y="10.5" width="139" height="85" rx="2.5" fill="url(#cScr)"/>
+<polygon points="50.5,10.5 124,10.5 86,95.5 50.5,95.5" fill="#fff" opacity=".18"/>
+<text x="120" y="105.6" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.2" font-weight="700" letter-spacing=".6" fill="#B07D86">acer</text>
+<rect x="62" y="107.5" width="116" height="5.5" rx="2.75" fill="#D9AEB5"/>
+<polygon points="44,113 196,113 226,152 14,152" fill="url(#lapPinkD)" stroke="#D9AEB5" stroke-width=".8" stroke-linejoin="round"/>
+<polygon class="lapPinkb" points="55.5,115.2 184.5,115.2 199.7,139.0 40.3,139.0"/><polygon class="lapPinkk" points="58.0,116.2 66.1,116.2 64.4,119.4 56.1,119.4"/><polygon class="lapPinkk" points="67.7,116.2 75.8,116.2 74.4,119.4 66.0,119.4"/><polygon class="lapPinkk" points="77.3,116.2 85.4,116.2 84.3,119.4 76.0,119.4"/><polygon class="lapPinkk" points="87.0,116.2 95.1,116.2 94.3,119.4 85.9,119.4"/><polygon class="lapPinkk" points="96.6,116.2 104.7,116.2 104.3,119.4 95.9,119.4"/><polygon class="lapPinkk" points="106.3,116.2 114.4,116.2 114.2,119.4 105.9,119.4"/><polygon class="lapPinkk" points="115.9,116.2 124.1,116.2 124.2,119.4 115.8,119.4"/><polygon class="lapPinkk" points="125.6,116.2 133.7,116.2 134.1,119.4 125.8,119.4"/><polygon class="lapPinkk" points="135.3,116.2 143.4,116.2 144.1,119.4 135.7,119.4"/><polygon class="lapPinkk" points="144.9,116.2 153.0,116.2 154.1,119.4 145.7,119.4"/><polygon class="lapPinkk" points="154.6,116.2 162.7,116.2 164.0,119.4 155.7,119.4"/><polygon class="lapPinkk" points="164.2,116.2 172.3,116.2 174.0,119.4 165.6,119.4"/><polygon class="lapPinkk" points="173.9,116.2 182.0,116.2 183.9,119.4 175.6,119.4"/><polygon class="lapPinkk" points="55.5,120.4 63.9,120.4 62.1,123.8 53.4,123.8"/><polygon class="lapPinkk" points="65.5,120.4 74.0,120.4 72.5,123.8 63.8,123.8"/><polygon class="lapPinkk" points="75.6,120.4 84.0,120.4 82.9,123.8 74.1,123.8"/><polygon class="lapPinkk" points="85.6,120.4 94.1,120.4 93.2,123.8 84.5,123.8"/><polygon class="lapPinkk" points="95.7,120.4 104.1,120.4 103.6,123.8 94.9,123.8"/><polygon class="lapPinkk" points="105.7,120.4 114.2,120.4 114.0,123.8 105.3,123.8"/><polygon class="lapPinkk" points="115.8,120.4 124.2,120.4 124.4,123.8 115.6,123.8"/><polygon class="lapPinkk" points="125.8,120.4 134.3,120.4 134.7,123.8 126.0,123.8"/><polygon class="lapPinkk" points="135.9,120.4 144.3,120.4 145.1,123.8 136.4,123.8"/><polygon class="lapPinkk" points="145.9,120.4 154.4,120.4 155.5,123.8 146.8,123.8"/><polygon class="lapPinkk" points="156.0,120.4 164.4,120.4 165.9,123.8 157.1,123.8"/><polygon class="lapPinkk" points="166.0,120.4 174.5,120.4 176.2,123.8 167.5,123.8"/><polygon class="lapPinkk" points="176.1,120.4 184.5,120.4 186.6,123.8 177.9,123.8"/><polygon class="lapPinkk" points="52.8,124.8 61.6,124.8 59.7,128.4 50.6,128.4"/><polygon class="lapPinkk" points="63.2,124.8 72.0,124.8 70.5,128.4 61.4,128.4"/><polygon class="lapPinkk" points="73.7,124.8 82.5,124.8 81.3,128.4 72.2,128.4"/><polygon class="lapPinkk" points="84.2,124.8 93.0,124.8 92.1,128.4 83.0,128.4"/><polygon class="lapPinkk" points="94.7,124.8 103.5,124.8 102.9,128.4 93.8,128.4"/><polygon class="lapPinkk" points="105.1,124.8 113.9,124.8 113.7,128.4 104.6,128.4"/><polygon class="lapPinkk" points="115.6,124.8 124.4,124.8 124.5,128.4 115.5,128.4"/><polygon class="lapPinkk" points="126.1,124.8 134.9,124.8 135.4,128.4 126.3,128.4"/><polygon class="lapPinkk" points="136.5,124.8 145.3,124.8 146.2,128.4 137.1,128.4"/><polygon class="lapPinkk" points="147.0,124.8 155.8,124.8 157.0,128.4 147.9,128.4"/><polygon class="lapPinkk" points="157.5,124.8 166.3,124.8 167.8,128.4 158.7,128.4"/><polygon class="lapPinkk" points="168.0,124.8 176.8,124.8 178.6,128.4 169.5,128.4"/><polygon class="lapPinkk" points="178.4,124.8 187.2,124.8 189.4,128.4 180.3,128.4"/><polygon class="lapPinkk" points="50.0,129.4 59.1,129.4 57.1,133.2 47.7,133.2"/><polygon class="lapPinkk" points="60.9,129.4 70.0,129.4 68.4,133.2 58.9,133.2"/><polygon class="lapPinkk" points="71.8,129.4 81.0,129.4 79.7,133.2 70.2,133.2"/><polygon class="lapPinkk" points="82.7,129.4 91.9,129.4 90.9,133.2 81.5,133.2"/><polygon class="lapPinkk" points="93.6,129.4 102.8,129.4 102.2,133.2 92.7,133.2"/><polygon class="lapPinkk" points="104.5,129.4 113.7,129.4 113.5,133.2 104.0,133.2"/><polygon class="lapPinkk" points="115.4,129.4 124.6,129.4 124.7,133.2 115.3,133.2"/><polygon class="lapPinkk" points="126.3,129.4 135.5,129.4 136.0,133.2 126.5,133.2"/><polygon class="lapPinkk" points="137.2,129.4 146.4,129.4 147.3,133.2 137.8,133.2"/><polygon class="lapPinkk" points="148.1,129.4 157.3,129.4 158.5,133.2 149.1,133.2"/><polygon class="lapPinkk" points="159.0,129.4 168.2,129.4 169.8,133.2 160.3,133.2"/><polygon class="lapPinkk" points="170.0,129.4 179.1,129.4 181.1,133.2 171.6,133.2"/><polygon class="lapPinkk" points="180.9,129.4 190.0,129.4 192.3,133.2 182.9,133.2"/><polygon class="lapPinkk" points="47.1,134.2 56.6,134.2 54.5,138.2 44.6,138.2"/><polygon class="lapPinkk" points="58.4,134.2 68.0,134.2 66.2,138.2 56.4,138.2"/><polygon class="lapPinkk" points="69.8,134.2 79.3,134.2 78.0,138.2 68.1,138.2"/><polygon class="lapPinkk" points="81.1,134.2 147.5,134.2 148.4,138.2 79.9,138.2"/><polygon class="lapPinkk" points="149.3,134.2 158.9,134.2 160.1,138.2 150.3,138.2"/><polygon class="lapPinkk" points="160.7,134.2 170.2,134.2 171.9,138.2 162.0,138.2"/><polygon class="lapPinkk" points="172.0,134.2 192.9,134.2 195.4,138.2 173.8,138.2"/><polygon class="lapPinkp" points="96.7,140.4 143.3,140.4 145.0,149.4 95.0,149.4"/>
+<path d="M14 152 H226 L221.5 157.5 Q220 159 217 159 H23 Q20 159 18.5 157.5 Z" fill="#D9AEB5"/>
+</symbol><linearGradient id="lapBurgL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9C4B58"/><stop offset="1" stop-color="#6E2834"/></linearGradient>
+<linearGradient id="lapBurgD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7E3442"/><stop offset="1" stop-color="#93485A"/></linearGradient>
+<style>.lapBurgk{fill:#A9606E;stroke:#5A1E28;stroke-width:.35}.lapBurgb{fill:#6A2632}.lapBurgp{fill:#93485A;stroke:#5A1E28;stroke-width:.6}</style>
+<symbol id="lapBurg" viewBox="0 0 240 168">
+<ellipse cx="120" cy="161" rx="108" ry="5" fill="#3B2F33" opacity=".08"/>
+<rect x="44" y="4" width="152" height="104" rx="9" fill="url(#lapBurgL)" stroke="#5A1E28"/>
+<rect x="47" y="7" width="146" height="92" rx="6" fill="#2F3A31"/>
+<rect x="50.5" y="10.5" width="139" height="85" rx="2.5" fill="url(#cScr)"/>
+<polygon points="50.5,10.5 124,10.5 86,95.5 50.5,95.5" fill="#fff" opacity=".18"/>
+<text x="120" y="105.6" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.2" font-weight="700" letter-spacing=".6" fill="#D9A5AE">acer</text>
+<rect x="62" y="107.5" width="116" height="5.5" rx="2.75" fill="#5A1E28"/>
+<polygon points="44,113 196,113 226,152 14,152" fill="url(#lapBurgD)" stroke="#5A1E28" stroke-width=".8" stroke-linejoin="round"/>
+<polygon class="lapBurgb" points="55.5,115.2 184.5,115.2 199.7,139.0 40.3,139.0"/><polygon class="lapBurgk" points="58.0,116.2 66.1,116.2 64.4,119.4 56.1,119.4"/><polygon class="lapBurgk" points="67.7,116.2 75.8,116.2 74.4,119.4 66.0,119.4"/><polygon class="lapBurgk" points="77.3,116.2 85.4,116.2 84.3,119.4 76.0,119.4"/><polygon class="lapBurgk" points="87.0,116.2 95.1,116.2 94.3,119.4 85.9,119.4"/><polygon class="lapBurgk" points="96.6,116.2 104.7,116.2 104.3,119.4 95.9,119.4"/><polygon class="lapBurgk" points="106.3,116.2 114.4,116.2 114.2,119.4 105.9,119.4"/><polygon class="lapBurgk" points="115.9,116.2 124.1,116.2 124.2,119.4 115.8,119.4"/><polygon class="lapBurgk" points="125.6,116.2 133.7,116.2 134.1,119.4 125.8,119.4"/><polygon class="lapBurgk" points="135.3,116.2 143.4,116.2 144.1,119.4 135.7,119.4"/><polygon class="lapBurgk" points="144.9,116.2 153.0,116.2 154.1,119.4 145.7,119.4"/><polygon class="lapBurgk" points="154.6,116.2 162.7,116.2 164.0,119.4 155.7,119.4"/><polygon class="lapBurgk" points="164.2,116.2 172.3,116.2 174.0,119.4 165.6,119.4"/><polygon class="lapBurgk" points="173.9,116.2 182.0,116.2 183.9,119.4 175.6,119.4"/><polygon class="lapBurgk" points="55.5,120.4 63.9,120.4 62.1,123.8 53.4,123.8"/><polygon class="lapBurgk" points="65.5,120.4 74.0,120.4 72.5,123.8 63.8,123.8"/><polygon class="lapBurgk" points="75.6,120.4 84.0,120.4 82.9,123.8 74.1,123.8"/><polygon class="lapBurgk" points="85.6,120.4 94.1,120.4 93.2,123.8 84.5,123.8"/><polygon class="lapBurgk" points="95.7,120.4 104.1,120.4 103.6,123.8 94.9,123.8"/><polygon class="lapBurgk" points="105.7,120.4 114.2,120.4 114.0,123.8 105.3,123.8"/><polygon class="lapBurgk" points="115.8,120.4 124.2,120.4 124.4,123.8 115.6,123.8"/><polygon class="lapBurgk" points="125.8,120.4 134.3,120.4 134.7,123.8 126.0,123.8"/><polygon class="lapBurgk" points="135.9,120.4 144.3,120.4 145.1,123.8 136.4,123.8"/><polygon class="lapBurgk" points="145.9,120.4 154.4,120.4 155.5,123.8 146.8,123.8"/><polygon class="lapBurgk" points="156.0,120.4 164.4,120.4 165.9,123.8 157.1,123.8"/><polygon class="lapBurgk" points="166.0,120.4 174.5,120.4 176.2,123.8 167.5,123.8"/><polygon class="lapBurgk" points="176.1,120.4 184.5,120.4 186.6,123.8 177.9,123.8"/><polygon class="lapBurgk" points="52.8,124.8 61.6,124.8 59.7,128.4 50.6,128.4"/><polygon class="lapBurgk" points="63.2,124.8 72.0,124.8 70.5,128.4 61.4,128.4"/><polygon class="lapBurgk" points="73.7,124.8 82.5,124.8 81.3,128.4 72.2,128.4"/><polygon class="lapBurgk" points="84.2,124.8 93.0,124.8 92.1,128.4 83.0,128.4"/><polygon class="lapBurgk" points="94.7,124.8 103.5,124.8 102.9,128.4 93.8,128.4"/><polygon class="lapBurgk" points="105.1,124.8 113.9,124.8 113.7,128.4 104.6,128.4"/><polygon class="lapBurgk" points="115.6,124.8 124.4,124.8 124.5,128.4 115.5,128.4"/><polygon class="lapBurgk" points="126.1,124.8 134.9,124.8 135.4,128.4 126.3,128.4"/><polygon class="lapBurgk" points="136.5,124.8 145.3,124.8 146.2,128.4 137.1,128.4"/><polygon class="lapBurgk" points="147.0,124.8 155.8,124.8 157.0,128.4 147.9,128.4"/><polygon class="lapBurgk" points="157.5,124.8 166.3,124.8 167.8,128.4 158.7,128.4"/><polygon class="lapBurgk" points="168.0,124.8 176.8,124.8 178.6,128.4 169.5,128.4"/><polygon class="lapBurgk" points="178.4,124.8 187.2,124.8 189.4,128.4 180.3,128.4"/><polygon class="lapBurgk" points="50.0,129.4 59.1,129.4 57.1,133.2 47.7,133.2"/><polygon class="lapBurgk" points="60.9,129.4 70.0,129.4 68.4,133.2 58.9,133.2"/><polygon class="lapBurgk" points="71.8,129.4 81.0,129.4 79.7,133.2 70.2,133.2"/><polygon class="lapBurgk" points="82.7,129.4 91.9,129.4 90.9,133.2 81.5,133.2"/><polygon class="lapBurgk" points="93.6,129.4 102.8,129.4 102.2,133.2 92.7,133.2"/><polygon class="lapBurgk" points="104.5,129.4 113.7,129.4 113.5,133.2 104.0,133.2"/><polygon class="lapBurgk" points="115.4,129.4 124.6,129.4 124.7,133.2 115.3,133.2"/><polygon class="lapBurgk" points="126.3,129.4 135.5,129.4 136.0,133.2 126.5,133.2"/><polygon class="lapBurgk" points="137.2,129.4 146.4,129.4 147.3,133.2 137.8,133.2"/><polygon class="lapBurgk" points="148.1,129.4 157.3,129.4 158.5,133.2 149.1,133.2"/><polygon class="lapBurgk" points="159.0,129.4 168.2,129.4 169.8,133.2 160.3,133.2"/><polygon class="lapBurgk" points="170.0,129.4 179.1,129.4 181.1,133.2 171.6,133.2"/><polygon class="lapBurgk" points="180.9,129.4 190.0,129.4 192.3,133.2 182.9,133.2"/><polygon class="lapBurgk" points="47.1,134.2 56.6,134.2 54.5,138.2 44.6,138.2"/><polygon class="lapBurgk" points="58.4,134.2 68.0,134.2 66.2,138.2 56.4,138.2"/><polygon class="lapBurgk" points="69.8,134.2 79.3,134.2 78.0,138.2 68.1,138.2"/><polygon class="lapBurgk" points="81.1,134.2 147.5,134.2 148.4,138.2 79.9,138.2"/><polygon class="lapBurgk" points="149.3,134.2 158.9,134.2 160.1,138.2 150.3,138.2"/><polygon class="lapBurgk" points="160.7,134.2 170.2,134.2 171.9,138.2 162.0,138.2"/><polygon class="lapBurgk" points="172.0,134.2 192.9,134.2 195.4,138.2 173.8,138.2"/><polygon class="lapBurgp" points="96.7,140.4 143.3,140.4 145.0,149.4 95.0,149.4"/>
+<path d="M14 152 H226 L221.5 157.5 Q220 159 217 159 H23 Q20 159 18.5 157.5 Z" fill="#5A1E28"/>
+</symbol></defs></svg>
+<div class="app" id="app">
+
+<section class="view on" id="v-start">
+ <div class="blob" style="width:260px;height:260px;background:var(--pink);top:-60px;right:-90px"></div><div class="blob" style="width:220px;height:220px;background:var(--green);bottom:-60px;left:-80px"></div>
+ <div class="logo">acer</div>
+ <div class="c" style="margin-top:12px"><div class="k">SWIFT AIR 穿搭配色・03</div><div class="h">今天穿這樣出門？</div><p class="p">出門前 20 秒，東西會一直冒出來。<br>點到就穿上身，全部疊上去！</p></div>
+ <div class="stage" id="startStage" style="margin-top:4px;flex:1;min-height:200px;max-height:400px"></div>
+ <div class="rules"><span class="chip s">👆 點＝穿上身</span><span class="chip s">🗼 可以一直疊</span><span class="chip s">🚫 紅色的別點</span><span class="chip s">✨ 發光的必接</span></div>
+ <div style="display:flex;justify-content:center;gap:8px;margin-top:12px;position:relative"><button class="chip on" id="gF">她</button><button class="chip" id="gM">他</button></div>
+ <div class="btns" style="margin-top:12px"><button class="btn" id="go">開始（20 秒）</button></div>
+ <div class="foot" id="dexStart">搭配圖鑑 0/8・找出隱藏搭配有加分</div>
+</section>
+
+<section class="view" id="v-play">
+ <div class="blob" style="width:220px;height:220px;background:var(--green);top:-80px;left:-80px"></div>
+ <div class="hud"><span class="chip s timer" id="timer">⏰ 0:20</span><div class="score"><b id="score">100%</b><span>回頭率</span></div><span class="chip s" id="streak">連穿 ×0</span></div>
+ <div class="sub"><span>身上 <b id="cnt">0</b> 件</span><span>負重 <b id="kg">0.0</b> kg</span></div>
+ <div class="kgbar"><i id="kgbar"></i></div>
+ <div class="stage" id="stage"><span class="say" id="say"></span><div class="banner" id="banner"><small>COMBO</small><b>放假模式</b></div></div>
+ <div class="found"><span class="foot" style="margin:0" id="hint">點冒出來的東西就會穿上身</span><span class="dots" id="foundDots"></span></div>
+</section>
+
+<section class="view" id="v-end">
+ <div class="blob" style="width:300px;height:300px;background:var(--green);top:140px;right:-150px"></div><div class="blob" style="width:180px;height:180px;background:var(--pink);top:60px;left:-110px"></div>
+ <div class="c"><div class="k">今日出門鑑定</div><div class="title" id="title">放假模式系</div></div>
+ <div class="stage" id="endStage" style="margin-top:4px;flex:1;min-height:160px"></div>
+ <div class="stats"><div class="st"><b id="sN">14</b><span>身上件數</span></div><div class="st"><b id="sKg">8.6</b><span>負重 kg</span></div><div class="st"><b id="sR">1,280%</b><span>回頭率</span></div></div>
+ <div class="combos" id="combos"></div>
+ <div class="card" style="margin-top:8px"><p class="p" style="color:var(--ink);font-size:13px;line-height:20px" id="copy"></p></div>
+ <div class="btns" style="margin-top:12px"><button class="btn" id="save">存成限動</button><button class="btn o" id="again">再出門一次</button></div>
+</section>
+<div class="sheet" id="sheet" hidden><img id="sheetImg" alt="分享圖"><p>長按圖片就能存到手機<br>分享文字也已經複製好了</p><button class="btn o" id="sheetClose">關閉</button></div>
+<div class="toast" id="toast"></div>
+</div>
+
+<script>
+(()=>{
+const INK='#3B2F33', SKIN='#F6D9C6', HAIR='#3B2F33', PINK='#F3D9DC', GREEN='#CFE3D0', BURG='#7A2E3A', YEL='#F7E7B4', DINO='#8DBF93', DINO_DK='#6FA57A', GOLD='#F7C948';
+const ROUND_MS = 20000;
+const $ = id => document.getElementById(id);
+const views={start:$('v-start'),play:$('v-play'),end:$('v-end')};
+const show=v=>{for(const k in views) views[k].classList.toggle('on',k===v);};
+
+// ---------- item art (sticker style) ----------
+const lei = (()=>{ let s=''; const cols=['#F3A6B4','#F7C948','#fff','#E85D4A','#F3A6B4','#F7C948','#fff','#E85D4A','#F3A6B4','#F7C948'];
+  for(let i=0;i<10;i++){ const a=Math.PI*(0.05+i*0.1), x=30-24*Math.cos(a), y=6+16*Math.sin(a); s+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4.6" fill="${cols[i]}" stroke="#E2C1C6" stroke-width=".6"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="1.4" fill="#F7C948"/>`; } return s; })();
+const ART = {
+ beret:`<ellipse cx="20" cy="24" rx="17" ry="7" fill="${BURG}" transform="rotate(-8 20 24)"/><circle cx="18" cy="15" r="2.5" fill="${BURG}"/>`,
+ dino:`<path d="M6 32 Q4 8 20 7 Q36 8 34 32 Z" fill="${DINO}" stroke="${DINO_DK}" stroke-width="1.5"/><path d="M10 12 L8 4 L14 9 M18 7 L19 0 L23 7 M27 9 L32 3 L31 12" stroke="${DINO_DK}" stroke-width="2.5" fill="${DINO_DK}" stroke-linejoin="round"/><circle cx="14" cy="15" r="3.5" fill="#fff"/><circle cx="26" cy="15" r="3.5" fill="#fff"/><circle cx="15" cy="16" r="1.6" fill="${INK}"/><circle cx="25" cy="16" r="1.6" fill="${INK}"/><path d="M9 32 L12 27 L15 32 L18 27 L21 32 L24 27 L27 32 L30 27 L31 32" fill="#fff"/>`,
+ helmet:`<path d="M6 28 Q6 9 20 9 Q34 9 34 28 Z" fill="${GOLD}" stroke="#D9A82A"/><rect x="2" y="27" width="36" height="5" rx="2.5" fill="${GOLD}" stroke="#D9A82A"/><path d="M20 9 V27" stroke="#D9A82A" stroke-width="3"/><path d="M11 18 Q13 13 17 12" stroke="#fff" stroke-width="2" fill="none" opacity=".6"/>`,
+ party:`<path d="M20 4 L31 35 H9 Z" fill="#F3A6B4"/><path d="M14 21 L27 17 M11 29 L30 24 M17 13 L24 11" stroke="#fff" stroke-width="2.5"/><circle cx="20" cy="5" r="3.5" fill="#83B81A"/>`,
+ cat:`<path d="M10 19 L11 8 L17 15 Z M30 19 L29 8 L23 15 Z" fill="#F2A65A"/><path d="M12 11 L13 13 L15 14Z M28 11 L27 13 L25 14Z" fill="#F7C9C9"/><path d="M5 34 Q4 15 20 14 Q36 15 35 34 Z" fill="#F2A65A"/><path d="M18 14 L19 18 M22 14 L21 18 M7 26 L11 26 M33 26 L29 26" stroke="#D9853A" stroke-width="1.6"/><path d="M13 22 Q15 24 17 22 M23 22 Q25 24 27 22" stroke="${INK}" stroke-width="1.5" fill="none"/><path d="M19 25 L21 25 L20 26.5Z" fill="#E08A8A"/><ellipse cx="13" cy="33" rx="4.5" ry="2.2" fill="#F7D3A6"/><ellipse cx="27" cy="33" rx="4.5" ry="2.2" fill="#F7D3A6"/>`,
+ crown:`<path d="M5 31 L7 12 L14 21 L20 7 L26 21 L33 12 L35 31 Z" fill="${GOLD}" stroke="#D9A82A" stroke-linejoin="round"/><circle cx="20" cy="25" r="2.6" fill="#E85D4A"/><circle cx="12" cy="26" r="2" fill="#2F6FD6"/><circle cx="28" cy="26" r="2" fill="#83B81A"/>`,
+ shades:`<path d="M2 17 H38" stroke="${INK}" stroke-width="2"/><rect x="4" y="16" width="14" height="10" rx="4" fill="${INK}"/><rect x="22" y="16" width="14" height="10" rx="4" fill="${INK}"/><path d="M7 19 L11 19" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>`,
+ goggles:`<path d="M2 19 H38" stroke="#2F6FD6" stroke-width="3"/><rect x="5" y="12" width="30" height="15" rx="7.5" fill="#9FD3F0" stroke="#2F6FD6" stroke-width="2.5"/><path d="M20 14 V25" stroke="#2F6FD6" stroke-width="2"/><path d="M34 13 V3 Q34 1 36 1 H38" stroke="${GOLD}" stroke-width="3" fill="none" stroke-linecap="round"/>`,
+ stache:`<path d="M20 18 Q14 11 8 15 Q4 18 2 15 Q4 26 12 24 Q17 23 20 20 Q23 23 28 24 Q36 26 38 15 Q36 18 32 15 Q26 11 20 18 Z" fill="${INK}"/>`,
+ lanyard:`<path d="M12 2 L18 21 M28 2 L22 21" stroke="${BURG}" stroke-width="2"/><rect x="12" y="19" width="16" height="19" rx="2" fill="#fff" stroke="#D9CFCB"/><rect x="12" y="19" width="16" height="5" rx="2" fill="#83B81A"/><rect x="15" y="28" width="10" height="2" fill="#D9CFCB"/><rect x="15" y="32" width="7" height="2" fill="#D9CFCB"/>`,
+ lei:lei,
+ medal:`<path d="M12 1 L18 17 M28 1 L22 17" stroke="#2F6FD6" stroke-width="4"/><circle cx="20" cy="27" r="10" fill="${GOLD}" stroke="#D9A82A" stroke-width="2"/><text x="20" y="31" text-anchor="middle" font-size="11" font-weight="900" fill="#B07A10" font-family="sans-serif">1</text>`,
+ ring:`<ellipse cx="50" cy="16" rx="44" ry="11" fill="none" stroke="#F3A6B4" stroke-width="10"/><ellipse cx="50" cy="16" rx="44" ry="11" fill="none" stroke="#fff" stroke-width="10" stroke-dasharray="14 14"/>`,
+ boba:`<path d="M11 10 H29 L26 37 H14 Z" fill="#E9CFA8" stroke="#B48A5A"/><ellipse cx="20" cy="10" rx="10" ry="3" fill="#F4F4F4" stroke="#BDBDBD"/><path d="M23 9 L27 1" stroke="${BURG}" stroke-width="3" stroke-linecap="round"/><g fill="#3A2A1E"><circle cx="17" cy="32" r="2.2"/><circle cx="22" cy="33" r="2.2"/><circle cx="20" cy="28" r="2.2"/></g>`,
+ leek:`<path d="M10 36 L24 14" stroke="#F4F1E6" stroke-width="6" stroke-linecap="round"/><path d="M24 14 L34 2 M24 14 L37 8 M24 14 L30 2" stroke="#6FA57A" stroke-width="4" stroke-linecap="round"/><path d="M8 38 L11 34 M10 38 L12 35" stroke="#E2D9C2" stroke-width="1.5"/>`,
+ basket:`<path d="M10 18 Q20 5 30 18" stroke="${INK}" stroke-width="2" fill="none"/><path d="M5 18 H35 L31 36 H9 Z" fill="#E7C9A0"/><path d="M7 24 H33 M8 30 H32 M14 18 L15 36 M20 18 V36 M26 18 L25 36" stroke="#C9A170" stroke-width="1"/><circle cx="13" cy="15" r="4" fill="#83B81A"/><circle cx="27" cy="14" r="4.5" fill="#E85D4A"/>`,
+ drum:`<ellipse cx="25" cy="15" rx="11" ry="9" fill="#C97A3A" transform="rotate(-30 25 15)"/><path d="M20 9 Q25 6 30 9" stroke="#E8A160" stroke-width="2" fill="none"/><path d="M18 21 L9 31" stroke="#F4EFE6" stroke-width="4" stroke-linecap="round"/><circle cx="8" cy="34" r="3" fill="#F4EFE6"/><circle cx="5.5" cy="30.5" r="3" fill="#F4EFE6"/>`,
+ balloon:`<ellipse cx="20" cy="15" rx="13" ry="14" fill="#E85D4A"/><path d="M18 29 L22 29 L20 32Z" fill="#E85D4A"/><path d="M20 32 Q24 46 18 58 Q14 68 20 78" stroke="${INK}" stroke-width="1" fill="none"/><ellipse cx="15" cy="10" rx="3" ry="5" fill="#fff" opacity=".5"/>`,
+ selfie:`<path d="M8 37 L27 10" stroke="${INK}" stroke-width="3" stroke-linecap="round"/><g transform="rotate(35 30 9)"><rect x="24" y="0" width="12" height="20" rx="2" fill="${INK}"/><circle cx="30" cy="4" r="2" fill="#9FD3F0"/></g>`,
+ box:`<rect x="5" y="8" width="30" height="27" rx="3" fill="${YEL}" stroke="#E2CC86"/><rect x="5" y="14" width="30" height="5" fill="${BURG}"/><text x="20" y="30" text-anchor="middle" font-size="8" font-weight="900" fill="${BURG}" font-family="sans-serif">外送</text>`,
+ pack:`<rect x="7" y="6" width="26" height="32" rx="8" fill="#E85D4A"/><rect x="10" y="21" width="20" height="13" rx="4" fill="#C94A3A"/><path d="M14 6 Q20 0 26 6" stroke="${INK}" stroke-width="2" fill="none"/><rect x="17" y="25" width="6" height="2" fill="${GOLD}"/><path d="M7 14 H33" stroke="#C94A3A" stroke-width="2"/>`,
+ guitar:`<path d="M25 4 L31 1 L34 5 L29 9 Z" fill="#5B3A22"/><path d="M29 7 L18 22" stroke="#5B3A22" stroke-width="3"/><path d="M18 17 Q23 21 21 26 Q25 32 19 37 Q12 41 7 36 Q1 30 8 25 Q9 20 13 19 Q15 15 18 17 Z" fill="#E8A160" stroke="#B5712E"/><circle cx="14" cy="28" r="3" fill="#5B3A22"/>`,
+ slippers:`<rect x="2" y="20" width="16" height="15" rx="7.5" fill="#F2F2F2" stroke="#BDBDBD"/><path d="M3 27 Q10 13 17 27 Z" fill="#2F6FD6"/><rect x="22" y="20" width="16" height="15" rx="7.5" fill="#F2F2F2" stroke="#BDBDBD"/><path d="M23 27 Q30 13 37 27 Z" fill="#2F6FD6"/>`,
+ flippers:`<path d="M3 37 L7 14 Q10 10 13 14 L18 37 Q10 41 3 37 Z" fill="#2FB5A6"/><path d="M22 37 L26 14 Q29 10 32 14 L37 37 Q29 41 22 37 Z" fill="#2FB5A6"/><path d="M7 28 L8 36 M10 27 V37 M13 28 L12 36 M26 28 L27 36 M29 27 V37 M32 28 L31 36" stroke="#1F8F83" stroke-width="1"/>`,
+ corgi:`<path d="M9 22 Q3 17 7 12" stroke="#E8A160" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="27" cy="24" rx="18" ry="9" fill="#E8A160"/><ellipse cx="28" cy="28" rx="14" ry="5" fill="#fff"/><rect x="14" y="29" width="5" height="8" rx="2" fill="#E8A160"/><rect x="34" y="29" width="5" height="8" rx="2" fill="#E8A160"/><path d="M41 9 L42 1 L47 8 Z M48 8 L53 1 L52 10 Z" fill="#E8A160"/><circle cx="46" cy="15" r="8" fill="#E8A160"/><path d="M45 17 Q50 22 54 18 Q53 13 48 14 Z" fill="#fff"/><circle cx="47" cy="13" r="1.3" fill="${INK}"/><circle cx="54" cy="16.5" r="1.6" fill="${INK}"/><path d="M50 20 Q51 23 53 21" fill="#F08AA0"/>`,
+ ot:`<rect x="2" y="7" width="36" height="24" rx="6" fill="#E85D4A"/><text x="20" y="24" text-anchor="middle" font-size="10" font-weight="900" fill="#fff" font-family="sans-serif">加班？</text><path d="M10 31 L8 38 L17 31Z" fill="#E85D4A"/>`,
+ boss:`<rect x="10" y="2" width="20" height="36" rx="4" fill="${INK}"/><rect x="12" y="6" width="16" height="24" rx="2" fill="#E85D4A"/><text x="20" y="21" text-anchor="middle" font-size="7" font-weight="900" fill="#fff" font-family="sans-serif">老闆</text><path d="M4 10 Q2 14 4 18 M36 10 Q38 14 36 18" stroke="#E85D4A" stroke-width="2" fill="none"/>`,
+ cloud:`<path d="M14 26 Q4 26 6 18 Q8 10 18 12 Q22 2 34 6 Q44 4 46 14 Q56 14 54 22 Q52 28 44 26 Z" fill="#8C8C96"/><path d="M18 30 L16 36 M28 30 L26 38 M38 30 L36 36" stroke="#6FA3D9" stroke-width="2" stroke-linecap="round"/>`,
+};
+// a: where it goes on the body; w: drawn width (doll units); vb: art viewBox; g: grams; p: 回頭率 points
+const ITEMS = {
+ beret:{name:'貝雷帽',a:'head',w:46,g:80,p:40},
+ dino:{name:'恐龍頭套',a:'head',w:58,g:450,p:80,line:'這樣……可以嗎？'},
+ helmet:{name:'安全帽',a:'head',w:52,g:400,p:50,line:'安全第一'},
+ party:{name:'生日帽',a:'head',w:34,g:20,p:50,line:'今天我生日？'},
+ cat:{name:'貓',a:'head',w:50,g:4500,p:90,line:'牠自己跳上來的'},
+ crown:{name:'皇冠',a:'head',w:44,g:300,p:70,line:'今天我最大'},
+ shades:{name:'墨鏡',a:'face',w:62,g:30,p:40,line:'今天走酷路線'},
+ goggles:{name:'潛水鏡',a:'face',w:66,g:250,p:60},
+ stache:{name:'假鬍子',a:'mouth',w:34,g:5,p:60,line:'嗯哼。'},
+ lanyard:{name:'識別證',a:'neck',w:34,g:30,p:40,line:'下班忘了拔……'},
+ lei:{name:'夏威夷花圈',a:'neck',w:60,vb:'0 0 60 30',g:120,p:50},
+ medal:{name:'金牌',a:'neck',w:30,g:200,p:50,line:'通勤冠軍'},
+ ring:{name:'游泳圈',a:'waist',w:110,vb:'0 0 100 32',g:350,p:80,line:'隨時準備放假！'},
+ boba:{name:'珍奶',a:'hand',w:30,g:750,p:40,line:'續命用的'},
+ leek:{name:'一根蔥',a:'hand',w:42,g:150,p:60,line:'蔥是今年流行色'},
+ basket:{name:'菜籃',a:'hand',w:42,g:900,p:50,line:'下班直接去市場'},
+ drum:{name:'雞腿',a:'hand',w:34,g:250,p:40},
+ balloon:{name:'氣球',a:'hand',w:30,vb:'0 0 40 80',g:5,p:50,ay:.97},
+ selfie:{name:'自拍棒',a:'hand',w:44,g:300,p:50,line:'等我拍一張'},
+ box:{name:'外送箱',a:'back',w:58,g:2200,p:70,line:'順便接個單？'},
+ pack:{name:'登山包',a:'back',w:56,g:3500,p:60,line:'今天要攻頂嗎'},
+ guitar:{name:'吉他',a:'back',w:66,g:2500,p:60},
+ slippers:{name:'藍白拖',a:'feet',w:62,g:300,p:50},
+ flippers:{name:'蛙鞋',a:'feet',w:70,g:900,p:70,line:'走路啪搭啪搭'},
+ corgi:{name:'柯基',a:'pet',w:80,vb:'0 0 60 40',g:11000,p:100,line:'牠也要一起去'},
+ laptop:{name:'Swift Air 14',a:'laptop',w:70,vb:'0 0 240 168',g:1190,p:150,rare:true},
+ ot:{name:'加班通知',a:'cloud',bad:true,p:-150,line:'啊……今晚加班'},
+ boss:{name:'老闆來電',a:'cloud',bad:true,p:-150,line:'老闆打來了……'},
+ cloud:{name:'烏雲',a:'none',w:60,vb:'0 0 60 40',hidden:true},   // 點到加班才會出現在頭上
+};
+const NORMAL = Object.keys(ITEMS).filter(k=>!ITEMS[k].bad && !ITEMS[k].rare && !ITEMS[k].hidden);
+const LAP_COLORS = [{key:'green',name:'晨露綠',hex:GREEN,sym:'lapGreen'},{key:'pink',name:'柔霧粉',hex:PINK,sym:'lapPink'},{key:'burg',name:'勃根地紅',hex:BURG,sym:'lapBurg'}];
+const COMBOS = [
+ {id:'beach', name:'放假模式', need:w=>w.shades&&w.ring&&(w.slippers||w.flippers), bonus:300},
+ {id:'jura', name:'侏羅紀上班族', need:w=>w.dino&&w.lanyard, bonus:200},
+ {id:'market', name:'菜市場人生', need:w=>w.basket&&w.leek, bonus:200},
+ {id:'dive', name:'潛水去上班', need:w=>w.goggles&&w.flippers&&w.lanyard, bonus:300},
+ {id:'bday', name:'生日主角', need:w=>w.party&&w.balloon&&w.crown, bonus:300},
+ {id:'tower', name:'帽子疊疊樂', need:w=>(w._head||0)>=3, bonus:250},
+ {id:'pets', name:'鏟屎官出門', need:w=>w.cat&&w.corgi, bonus:250},
+ {id:'influ', name:'外送網紅', need:w=>w.box&&w.selfie, bonus:200},
+];
+
+// ---------- the doll ----------
+const FACES = {
+ smile:`<ellipse cx="68" cy="64" rx="3" ry="4" fill="${INK}"/><ellipse cx="92" cy="64" rx="3" ry="4" fill="${INK}"/><path d="M74 76 Q80 82 86 76" stroke="${INK}" stroke-width="2.2" fill="none" stroke-linecap="round"/>`,
+ wow:`<ellipse cx="68" cy="63" rx="3.5" ry="4.5" fill="${INK}"/><ellipse cx="92" cy="63" rx="3.5" ry="4.5" fill="${INK}"/><ellipse cx="80" cy="79" rx="4" ry="5" fill="#B34A5A"/>`,
+ strain:`<path d="M63 60 L72 64 L63 68 M97 60 L88 64 L97 68" stroke="${INK}" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="72" y="74" width="16" height="8" rx="3" fill="#fff" stroke="${INK}" stroke-width="1.8"/><path d="M76 74 V82 M80 74 V82 M84 74 V82" stroke="${INK}" stroke-width="1"/><path d="M116 46 Q120 54 116 58 Q112 54 116 46 Z M44 52 Q47 58 44 61 Q41 58 44 52 Z" fill="#BFE0F2"/>`,
+ dizzy:`<path d="M64 64 m-4 0 a4 4 0 1 1 8 0 a3 3 0 1 1 -6 0 a2 2 0 1 1 4 0" stroke="${INK}" stroke-width="1.6" fill="none"/><path d="M88 64 m-4 0 a4 4 0 1 1 8 0 a3 3 0 1 1 -6 0 a2 2 0 1 1 4 0" stroke="${INK}" stroke-width="1.6" fill="none"/><path d="M72 80 Q76 76 80 80 Q84 84 88 80" stroke="${INK}" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M116 46 Q120 54 116 58 Q112 54 116 46 Z M44 52 Q47 58 44 61 Q41 58 44 52 Z M120 66 Q123 72 120 75 Q117 72 120 66Z" fill="#BFE0F2"/>`,
+ sad:`<ellipse cx="68" cy="66" rx="3" ry="3.5" fill="${INK}"/><ellipse cx="92" cy="66" rx="3" ry="3.5" fill="${INK}"/><path d="M62 57 L72 55 M98 57 L88 55" stroke="${INK}" stroke-width="2" stroke-linecap="round"/><path d="M74 82 Q80 77 86 82" stroke="${INK}" stroke-width="2.2" fill="none" stroke-linecap="round"/>`,
+ proud:`<path d="M64 65 Q68 61 72 65" stroke="${INK}" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="92" cy="64" rx="3" ry="4" fill="${INK}"/><path d="M73 75 Q80 75 87 75 Q86 84 80 84 Q74 84 73 75 Z" fill="#B34A5A"/><path d="M76 80 Q80 78 84 80 Q82 83 80 83 Q78 83 76 80 Z" fill="#F08AA0"/>`,
+};
+function baseDoll(gender, face, squash){
+  const g=[];
+  g.push(`<ellipse cx="80" cy="262" rx="${(44+squash*200).toFixed(1)}" ry="5" fill="${INK}" opacity=".08"/>`);
+  g.push(`<g transform="translate(80 262) scale(${(1+squash*.6).toFixed(3)} ${(1-squash).toFixed(3)}) translate(-80 -262)">`);
+  if(gender==='f') g.push(`<path d="M38 56 Q36 104 46 114 L114 114 Q124 104 122 56 Z" fill="${HAIR}"/>`);
+  g.push(`<rect x="66" y="200" width="11" height="48" rx="5" fill="${SKIN}"/><rect x="83" y="200" width="11" height="48" rx="5" fill="${SKIN}"/>`);
+  if(gender==='m') g.push(`<path d="M58 160 L102 160 L100 246 L84 246 L80 186 L76 246 L60 246 Z" fill="#6E8FC2" stroke="#56749F" stroke-linejoin="round"/>`);
+  g.push(`<rect x="58" y="244" width="22" height="13" rx="6.5" fill="#fff" stroke="#D9CFCB"/><rect x="82" y="244" width="22" height="13" rx="6.5" fill="#fff" stroke="#D9CFCB"/><rect x="58" y="252" width="22" height="5" rx="2.5" fill="${BURG}"/><rect x="82" y="252" width="22" height="5" rx="2.5" fill="${BURG}"/>`);
+  if(gender==='f') g.push(`<path d="M58 164 L102 164 L113 208 Q80 216 47 208 Z" fill="${BURG}"/>`);
+  g.push(`<rect x="39" y="108" width="14" height="58" rx="7" fill="${PINK}" stroke="#E2C1C6"/><rect x="107" y="108" width="14" height="58" rx="7" fill="${PINK}" stroke="#E2C1C6"/><circle cx="46" cy="168" r="7" fill="${SKIN}"/><circle cx="114" cy="168" r="7" fill="${SKIN}"/>`);
+  g.push(`<path d="M52 110 Q54 102 66 101 L94 101 Q106 102 108 110 L108 168 L52 168 Z" fill="#FFFFFF" stroke="#E2D6D2"/><path d="M52 110 Q54 102 66 101 L74 101 L80 136 L80 168 L52 168 Z" fill="${PINK}" stroke="#E2C1C6"/><path d="M108 110 Q106 102 94 101 L86 101 L80 136 L80 168 L108 168 Z" fill="${PINK}" stroke="#E2C1C6"/>`);
+  g.push(`<rect x="74" y="90" width="12" height="14" fill="${SKIN}"/><circle cx="80" cy="62" r="34" fill="${SKIN}"/><ellipse cx="60" cy="74" rx="6" ry="3.5" fill="#F3B5BE" opacity=".8"/><ellipse cx="100" cy="74" rx="6" ry="3.5" fill="#F3B5BE" opacity=".8"/>`);
+  g.push(FACES[face]);
+  g.push(gender==='f'
+    ? `<path d="M46 60 Q48 26 80 26 Q112 26 114 60 Q102 46 88 48 Q78 38 68 50 Q56 48 46 60 Z" fill="${HAIR}"/>`
+    : `<path d="M45 58 Q44 26 80 25 Q116 26 115 58 Q110 44 96 42 Q92 48 84 44 Q76 50 66 44 Q54 46 45 58 Z" fill="${HAIR}"/>`);
+  g.push(`</g>`);
+  return g.join('');
+}
+function sticker(id, x, y, w, rot, ay=0.5, sym=''){
+  const it=ITEMS[id], vb=(it.vb||'0 0 40 40').split(' ').map(Number), h=w*vb[3]/vb[2];
+  const art = id==='laptop' ? `<use href="#${sym||'lapGreen'}"/>` : ART[id];
+  return `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot.toFixed(1)})" class="sticker"><svg x="${(-w/2).toFixed(1)}" y="${(-h*ay).toFixed(1)}" width="${w}" height="${h.toFixed(1)}" viewBox="${vb.join(' ')}" overflow="visible">${art}</svg></g>`;
+}
+// worn = [{id, rot, jx, color}] in tap order; everything stacks, nothing gets replaced
+function layout(worn){
+  const L={back:[],pet:[],feet:[],waist:[],neck:[],face:[],mouth:[],hand:[],laptop:[],head:[],cloud:[]}, n={};
+  let headTop=34;
+  for(const it of worn){
+    const d=ITEMS[it.id], a=d.a, k=(n[a]=(n[a]||0)+1)-1, r=it.rot, j=it.jx;
+    if(a==='head'){
+      if(it.id==='dino' && k===0){ L.head.push(sticker('dino',80,50,96,r*.3)); headTop=8; continue; }
+      const y=headTop+6; L.head.push(sticker(it.id,80+j,y,d.w,r,.86)); headTop=y-d.w*0.62*0.86; continue; }
+    if(a==='face') { L.face.push(sticker(it.id,80+j*.3,65-k*5,d.w,r*.4)); continue; }
+    if(a==='mouth'){ L.mouth.push(sticker(it.id,80,80+k*4,d.w,r*.5)); continue; }
+    if(a==='neck') { L.neck.push(sticker(it.id,80+j*.5,114+k*10,d.w,r*.4,.3)); continue; }
+    if(a==='waist'){ L.waist.push(sticker(it.id,80,168-k*14,d.w,r*.3)); continue; }
+    if(a==='hand'){ const right=k%2===0, m=Math.floor(k/2), sx=right?1:-1;
+      L.hand.push(sticker(it.id,(right?118:42)+sx*m*12,(d.ay?172:160)-m*10,d.w,sx*(m*14)+r*.5,d.ay||.5)); continue; }
+    if(a==='back'){ const right=k%2===0, m=Math.floor(k/2), sx=right?1:-1;
+      L.back.push(sticker(it.id,80+sx*(34+m*10),120-m*16,d.w,sx*(12+m*8)+r*.3)); continue; }
+    if(a==='feet') { L.feet.push(sticker(it.id,80,250-k*3,d.w,r*.3)); continue; }
+    if(a==='pet')  { const P=[[0,236],[160,236],[-20,212],[180,212]][k%4]; L.pet.push(sticker(it.id,P[0],P[1]-Math.floor(k/4)*20,d.w,r*.3)); continue; }
+    if(a==='laptop'){ const P=[[128,196],[32,196],[134,170],[26,170]][k%4]; L.laptop.push(sticker('laptop',P[0],P[1]-Math.floor(k/4)*24,d.w,r*.4,.5,it.color)); continue; }
+    if(a==='cloud'){ L.cloud.push({k,r}); continue; }
+  }
+  const clouds = L.cloud.map(({k,r})=>sticker('cloud',80+(k%2?1:-1)*Math.ceil(k/2)*30,headTop-22-Math.floor(k/2)*4,60,r*.3)).join('');
+  return {L, clouds, headTop};
+}
+function totalKg(worn){ return worn.reduce((s,it)=>s+(ITEMS[it.id].g||0),0)/1000; }
+function dollSVG(gender, worn, face, cls='doll'){
+  const kg=totalKg(worn), squash=Math.min(.08,kg*.0028);
+  const {L,clouds,headTop}=layout(worn);
+  const top=Math.min(-12, headTop-52);
+  const vb=`-44 ${top.toFixed(0)} 248 ${(274-top).toFixed(0)}`;
+  return `<svg class="${cls}" viewBox="${vb}" preserveAspectRatio="xMidYMax meet" aria-hidden="true">${L.back.join('')}${L.pet.join('')}${baseDoll(gender,face,squash)}${L.feet.join('')}${L.waist.join('')}${L.neck.join('')}${L.face.join('')}${L.mouth.join('')}${L.hand.join('')}${L.laptop.join('')}${L.head.join('')}${clouds}</svg>`;
+}
+function faceFor(kg){ return kg<4?'smile':kg<10?'wow':kg<18?'strain':'dizzy'; }
+
+// ---------- sound ----------
+let ac=null;
+function tone(f1,f2=f1*1.5,dur=.12,type='sine',vol=.06){ try{ ac=ac||new (window.AudioContext||window.webkitAudioContext)(); const t=ac.currentTime,o=ac.createOscillator(),g=ac.createGain(); o.type=type; o.frequency.setValueAtTime(f1,t); o.frequency.exponentialRampToValueAtTime(f2,t+dur*.8); g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(.0001,t+dur); o.connect(g).connect(ac.destination); o.start(t); o.stop(t+dur);}catch(e){} }
+const buzz=ms=>{ try{ navigator.vibrate&&navigator.vibrate(ms);}catch(e){} };
+
+// ---------- 搭配圖鑑（只存在這台裝置） ----------
+let dex=new Set(); try{ dex=new Set(JSON.parse(localStorage.getItem('acer-outfit-combos')||'[]')); }catch(e){}
+const saveDex=()=>{ try{ localStorage.setItem('acer-outfit-combos',JSON.stringify([...dex])); }catch(e){} };
+
+// ---------- game state ----------
+let gender='f', worn=[], score=100, streak=0, lastTap=0, found=[], lapColor=null, tEnd=0, running=false, spawnT=0, tickT=0, faceOverride=null, faceT=0, sayT=0, lapShown=false, kgSaid=0;
+const stage=$('stage');
+
+function renderStart(){
+  const demo=[{id:'crown',rot:-6,jx:0},{id:'cat',rot:8,jx:3},{id:'shades',rot:0,jx:0},{id:'lei',rot:0,jx:0},{id:'boba',rot:0,jx:0},{id:'balloon',rot:-4,jx:0},{id:'box',rot:0,jx:0}];
+  $('startStage').innerHTML=dollSVG(gender,demo,'wow');
+  $('gF').classList.toggle('on',gender==='f'); $('gM').classList.toggle('on',gender==='m');
+  $('dexStart').textContent=`搭配圖鑑 ${dex.size}/${COMBOS.length}・找出隱藏搭配有加分`;
+}
+function renderDoll(){
+  const kg=totalKg(worn);
+  stage.querySelectorAll('svg.doll').forEach(s=>s.remove());
+  stage.insertAdjacentHTML('afterbegin', dollSVG(gender,worn,faceOverride||faceFor(kg)));
+  const svg=stage.querySelector('svg.doll'); svg.classList.toggle('wobble',kg>=10); svg.classList.toggle('hard',kg>=18);
+  $('cnt').textContent=worn.filter(w=>!ITEMS[w.id].bad).length; $('kg').textContent=kg.toFixed(1);
+  $('kgbar').style.width=Math.min(100,kg/25*100)+'%';
+}
+function setScore(v){ score=Math.max(0,v); const b=$('score'); b.textContent=score.toLocaleString()+'%'; b.classList.add('bump'); setTimeout(()=>b.classList.remove('bump'),120); }
+function say(text){ const s=$('say'); s.textContent=text; s.classList.add('on'); clearTimeout(sayT); sayT=setTimeout(()=>s.classList.remove('on'),1500); }
+function plus(text,x,y,bad){ const p=document.createElement('span'); p.className='plus'+(bad?' bad':''); p.textContent=text; p.style.left=x+'px'; p.style.top=y+'px'; stage.appendChild(p); setTimeout(()=>p.remove(),1000); }
+function banner(small,big,cls=''){ const b=$('banner'); b.className='banner '+cls; b.innerHTML=`<small>${small}</small><b>${big}</b>`; void b.offsetWidth; b.classList.add('on'); clearTimeout(b._t); b._t=setTimeout(()=>b.classList.remove('on'),1300); }
+function renderFoundDots(){ $('foundDots').innerHTML=COMBOS.map(c=>`<i class="${found.includes(c.id)?'on':''}"></i>`).join(''); }
+
+function start(){
+  running=false; clearTimeout(spawnT); clearTimeout(tickT);
+  worn=[]; score=100; streak=0; found=[]; lapColor=null; lapShown=false; kgSaid=0; faceOverride=null;
+  stage.querySelectorAll('.sp,.plus,.fly,.countdown').forEach(e=>e.remove());
+  show('play'); renderDoll(); setScore(100); $('streak').textContent='連穿 ×0'; renderFoundDots();
+  $('timer').textContent='⏰ 0:20'; $('timer').classList.remove('warn'); $('hint').textContent='點冒出來的東西就會穿上身';
+  const cd=document.createElement('div'); cd.className='countdown'; stage.appendChild(cd);
+  let n=3; const step=()=>{ if(n===0){ cd.remove(); go(); return; } cd.textContent=n; tone(520,520,.08,'square',.03); n--; setTimeout(step,550); }; step();
+}
+function go(){
+  running=true; tEnd=performance.now()+ROUND_MS; tone(660,990,.15);
+  spawn(); setTimeout(spawn,250); scheduleSpawn(); tick();
+}
+function scheduleSpawn(){ clearTimeout(spawnT); if(!running) return; spawnT=setTimeout(()=>{ spawn(); scheduleSpawn(); }, 420+Math.random()*320); }
+function tick(){
+  if(!running) return;
+  const left=Math.max(0,tEnd-performance.now()), s=Math.ceil(left/1000);
+  $('timer').textContent='⏰ 0:'+String(s).padStart(2,'0'); $('timer').classList.toggle('warn',left<=5000);
+  if(left<=0) return end();
+  tickT=setTimeout(tick,100);
+}
+function pickId(){
+  const elapsed=ROUND_MS-(tEnd-performance.now());
+  // 發光的 Swift Air 14：每輪 7～13 秒之間一定出現一次，之後偶爾再出現
+  if(!lapShown && elapsed>7000 && (Math.random()<.12 || elapsed>13000)) { lapShown=true; return 'laptop'; }
+  if(lapShown && Math.random()<.04) return 'laptop';
+  if(elapsed>2500 && Math.random()<.16) return Math.random()<.5?'ot':'boss';
+  return NORMAL[Math.floor(Math.random()*NORMAL.length)];
+}
+function spawn(){
+  if(!running) return;
+  const live=stage.querySelectorAll('.sp:not(.gone)'); if(live.length>=5) return;
+  const id=pickId(), it=ITEMS[id], W=stage.clientWidth, H=stage.clientHeight;
+  let x=0,y=0;
+  for(let t=0;t<12;t++){ x=40+Math.random()*(W-80); y=40+Math.random()*(H-90);
+    if([...live].every(e=>Math.hypot(parseFloat(e.style.left)-x,parseFloat(e.style.top)-y)>74)) break; }
+  const b=document.createElement('button'); b.className='sp'+(it.bad?' bad':'')+(it.rare?' rare':'')+((it.vb||'').endsWith(' 80')?' tall':'')+(id==='ring'||id==='lei'||id==='corgi'?' wide':'');
+  b.style.left=x+'px'; b.style.top=y+'px'; b.dataset.id=id;
+  const color = id==='laptop' ? LAP_COLORS[Math.floor(Math.random()*3)] : null;
+  if(color) b.dataset.color=color.sym;
+  b.innerHTML=`<svg viewBox="${it.vb||'0 0 40 40'}" class="sticker">${id==='laptop'?`<use href="#${color.sym}"/>`:ART[id]}</svg>`;
+  b.setAttribute('aria-label',it.name);
+  b.addEventListener('pointerdown',e=>{ e.preventDefault(); tapItem(b); });
+  stage.appendChild(b);
+  const life = it.rare ? 1500 : 1900+Math.random()*700;
+  b._t1=setTimeout(()=>b.classList.add('fade'), life-500);
+  b._t2=setTimeout(()=>{ b.classList.add('gone'); setTimeout(()=>b.remove(),220); }, life);
+}
+function anchorPoint(){
+  const svg=stage.querySelector('svg.doll'), s=stage.getBoundingClientRect(), r=svg?svg.getBoundingClientRect():s;
+  return {x:r.left-s.left+r.width/2, y:r.top-s.top+r.height*.55};
+}
+function tapItem(b){
+  if(!running || b.classList.contains('gone')) return;
+  clearTimeout(b._t1); clearTimeout(b._t2); b.classList.add('gone'); setTimeout(()=>b.remove(),200);
+  const id=b.dataset.id, it=ITEMS[id], x=parseFloat(b.style.left), y=parseFloat(b.style.top);
+  const f=document.createElement('div'); f.className='fly'; f.innerHTML=b.innerHTML; f.style.left=x+'px'; f.style.top=y+'px'; stage.appendChild(f);
+  const ap=anchorPoint(); requestAnimationFrame(()=>{ f.style.left=ap.x+'px'; f.style.top=ap.y+'px'; f.style.transform='scale(.6)'; });
+  setTimeout(()=>f.remove(),270);
+  const now=performance.now();
+  if(it.bad){
+    streak=0; $('streak').textContent='連穿 ×0';
+    worn.push({id, rot:(Math.random()*2-1)*10, jx:0});
+    setScore(score+it.p); plus(`${it.name} ${it.p}`,x,y-20,true); say(it.line);
+    faceOverride='sad'; clearTimeout(faceT); faceT=setTimeout(()=>{faceOverride=null; renderDoll();},1400);
+    tone(220,140,.25,'square',.04); buzz([40,30,40]);
+    setTimeout(renderDoll,200); return;
+  }
+  streak = (now-lastTap<1100) ? streak+1 : 1; lastTap=now;
+  const pts=Math.round(it.p*(1+Math.min(streak-1,10)*0.1));
+  const entry={id, rot:(Math.random()*2-1)*12, jx:(Math.random()*2-1)*4};
+  if(id==='laptop'){ entry.color=b.dataset.color; lapColor=LAP_COLORS.find(c=>c.sym===b.dataset.color); }
+  worn.push(entry);
+  setScore(score+pts); $('streak').textContent=`連穿 ×${streak}`;
+  plus(`+${pts}`,x,y-20);
+  if(id==='laptop'){ banner('接到了！',`Swift Air 14 ${lapColor.name}`,'go'); say('只有 1.19kg，好輕！'); tone(880,1760,.25,'triangle',.07); }
+  else if(it.line && Math.random()<.7) say(it.line);
+  tone(500+Math.min(streak,12)*60, 900+Math.min(streak,12)*80, .1); buzz(12);
+  const kg=totalKg(worn);
+  for(const [t,l] of [[5,'有點重……'],[10,'我還撐得住！'],[15,'腰要斷了'],[20,'這是搬家吧？']]){ if(kg>=t && kgSaid<t){ kgSaid=t; say(l); } }
+  setTimeout(()=>{ renderDoll(); checkCombos(); },200);
+}
+function checkCombos(){
+  const w={}; for(const it of worn){ w[it.id]=(w[it.id]||0)+1; if(ITEMS[it.id].a==='head') w._head=(w._head||0)+1; }
+  for(const c of COMBOS){
+    if(found.includes(c.id) || !c.need(w)) continue;
+    found.push(c.id); const isNew=!dex.has(c.id); dex.add(c.id); saveDex();
+    setScore(score+c.bonus); banner(isNew?'NEW COMBO！':'COMBO！',`${c.name} +${c.bonus}`);
+    tone(660,1320,.18,'triangle',.07); setTimeout(()=>tone(990,1980,.2,'triangle',.06),140); buzz([20,40,20]);
+    renderFoundDots(); $('hint').textContent=`找到「${c.name}」！`;
+    break;
+  }
+}
+function end(){
+  running=false; clearTimeout(spawnT); clearTimeout(tickT);
+  stage.querySelectorAll('.sp').forEach(b=>{ clearTimeout(b._t1); clearTimeout(b._t2); b.classList.add('gone'); });
+  $('timer').textContent='⏰ 0:00'; $('timer').classList.remove('warn');
+  banner('時間到','出門！','go'); tone(523,784,.2,'triangle',.06);
+  setTimeout(result,1200);
+}
+
+// ---------- result ----------
+let res=null;
+function result(){
+  const n=worn.filter(w=>!ITEMS[w.id].bad).length, kg=totalKg(worn), bads=worn.length-n;
+  const best=COMBOS.filter(c=>found.includes(c.id)).sort((a,b)=>b.bonus-a.bonus)[0];
+  const title = best ? best.name+'系' : n>=16?'全身家當系':n>=10?'行動倉庫系':n>=5?'隨手一抓系':n>=1?'輕裝出門系':'什麼都沒穿系';
+  res={title,n,kg,col:lapColor};
+  $('title').textContent=title;
+  $('endStage').innerHTML=dollSVG(gender,worn,kg>=18?'dizzy':'proud');
+  $('sN').textContent=n; $('sKg').textContent=kg.toFixed(1); $('sR').textContent=score.toLocaleString()+'%';
+  $('combos').innerHTML=COMBOS.map(c=>{ const got=found.includes(c.id), known=dex.has(c.id); return `<span class="${got?'on new':known?'on':''}">${known?c.name:'？？？'}</span>`; }).join('');
+  const heavy = kg>=1.19 ? `全身扛了 ${kg.toFixed(1)}kg 出門，還好 <b>Swift Air 14 只有 1.19kg</b>。` : `<b>Swift Air 14 只有 1.19kg</b>，帶著出門剛剛好。`;
+  const colTxt = lapColor ? `你接到的<span class="match" style="background:${lapColor.hex}"></span><b>${lapColor.name}</b>就是你的本命色。` : `下次接住那台發光的 Swift Air 14，看看你的本命色。`;
+  $('copy').innerHTML = heavy + (bads?`（還順手接了 ${bads} 通加班，辛苦了。）`:'') + '<br>' + colTxt;
+  show('end'); tone(660,990,.15); setTimeout(()=>tone(990,1320,.2),150);
+}
+function toast(t){ const el=$('toast'); el.textContent=t; el.classList.add('on'); clearTimeout(el._t); el._t=setTimeout(()=>el.classList.remove('on'),1800); }
+async function storyPNG(){
+  const defs=document.querySelector('svg.defs').innerHTML, W=1080, H=1920, r=res;
+  const doll=dollSVG(gender,worn,r.kg>=18?'dizzy':'proud','x').replace('<svg class="x"','<svg x="90" y="420" width="900" height="1000"');
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${defs}
+  <style>.sticker{filter:drop-shadow(0 4px 6px rgba(59,47,51,.18))}</style>
+  <rect width="${W}" height="${H}" fill="#FAF7F2"/><circle cx="980" cy="200" r="380" fill="${PINK}"/><circle cx="60" cy="1700" r="420" fill="${GREEN}"/>
+  <text x="540" y="230" text-anchor="middle" font-family="PingFang TC,Noto Sans TC,sans-serif" font-size="40" letter-spacing="8" fill="#8C7F84">今日出門鑑定</text>
+  <text x="540" y="330" text-anchor="middle" font-family="PingFang TC,Noto Sans TC,sans-serif" font-size="84" font-weight="900" fill="${INK}">${r.title}</text>
+  ${doll}
+  <text x="540" y="1520" text-anchor="middle" font-family="PingFang TC,Noto Sans TC,sans-serif" font-size="44" font-weight="700" fill="${INK}">身上 ${r.n} 件｜負重 ${r.kg.toFixed(1)}kg｜回頭率 ${score.toLocaleString()}%</text>
+  <text x="540" y="1600" text-anchor="middle" font-family="PingFang TC,Noto Sans TC,sans-serif" font-size="38" fill="${BURG}">${r.col?`我的本命色：Swift Air 14 ${r.col.name}`:'還好 Swift Air 14 只有 1.19kg'}</text>
+  <text x="540" y="1790" text-anchor="middle" font-family="Arial,sans-serif" font-size="56" font-weight="900" fill="#83B81A">acer</text></svg>`;
+  const url=URL.createObjectURL(new Blob([svg],{type:'image/svg+xml'}));
+  const img=new Image(); await new Promise((ok,no)=>{img.onload=ok; img.onerror=no; img.src=url;});
+  const cv=document.createElement('canvas'); cv.width=W; cv.height=H; cv.getContext('2d').drawImage(img,0,0); URL.revokeObjectURL(url);
+  return await new Promise(ok=>cv.toBlob(ok,'image/png'));
+}
+function showSheet(blob){ $('sheetImg').src=URL.createObjectURL(blob); $('sheet').hidden=false; }
+$('sheetClose').onclick=()=>{ $('sheet').hidden=true; };
+$('save').onclick=async()=>{
+  const text=`我今天是「${res.title}」，身上掛了 ${res.n} 件出門！`;
+  try{ navigator.clipboard.writeText(text).catch(()=>{}); }catch(e){}
+  let blob; try{ blob=await storyPNG(); }catch(e){ toast('存圖失敗，再試一次'); return; }
+  const file=new File([blob],'今天穿這樣出門.png',{type:'image/png'});
+  try{ if(navigator.canShare&&navigator.canShare({files:[file]})){ await navigator.share({files:[file],text}); return; } }catch(e){ if(e&&e.name==='AbortError') return; }
+  showSheet(blob);
+};
+$('gF').onclick=()=>{ gender='f'; renderStart(); };
+$('gM').onclick=()=>{ gender='m'; renderStart(); };
+$('go').onclick=start; $('again').onclick=start;
+renderStart();
+})();
+</script>
+</body></html>
