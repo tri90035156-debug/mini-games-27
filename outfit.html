@@ -271,7 +271,7 @@ function baseDoll(gender, face, squash){
   const g=[];
   g.push(`<ellipse cx="80" cy="262" rx="${(44+squash*200).toFixed(1)}" ry="5" fill="${INK}" opacity=".08"/>`);
   g.push(`<g transform="translate(80 262) scale(${(1+squash*.6).toFixed(3)} ${(1-squash).toFixed(3)}) translate(-80 -262)">`);
-  if(gender==='f') g.push(`<path d="M38 56 Q36 104 46 114 L114 114 Q124 104 122 56 Z" fill="${HAIR}"/>`);
+  if(gender==='f') g.push(`<path d="M38 62 C38 34 56 23 80 23 C104 23 122 34 122 62 Q124 104 114 114 L46 114 Q36 104 38 62 Z" fill="${HAIR}"/>`);
   g.push(`<rect x="66" y="200" width="11" height="48" rx="5" fill="${SKIN}"/><rect x="83" y="200" width="11" height="48" rx="5" fill="${SKIN}"/>`);
   if(gender==='m') g.push(`<path d="M58 160 L102 160 L100 246 L84 246 L80 186 L76 246 L60 246 Z" fill="#6E8FC2" stroke="#56749F" stroke-linejoin="round"/>`);
   g.push(`<rect x="58" y="244" width="22" height="13" rx="6.5" fill="#fff" stroke="#D9CFCB"/><rect x="82" y="244" width="22" height="13" rx="6.5" fill="#fff" stroke="#D9CFCB"/><rect x="58" y="252" width="22" height="5" rx="2.5" fill="${BURG}"/><rect x="82" y="252" width="22" height="5" rx="2.5" fill="${BURG}"/>`);
