@@ -1,4 +1,19 @@
 <!doctype html><html lang="zh-Hant"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!-- GA4 追蹤（2026-11-03 埋事件碼）｜GA4 評估 ID（帳戶 Acer 2027 小遊戲／資源 Acer 小遊戲 2027，2026-11-03 建立）。ID 填好前不會載入 gtag、不送任何資料。
+     事件：game_start、game_complete（score）、share_click、product_click（「看這台」，連結帶 UTM utm_campaign=outfit） -->
+<script>
+window.GA4_ID='G-M6Q3DCE3M8'; // GA4 評估 ID（帳戶 Acer 2027 小遊戲／資源 Acer 小遊戲 2027，2026-11-03 建立）
+window.GAME_ID='outfit';
+(function(){
+  // 放在合集頁（index.html）的 iframe 裡時，借用外層頁面的 gtag，不重複載入
+  try{ if(window.parent!==window && typeof window.parent.gtag==='function'){ window.gtag=function(){ window.parent.gtag.apply(window.parent,arguments); }; return; } }catch(e){}
+  window.dataLayer=window.dataLayer||[]; window.gtag=function(){ dataLayer.push(arguments); };
+  if(/^G-X+$/.test(window.GA4_ID)) return;
+  var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+window.GA4_ID; document.head.appendChild(s);
+  gtag('js',new Date()); gtag('config',window.GA4_ID);
+})();
+function gaEvent(name,params){ try{ gtag('event',name,Object.assign({game_id:window.GAME_ID},params||{})); }catch(e){} }
+</script>
 <title>今天穿這樣出門？</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
@@ -22,6 +37,9 @@ body{font-family:"Noto Sans TC","PingFang TC",sans-serif;background:var(--page);
 .btn{display:flex;align-items:center;justify-content:center;height:56px;width:100%;border:0;font:inherit;font-weight:900;font-size:17px;border-radius:var(--r);background:var(--acc);color:var(--acc-ink);box-shadow:var(--sh-acc);cursor:pointer;touch-action:manipulation;transition:transform .15s,box-shadow .15s,filter .15s;position:relative}
 @media (hover:hover){.btn:hover{transform:translateY(-1px);filter:brightness(1.08)}}
 .btn:active{transform:translateY(1px);filter:brightness(.95)}
+a.btn{text-decoration:none}
+.btn.t{height:40px;background:transparent;box-shadow:none;color:var(--ink);font-weight:700;font-size:14px}
+.btn.t svg{color:var(--acc)}
 .btn.o{height:48px;background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:15px;box-shadow:var(--sh)}
 .btns{display:flex;flex-direction:column;gap:8px;position:relative}
 .chip{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 14px;font:inherit;font-size:13px;font-weight:700;border-radius:99px;background:#fff;border:1px solid var(--line);box-shadow:var(--sh);white-space:nowrap;cursor:pointer;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -166,7 +184,7 @@ body{font-family:"Noto Sans TC","PingFang TC",sans-serif;background:var(--page);
  <div class="stats"><div class="st"><b id="sN">14</b><span>身上件數</span></div><div class="st"><b id="sKg">8.6</b><span>負重 kg</span></div><div class="st"><b id="sR">1,280%</b><span>回頭率</span></div></div>
  <div class="combos" id="combos"></div>
  <div class="card" style="margin-top:8px"><p class="p" style="color:var(--ink);font-size:13px;line-height:20px" id="copy"></p></div>
- <div class="btns" style="margin-top:12px"><button class="btn" id="save">存成限動</button><button class="btn o" id="again">再出門一次</button></div>
+ <div class="btns" style="margin-top:12px"><button class="btn" id="save">存成限動</button><button class="btn o" id="again">再出門一次</button><!-- Acer Store Swift Air 14 產品頁（SFA14-71M-54EF，2026-11-03 選定） --><a class="btn t" id="more" href="https://store.acer.com/zh-tw/sfa14-71m-54ef?utm_source=minigame&amp;utm_medium=social&amp;utm_campaign=outfit" target="_blank" rel="noopener">看這台 Swift Air 14<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
 </section>
 <div class="sheet" id="sheet" hidden><img id="sheetImg" alt="分享圖"><p>長按圖片就能存到手機<br>分享文字也已經複製好了</p><button class="btn o" id="sheetClose">關閉</button></div>
 <div class="toast" id="toast"></div>
@@ -359,7 +377,7 @@ function plus(text,x,y,bad){ const p=document.createElement('span'); p.className
 function banner(small,big,cls=''){ const b=$('banner'); b.className='banner '+cls; b.innerHTML=`<small>${small}</small><b>${big}</b>`; void b.offsetWidth; b.classList.add('on'); clearTimeout(b._t); b._t=setTimeout(()=>b.classList.remove('on'),1300); }
 function renderFoundDots(){ $('foundDots').innerHTML=COMBOS.map(c=>`<i class="${found.includes(c.id)?'on':''}"></i>`).join(''); }
 
-function start(){
+function start(){ gaEvent('game_start');
   running=false; clearTimeout(spawnT); clearTimeout(tickT);
   worn=[]; score=100; streak=0; found=[]; lapColor=null; lapShown=false; kgSaid=0; faceOverride=null;
   stage.querySelectorAll('.sp,.plus,.fly,.countdown').forEach(e=>e.remove());
@@ -474,6 +492,7 @@ function result(){
   const heavy = kg>=1.19 ? `全身扛了 ${kg.toFixed(1)}kg 出門，還好 <b>Swift Air 14 只有 1.19kg</b>。` : `<b>Swift Air 14 只有 1.19kg</b>，帶著出門剛剛好。`;
   const colTxt = lapColor ? `你接到的<span class="match" style="background:${lapColor.hex}"></span><b>${lapColor.name}</b>就是你的本命色。` : `下次接住那台發光的 Swift Air 14，看看你的本命色。`;
   $('copy').innerHTML = heavy + (bads?`（還順手接了 ${bads} 通加班，辛苦了。）`:'') + '<br>' + colTxt;
+  gaEvent('game_complete',{score,items:n,kg:+kg.toFixed(1)});
   show('end'); tone(660,990,.15); setTimeout(()=>tone(990,1320,.2),150);
 }
 function toast(t){ const el=$('toast'); el.textContent=t; el.classList.add('on'); clearTimeout(el._t); el._t=setTimeout(()=>el.classList.remove('on'),1800); }
@@ -496,7 +515,7 @@ async function storyPNG(){
 }
 function showSheet(blob){ $('sheetImg').src=URL.createObjectURL(blob); $('sheet').hidden=false; }
 $('sheetClose').onclick=()=>{ $('sheet').hidden=true; };
-$('save').onclick=async()=>{
+$('save').onclick=async()=>{ gaEvent('share_click',{method:'story_image'});
   const text=`我今天是「${res.title}」，身上掛了 ${res.n} 件出門！`;
   try{ navigator.clipboard.writeText(text).catch(()=>{}); }catch(e){}
   let blob; try{ blob=await storyPNG(); }catch(e){ toast('存圖失敗，再試一次'); return; }
@@ -507,6 +526,7 @@ $('save').onclick=async()=>{
 $('gF').onclick=()=>{ gender='f'; renderStart(); };
 $('gM').onclick=()=>{ gender='m'; renderStart(); };
 $('go').onclick=start; $('again').onclick=start;
+$('more').onclick=()=>gaEvent('product_click',{product:'Swift Air 14',link_url:$('more').href});
 renderStart();
 })();
 </script>

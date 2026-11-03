@@ -1,4 +1,19 @@
 <!doctype html><html lang="zh-Hant"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!-- GA4 追蹤（2026-11-03 埋事件碼）｜GA4 評估 ID（帳戶 Acer 2027 小遊戲／資源 Acer 小遊戲 2027，2026-11-03 建立）。ID 填好前不會載入 gtag、不送任何資料。
+     事件：game_start、game_complete（score）、share_click、product_click（「看這台」，連結帶 UTM utm_campaign=hub） -->
+<script>
+window.GA4_ID='G-M6Q3DCE3M8'; // GA4 評估 ID（帳戶 Acer 2027 小遊戲／資源 Acer 小遊戲 2027，2026-11-03 建立）
+window.GAME_ID='hub'; // 合集頁：三款遊戲的事件都經由這裡送出，game_id 分別是 weigh／shutter／outfit
+(function(){
+  // 放在合集頁（index.html）的 iframe 裡時，借用外層頁面的 gtag，不重複載入
+  try{ if(window.parent!==window && typeof window.parent.gtag==='function'){ window.gtag=function(){ window.parent.gtag.apply(window.parent,arguments); }; return; } }catch(e){}
+  window.dataLayer=window.dataLayer||[]; window.gtag=function(){ dataLayer.push(arguments); };
+  if(/^G-X+$/.test(window.GA4_ID)) return;
+  var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+window.GA4_ID; document.head.appendChild(s);
+  gtag('js',new Date()); gtag('config',window.GA4_ID);
+})();
+function gaEvent(name,params){ try{ gtag('event',name,Object.assign({game_id:window.GAME_ID},params||{})); }catch(e){} }
+</script>
 <title>Acer 小遊戲試玩</title>
 <style>
 :root{--acc:#83B81A;--ink:#1A1A1A;--mute:#6B6B6B;--line:#E3E3E3}
@@ -19,6 +34,21 @@ body{font-family:"Noto Sans TC","PingFang TC",sans-serif;background:#E9E9E9;colo
 </style></head><body>
 <div class="bar"><div class="in"><div class="brand"><b>acer</b> 小遊戲試玩</div><nav class="tabs"><button class="tab" data-id="A2"><b>A2 秤重大挑戰</b><span>左滑右滑，哪一個比較重？</span></button><button class="tab" data-id="B"><b>B 0.1 秒快門</b><span>拍下飆速怪咖的奇異表情</span></button><button class="tab" data-id="C"><b>C 今天穿這樣出門？</b><span>東西亂冒出來，點了全疊上身</span></button></nav></div></div>
 <div class="stage"><iframe class="g" id="g-A2" title="A2 秤重大挑戰" data-src="&lt;!doctype html&gt;&lt;html lang=&quot;zh-Hant&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,viewport-fit=cover&quot;&gt;
+&lt;!-- GA4 追蹤（2026-11-03 埋事件碼）｜GA4 評估 ID（帳戶 Acer 2027 小遊戲／資源 Acer 小遊戲 2027，2026-11-03 建立）。ID 填好前不會載入 gtag、不送任何資料。
+     事件：game_start、game_complete（score）、share_click、product_click（「看這台」，連結帶 UTM utm_campaign=weigh） --&gt;
+&lt;script&gt;
+window.GA4_ID=&#x27;G-M6Q3DCE3M8&#x27;; // GA4 評估 ID（帳戶 Acer 2027 小遊戲／資源 Acer 小遊戲 2027，2026-11-03 建立）
+window.GAME_ID=&#x27;weigh&#x27;;
+(function(){
+  // 放在合集頁（index.html）的 iframe 裡時，借用外層頁面的 gtag，不重複載入
+  try{ if(window.parent!==window &amp;&amp; typeof window.parent.gtag===&#x27;function&#x27;){ window.gtag=function(){ window.parent.gtag.apply(window.parent,arguments); }; return; } }catch(e){}
+  window.dataLayer=window.dataLayer||[]; window.gtag=function(){ dataLayer.push(arguments); };
+  if(/^G-X+$/.test(window.GA4_ID)) return;
+  var s=document.createElement(&#x27;script&#x27;); s.async=true; s.src=&#x27;https://www.googletagmanager.com/gtag/js?id=&#x27;+window.GA4_ID; document.head.appendChild(s);
+  gtag(&#x27;js&#x27;,new Date()); gtag(&#x27;config&#x27;,window.GA4_ID);
+})();
+function gaEvent(name,params){ try{ gtag(&#x27;event&#x27;,name,Object.assign({game_id:window.GAME_ID},params||{})); }catch(e){} }
+&lt;/script&gt;
 &lt;title&gt;秤重大挑戰&lt;/title&gt;
 &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
 &lt;style&gt;
@@ -46,6 +76,7 @@ body{font-family:&quot;Noto Sans TC&quot;,&quot;PingFang TC&quot;,sans-serif;bac
 .btn.o{height:48px;background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:15px;box-shadow:var(--sh)}
 @media (hover:hover){.btn.o:hover{box-shadow:var(--sh-h);filter:none}}
 .btn.o:active{background:#F4F4F4;filter:none}
+a.btn{text-decoration:none}
 .btn.t{height:40px;background:transparent;box-shadow:none;color:var(--ink);font-weight:700;font-size:14px}
 .btn.t svg{color:var(--acc)}
 .btns{display:flex;flex-direction:column;gap:8px}
@@ -207,7 +238,7 @@ body{font-family:&quot;Noto Sans TC&quot;,&quot;PingFang TC&quot;,sans-serif;bac
  &lt;div class=&quot;say&quot; id=&quot;say&quot;&gt;重量感很準，差一點滿分&lt;/div&gt;
  &lt;div class=&quot;mini&quot; id=&quot;mini&quot;&gt;&lt;/div&gt;&lt;/div&gt;
  &lt;div class=&quot;card prod&quot; style=&quot;margin-top:16px&quot;&gt;&lt;svg width=&quot;96&quot; height=&quot;67&quot; aria-label=&quot;Swift Air 16&quot;&gt;&lt;use href=&quot;#lap999&quot;/&gt;&lt;/svg&gt;&lt;p class=&quot;p&quot;&gt;&lt;b&gt;Swift Air 16 只有 999g&lt;/b&gt;，比裝滿的 600ml 水壺還輕。&lt;/p&gt;&lt;/div&gt;
- &lt;div class=&quot;btns&quot; style=&quot;margin-top:auto;padding-top:16px&quot;&gt;&lt;button class=&quot;btn&quot; id=&quot;share&quot;&gt;分享成績&lt;/button&gt;&lt;button class=&quot;btn o&quot; id=&quot;again&quot;&gt;再玩一次&lt;/button&gt;&lt;button class=&quot;btn t&quot; id=&quot;more&quot;&gt;看 Swift Air 16&lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M3 8h10M9 4l4 4-4 4&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;&lt;/div&gt;
+ &lt;div class=&quot;btns&quot; style=&quot;margin-top:auto;padding-top:16px&quot;&gt;&lt;button class=&quot;btn&quot; id=&quot;share&quot;&gt;分享成績&lt;/button&gt;&lt;button class=&quot;btn o&quot; id=&quot;again&quot;&gt;再玩一次&lt;/button&gt;&lt;!-- Acer Store Swift Air 16 產品頁（SFA16-62M-R4TQ，2026-11-03 選定） --&gt;&lt;a class=&quot;btn t&quot; id=&quot;more&quot; href=&quot;https://store.acer.com/zh-tw/sfa16-62m-r4tq?utm_source=minigame&amp;amp;utm_medium=social&amp;amp;utm_campaign=weigh&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;看 Swift Air 16&lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M3 8h10M9 4l4 4-4 4&quot;/&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;/section&gt;
 &lt;div class=&quot;toast&quot; id=&quot;toast&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -257,7 +288,7 @@ function pickQuestions(){
   return shuffle([...fixed, ...heavy.slice(0,3), ...light.slice(0,5)]).slice(0,TOTAL_Q);
 }
 
-function start(){
+function start(){ gaEvent(&#x27;game_start&#x27;);
   qs = pickQuestions(); idx=0; results=[]; left=TOTAL_MS; busy=false;
   show(&#x27;play&#x27;); renderDots(); renderStack(); updateClock();
   running=true; last=performance.now(); cancelAnimationFrame(raf); raf=requestAnimationFrame(tick);
@@ -348,7 +379,7 @@ const STAR=&#x27;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quo
 let lastScore=0;
 function finish(){
   running=false; cancelAnimationFrame(raf);
-  const score = results.filter(r=&gt;r===true).length; lastScore=score;
+  const score = results.filter(r=&gt;r===true).length; lastScore=score; gaEvent(&#x27;game_complete&#x27;,{score});
   const nStar = score&gt;=9?3:score&gt;=6?2:1;
   const [title,say] = score===10?[&#x27;人肉電子秤・滿分&#x27;,&#x27;滿分！你的手就是電子秤&#x27;]
     : score&gt;=8?[&#x27;人肉電子秤&#x27;,&#x27;重量感很準，差一點滿分&#x27;]
@@ -362,17 +393,32 @@ function finish(){
 }
 function toast(t){ const el=$(&#x27;toast&#x27;); el.textContent=t; el.classList.add(&#x27;on&#x27;); clearTimeout(el._t); el._t=setTimeout(()=&gt;el.classList.remove(&#x27;on&#x27;),1800); }
 $(&#x27;go&#x27;).onclick=start; $(&#x27;again&#x27;).onclick=start;
-$(&#x27;share&#x27;).onclick=async()=&gt;{
+$(&#x27;share&#x27;).onclick=async()=&gt;{ gaEvent(&#x27;share_click&#x27;);
   const text=`我在「秤重大挑戰」滑對 ${lastScore}/10！原來 Swift Air 16 只有 999g，比裝滿的 600ml 水壺還輕。你猜得出來嗎？`;
   let copied=false; try{ await navigator.clipboard.writeText(text); copied=true; }catch(e){}
   try{ if(navigator.share){ await navigator.share({title:&#x27;秤重大挑戰&#x27;,text}); return; } }catch(e){ if(e&amp;&amp;e.name===&#x27;AbortError&#x27;) return; }
   toast(copied?&#x27;已複製分享文字，貼到 IG／LINE 就好&#x27;:&#x27;分享文字：&#x27;+text.slice(0,18)+&#x27;…&#x27;);
 };
-$(&#x27;more&#x27;).onclick=()=&gt;toast(&#x27;正式版會連到 Swift Air 16 產品頁&#x27;);
+$(&#x27;more&#x27;).onclick=()=&gt;gaEvent(&#x27;product_click&#x27;,{product:&#x27;Swift Air 16&#x27;,link_url:$(&#x27;more&#x27;).href});
 })();
 &lt;/script&gt;
 &lt;/body&gt;&lt;/html&gt;
 " allow="web-share; clipboard-write"></iframe><iframe class="g" id="g-B" title="B 0.1 秒快門" data-src="&lt;!doctype html&gt;&lt;html lang=&quot;zh-Hant&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,viewport-fit=cover&quot;&gt;
+&lt;!-- GA4 追蹤（2026-11-03 埋事件碼）｜GA4 評估 ID（帳戶 Acer 2027 小遊戲／資源 Acer 小遊戲 2027，2026-11-03 建立）。ID 填好前不會載入 gtag、不送任何資料。
+     事件：game_start、game_complete（score）、share_click、product_click（「看這台」，連結帶 UTM utm_campaign=shutter） --&gt;
+&lt;script&gt;
+window.GA4_ID=&#x27;G-M6Q3DCE3M8&#x27;; // GA4 評估 ID（帳戶 Acer 2027 小遊戲／資源 Acer 小遊戲 2027，2026-11-03 建立）
+window.GAME_ID=&#x27;shutter&#x27;;
+(function(){
+  // 放在合集頁（index.html）的 iframe 裡時，借用外層頁面的 gtag，不重複載入
+  try{ if(window.parent!==window &amp;&amp; typeof window.parent.gtag===&#x27;function&#x27;){ window.gtag=function(){ window.parent.gtag.apply(window.parent,arguments); }; return; } }catch(e){}
+  window.dataLayer=window.dataLayer||[]; window.gtag=function(){ dataLayer.push(arguments); };
+  if(/^G-X+$/.test(window.GA4_ID)) return;
+  var s=document.createElement(&#x27;script&#x27;); s.async=true; s.src=&#x27;https://www.googletagmanager.com/gtag/js?id=&#x27;+window.GA4_ID; document.head.appendChild(s);
+  gtag(&#x27;js&#x27;,new Date()); gtag(&#x27;config&#x27;,window.GA4_ID);
+})();
+function gaEvent(name,params){ try{ gtag(&#x27;event&#x27;,name,Object.assign({game_id:window.GAME_ID},params||{})); }catch(e){} }
+&lt;/script&gt;
 &lt;title&gt;0.1 秒快門&lt;/title&gt;
 &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
 &lt;style&gt;
@@ -405,6 +451,10 @@ body{font-family:&quot;Noto Sans TC&quot;,&quot;PingFang TC&quot;,sans-serif;bac
 .btn.o{height:48px;background:transparent;border:1px solid #3A3A3A;color:var(--ink);font-weight:700;font-size:15px;box-shadow:none}
 @media (hover:hover){.btn.o:hover{border-color:var(--acc);filter:none}}
 .btns{display:flex;flex-direction:column;gap:8px}
+a.btn{text-decoration:none}
+.row2{display:flex;gap:8px}.row2 .btn{flex:1;width:auto}
+.btn.t{height:48px;background:transparent;border:1px solid #3A3A3A;box-shadow:none;color:var(--ink);font-weight:700;font-size:15px;letter-spacing:.02em}
+.btn.t svg{color:var(--acc)}
 .chip{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;font-size:12px;line-height:16px;font-weight:700;border-radius:4px;border:1px solid #333;background:#121212;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
 .chip.g{border-color:var(--acc);color:var(--acc)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 16px;box-shadow:var(--sh)}
@@ -603,7 +653,7 @@ body{font-family:&quot;Noto Sans TC&quot;,&quot;PingFang TC&quot;,sans-serif;bac
  &lt;div style=&quot;margin-top:8px&quot;&gt;&lt;span class=&quot;badge&quot;&gt;&lt;svg width=&quot;14&quot; height=&quot;16&quot; viewBox=&quot;0 0 14 16&quot;&gt;&lt;path d=&quot;M8.5 0 1 9h5l-1.5 7L13 6.5H8Z&quot; fill=&quot;#9BE028&quot;/&gt;&lt;/svg&gt;&lt;span id=&quot;rank&quot;&gt;神之手指・比 92% 玩家快&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
  &lt;div class=&quot;foot mono&quot; id=&quot;sum&quot; style=&quot;margin-top:8px&quot;&gt;&lt;/div&gt;&lt;/div&gt;
  &lt;div class=&quot;card&quot; style=&quot;margin-top:12px&quot;&gt;&lt;p class=&quot;p&quot; style=&quot;color:#DDD&quot;&gt;&lt;b style=&quot;color:var(--acc)&quot;&gt;Nitro 180Hz 每一幀只要 5.6ms&lt;/b&gt;，再快的怪咖都拍得清清楚楚。&lt;/p&gt;&lt;/div&gt;
- &lt;div class=&quot;btns&quot; style=&quot;margin-top:auto;padding-top:16px&quot;&gt;&lt;button class=&quot;btn&quot; id=&quot;share&quot;&gt;分享奇異快照&lt;/button&gt;&lt;button class=&quot;btn o mono&quot; id=&quot;again&quot;&gt;AGAIN&lt;/button&gt;&lt;/div&gt;
+ &lt;div class=&quot;btns&quot; style=&quot;margin-top:auto;padding-top:16px&quot;&gt;&lt;button class=&quot;btn&quot; id=&quot;share&quot;&gt;分享奇異快照&lt;/button&gt;&lt;div class=&quot;row2&quot;&gt;&lt;button class=&quot;btn o mono&quot; id=&quot;again&quot;&gt;AGAIN&lt;/button&gt;&lt;!-- Acer Store Nitro XZ340CKR P 產品頁（XZ340CKR P，2026-11-03 選定） --&gt;&lt;a class=&quot;btn t&quot; id=&quot;more&quot; href=&quot;https://store.acer.com/zh-tw/xz340ckr-p?utm_source=minigame&amp;amp;utm_medium=social&amp;amp;utm_campaign=shutter&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;看這台 Nitro&lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M3 8h10M9 4l4 4-4 4&quot;/&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;/section&gt;
 &lt;div class=&quot;sheet&quot; id=&quot;sheet&quot; hidden&gt;&lt;img id=&quot;sheetImg&quot; alt=&quot;分享圖&quot;&gt;&lt;p&gt;長按圖片就能存到手機&lt;br&gt;分享文字也已經複製好了&lt;/p&gt;&lt;button class=&quot;btn o&quot; id=&quot;sheetClose&quot;&gt;關閉&lt;/button&gt;&lt;/div&gt;
 &lt;div class=&quot;toast&quot; id=&quot;toast&quot;&gt;&lt;/div&gt;
@@ -649,7 +699,7 @@ function renderRounds(){
   $(&#x27;dexPlay&#x27;).textContent = dexText();
 }
 
-function start(){
+function start(){ gaEvent(&#x27;game_start&#x27;);
   round=0; shots=[]; newFinds=[]; $(&#x27;thumb&#x27;).innerHTML=&#x27;&#x27;;
   show(&#x27;play&#x27;); renderRounds(); nextRound();
 }
@@ -741,6 +791,7 @@ function finish(){
   }
   $(&#x27;dexEnd&#x27;).textContent=(newFinds.length?&#x27;NEW・&#x27;:&#x27;&#x27;)+&#x27;圖鑑 &#x27;+dexText();
   $(&#x27;dexStart&#x27;).textContent=&#x27;圖鑑 &#x27;+dexText();
+  gaEvent(&#x27;game_complete&#x27;,{score:bestShot?bestShot.ms:0,score_unit:&#x27;ms&#x27;,hits:hits.length});
   show(&#x27;end&#x27;); tone([523,659,784],0.08,&#x27;square&#x27;,0.03);
 }
 
@@ -766,7 +817,7 @@ async function snapshotPNG(){
 }
 function showSheet(blob){ $(&#x27;sheetImg&#x27;).src=URL.createObjectURL(blob); $(&#x27;sheet&#x27;).hidden=false; }
 $(&#x27;sheetClose&#x27;).onclick=()=&gt;{ $(&#x27;sheet&#x27;).hidden=true; };
-$(&#x27;share&#x27;).onclick=async()=&gt;{
+$(&#x27;share&#x27;).onclick=async()=&gt;{ gaEvent(&#x27;share_click&#x27;);
   if(!bestShot){ toast(&#x27;這輪沒拍到，再來一輪！&#x27;); return; }
   const text=`我用 ${bestShot.ms}ms 拍到了「${bestShot.c.name}」的奇異表情！你拍得到嗎？`;
   try{ navigator.clipboard.writeText(text).catch(()=&gt;{}); }catch(e){}
@@ -776,10 +827,26 @@ $(&#x27;share&#x27;).onclick=async()=&gt;{
   showSheet(blob);
 };
 $(&#x27;go&#x27;).onclick=start; $(&#x27;again&#x27;).onclick=start;
+$(&#x27;more&#x27;).onclick=()=&gt;gaEvent(&#x27;product_click&#x27;,{product:&#x27;Nitro XZ340CKR P&#x27;,link_url:$(&#x27;more&#x27;).href});
 })();
 &lt;/script&gt;
 &lt;/body&gt;&lt;/html&gt;
 " allow="web-share; clipboard-write"></iframe><iframe class="g" id="g-C" title="C 今天穿這樣出門？" data-src="&lt;!doctype html&gt;&lt;html lang=&quot;zh-Hant&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,viewport-fit=cover&quot;&gt;
+&lt;!-- GA4 追蹤（2026-11-03 埋事件碼）｜GA4 評估 ID（帳戶 Acer 2027 小遊戲／資源 Acer 小遊戲 2027，2026-11-03 建立）。ID 填好前不會載入 gtag、不送任何資料。
+     事件：game_start、game_complete（score）、share_click、product_click（「看這台」，連結帶 UTM utm_campaign=outfit） --&gt;
+&lt;script&gt;
+window.GA4_ID=&#x27;G-M6Q3DCE3M8&#x27;; // GA4 評估 ID（帳戶 Acer 2027 小遊戲／資源 Acer 小遊戲 2027，2026-11-03 建立）
+window.GAME_ID=&#x27;outfit&#x27;;
+(function(){
+  // 放在合集頁（index.html）的 iframe 裡時，借用外層頁面的 gtag，不重複載入
+  try{ if(window.parent!==window &amp;&amp; typeof window.parent.gtag===&#x27;function&#x27;){ window.gtag=function(){ window.parent.gtag.apply(window.parent,arguments); }; return; } }catch(e){}
+  window.dataLayer=window.dataLayer||[]; window.gtag=function(){ dataLayer.push(arguments); };
+  if(/^G-X+$/.test(window.GA4_ID)) return;
+  var s=document.createElement(&#x27;script&#x27;); s.async=true; s.src=&#x27;https://www.googletagmanager.com/gtag/js?id=&#x27;+window.GA4_ID; document.head.appendChild(s);
+  gtag(&#x27;js&#x27;,new Date()); gtag(&#x27;config&#x27;,window.GA4_ID);
+})();
+function gaEvent(name,params){ try{ gtag(&#x27;event&#x27;,name,Object.assign({game_id:window.GAME_ID},params||{})); }catch(e){} }
+&lt;/script&gt;
 &lt;title&gt;今天穿這樣出門？&lt;/title&gt;
 &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
 &lt;style&gt;
@@ -803,6 +870,9 @@ body{font-family:&quot;Noto Sans TC&quot;,&quot;PingFang TC&quot;,sans-serif;bac
 .btn{display:flex;align-items:center;justify-content:center;height:56px;width:100%;border:0;font:inherit;font-weight:900;font-size:17px;border-radius:var(--r);background:var(--acc);color:var(--acc-ink);box-shadow:var(--sh-acc);cursor:pointer;touch-action:manipulation;transition:transform .15s,box-shadow .15s,filter .15s;position:relative}
 @media (hover:hover){.btn:hover{transform:translateY(-1px);filter:brightness(1.08)}}
 .btn:active{transform:translateY(1px);filter:brightness(.95)}
+a.btn{text-decoration:none}
+.btn.t{height:40px;background:transparent;box-shadow:none;color:var(--ink);font-weight:700;font-size:14px}
+.btn.t svg{color:var(--acc)}
 .btn.o{height:48px;background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:15px;box-shadow:var(--sh)}
 .btns{display:flex;flex-direction:column;gap:8px;position:relative}
 .chip{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 14px;font:inherit;font-size:13px;font-weight:700;border-radius:99px;background:#fff;border:1px solid var(--line);box-shadow:var(--sh);white-space:nowrap;cursor:pointer;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -947,7 +1017,7 @@ body{font-family:&quot;Noto Sans TC&quot;,&quot;PingFang TC&quot;,sans-serif;bac
  &lt;div class=&quot;stats&quot;&gt;&lt;div class=&quot;st&quot;&gt;&lt;b id=&quot;sN&quot;&gt;14&lt;/b&gt;&lt;span&gt;身上件數&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;st&quot;&gt;&lt;b id=&quot;sKg&quot;&gt;8.6&lt;/b&gt;&lt;span&gt;負重 kg&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;st&quot;&gt;&lt;b id=&quot;sR&quot;&gt;1,280%&lt;/b&gt;&lt;span&gt;回頭率&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
  &lt;div class=&quot;combos&quot; id=&quot;combos&quot;&gt;&lt;/div&gt;
  &lt;div class=&quot;card&quot; style=&quot;margin-top:8px&quot;&gt;&lt;p class=&quot;p&quot; style=&quot;color:var(--ink);font-size:13px;line-height:20px&quot; id=&quot;copy&quot;&gt;&lt;/p&gt;&lt;/div&gt;
- &lt;div class=&quot;btns&quot; style=&quot;margin-top:12px&quot;&gt;&lt;button class=&quot;btn&quot; id=&quot;save&quot;&gt;存成限動&lt;/button&gt;&lt;button class=&quot;btn o&quot; id=&quot;again&quot;&gt;再出門一次&lt;/button&gt;&lt;/div&gt;
+ &lt;div class=&quot;btns&quot; style=&quot;margin-top:12px&quot;&gt;&lt;button class=&quot;btn&quot; id=&quot;save&quot;&gt;存成限動&lt;/button&gt;&lt;button class=&quot;btn o&quot; id=&quot;again&quot;&gt;再出門一次&lt;/button&gt;&lt;!-- Acer Store Swift Air 14 產品頁（SFA14-71M-54EF，2026-11-03 選定） --&gt;&lt;a class=&quot;btn t&quot; id=&quot;more&quot; href=&quot;https://store.acer.com/zh-tw/sfa14-71m-54ef?utm_source=minigame&amp;amp;utm_medium=social&amp;amp;utm_campaign=outfit&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;看這台 Swift Air 14&lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M3 8h10M9 4l4 4-4 4&quot;/&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;/section&gt;
 &lt;div class=&quot;sheet&quot; id=&quot;sheet&quot; hidden&gt;&lt;img id=&quot;sheetImg&quot; alt=&quot;分享圖&quot;&gt;&lt;p&gt;長按圖片就能存到手機&lt;br&gt;分享文字也已經複製好了&lt;/p&gt;&lt;button class=&quot;btn o&quot; id=&quot;sheetClose&quot;&gt;關閉&lt;/button&gt;&lt;/div&gt;
 &lt;div class=&quot;toast&quot; id=&quot;toast&quot;&gt;&lt;/div&gt;
@@ -1140,7 +1210,7 @@ function plus(text,x,y,bad){ const p=document.createElement(&#x27;span&#x27;); p
 function banner(small,big,cls=&#x27;&#x27;){ const b=$(&#x27;banner&#x27;); b.className=&#x27;banner &#x27;+cls; b.innerHTML=`&lt;small&gt;${small}&lt;/small&gt;&lt;b&gt;${big}&lt;/b&gt;`; void b.offsetWidth; b.classList.add(&#x27;on&#x27;); clearTimeout(b._t); b._t=setTimeout(()=&gt;b.classList.remove(&#x27;on&#x27;),1300); }
 function renderFoundDots(){ $(&#x27;foundDots&#x27;).innerHTML=COMBOS.map(c=&gt;`&lt;i class=&quot;${found.includes(c.id)?&#x27;on&#x27;:&#x27;&#x27;}&quot;&gt;&lt;/i&gt;`).join(&#x27;&#x27;); }
 
-function start(){
+function start(){ gaEvent(&#x27;game_start&#x27;);
   running=false; clearTimeout(spawnT); clearTimeout(tickT);
   worn=[]; score=100; streak=0; found=[]; lapColor=null; lapShown=false; kgSaid=0; faceOverride=null;
   stage.querySelectorAll(&#x27;.sp,.plus,.fly,.countdown&#x27;).forEach(e=&gt;e.remove());
@@ -1255,6 +1325,7 @@ function result(){
   const heavy = kg&gt;=1.19 ? `全身扛了 ${kg.toFixed(1)}kg 出門，還好 &lt;b&gt;Swift Air 14 只有 1.19kg&lt;/b&gt;。` : `&lt;b&gt;Swift Air 14 只有 1.19kg&lt;/b&gt;，帶著出門剛剛好。`;
   const colTxt = lapColor ? `你接到的&lt;span class=&quot;match&quot; style=&quot;background:${lapColor.hex}&quot;&gt;&lt;/span&gt;&lt;b&gt;${lapColor.name}&lt;/b&gt;就是你的本命色。` : `下次接住那台發光的 Swift Air 14，看看你的本命色。`;
   $(&#x27;copy&#x27;).innerHTML = heavy + (bads?`（還順手接了 ${bads} 通加班，辛苦了。）`:&#x27;&#x27;) + &#x27;&lt;br&gt;&#x27; + colTxt;
+  gaEvent(&#x27;game_complete&#x27;,{score,items:n,kg:+kg.toFixed(1)});
   show(&#x27;end&#x27;); tone(660,990,.15); setTimeout(()=&gt;tone(990,1320,.2),150);
 }
 function toast(t){ const el=$(&#x27;toast&#x27;); el.textContent=t; el.classList.add(&#x27;on&#x27;); clearTimeout(el._t); el._t=setTimeout(()=&gt;el.classList.remove(&#x27;on&#x27;),1800); }
@@ -1277,7 +1348,7 @@ async function storyPNG(){
 }
 function showSheet(blob){ $(&#x27;sheetImg&#x27;).src=URL.createObjectURL(blob); $(&#x27;sheet&#x27;).hidden=false; }
 $(&#x27;sheetClose&#x27;).onclick=()=&gt;{ $(&#x27;sheet&#x27;).hidden=true; };
-$(&#x27;save&#x27;).onclick=async()=&gt;{
+$(&#x27;save&#x27;).onclick=async()=&gt;{ gaEvent(&#x27;share_click&#x27;,{method:&#x27;story_image&#x27;});
   const text=`我今天是「${res.title}」，身上掛了 ${res.n} 件出門！`;
   try{ navigator.clipboard.writeText(text).catch(()=&gt;{}); }catch(e){}
   let blob; try{ blob=await storyPNG(); }catch(e){ toast(&#x27;存圖失敗，再試一次&#x27;); return; }
@@ -1288,6 +1359,7 @@ $(&#x27;save&#x27;).onclick=async()=&gt;{
 $(&#x27;gF&#x27;).onclick=()=&gt;{ gender=&#x27;f&#x27;; renderStart(); };
 $(&#x27;gM&#x27;).onclick=()=&gt;{ gender=&#x27;m&#x27;; renderStart(); };
 $(&#x27;go&#x27;).onclick=start; $(&#x27;again&#x27;).onclick=start;
+$(&#x27;more&#x27;).onclick=()=&gt;gaEvent(&#x27;product_click&#x27;,{product:&#x27;Swift Air 14&#x27;,link_url:$(&#x27;more&#x27;).href});
 renderStart();
 })();
 &lt;/script&gt;

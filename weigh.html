@@ -1,4 +1,19 @@
 <!doctype html><html lang="zh-Hant"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!-- GA4 追蹤（2026-11-03 埋事件碼）｜GA4 評估 ID（帳戶 Acer 2027 小遊戲／資源 Acer 小遊戲 2027，2026-11-03 建立）。ID 填好前不會載入 gtag、不送任何資料。
+     事件：game_start、game_complete（score）、share_click、product_click（「看這台」，連結帶 UTM utm_campaign=weigh） -->
+<script>
+window.GA4_ID='G-M6Q3DCE3M8'; // GA4 評估 ID（帳戶 Acer 2027 小遊戲／資源 Acer 小遊戲 2027，2026-11-03 建立）
+window.GAME_ID='weigh';
+(function(){
+  // 放在合集頁（index.html）的 iframe 裡時，借用外層頁面的 gtag，不重複載入
+  try{ if(window.parent!==window && typeof window.parent.gtag==='function'){ window.gtag=function(){ window.parent.gtag.apply(window.parent,arguments); }; return; } }catch(e){}
+  window.dataLayer=window.dataLayer||[]; window.gtag=function(){ dataLayer.push(arguments); };
+  if(/^G-X+$/.test(window.GA4_ID)) return;
+  var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+window.GA4_ID; document.head.appendChild(s);
+  gtag('js',new Date()); gtag('config',window.GA4_ID);
+})();
+function gaEvent(name,params){ try{ gtag('event',name,Object.assign({game_id:window.GAME_ID},params||{})); }catch(e){} }
+</script>
 <title>秤重大挑戰</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
@@ -26,6 +41,7 @@ body{font-family:"Noto Sans TC","PingFang TC",sans-serif;background:var(--page);
 .btn.o{height:48px;background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:15px;box-shadow:var(--sh)}
 @media (hover:hover){.btn.o:hover{box-shadow:var(--sh-h);filter:none}}
 .btn.o:active{background:#F4F4F4;filter:none}
+a.btn{text-decoration:none}
 .btn.t{height:40px;background:transparent;box-shadow:none;color:var(--ink);font-weight:700;font-size:14px}
 .btn.t svg{color:var(--acc)}
 .btns{display:flex;flex-direction:column;gap:8px}
@@ -187,7 +203,7 @@ body{font-family:"Noto Sans TC","PingFang TC",sans-serif;background:var(--page);
  <div class="say" id="say">重量感很準，差一點滿分</div>
  <div class="mini" id="mini"></div></div>
  <div class="card prod" style="margin-top:16px"><svg width="96" height="67" aria-label="Swift Air 16"><use href="#lap999"/></svg><p class="p"><b>Swift Air 16 只有 999g</b>，比裝滿的 600ml 水壺還輕。</p></div>
- <div class="btns" style="margin-top:auto;padding-top:16px"><button class="btn" id="share">分享成績</button><button class="btn o" id="again">再玩一次</button><button class="btn t" id="more">看 Swift Air 16<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button></div>
+ <div class="btns" style="margin-top:auto;padding-top:16px"><button class="btn" id="share">分享成績</button><button class="btn o" id="again">再玩一次</button><!-- Acer Store Swift Air 16 產品頁（SFA16-62M-R4TQ，2026-11-03 選定） --><a class="btn t" id="more" href="https://store.acer.com/zh-tw/sfa16-62m-r4tq?utm_source=minigame&amp;utm_medium=social&amp;utm_campaign=weigh" target="_blank" rel="noopener">看 Swift Air 16<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
 </section>
 <div class="toast" id="toast"></div>
 </div>
@@ -237,7 +253,7 @@ function pickQuestions(){
   return shuffle([...fixed, ...heavy.slice(0,3), ...light.slice(0,5)]).slice(0,TOTAL_Q);
 }
 
-function start(){
+function start(){ gaEvent('game_start');
   qs = pickQuestions(); idx=0; results=[]; left=TOTAL_MS; busy=false;
   show('play'); renderDots(); renderStack(); updateClock();
   running=true; last=performance.now(); cancelAnimationFrame(raf); raf=requestAnimationFrame(tick);
@@ -328,7 +344,7 @@ const STAR='<svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2.6l2.8
 let lastScore=0;
 function finish(){
   running=false; cancelAnimationFrame(raf);
-  const score = results.filter(r=>r===true).length; lastScore=score;
+  const score = results.filter(r=>r===true).length; lastScore=score; gaEvent('game_complete',{score});
   const nStar = score>=9?3:score>=6?2:1;
   const [title,say] = score===10?['人肉電子秤・滿分','滿分！你的手就是電子秤']
     : score>=8?['人肉電子秤','重量感很準，差一點滿分']
@@ -342,13 +358,13 @@ function finish(){
 }
 function toast(t){ const el=$('toast'); el.textContent=t; el.classList.add('on'); clearTimeout(el._t); el._t=setTimeout(()=>el.classList.remove('on'),1800); }
 $('go').onclick=start; $('again').onclick=start;
-$('share').onclick=async()=>{
+$('share').onclick=async()=>{ gaEvent('share_click');
   const text=`我在「秤重大挑戰」滑對 ${lastScore}/10！原來 Swift Air 16 只有 999g，比裝滿的 600ml 水壺還輕。你猜得出來嗎？`;
   let copied=false; try{ await navigator.clipboard.writeText(text); copied=true; }catch(e){}
   try{ if(navigator.share){ await navigator.share({title:'秤重大挑戰',text}); return; } }catch(e){ if(e&&e.name==='AbortError') return; }
   toast(copied?'已複製分享文字，貼到 IG／LINE 就好':'分享文字：'+text.slice(0,18)+'…');
 };
-$('more').onclick=()=>toast('正式版會連到 Swift Air 16 產品頁');
+$('more').onclick=()=>gaEvent('product_click',{product:'Swift Air 16',link_url:$('more').href});
 })();
 </script>
 </body></html>
